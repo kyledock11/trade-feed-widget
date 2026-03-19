@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-19T20:45:19.925700+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-19T20:50:49.612373+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T20:45:19.925710+00:00",
+    "last_heartbeat": "2026-03-19T20:50:49.612381+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "18s",
-      "INFO       Skipped: 18 recently analyzed, 12 already have run.py:167",
-      "position, 1 no edge",
-      "INFO       Quick mode: 1 low-volume markets               run.py:173",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 23 positions, M$576.24 deployed",
+      "[14:46:45] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-19",
+      "15:15:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -747,6 +703,16 @@
   ],
   "estimates": [
     {
+      "id": 52,
+      "market_id": "qOupANU6Zl",
+      "probability": 0.5,
+      "confidence": 0.15,
+      "reasoning": "Coin flip market \u2014 pure randomness, no edge possible.",
+      "key_uncertainties": "[\"Random outcome \\u2014 no information advantage\"]",
+      "base_rate": 0.5,
+      "created_at": "2026-03-19T20:50:43.350831"
+    },
+    {
       "id": 51,
       "market_id": "p2c9nlgPEg",
       "probability": 0.5,
@@ -1235,19 +1201,94 @@
       "key_uncertainties": "[\"No clear resolution criteria - unknown what outcome is being predicted\", \"Unknown timing and methodology of the coin flip\", \"Unknown verification process for results\", \"Unclear if this is a single flip or multiple daily flips\", \"No specification of coin type or flipping method\", \"Possibility that 'Daily Coinflip' refers to something other than a literal coin flip\"]",
       "base_rate": 0.5,
       "created_at": "2026-03-19T18:09:12.449821"
-    },
-    {
-      "id": 2,
-      "market_id": "ZctCIAhQsu",
-      "probability": 0.08,
-      "confidence": 0.4,
-      "reasoning": "Starting with a low base rate (~2%) as direct military confrontations between major powers are rare and both sides generally seek to avoid escalation to shooting down manned aircraft. However, several factors increase the risk above the base rate: (1) The 14+ month timeframe provides substantial opportunity for incidents; (2) Iran has demonstrated willingness to shoot down US unmanned aircraft when it perceives violations of sovereignty; (3) Current regional tensions are elevated with ongoing proxy conflicts; (4) The question includes both planes AND helicopters, expanding the potential targets; (5) Routine US surveillance operations near Iranian territory create regular opportunities for miscalculation. Key escalation risk comes from the distinction between unmanned drones (which Iran has targeted) and manned aircraft (much higher stakes). While Iran likely prefers avoiding direct confrontation with manned US aircraft due to massive retaliation risks, accidents, miscommunication, or desperate circumstances during a broader regional conflict could lead to such an incident. The probability remains relatively low but meaningfully above baseline due to the extended timeframe and volatile regional dynamics.",
-      "key_uncertainties": "[\"Escalation of regional tensions involving Israel-Iran conflict\", \"Changes in US military posture and patrol patterns near Iranian territory\", \"Iranian political leadership decisions and risk tolerance\", \"Potential for accidental encounters during routine operations\", \"Evolution of nuclear negotiations and sanctions regime\", \"Proxy conflicts involving Iranian-backed groups\", \"Third-party provocations that could trigger broader conflict\"]",
-      "base_rate": 0.02,
-      "created_at": "2026-03-19T18:08:57.137039"
     }
   ],
   "markets": [
+    {
+      "id": 119,
+      "platform": "manifold",
+      "market_id": "qOupANU6Zl",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.5049259987396706,
+      "current_no_price": 0.4950740012603294,
+      "volume": 108.23531372941291,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:50:19.927573",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 118,
+      "platform": "manifold",
+      "market_id": "gLs6SNcP6L",
+      "question": "Daily Coin Flip - Day 703",
+      "current_yes_price": 0.49045262578341053,
+      "current_no_price": 0.5095473742165895,
+      "volume": 147.65124837980898,
+      "liquidity": 1100.0,
+      "close_date": "2026-03-21T16:56:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:50:17.487561",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 117,
+      "platform": "manifold",
+      "market_id": "6Zy0AhhshR",
+      "question": "Daily Coin Flip - Day 703",
+      "current_yes_price": 0.5,
+      "current_no_price": 0.5,
+      "volume": 211.62493093035755,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-19T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:49:52.277303",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 116,
+      "platform": "manifold",
+      "market_id": "Incl8ICc5g",
+      "question": "Trump visits China by end of March 31?",
+      "current_yes_price": 0.02450284255660054,
+      "current_no_price": 0.9754971574433995,
+      "volume": 438.7296101299219,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T06:59:00+00:00",
+      "category": "politics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:49:49.055607",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 115,
+      "platform": "manifold",
+      "market_id": "EzEhQEA0pp",
+      "question": "UK gov accepts all 47 Fingleton nuclear review recommendations by Q1 2026?",
+      "current_yes_price": 0.17539971327128034,
+      "current_no_price": 0.8246002867287197,
+      "volume": 5391.181320892825,
+      "liquidity": 8000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:49:45.954487",
+      "est_prob": 0.25,
+      "est_conf": 0.2,
+      "est_reasoning": "This is a highly uncertain prediction due to multiple critical information gaps. While there is some positive evidence from March 2026 news indicating UK government commitment to nuclear regulatory reforms with completion expected by end of next year, this falls short of the specific requirements for YES resolution. The news doesn't explicitly mention the 'Fingleton' review, doesn't confirm exactly 47 recommendations, and doesn't clarify whether 'acceptance' has occurred versus just implementation planning. The timing is also problematic - with the market closing March 31, 2026, there's minimal time for additional official confirmations. Without being able to definitively link the news about nuclear regulatory reforms to the specific Fingleton review and its 47 recommendations, and without clear resolution criteria for what constitutes 'acceptance,' I estimate a low probability while acknowledging very high uncertainty."
+    },
     {
       "id": 114,
       "platform": "manifold",
@@ -2862,91 +2903,6 @@
       "est_prob": 0.5,
       "est_conf": 0.3,
       "est_reasoning": "Given the complete lack of information about what specific event is being predicted, I must rely solely on the title 'Daily Coinflip'. If this is literally referring to a coin toss, the mathematical base rate is exactly 50% for either outcome. However, the sports categorization suggests this might be metaphorical. Without any resolution criteria, context, or additional details, I cannot adjust meaningfully from the 50% base rate that a coinflip would theoretically provide. My confidence is very low (0.3) because this estimate could be completely wrong if 'Daily Coinflip' refers to something other than an actual coin toss, but I have no information to determine what that might be."
-    },
-    {
-      "id": 19,
-      "platform": "manifold",
-      "market_id": "ZctCIAhQsu",
-      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-      "current_yes_price": 0.15320802767927105,
-      "current_no_price": 0.8467919723207289,
-      "volume": 9528.687687960592,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "geopolitics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:16:57.395254",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
-    },
-    {
-      "id": 18,
-      "platform": "manifold",
-      "market_id": "s6AyzCILzL",
-      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
-      "current_yes_price": 0.7821441961481722,
-      "current_no_price": 0.2178558038518278,
-      "volume": 23720.580415641954,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "geopolitics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:16:37.074578",
-      "est_prob": 0.92,
-      "est_conf": 0.7,
-      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
-    },
-    {
-      "id": 17,
-      "platform": "manifold",
-      "market_id": "pulqzqzCnA",
-      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
-      "current_yes_price": 0.3902439024390245,
-      "current_no_price": 0.6097560975609755,
-      "volume": 100.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-23T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:10:31.245989",
-      "est_prob": 0.65,
-      "est_conf": 0.2,
-      "est_reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data."
-    },
-    {
-      "id": 16,
-      "platform": "manifold",
-      "market_id": "C96pyn9Z5Z",
-      "question": "Iran Government falls before end of March 2026",
-      "current_yes_price": 0.03754890752752743,
-      "current_no_price": 0.9624510924724725,
-      "volume": 213.9319714012992,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:10:08.875631",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a base rate: authoritarian regimes that have survived 45+ years (like Iran since 1979) rarely collapse in any given 15-month period - perhaps 5% historically. Iran's Islamic Republic has demonstrated remarkable institutional resilience, surviving the Iran-Iraq War, multiple protest waves, and severe economic sanctions. The regime maintains control through extensive security apparatus, economic patronage networks, and religious legitimacy among core supporters. However, several factors could increase instability risk: ongoing economic pressures from sanctions, a large young population with limited opportunities, periodic protest movements, and potential succession uncertainty given Khamenei's age. The 2022-23 protests showed significant popular discontent but were ultimately contained. The biggest wild card is the unclear resolution criteria - 'government falls' could mean anything from regime change to leadership transition. Given Iran's track record of stability, the strong repressive capacity, and lack of immediate catalysts for collapse, I estimate slightly above the base rate but remain highly uncertain due to definitional ambiguity and the inherent unpredictability of revolutionary moments."
-    },
-    {
-      "id": 15,
-      "platform": "manifold",
-      "market_id": "UCZNd6RdnR",
-      "question": "Will ChatGPT launch an \"adult mode\" before 1 April 2026?",
-      "current_yes_price": 0.047392449773703466,
-      "current_no_price": 0.9526075502262965,
-      "volume": 311.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:09:48.282906",
-      "est_prob": 0.15,
-      "est_conf": 0.4,
-      "est_reasoning": "I cannot identify a meaningful base rate since 'adult mode' for AI assistants is poorly defined and unprecedented. OpenAI has consistently prioritized safety and broad accessibility, making explicit adult-oriented features seem unlikely given their brand positioning and corporate philosophy. However, they have shown some flexibility with content policies for creative use cases. The 16-month timeframe provides reasonable opportunity for policy evolution, especially if competitive pressure increases from less restricted models. The biggest challenge is the undefined resolution criteria - even minor relaxations of content filtering could potentially qualify, but OpenAI is more likely to make incremental safety adjustments rather than launch an explicitly branded 'adult mode.' The lack of clear definition creates both upside and downside uncertainty, but OpenAI's historical conservatism suggests they would avoid controversial explicit branding even if they do relax some restrictions."
     }
   ]
 }
