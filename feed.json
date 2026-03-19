@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-19T20:57:07.820293+00:00",
+  "updated_at": "2026-03-19T21:02:50.289158+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,7 +47,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T20:57:07.820304+00:00",
+    "last_heartbeat": "2026-03-19T21:02:50.289167+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -360,16 +360,16 @@
       "account": "primary",
       "accent": "green",
       "portfolio": {
-        "bankroll": 1000,
-        "deployed": 74.65,
-        "cash": 925.35
+        "bankroll": 1000.0,
+        "deployed": 104.65,
+        "cash": 895.35
       },
       "stats": {
-        "total_trades": 6,
-        "open_positions": 6,
+        "total_trades": 7,
+        "open_positions": 7,
         "resolved": 0,
         "total_pnl": 0,
-        "avg_edge": 0.1368
+        "avg_edge": 0.1446
       },
       "exposure": {
         "by_direction": {
@@ -378,16 +378,33 @@
             "deployed": 38.4
           },
           "no": {
-            "count": 3,
-            "deployed": 36.25
+            "count": 4,
+            "deployed": 66.25
           }
         },
-        "high_edge_count": 3,
+        "high_edge_count": 4,
         "low_edge_count": 3,
-        "high_edge_deployed": 47.97,
+        "high_edge_deployed": 77.97,
         "low_edge_deployed": 26.68
       },
       "trades": [
+        {
+          "id": 7,
+          "market_id": "Cyy96hnZcR",
+          "platform": "manifold",
+          "question": "Will Anthropic release a model with a higher version number than 4.6 by April 15th?",
+          "direction": "no",
+          "size": 30.0,
+          "entry_price": 0.44134503736242153,
+          "estimated_probability": 0.25004503736242145,
+          "edge": 0.1913,
+          "kelly_fraction": 0.0434,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:57:43.822137",
+          "resolved_at": null
+        },
         {
           "id": 6,
           "market_id": "CdARQ20t2q",
@@ -499,9 +516,9 @@
       "account": "account2",
       "accent": "amber",
       "portfolio": {
-        "bankroll": 1000,
+        "bankroll": 1000.0,
         "deployed": 0,
-        "cash": 1000
+        "cash": 1000.0
       },
       "stats": {
         "total_trades": 0,
@@ -535,16 +552,16 @@
       "account": "paper",
       "accent": "blue",
       "portfolio": {
-        "bankroll": 1000,
-        "deployed": 145.31,
-        "cash": 854.69
+        "bankroll": 974.24,
+        "deployed": 152.7,
+        "cash": 821.54
       },
       "stats": {
-        "total_trades": 6,
-        "open_positions": 5,
+        "total_trades": 7,
+        "open_positions": 6,
         "resolved": 1,
         "total_pnl": -25.76,
-        "avg_edge": 0.2868
+        "avg_edge": 0.2439
       },
       "exposure": {
         "by_direction": {
@@ -553,16 +570,33 @@
             "deployed": 95.31
           },
           "no": {
-            "count": 1,
-            "deployed": 50.0
+            "count": 2,
+            "deployed": 57.39
           }
         },
         "high_edge_count": 4,
-        "low_edge_count": 1,
+        "low_edge_count": 2,
         "high_edge_deployed": 131.22,
-        "low_edge_deployed": 14.09
+        "low_edge_deployed": 21.48
       },
       "trades": [
+        {
+          "id": 7,
+          "market_id": "ARnqln6pRP",
+          "platform": "manifold",
+          "question": "Will Y Combinator fund 3 or more quantum-related startups in its next public batch update within the next 2 months?",
+          "direction": "no",
+          "size": 7.39,
+          "entry_price": 0.8205500949456682,
+          "estimated_probability": 0.15004990505433177,
+          "edge": 0.0294,
+          "kelly_fraction": 0.0074,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T21:00:04.182325",
+          "resolved_at": null
+        },
         {
           "id": 6,
           "market_id": "USqgCAPAz5",
@@ -1564,6 +1598,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 120,
+      "platform": "manifold",
+      "market_id": "uZE6NZ6yl8",
+      "question": "Another American cartel leader killed/captured before end of march?",
+      "current_yes_price": 0.19118021848424327,
+      "current_no_price": 0.8088197815157567,
+      "volume": 151.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:02:49.221120",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 119,
       "platform": "manifold",
@@ -3246,23 +3297,6 @@
       "est_prob": 0.75,
       "est_conf": 0.4,
       "est_reasoning": "With millions of brackets filled out across multiple platforms, even if individual bracket survival probability through 32 games is low (likely 0.1-1%), the large sample size makes it probable that some brackets will survive. The 1st round has fewer major upsets than later rounds, and conservative bracket strategies can achieve higher 1st round survival rates. However, significant uncertainty exists due to lack of historical base rates and unclear resolution criteria."
-    },
-    {
-      "id": 20,
-      "platform": "manifold",
-      "market_id": "EcOt6EU68N",
-      "question": "Daily Coinflip",
-      "current_yes_price": 0.5100000000000001,
-      "current_no_price": 0.4899999999999999,
-      "volume": 7899.005798799897,
-      "liquidity": 10000.0,
-      "close_date": "2026-03-21T03:59:00+00:00",
-      "category": "sports",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:17:18.665001",
-      "est_prob": 0.5,
-      "est_conf": 0.3,
-      "est_reasoning": "Given the complete lack of information about what specific event is being predicted, I must rely solely on the title 'Daily Coinflip'. If this is literally referring to a coin toss, the mathematical base rate is exactly 50% for either outcome. However, the sports categorization suggests this might be metaphorical. Without any resolution criteria, context, or additional details, I cannot adjust meaningfully from the 50% base rate that a coinflip would theoretically provide. My confidence is very low (0.3) because this estimate could be completely wrong if 'Daily Coinflip' refers to something other than an actual coin toss, but I have no information to determine what that might be."
     }
   ]
 }
