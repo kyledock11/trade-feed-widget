@@ -57,6 +57,7 @@
     animation: pulse 2s ease infinite;
   }
 
+  .status-dot.stale { background: #b8843a; animation: pulse 3s ease infinite; }
   .status-dot.offline { background: #a05050; animation: none; }
 
   @keyframes pulse {
@@ -71,6 +72,90 @@
     color: #6b6660;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+  }
+
+  .bot-status-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .bot-status-bar.running {
+    background: rgba(90, 158, 90, 0.06);
+    border-color: rgba(90, 158, 90, 0.12);
+  }
+
+  .bot-status-bar.stale {
+    background: rgba(184, 132, 58, 0.06);
+    border-color: rgba(184, 132, 58, 0.12);
+  }
+
+  .bot-status-bar.down {
+    background: rgba(160, 80, 80, 0.06);
+    border-color: rgba(160, 80, 80, 0.12);
+  }
+
+  .bot-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .bot-status-dot.running { background: #5a9e5a; animation: pulse 2s ease infinite; }
+  .bot-status-dot.stale { background: #b8843a; animation: pulse 3s ease infinite; }
+  .bot-status-dot.down { background: #a05050; animation: none; }
+
+  .bot-status-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 0.65rem;
+    flex: 1;
+  }
+
+  .bot-status-text.running { color: #6ec07a; }
+  .bot-status-text.stale { color: #c4a35a; }
+  .bot-status-text.down { color: #c06e6e; }
+
+  .bot-status-time {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.55rem;
+    color: #6b6660;
+  }
+
+  .bot-log-toggle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.55rem;
+    color: #5a5650;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .bot-log-toggle:hover { color: #8a857e; }
+
+  .bot-log {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .bot-log.open { max-height: 200px; }
+
+  .bot-log-inner {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    font-size: 0.55rem;
+    line-height: 1.5;
+    color: #6b6660;
+    padding: 0.4rem 0 0.4rem 0.75rem;
+    white-space: pre-wrap;
+    word-break: break-all;
   }
 
   /* Portfolio summary */
@@ -311,6 +396,16 @@
     </div>
   </div>
 
+  <div class="bot-status-bar down" id="botStatusBar">
+    <div class="bot-status-dot down" id="botDot"></div>
+    <span class="bot-status-text down" id="botText">Checking...</span>
+    <span class="bot-status-time" id="botTime"></span>
+    <span class="bot-log-toggle" id="botLogToggle">Logs</span>
+  </div>
+  <div class="bot-log" id="botLog">
+    <div class="bot-log-inner" id="botLogInner">No log data.</div>
+  </div>
+
   <div class="portfolio-bar" id="portfolioBar">
     <div class="stat"><span class="stat-value" id="sBankroll">--</span><span class="stat-label">Bankroll</span></div>
     <div class="stat"><span class="stat-value" id="sDeployed">--</span><span class="stat-label">Deployed</span></div>
@@ -383,6 +478,57 @@ function calcPotentialProfit(trade) {
   if (price <= 0 || price >= 1) return 0;
   return (size / price) - size;
 }
+
+function updateBotStatus(botStatus) {
+  const bar = document.getElementById('botStatusBar');
+  const dot = document.getElementById('botDot');
+  const text = document.getElementById('botText');
+  const time = document.getElementById('botTime');
+  const logInner = document.getElementById('botLogInner');
+
+  if (!botStatus || !botStatus.last_heartbeat) {
+    bar.className = 'bot-status-bar down';
+    dot.className = 'bot-status-dot down';
+    text.className = 'bot-status-text down';
+    text.textContent = 'BOT OFFLINE';
+    time.textContent = 'No heartbeat received';
+    return;
+  }
+
+  const heartbeat = new Date(botStatus.last_heartbeat);
+  const ageMs = Date.now() - heartbeat.getTime();
+  const ageMin = Math.floor(ageMs / 60000);
+
+  // Status thresholds: <15 min = running, 15-60 min = stale, >60 min = down
+  let status;
+  if (ageMin < 15) {
+    status = 'running';
+    text.textContent = 'BOT RUNNING';
+  } else if (ageMin < 60) {
+    status = 'stale';
+    text.textContent = 'BOT DELAYED';
+  } else {
+    status = 'down';
+    text.textContent = 'BOT OFFLINE';
+  }
+
+  bar.className = `bot-status-bar ${status}`;
+  dot.className = `bot-status-dot ${status}`;
+  text.className = `bot-status-text ${status}`;
+  time.textContent = `Heartbeat: ${relativeTime(botStatus.last_heartbeat)}`;
+
+  // Log lines
+  if (botStatus.last_log_lines && botStatus.last_log_lines.length > 0) {
+    logInner.textContent = botStatus.last_log_lines.join('\n');
+  } else {
+    logInner.textContent = 'No recent log entries.';
+  }
+}
+
+// Log toggle
+document.getElementById('botLogToggle').addEventListener('click', () => {
+  document.getElementById('botLog').classList.toggle('open');
+});
 
 function updatePortfolio(stats) {
   if (!stats) return;
@@ -645,11 +791,13 @@ async function fetchFeed() {
     const updatedAt = feedData.updated_at ? relativeTime(feedData.updated_at) : 'unknown';
     update.textContent = `Updated ${updatedAt}`;
 
+    updateBotStatus(feedData.bot_status);
     updatePortfolio(feedData.stats);
     renderTrades();
   } catch {
     dot.className = 'status-dot offline';
     update.textContent = 'Feed offline';
+    updateBotStatus(null);
     document.getElementById('tradeList').innerHTML =
       '<div class="error-state">Could not load trade feed. Run export_feed.py to generate data.</div>';
   }
