@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-19T21:50:49.677780+00:00",
+  "updated_at": "2026-03-19T22:03:03.408169+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T21:50:49.677797+00:00",
+    "last_heartbeat": "2026-03-19T22:03:03.408177+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1221,6 +1221,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 144,
+      "platform": "manifold",
+      "market_id": "OgnlLCUuCA",
+      "question": "Does this jigsaw puzzle some missing piece?",
+      "current_yes_price": 0.5011890589609237,
+      "current_no_price": 0.4988109410390763,
+      "volume": 100.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-02T21:41:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:02:59.650424",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 143,
+      "platform": "manifold",
+      "market_id": "gAVoYpX2UXQSeiSdkXKn",
+      "question": "Will spy be worth more than $436 on May 12 2026?",
+      "current_yes_price": 0.9619343758455942,
+      "current_no_price": 0.03806562415440584,
+      "volume": 3387.3595945025536,
+      "liquidity": 1000.0,
+      "close_date": "2026-05-13T05:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:02:56.920942",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 142,
       "platform": "manifold",
@@ -2886,40 +2920,6 @@
       "est_prob": 0.45,
       "est_conf": 0.3,
       "est_reasoning": "I estimated a base rate of 35% based on the noted historical pattern that Italian constitutional referendums often have low turnout and frequently fail to meet requirements. However, this specific referendum has some factors that could increase success probability: it has backing from the governing conservative coalition under PM Meloni, focuses on a concrete issue (judicial reform/separation of powers), and appears to be a test of current government strength. The critical problem is that the market question asks 'What wins?' without clearly defining the outcomes - this could mean YES vs NO votes, whether reforms pass, or whether turnout thresholds are met. Given the government backing and the focused nature of judicial reform, I adjusted slightly upward to 45%, but my confidence is very low (0.3) due to the fundamental ambiguity about what constitutes a 'win' and the lack of polling data or clear historical precedents for this specific type of reform."
-    },
-    {
-      "id": 44,
-      "platform": "manifold",
-      "market_id": "Cyy96hnZcR",
-      "question": "Will Anthropic release a model with a higher version number than 4.6 by April 15th?",
-      "current_yes_price": 0.4547115798490482,
-      "current_no_price": 0.5452884201509518,
-      "volume": 280.8058119455025,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-16T02:59:00+00:00",
-      "category": "tech",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:46:13.915957",
-      "est_prob": 0.25,
-      "est_conf": 0.4,
-      "est_reasoning": "With only 3-4 weeks until deadline and Anthropic's emphasis on safety over speed, a new version release seems unlikely. The indirect evidence of Opus 4.6 suggests we're already at or near that version level. While minor incremental updates are possible, the short timeframe and lack of clear signals about imminent releases point toward a low probability. The 25% estimate reflects some possibility of a quick incremental release or announcement, but the weight of evidence suggests this is unlikely."
-    },
-    {
-      "id": 43,
-      "platform": "manifold",
-      "market_id": "Isqpy2L2lu",
-      "question": "Will I succeed in my goal of posting an experiment proposal every Friday for the next 10 weeks?",
-      "current_yes_price": 0.35877798219389073,
-      "current_no_price": 0.6412220178061092,
-      "volume": 330.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-05-29T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:46:10.876497",
-      "est_prob": 0.25,
-      "est_conf": 0.3,
-      "est_reasoning": "With no information about the specific individual, I must rely on general base rates for personal goal completion. Research suggests that most people fail to maintain weekly commitments over 2+ month periods - studies on habit formation and goal achievement typically show success rates of 15-25% for sustained behavioral changes lasting 10+ weeks. The 10-week timeframe is particularly challenging as it's long enough for motivation to wane but short enough to feel like it should be achievable. Weekly frequency is manageable compared to daily commitments, which slightly improves odds. However, the vague nature of 'experiment proposal' creates additional uncertainty - if these require significant research/preparation, success becomes less likely. I'm adjusting slightly upward from the base rate (20% to 25%) because weekly posting is more achievable than many other behavioral goals, but maintaining very low confidence due to the complete absence of individual-specific information."
     }
   ]
 }
