@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-19T20:10:17.250114+00:00",
+  "updated_at": "2026-03-19T20:16:34.333901+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,18 +47,18 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T20:10:17.250125+00:00",
+    "last_heartbeat": "2026-03-19T20:16:34.333911+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "Pushed to GitHub Pages",
-      "Notion page updated: 22 positions, M$558.72 deployed",
-      "[14:05:01] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
-      "interval[0:30:00], next run at: 2026-03-19",
-      "14:32:46 MDT)\" executed successfully"
+      "INFO       Skipped: 18 recently analyzed, 12 already have run.py:167",
+      "position, 1 no edge",
+      "INFO       Quick mode: 4 low-volume markets               run.py:173",
+      "WARNING    Errors: 4 markets failed to process            run.py:175",
+      "INFO       Next cycle in 30 minutes                       run.py:176"
     ]
   },
   "portfolio": {
@@ -347,7 +347,6 @@
       ]
     }
   ],
-  "strategies": [],
   "trades": [
     {
       "id": 22,
@@ -725,6 +724,16 @@
     }
   ],
   "estimates": [
+    {
+      "id": 48,
+      "market_id": "zQ0dgER6SI",
+      "probability": 0.35,
+      "confidence": 0.2,
+      "reasoning": "This is an extremely difficult prediction due to fundamental ambiguities in the question and severe information gaps. Without knowing current gas prices, the specific timeframe for 'buy now' advice, or objective criteria for 'reasonable,' any estimate is highly speculative. The limited evidence is mixed: a $6.28/gallon price in NJ suggests potential for high prices (supporting YES), while CNBC discussion of $3-4 range suggests more moderate levels (supporting NO). The very short timeframe to resolution (days from current date based on sources) limits potential for major price movements. Given the subjective nature of 'reasonable advice' and complete lack of baseline data, I'm assigning a slightly below-neutral probability, acknowledging this could easily swing either direction with clearer information. My confidence is very low due to the fundamental ambiguities in the question structure.",
+      "key_uncertainties": "[\"What constitutes 'reasonable advice' - no objective threshold defined\", \"Current baseline gas prices unknown - cannot assess if buying now makes sense\", \"Timeframe for the advice unclear - immediate purchase vs longer period\", \"Geographic scope uncertain - local vs national price patterns\", \"Geopolitical factors mentioned but vague and unspecific\", \"Whether $6.28/gallon NJ price represents broader trend or anomaly\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T20:16:30.360296"
+    },
     {
       "id": 47,
       "market_id": "NIhOcZOQZE",
@@ -1197,6 +1206,91 @@
     }
   ],
   "markets": [
+    {
+      "id": 111,
+      "platform": "manifold",
+      "market_id": "zQ0dgER6SI",
+      "question": "In retrospect will \u201cBuy gas now, don\u2019t wait\u201d be reasonable advice?",
+      "current_yes_price": 0.8704639777016067,
+      "current_no_price": 0.12953602229839334,
+      "volume": 132.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-22T15:37:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:15:57.788965",
+      "est_prob": 0.35,
+      "est_conf": 0.2,
+      "est_reasoning": "This is an extremely difficult prediction due to fundamental ambiguities in the question and severe information gaps. Without knowing current gas prices, the specific timeframe for 'buy now' advice, or objective criteria for 'reasonable,' any estimate is highly speculative. The limited evidence is mixed: a $6.28/gallon price in NJ suggests potential for high prices (supporting YES), while CNBC discussion of $3-4 range suggests more moderate levels (supporting NO). The very short timeframe to resolution (days from current date based on sources) limits potential for major price movements. Given the subjective nature of 'reasonable advice' and complete lack of baseline data, I'm assigning a slightly below-neutral probability, acknowledging this could easily swing either direction with clearer information. My confidence is very low due to the fundamental ambiguities in the question structure."
+    },
+    {
+      "id": 110,
+      "platform": "manifold",
+      "market_id": "uphA9gU6z0",
+      "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
+      "current_yes_price": 0.34000000000000014,
+      "current_no_price": 0.6599999999999999,
+      "volume": 135.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-04T20:15:00+00:00",
+      "category": "tech",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:15:37.418366",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 109,
+      "platform": "manifold",
+      "market_id": "ARnqln6pRP",
+      "question": "Will Y Combinator fund 3 or more quantum-related startups in its next public batch update within the next 2 months?",
+      "current_yes_price": 0.1794499050543318,
+      "current_no_price": 0.8205500949456682,
+      "volume": 146.17906001644067,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-20T21:49:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:15:33.301634",
+      "est_prob": 0.35,
+      "est_conf": 0.2,
+      "est_reasoning": "With no YC-specific data, I'm estimating based on general startup ecosystem patterns. If quantum represents ~1% of startups and YC funds ~300 per batch, we'd expect ~3 quantum startups on average. However, high variability means many batches could have 0-2. The Quantonation fund suggests VC interest exists, but quantum remains niche. Given the information vacuum and single-batch sample size, I'm moderately skeptical but acknowledge significant uncertainty."
+    },
+    {
+      "id": 108,
+      "platform": "manifold",
+      "market_id": "C96pyn9Z5Z",
+      "question": "Iran Government falls before end of March 2026",
+      "current_yes_price": 0.03684182217275326,
+      "current_no_price": 0.9631581778272468,
+      "volume": 316.9319714012992,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:15:06.666220",
+      "est_prob": 0.08,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate: authoritarian regimes that have survived 45+ years (like Iran since 1979) rarely collapse in any given 15-month period - perhaps 5% historically. Iran's Islamic Republic has demonstrated remarkable institutional resilience, surviving the Iran-Iraq War, multiple protest waves, and severe economic sanctions. The regime maintains control through extensive security apparatus, economic patronage networks, and religious legitimacy among core supporters. However, several factors could increase instability risk: ongoing economic pressures from sanctions, a large young population with limited opportunities, periodic protest movements, and potential succession uncertainty given Khamenei's age. The 2022-23 protests showed significant popular discontent but were ultimately contained. The biggest wild card is the unclear resolution criteria - 'government falls' could mean anything from regime change to leadership transition. Given Iran's track record of stability, the strong repressive capacity, and lack of immediate catalysts for collapse, I estimate slightly above the base rate but remain highly uncertain due to definitional ambiguity and the inherent unpredictability of revolutionary moments."
+    },
+    {
+      "id": 107,
+      "platform": "manifold",
+      "market_id": "EcOt6EU68N",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.5084725535643327,
+      "current_no_price": 0.49152744643566726,
+      "volume": 7996.981554934244,
+      "liquidity": 10000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:15:03.769431",
+      "est_prob": 0.5,
+      "est_conf": 0.3,
+      "est_reasoning": "Given the complete lack of information about what specific event is being predicted, I must rely solely on the title 'Daily Coinflip'. If this is literally referring to a coin toss, the mathematical base rate is exactly 50% for either outcome. However, the sports categorization suggests this might be metaphorical. Without any resolution criteria, context, or additional details, I cannot adjust meaningfully from the 50% base rate that a coinflip would theoretically provide. My confidence is very low (0.3) because this estimate could be completely wrong if 'Daily Coinflip' refers to something other than an actual coin toss, but I have no information to determine what that might be."
+    },
     {
       "id": 106,
       "platform": "manifold",
@@ -1720,9 +1814,9 @@
       "category": "uncategorized",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:05:09.933038",
-      "est_prob": 0.5,
+      "est_prob": 0.35,
       "est_conf": 0.2,
-      "est_reasoning": "This market suffers from fundamentally ambiguous resolution criteria, making any estimate highly speculative. Without knowing what constitutes 'reasonable advice' or having baseline current gas prices, it's impossible to apply standard analytical frameworks. The available evidence shows scattered references to higher gas prices and supply concerns, but also suggests some price points may be outliers. The mentions of oil price spike concerns and geopolitical risks (Gulf War, Iran) could support the advice being reasonable if prices do increase significantly. However, the lack of systematic price data and the apparent outlier nature of the $6.28 station suggest current conditions may not warrant urgent purchasing. Given the complete ambiguity in resolution criteria and the mixed, limited evidence, I assign this a 50% probability - essentially reflecting maximum uncertainty. The extremely low confidence reflects that this estimate could easily be wrong in either direction depending on how the undefined resolution criteria are ultimately interpreted."
+      "est_reasoning": "This is an extremely difficult prediction due to fundamental ambiguities in the question and severe information gaps. Without knowing current gas prices, the specific timeframe for 'buy now' advice, or objective criteria for 'reasonable,' any estimate is highly speculative. The limited evidence is mixed: a $6.28/gallon price in NJ suggests potential for high prices (supporting YES), while CNBC discussion of $3-4 range suggests more moderate levels (supporting NO). The very short timeframe to resolution (days from current date based on sources) limits potential for major price movements. Given the subjective nature of 'reasonable advice' and complete lack of baseline data, I'm assigning a slightly below-neutral probability, acknowledging this could easily swing either direction with clearer information. My confidence is very low due to the fundamental ambiguities in the question structure."
     },
     {
       "id": 75,
@@ -2043,9 +2137,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T18:48:44.905924",
-      "est_prob": 0.5,
+      "est_prob": 0.35,
       "est_conf": 0.2,
-      "est_reasoning": "This market suffers from fundamentally ambiguous resolution criteria, making any estimate highly speculative. Without knowing what constitutes 'reasonable advice' or having baseline current gas prices, it's impossible to apply standard analytical frameworks. The available evidence shows scattered references to higher gas prices and supply concerns, but also suggests some price points may be outliers. The mentions of oil price spike concerns and geopolitical risks (Gulf War, Iran) could support the advice being reasonable if prices do increase significantly. However, the lack of systematic price data and the apparent outlier nature of the $6.28 station suggest current conditions may not warrant urgent purchasing. Given the complete ambiguity in resolution criteria and the mixed, limited evidence, I assign this a 50% probability - essentially reflecting maximum uncertainty. The extremely low confidence reflects that this estimate could easily be wrong in either direction depending on how the undefined resolution criteria are ultimately interpreted."
+      "est_reasoning": "This is an extremely difficult prediction due to fundamental ambiguities in the question and severe information gaps. Without knowing current gas prices, the specific timeframe for 'buy now' advice, or objective criteria for 'reasonable,' any estimate is highly speculative. The limited evidence is mixed: a $6.28/gallon price in NJ suggests potential for high prices (supporting YES), while CNBC discussion of $3-4 range suggests more moderate levels (supporting NO). The very short timeframe to resolution (days from current date based on sources) limits potential for major price movements. Given the subjective nature of 'reasonable advice' and complete lack of baseline data, I'm assigning a slightly below-neutral probability, acknowledging this could easily swing either direction with clearer information. My confidence is very low due to the fundamental ambiguities in the question structure."
     },
     {
       "id": 56,
@@ -2811,91 +2905,6 @@
       "est_prob": 0.5,
       "est_conf": 0.3,
       "est_reasoning": "Given the complete lack of information about what specific event is being predicted, I must rely solely on the title 'Daily Coinflip'. If this is literally referring to a coin toss, the mathematical base rate is exactly 50% for either outcome. However, the sports categorization suggests this might be metaphorical. Without any resolution criteria, context, or additional details, I cannot adjust meaningfully from the 50% base rate that a coinflip would theoretically provide. My confidence is very low (0.3) because this estimate could be completely wrong if 'Daily Coinflip' refers to something other than an actual coin toss, but I have no information to determine what that might be."
-    },
-    {
-      "id": 11,
-      "platform": "manifold",
-      "market_id": "ZctCIAhQsu",
-      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-      "current_yes_price": 0.15843597826102435,
-      "current_no_price": 0.8415640217389757,
-      "volume": 9528.687687960592,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:08:33.561133",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
-    },
-    {
-      "id": 10,
-      "platform": "manifold",
-      "market_id": "s6AyzCILzL",
-      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
-      "current_yes_price": 0.7395993649460441,
-      "current_no_price": 0.26040063505395594,
-      "volume": 23720.580415641954,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:08:12.434164",
-      "est_prob": 0.92,
-      "est_conf": 0.7,
-      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
-    },
-    {
-      "id": 9,
-      "platform": "manifold",
-      "market_id": "ZJ9LlySKX4dldqcpdQ4G",
-      "question": "Will Viktor Orban remain Hungary's prime minister after the 2026 elections?",
-      "current_yes_price": 0.2999999999999999,
-      "current_no_price": 0.7000000000000002,
-      "volume": 122.08605159297194,
-      "liquidity": 1100.0,
-      "close_date": "2026-04-01T21:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:05.848774",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 8,
-      "platform": "manifold",
-      "market_id": "C96pyn9Z5Z",
-      "question": "Iran Government falls before end of March 2026",
-      "current_yes_price": 0.03754890752752743,
-      "current_no_price": 0.9624510924724725,
-      "volume": 213.9319714012992,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:05.590592",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a base rate: authoritarian regimes that have survived 45+ years (like Iran since 1979) rarely collapse in any given 15-month period - perhaps 5% historically. Iran's Islamic Republic has demonstrated remarkable institutional resilience, surviving the Iran-Iraq War, multiple protest waves, and severe economic sanctions. The regime maintains control through extensive security apparatus, economic patronage networks, and religious legitimacy among core supporters. However, several factors could increase instability risk: ongoing economic pressures from sanctions, a large young population with limited opportunities, periodic protest movements, and potential succession uncertainty given Khamenei's age. The 2022-23 protests showed significant popular discontent but were ultimately contained. The biggest wild card is the unclear resolution criteria - 'government falls' could mean anything from regime change to leadership transition. Given Iran's track record of stability, the strong repressive capacity, and lack of immediate catalysts for collapse, I estimate slightly above the base rate but remain highly uncertain due to definitional ambiguity and the inherent unpredictability of revolutionary moments."
-    },
-    {
-      "id": 7,
-      "platform": "manifold",
-      "market_id": "UCZNd6RdnR",
-      "question": "Will ChatGPT launch an \"adult mode\" before 1 April 2026?",
-      "current_yes_price": 0.047392449773703466,
-      "current_no_price": 0.9526075502262965,
-      "volume": 311.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:05.342147",
-      "est_prob": 0.15,
-      "est_conf": 0.4,
-      "est_reasoning": "I cannot identify a meaningful base rate since 'adult mode' for AI assistants is poorly defined and unprecedented. OpenAI has consistently prioritized safety and broad accessibility, making explicit adult-oriented features seem unlikely given their brand positioning and corporate philosophy. However, they have shown some flexibility with content policies for creative use cases. The 16-month timeframe provides reasonable opportunity for policy evolution, especially if competitive pressure increases from less restricted models. The biggest challenge is the undefined resolution criteria - even minor relaxations of content filtering could potentially qualify, but OpenAI is more likely to make incremental safety adjustments rather than launch an explicitly branded 'adult mode.' The lack of clear definition creates both upside and downside uncertainty, but OpenAI's historical conservatism suggests they would avoid controversial explicit branding even if they do relax some restrictions."
     }
   ]
 }
