@@ -251,6 +251,31 @@
 
   .tab.active .count { color: #7a756e; }
 
+  /* Trade list header */
+  .trade-list-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 0.25rem;
+  }
+
+  .trade-list-header .th {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.55rem;
+    color: #5a5650;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .trade-list-header .th-spacer { width: 12px; flex-shrink: 0; }
+  .trade-list-header .th-dir { width: 32px; flex-shrink: 0; }
+  .trade-list-header .th-question { flex: 1; }
+  .trade-list-header .th-data { width: 55px; flex-shrink: 0; text-align: right; }
+  .trade-list-header .th-time { width: 55px; flex-shrink: 0; text-align: right; }
+
   /* Trade cards */
   .trade-list {
     display: flex;
@@ -969,7 +994,15 @@ function buildTradeListHTML(trades, estimates) {
     });
   }
 
-  let html = '';
+  let html = `<div class="trade-list-header">
+    <span class="th th-spacer"></span>
+    <span class="th th-dir">Side</span>
+    <span class="th th-question">Market</span>
+    <span class="th th-data">Prob</span>
+    <span class="th th-data">Risked</span>
+    <span class="th th-data">Profit</span>
+    <span class="th th-time">Time</span>
+  </div>`;
   trades.forEach(trade => {
     const estimate = estimateMap[trade.market_id];
     const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
@@ -1154,7 +1187,15 @@ function renderTrades() {
     return;
   }
 
-  list.innerHTML = '';
+  list.innerHTML = `<div class="trade-list-header">
+    <span class="th th-spacer"></span>
+    <span class="th th-dir">Side</span>
+    <span class="th th-question">Market</span>
+    <span class="th th-data">Prob</span>
+    <span class="th th-data">Risked</span>
+    <span class="th th-data">Profit</span>
+    <span class="th th-time">Time</span>
+  </div>`;
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
 
   const estimateMap = {};
