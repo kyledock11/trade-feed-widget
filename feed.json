@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-19T19:44:12.201695+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-19T19:50:49.243606+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T19:44:12.201705+00:00",
+    "last_heartbeat": "2026-03-19T19:50:49.243614+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 34 recently analyzed, 3 already have  run.py:167",
-      "position, 1 no edge",
-      "INFO       Quick mode: 2 low-volume markets               run.py:173",
-      "WARNING    Errors: 1 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "scheduled when the scheduler starts",
+      "INFO     Added job \"TradingBot.run_cycle\" to job store  base.py:1090",
+      "\"default\"",
+      "INFO     Scheduler started                               base.py:214",
+      "Scheduler running (every 30 min). Press Ctrl+C to stop."
     ]
   },
   "portfolio": {
@@ -677,6 +633,16 @@
   ],
   "estimates": [
     {
+      "id": 45,
+      "market_id": "UtAAhN6Eh8",
+      "probability": 0.15,
+      "confidence": 0.4,
+      "reasoning": "The evidence shows a clear pattern: the Trump DOJ is systematically attempting to prosecute perceived political enemies but facing widespread institutional resistance. Grand juries are refusing indictments, federal judges are blocking investigations, and prosecutors are resigning. While Comey would be a logical high-profile target given his history with Trump, there's no specific evidence of any investigation targeting him. The time constraint is severe - only ~2 weeks until resolution. The pattern of DOJ failures (rejected indictments of Democratic Congress members, blocked investigations of Powell and Biden) suggests institutional barriers that would likely apply to any Comey prosecution as well. Without any evidence of an active investigation or grand jury proceeding involving Comey, and given the demonstrated prosecutorial failures, the probability is low but not negligible given Trump's documented animosity toward Comey.",
+      "key_uncertainties": "[\"No specific information about any ongoing investigation targeting Comey\", \"Ambiguous resolution criteria - unclear what 'indict Comey again' means\", \"Only ~2 weeks remaining until market close based on March 2026 timeline\", \"Uncertainty about who qualifies as 'Trump Prosecutors'\", \"No historical precedent for multiple indictments of former FBI directors\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T19:50:27.727774"
+    },
+    {
       "id": 44,
       "market_id": "p2c9nlgPEg",
       "probability": 0.5,
@@ -1118,6 +1084,159 @@
     }
   ],
   "markets": [
+    {
+      "id": 94,
+      "platform": "manifold",
+      "market_id": "2Iz0RIh290",
+      "question": "Will the Taylor swift wedding be rescheduled at least one time. (Will it not happen on June 13th)",
+      "current_yes_price": 0.4612440180928343,
+      "current_no_price": 0.5387559819071657,
+      "volume": 50.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-06-13T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:50:33.296093",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 93,
+      "platform": "manifold",
+      "market_id": "QIAgQyS5tU",
+      "question": "Will Hamilton finish the Japanese Grand Prix 2026 higher than Leclerc?",
+      "current_yes_price": 0.4022561937488817,
+      "current_no_price": 0.5977438062511182,
+      "volume": 56.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-29T05:00:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:50:27.731637",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 92,
+      "platform": "manifold",
+      "market_id": "NEIuQSyEPc",
+      "question": "Will there be more mana purchased in March 2026 than in December 2025?",
+      "current_yes_price": 0.2721188192046253,
+      "current_no_price": 0.7278811807953747,
+      "volume": 100.0,
+      "liquidity": 5125.0,
+      "close_date": "2026-04-01T03:52:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:50:23.141763",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 91,
+      "platform": "manifold",
+      "market_id": "qpLyOQ2C0n",
+      "question": "Will Eldorado Gold's acquisition result in a copper supply increase by May 11, 2026?",
+      "current_yes_price": 0.3660364894876344,
+      "current_no_price": 0.6339635105123655,
+      "volume": 100.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-05-11T09:01:42.619000+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:50:19.907542",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 90,
+      "platform": "manifold",
+      "market_id": "qOupANU6Zl",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.5049259987396706,
+      "current_no_price": 0.4950740012603294,
+      "volume": 108.23531372941291,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:50:12.299735",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 89,
+      "platform": "manifold",
+      "market_id": "gLs6SNcP6L",
+      "question": "Daily Coin Flip - Day 703",
+      "current_yes_price": 0.4911061635580466,
+      "current_no_price": 0.5088938364419534,
+      "volume": 122.64376630290789,
+      "liquidity": 1100.0,
+      "close_date": "2026-03-21T16:56:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:50:09.501854",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 88,
+      "platform": "manifold",
+      "market_id": "6Zy0AhhshR",
+      "question": "Daily Coin Flip - Day 703",
+      "current_yes_price": 0.5,
+      "current_no_price": 0.5,
+      "volume": 215.62493093035698,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-19T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:49:51.802295",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 87,
+      "platform": "manifold",
+      "market_id": "UtAAhN6Eh8",
+      "question": "Will Trump Prosectors get a Grand Jury to indict Comey again before the end of March 2026?",
+      "current_yes_price": 0.16348146003550493,
+      "current_no_price": 0.8365185399644951,
+      "volume": 226.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "politics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:49:48.807852",
+      "est_prob": 0.15,
+      "est_conf": 0.4,
+      "est_reasoning": "The evidence shows a clear pattern: the Trump DOJ is systematically attempting to prosecute perceived political enemies but facing widespread institutional resistance. Grand juries are refusing indictments, federal judges are blocking investigations, and prosecutors are resigning. While Comey would be a logical high-profile target given his history with Trump, there's no specific evidence of any investigation targeting him. The time constraint is severe - only ~2 weeks until resolution. The pattern of DOJ failures (rejected indictments of Democratic Congress members, blocked investigations of Powell and Biden) suggests institutional barriers that would likely apply to any Comey prosecution as well. Without any evidence of an active investigation or grand jury proceeding involving Comey, and given the demonstrated prosecutorial failures, the probability is low but not negligible given Trump's documented animosity toward Comey."
+    },
+    {
+      "id": 86,
+      "platform": "manifold",
+      "market_id": "P2d2C6l22A",
+      "question": "new Fooming Shoggoths song by April 1st 2026?",
+      "current_yes_price": 0.1496038649216867,
+      "current_no_price": 0.8503961350783134,
+      "volume": 251.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-28T00:59:00+00:00",
+      "category": "entertainment",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:49:46.167846",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 85,
       "platform": "manifold",
@@ -1778,8 +1897,8 @@
       "resolution_source": "",
       "scanned_at": "2026-03-19T18:46:46.301126",
       "est_prob": 0.15,
-      "est_conf": 0.6,
-      "est_reasoning": "I cannot identify a meaningful base rate since indicting former FBI Directors is essentially unprecedented. The evidence shows a clear pattern through early-to-mid 2026 of Trump's DOJ struggling to successfully prosecute perceived enemies - grand juries refusing indictments, prosecutors resigning, judges blocking investigations. Critically, there is no mention of James Comey in any of the 2026 coverage about Trump DOJ prosecutions, despite extensive reporting on efforts against other Trump rivals like Brennan, Powell, and Democratic lawmakers. With only ~12 days remaining until the March 31, 2026 deadline based on the latest March 19 news coverage, the time constraint is severe. While the Trump administration appears motivated to pursue Trump's perceived enemies, the consistent pattern of DOJ failures and complete absence of any Comey-related activity in the reporting suggests a low probability. I'm moderately confident in this assessment because the pattern of DOJ struggles is well-documented, though there's uncertainty about potential unreported investigations."
+      "est_conf": 0.4,
+      "est_reasoning": "The evidence shows a clear pattern: the Trump DOJ is systematically attempting to prosecute perceived political enemies but facing widespread institutional resistance. Grand juries are refusing indictments, federal judges are blocking investigations, and prosecutors are resigning. While Comey would be a logical high-profile target given his history with Trump, there's no specific evidence of any investigation targeting him. The time constraint is severe - only ~2 weeks until resolution. The pattern of DOJ failures (rejected indictments of Democratic Congress members, blocked investigations of Powell and Biden) suggests institutional barriers that would likely apply to any Comey prosecution as well. Without any evidence of an active investigation or grand jury proceeding involving Comey, and given the demonstrated prosecutorial failures, the probability is low but not negligible given Trump's documented animosity toward Comey."
     },
     {
       "id": 46,
