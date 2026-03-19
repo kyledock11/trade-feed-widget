@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-19T22:19:12.812332+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-19T22:21:04.448713+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T22:19:12.812341+00:00",
+    "last_heartbeat": "2026-03-19T22:21:04.448722+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 21 recently analyzed, 12 already have run.py:167",
-      "position, 5 no edge",
-      "INFO       Quick mode: 11 low-volume markets              run.py:173",
-      "WARNING    Errors: 1 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 29 positions, M$689.51 deployed",
+      "[16:20:10] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-19",
+      "16:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -861,6 +817,16 @@
   ],
   "estimates": [
     {
+      "id": 65,
+      "market_id": "pulqzqzCnA",
+      "probability": 0.35,
+      "confidence": 0.2,
+      "reasoning": "Without baseline data on NSF MSPRF timing, I'm estimating below 50% due to the specific budget delays mentioned and the tight timeline. March could plausibly be within a normal notification window for academic fellowships, but the uncertainty is extremely high. The 35% reflects that while there's some reasonable chance NSF maintains their schedule despite delays, the lack of information and mentioned budget issues suggest meaningful probability of delays pushing past March 24.",
+      "key_uncertainties": "[\"No historical data on typical MSPRF offer letter timing\", \"Unknown impact of budget delays on fellowship award schedules\", \"Unclear current status of 2026-2027 MSPRF application cycle\", \"Ambiguous definition of what constitutes 'sending offer letters'\", \"Very short time window between latest news date and resolution\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T22:20:49.478951"
+    },
+    {
       "id": 64,
       "market_id": "U66RQ9sERU",
       "probability": 0.15,
@@ -1349,19 +1315,43 @@
       "key_uncertainties": "[\"Definition of 'verifiable, live public appearance' - unclear if video counts or requires in-person events\", \"Potential health issues or medical emergencies in the remaining 2-week period\", \"Security threats or incidents that could force cancellation of public events\", \"Political crisis or emergency situation that could disrupt normal schedule\", \"Technical or logistical issues preventing verification of appearances\"]",
       "base_rate": 0.99,
       "created_at": "2026-03-19T18:29:15.045627"
-    },
-    {
-      "id": 15,
-      "market_id": "C96pyn9Z5Z",
-      "probability": 0.08,
-      "confidence": 0.4,
-      "reasoning": "Starting with a base rate: authoritarian regimes that have survived 45+ years (like Iran since 1979) rarely collapse in any given 15-month period - perhaps 5% historically. Iran's Islamic Republic has demonstrated remarkable institutional resilience, surviving the Iran-Iraq War, multiple protest waves, and severe economic sanctions. The regime maintains control through extensive security apparatus, economic patronage networks, and religious legitimacy among core supporters. However, several factors could increase instability risk: ongoing economic pressures from sanctions, a large young population with limited opportunities, periodic protest movements, and potential succession uncertainty given Khamenei's age. The 2022-23 protests showed significant popular discontent but were ultimately contained. The biggest wild card is the unclear resolution criteria - 'government falls' could mean anything from regime change to leadership transition. Given Iran's track record of stability, the strong repressive capacity, and lack of immediate catalysts for collapse, I estimate slightly above the base rate but remain highly uncertain due to definitional ambiguity and the inherent unpredictability of revolutionary moments.",
-      "key_uncertainties": "[\"Definition of what constitutes 'government falls' - unclear resolution criteria\", \"Supreme Leader Khamenei's health and potential succession crisis\", \"Scale and persistence of future protest movements\", \"Loyalty of military and security forces during major unrest\", \"Economic collapse threshold that could trigger regime instability\", \"Regional war escalation that could destabilize the government\", \"International sanctions relief or tightening effects\"]",
-      "base_rate": 0.05,
-      "created_at": "2026-03-19T18:19:34.042211"
     }
   ],
   "markets": [
+    {
+      "id": 172,
+      "platform": "manifold",
+      "market_id": "P255hsOyEL",
+      "question": "BTC  close above 80K by end of March?",
+      "current_yes_price": 0.13893704067783516,
+      "current_no_price": 0.8610629593221648,
+      "volume": 344.09414364113076,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T20:59:00+00:00",
+      "category": "crypto",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:20:49.467410",
+      "est_prob": 0.1,
+      "est_conf": 0.2,
+      "est_reasoning": "This estimate faces severe limitations due to conflicting price data. Using a conservative base rate of 15% for Bitcoin achieving significant milestones in short timeframes, I adjust downward to 10% due to several factors: (1) The extreme data inconsistency suggests unreliable information sources, making any prediction highly speculative; (2) If the lower trading data (~$31) is accurate, reaching $80K would require an unprecedented 158% gain in ~2 weeks; (3) If the higher news price ($74,400) is accurate, only 7.5% gain is needed, but the data conflict undermines confidence in this scenario; (4) The trading data appears to be for a Bitcoin trust rather than spot Bitcoin, which could explain the discrepancy but adds uncertainty about what price will be used for resolution. Given these critical information gaps and the fundamental uncertainty about Bitcoin's actual current price, I assign very low confidence to any estimate."
+    },
+    {
+      "id": 171,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.38986339576475815,
+      "current_no_price": 0.6101366042352419,
+      "volume": 250.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:20:20.287660",
+      "est_prob": 0.35,
+      "est_conf": 0.2,
+      "est_reasoning": "Without baseline data on NSF MSPRF timing, I'm estimating below 50% due to the specific budget delays mentioned and the tight timeline. March could plausibly be within a normal notification window for academic fellowships, but the uncertainty is extremely high. The 35% reflects that while there's some reasonable chance NSF maintains their schedule despite delays, the lack of information and mentioned budget issues suggest meaningful probability of delays pushing past March 24."
+    },
     {
       "id": 170,
       "platform": "manifold",
@@ -1970,9 +1960,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T21:20:19.792520",
-      "est_prob": 0.65,
+      "est_prob": 0.35,
       "est_conf": 0.2,
-      "est_reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data."
+      "est_reasoning": "Without baseline data on NSF MSPRF timing, I'm estimating below 50% due to the specific budget delays mentioned and the tight timeline. March could plausibly be within a normal notification window for academic fellowships, but the uncertainty is extremely high. The 35% reflects that while there's some reasonable chance NSF maintains their schedule despite delays, the lack of information and mentioned budget issues suggest meaningful probability of delays pushing past March 24."
     },
     {
       "id": 134,
@@ -2361,9 +2351,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T20:20:19.668680",
-      "est_prob": 0.65,
+      "est_prob": 0.35,
       "est_conf": 0.2,
-      "est_reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data."
+      "est_reasoning": "Without baseline data on NSF MSPRF timing, I'm estimating below 50% due to the specific budget delays mentioned and the tight timeline. March could plausibly be within a normal notification window for academic fellowships, but the uncertainty is extremely high. The 35% reflects that while there's some reasonable chance NSF maintains their schedule despite delays, the lack of information and mentioned budget issues suggest meaningful probability of delays pushing past March 24."
     },
     {
       "id": 111,
@@ -2888,9 +2878,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:19:52.078487",
-      "est_prob": 0.65,
+      "est_prob": 0.35,
       "est_conf": 0.2,
-      "est_reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data."
+      "est_reasoning": "Without baseline data on NSF MSPRF timing, I'm estimating below 50% due to the specific budget delays mentioned and the tight timeline. March could plausibly be within a normal notification window for academic fellowships, but the uncertainty is extremely high. The 35% reflects that while there's some reasonable chance NSF maintains their schedule despite delays, the lack of information and mentioned budget issues suggest meaningful probability of delays pushing past March 24."
     },
     {
       "id": 80,
@@ -3027,40 +3017,6 @@
       "est_prob": 0.25,
       "est_conf": 0.4,
       "est_reasoning": "With only 3-4 weeks until deadline and Anthropic's emphasis on safety over speed, a new version release seems unlikely. The indirect evidence of Opus 4.6 suggests we're already at or near that version level. While minor incremental updates are possible, the short timeframe and lack of clear signals about imminent releases point toward a low probability. The 25% estimate reflects some possibility of a quick incremental release or announcement, but the weight of evidence suggests this is unlikely."
-    },
-    {
-      "id": 72,
-      "platform": "manifold",
-      "market_id": "C96pyn9Z5Z",
-      "question": "Iran Government falls before end of March 2026",
-      "current_yes_price": 0.03684182217275326,
-      "current_no_price": 0.9631581778272468,
-      "volume": 316.9319714012992,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:08.912179",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a base rate: authoritarian regimes that have survived 45+ years (like Iran since 1979) rarely collapse in any given 15-month period - perhaps 5% historically. Iran's Islamic Republic has demonstrated remarkable institutional resilience, surviving the Iran-Iraq War, multiple protest waves, and severe economic sanctions. The regime maintains control through extensive security apparatus, economic patronage networks, and religious legitimacy among core supporters. However, several factors could increase instability risk: ongoing economic pressures from sanctions, a large young population with limited opportunities, periodic protest movements, and potential succession uncertainty given Khamenei's age. The 2022-23 protests showed significant popular discontent but were ultimately contained. The biggest wild card is the unclear resolution criteria - 'government falls' could mean anything from regime change to leadership transition. Given Iran's track record of stability, the strong repressive capacity, and lack of immediate catalysts for collapse, I estimate slightly above the base rate but remain highly uncertain due to definitional ambiguity and the inherent unpredictability of revolutionary moments."
-    },
-    {
-      "id": 71,
-      "platform": "manifold",
-      "market_id": "Isqpy2L2lu",
-      "question": "Will I succeed in my goal of posting an experiment proposal every Friday for the next 10 weeks?",
-      "current_yes_price": 0.3471906183377525,
-      "current_no_price": 0.6528093816622476,
-      "volume": 360.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-05-29T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:08.659708",
-      "est_prob": 0.25,
-      "est_conf": 0.3,
-      "est_reasoning": "With no information about the specific individual, I must rely on general base rates for personal goal completion. Research suggests that most people fail to maintain weekly commitments over 2+ month periods - studies on habit formation and goal achievement typically show success rates of 15-25% for sustained behavioral changes lasting 10+ weeks. The 10-week timeframe is particularly challenging as it's long enough for motivation to wane but short enough to feel like it should be achievable. Weekly frequency is manageable compared to daily commitments, which slightly improves odds. However, the vague nature of 'experiment proposal' creates additional uncertainty - if these require significant research/preparation, success becomes less likely. I'm adjusting slightly upward from the base rate (20% to 25%) because weekly posting is more achievable than many other behavioral goals, but maintaining very low confidence due to the complete absence of individual-specific information."
     }
   ]
 }
