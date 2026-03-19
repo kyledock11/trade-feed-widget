@@ -1,9 +1,53 @@
 {
-  "updated_at": "2026-03-19T20:50:49.612373+00:00",
+  "updated_at": "2026-03-19T20:57:03.701806+00:00",
+  "strategy": {
+    "name": "Parallax",
+    "version": "0.5",
+    "full_name": "Parallax v0.5",
+    "iteration": 5,
+    "current": {
+      "version": "0.5",
+      "date": "2026-03-19",
+      "name": "Agreement Filter",
+      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
+    },
+    "changelog": [
+      {
+        "version": "0.1",
+        "date": "2026-03-19",
+        "name": "Genesis",
+        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
+      },
+      {
+        "version": "0.2",
+        "date": "2026-03-19",
+        "name": "Deep Research",
+        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
+      },
+      {
+        "version": "0.3",
+        "date": "2026-03-19",
+        "name": "Learning Loop",
+        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
+      },
+      {
+        "version": "0.4",
+        "date": "2026-03-19",
+        "name": "Tiered Exposure",
+        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
+      },
+      {
+        "version": "0.5",
+        "date": "2026-03-19",
+        "name": "Agreement Filter",
+        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
+      }
+    ]
+  },
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T20:50:49.612381+00:00",
+    "last_heartbeat": "2026-03-19T20:57:03.701817+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -305,6 +349,322 @@
       "count": 1,
       "markets": [
         "Will the Gaza death toll be over 150,000 at the end of the Israel-Hamas war"
+      ]
+    }
+  ],
+  "strategies": [
+    {
+      "name": "Parallax",
+      "version": "0.5",
+      "label": "Agreement Filter",
+      "account": "primary",
+      "accent": "green",
+      "portfolio": {
+        "bankroll": 1000,
+        "deployed": 74.65,
+        "cash": 925.35
+      },
+      "stats": {
+        "total_trades": 6,
+        "open_positions": 6,
+        "resolved": 0,
+        "total_pnl": 0,
+        "avg_edge": 0.1368
+      },
+      "exposure": {
+        "by_direction": {
+          "yes": {
+            "count": 3,
+            "deployed": 38.4
+          },
+          "no": {
+            "count": 3,
+            "deployed": 36.25
+          }
+        },
+        "high_edge_count": 3,
+        "low_edge_count": 3,
+        "high_edge_deployed": 47.97,
+        "low_edge_deployed": 26.68
+      },
+      "trades": [
+        {
+          "id": 6,
+          "market_id": "CdARQ20t2q",
+          "platform": "manifold",
+          "question": "Will Trump's approval rating improve after 1 month of attacking Iran?",
+          "direction": "yes",
+          "size": 10.57,
+          "entry_price": 0.04895175532736617,
+          "estimated_probability": 0.2499517553273662,
+          "edge": 0.201,
+          "kelly_fraction": 0.0106,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:31:23.211528",
+          "resolved_at": null
+        },
+        {
+          "id": 5,
+          "market_id": "u6dgRuunsn",
+          "platform": "manifold",
+          "question": "Will any brackets remain perfect through the 1st round of March Madness?",
+          "direction": "no",
+          "size": 23.96,
+          "entry_price": 0.5294628501255548,
+          "estimated_probability": 0.24999999999999997,
+          "edge": 0.23,
+          "kelly_fraction": 0.024,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:30:02.337544",
+          "resolved_at": null
+        },
+        {
+          "id": 4,
+          "market_id": "lSq6hLPQ20",
+          "platform": "manifold",
+          "question": "Florida Gators reach Final Four in 2026?",
+          "direction": "yes",
+          "size": 14.39,
+          "entry_price": 0.3225290049934712,
+          "estimated_probability": 0.4200290049934712,
+          "edge": 0.0975,
+          "kelly_fraction": 0.0144,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:20:37.540301",
+          "resolved_at": null
+        },
+        {
+          "id": 3,
+          "market_id": "NIhOcZOQZE",
+          "platform": "manifold",
+          "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
+          "direction": "yes",
+          "size": 13.44,
+          "entry_price": 0.11113020180278499,
+          "estimated_probability": 0.350030201802785,
+          "edge": 0.2389,
+          "kelly_fraction": 0.0134,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:15:05.767511",
+          "resolved_at": null
+        },
+        {
+          "id": 2,
+          "market_id": "NstCUAzyt2",
+          "platform": "manifold",
+          "question": "USA x Iran ceasefire by end of march 31?",
+          "direction": "no",
+          "size": 8.41,
+          "entry_price": 0.11113729021029815,
+          "estimated_probability": 0.08003729021029816,
+          "edge": 0.0311,
+          "kelly_fraction": 0.0084,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:13:05.505471",
+          "resolved_at": null
+        },
+        {
+          "id": 1,
+          "market_id": "ZctCIAhQsu",
+          "platform": "manifold",
+          "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
+          "direction": "no",
+          "size": 3.88,
+          "entry_price": 0.17225253829250442,
+          "estimated_probability": 0.14995253829250443,
+          "edge": 0.0223,
+          "kelly_fraction": 0.0039,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:05:54.334707",
+          "resolved_at": null
+        }
+      ]
+    },
+    {
+      "name": "Contrarian",
+      "version": "0.1",
+      "label": "Disagreement + Blend",
+      "account": "account2",
+      "accent": "amber",
+      "portfolio": {
+        "bankroll": 1000,
+        "deployed": 0,
+        "cash": 1000
+      },
+      "stats": {
+        "total_trades": 0,
+        "open_positions": 0,
+        "resolved": 0,
+        "total_pnl": 0,
+        "avg_edge": 0
+      },
+      "exposure": {
+        "by_direction": {
+          "yes": {
+            "count": 0,
+            "deployed": 0
+          },
+          "no": {
+            "count": 0,
+            "deployed": 0
+          }
+        },
+        "high_edge_count": 0,
+        "low_edge_count": 0,
+        "high_edge_deployed": 0,
+        "low_edge_deployed": 0
+      },
+      "trades": []
+    },
+    {
+      "name": "Zeitgeist",
+      "version": "0.1",
+      "label": "Cultural Prediction",
+      "account": "paper",
+      "accent": "blue",
+      "portfolio": {
+        "bankroll": 1000,
+        "deployed": 145.31,
+        "cash": 854.69
+      },
+      "stats": {
+        "total_trades": 6,
+        "open_positions": 5,
+        "resolved": 1,
+        "total_pnl": -25.76,
+        "avg_edge": 0.2868
+      },
+      "exposure": {
+        "by_direction": {
+          "yes": {
+            "count": 4,
+            "deployed": 95.31
+          },
+          "no": {
+            "count": 1,
+            "deployed": 50.0
+          }
+        },
+        "high_edge_count": 4,
+        "low_edge_count": 1,
+        "high_edge_deployed": 131.22,
+        "low_edge_deployed": 14.09
+      },
+      "trades": [
+        {
+          "id": 6,
+          "market_id": "USqgCAPAz5",
+          "platform": "manifold",
+          "question": "Will something happen in Iran this month?",
+          "direction": "yes",
+          "size": 41.94,
+          "entry_price": 0.2636878456112051,
+          "estimated_probability": 0.9499878456112052,
+          "edge": 0.6863,
+          "kelly_fraction": 0.0419,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:49:40.290373",
+          "resolved_at": null
+        },
+        {
+          "id": 5,
+          "market_id": "CdARQ20t2q",
+          "platform": "manifold",
+          "question": "Will Trump's approval rating improve after 1 month of attacking Iran?",
+          "direction": "yes",
+          "size": 15.85,
+          "entry_price": 0.04895175532736617,
+          "estimated_probability": 0.2499517553273662,
+          "edge": 0.201,
+          "kelly_fraction": 0.0159,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:31:57.614178",
+          "resolved_at": null
+        },
+        {
+          "id": 4,
+          "market_id": "u6dgRuunsn",
+          "platform": "manifold",
+          "question": "Will any brackets remain perfect through the 1st round of March Madness?",
+          "direction": "no",
+          "size": 50.0,
+          "entry_price": 0.52,
+          "estimated_probability": 0.14999999999999997,
+          "edge": 0.33,
+          "kelly_fraction": 0.0516,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:30:36.647096",
+          "resolved_at": null
+        },
+        {
+          "id": 3,
+          "market_id": "NIhOcZOQZE",
+          "platform": "manifold",
+          "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
+          "direction": "yes",
+          "size": 23.43,
+          "entry_price": 0.11113020180278499,
+          "estimated_probability": 0.250030201802785,
+          "edge": 0.1389,
+          "kelly_fraction": 0.0234,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:15:33.629709",
+          "resolved_at": null
+        },
+        {
+          "id": 2,
+          "market_id": "m7scZNu2LwMHTfnhW0IV",
+          "platform": "manifold",
+          "question": "Will Slay the Spire 2 get overwhelmingly positive reviews on Steam?",
+          "direction": "no",
+          "size": 25.76,
+          "entry_price": 0.009999999999999898,
+          "estimated_probability": 0.8200000000000001,
+          "edge": 0.17,
+          "kelly_fraction": 0.0258,
+          "status": "resolved",
+          "exit_price": 1.0,
+          "pnl": -25.76,
+          "created_at": "2026-03-19T20:10:26.380517",
+          "resolved_at": "2026-03-19T20:49:37.425833"
+        },
+        {
+          "id": 1,
+          "market_id": "ZctCIAhQsu",
+          "platform": "manifold",
+          "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
+          "direction": "yes",
+          "size": 14.09,
+          "entry_price": 0.17225253829250442,
+          "estimated_probability": 0.2499525382925044,
+          "edge": 0.0777,
+          "kelly_fraction": 0.0141,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:06:46.300933",
+          "resolved_at": null
+        }
       ]
     }
   ],
