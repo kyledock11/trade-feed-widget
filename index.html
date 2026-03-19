@@ -766,6 +766,34 @@
     color: #7a756e;
   }
 
+  /* Live spread */
+  .trade-spread {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .trade-spread .spread-arrow {
+    font-size: 0.5rem;
+  }
+
+  .trade-spread.favorable { color: #6ec07a; }
+  .trade-spread.unfavorable { color: #c06e6e; }
+  .trade-spread.neutral { color: #8a857e; }
+  .trade-spread.loading { color: #5a5650; }
+
+  .trade-entry {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    font-size: 0.65rem;
+    color: #6b6660;
+    flex-shrink: 0;
+  }
+
   /* Trade account tag */
   .trade-account {
     font-family: 'JetBrains Mono', monospace;
@@ -1205,6 +1233,63 @@ function calcExpectedProfit(trade) {
   return (prob * potential) - ((1 - prob) * size);
 }
 
+// Live market prices cache
+const livePrices = {};
+let liveRefreshTimer = null;
+
+async function fetchLivePrices(trades) {
+  const openTrades = trades.filter(t => t.status === 'filled' && t.platform === 'manifold');
+  const uniqueIds = [...new Set(openTrades.map(t => t.market_id))];
+
+  const promises = uniqueIds.map(async (id) => {
+    try {
+      const res = await fetch(`https://api.manifold.markets/v0/market/${id}`);
+      if (!res.ok) return;
+      const data = await res.json();
+      livePrices[id] = {
+        probability: data.probability,
+        volume: data.volume,
+        updatedAt: Date.now()
+      };
+    } catch {}
+  });
+
+  await Promise.allSettled(promises);
+  updateLiveSpreads();
+}
+
+function updateLiveSpreads() {
+  document.querySelectorAll('[data-market-id]').forEach(el => {
+    const marketId = el.dataset.marketId;
+    const direction = el.dataset.direction;
+    const entryPrice = parseFloat(el.dataset.entryPrice) || 0;
+    const live = livePrices[marketId];
+
+    if (!live) {
+      el.textContent = '...';
+      el.className = 'trade-spread loading';
+      return;
+    }
+
+    // Current price for this direction
+    const currentPrice = direction === 'yes' ? live.probability : (1 - live.probability);
+    const entryDir = direction === 'yes' ? entryPrice : entryPrice;
+    const diff = currentPrice - entryDir;
+    const diffPct = (diff * 100).toFixed(1);
+    const arrow = diff > 0.005 ? '▲' : diff < -0.005 ? '▼' : '—';
+    const cls = diff > 0.005 ? 'favorable' : diff < -0.005 ? 'unfavorable' : 'neutral';
+
+    el.innerHTML = `${(currentPrice * 100).toFixed(1)}% <span class="spread-arrow">${arrow}</span> ${diff > 0 ? '+' : ''}${diffPct}%`;
+    el.className = `trade-spread ${cls}`;
+  });
+}
+
+function startLiveRefresh(trades) {
+  fetchLivePrices(trades);
+  if (liveRefreshTimer) clearInterval(liveRefreshTimer);
+  liveRefreshTimer = setInterval(() => fetchLivePrices(trades), 30000); // 30s refresh
+}
+
 function updateStrategy(strategy) {
   if (!strategy) return;
   const nameEl = document.getElementById('strategyName');
@@ -1549,19 +1634,25 @@ function renderTrades() {
     <span class="th th-spacer"></span>
     <span class="th th-dir">Side</span>
     <span class="th th-question">Market</span>
+    <span class="th th-data">Entry</span>
+    <span class="th th-data">Live</span>
     <span class="th th-data">Prob</span>
     <span class="th th-data">Risked</span>
     <span class="th th-data">Profit</span>
+    ${selectedStrategy === 'all' ? '<span class="th th-data">Acct</span>' : ''}
     <span class="th th-time">Time</span>
   </div>`;
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
 
   const estimateMap = {};
-  if (feedData.estimates) {
-    feedData.estimates.forEach(e => {
-      if (!estimateMap[e.market_id]) estimateMap[e.market_id] = e;
-    });
-  }
+  const estimates = data.estimates || feedData.estimates || [];
+  estimates.forEach(e => {
+    if (!estimateMap[e.market_id]) estimateMap[e.market_id] = e;
+  });
+
+  // Start live price refresh for open trades
+  const allOpenTrades = (data.trades || []).filter(t => t.status === 'filled');
+  startLiveRefresh(allOpenTrades);
 
   trades.forEach(trade => {
     const card = document.createElement('div');
@@ -1571,15 +1662,19 @@ function renderTrades() {
     const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
     const potentialProfit = calcPotentialProfit(trade);
     const likelihood = trade.estimated_probability ? (trade.estimated_probability * 100).toFixed(0) + '%' : '';
+    const entryPct = trade.entry_price ? (trade.entry_price * 100).toFixed(1) + '%' : '--';
 
     card.innerHTML = `
       <div class="trade-header">
         ${caretSVG}
         <span class="trade-direction ${trade.direction}">${trade.direction}</span>
         <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
+        <span class="trade-entry">${entryPct}</span>
+        ${trade.status === 'filled' ? `<span class="trade-spread loading" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</span>` : ''}
         ${likelihood ? `<span class="trade-size" style="color:#7eb8d0">${likelihood}</span>` : ''}
         <span class="trade-size">${formatMoney(trade.size)}</span>
         ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
+        ${selectedStrategy === 'all' && trade._strategy ? `<span class="trade-account">${esc(trade._strategy)}</span>` : ''}
         <span class="trade-time">${relativeTime(trade.created_at)}</span>
       </div>
       <div class="trade-body">
