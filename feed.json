@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-19T20:20:49.780180+00:00",
+  "updated_at": "2026-03-19T20:33:17.288705+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T20:20:49.780189+00:00",
+    "last_heartbeat": "2026-03-19T20:33:17.288713+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -19,23 +19,27 @@
   },
   "portfolio": {
     "bankroll": 1000.0,
-    "deployed": 558.72,
-    "cash": 441.28,
-    "deployed_pct": 55.9,
+    "deployed": 576.24,
+    "cash": 423.76,
+    "deployed_pct": 57.6,
     "total_pnl": 0.0,
     "unrealized_pnl": 0.0,
     "max_drawdown": 0.0
   },
   "stats": {
-    "total_trades": 22,
-    "open_positions": 22,
+    "total_trades": 23,
+    "open_positions": 23,
     "resolved": 0,
     "win_rate": null,
     "brier_score": null,
-    "avg_edge": 0.1758
+    "avg_edge": 0.181
   },
   "exposure": {
     "by_category": {
+      "politics": {
+        "count": 1,
+        "deployed": 17.52
+      },
       "uncategorized": {
         "count": 14,
         "deployed": 425.25
@@ -55,17 +59,17 @@
     },
     "by_direction": {
       "yes": {
-        "count": 15,
-        "deployed": 288.72
+        "count": 16,
+        "deployed": 306.24
       },
       "no": {
         "count": 7,
         "deployed": 270.0
       }
     },
-    "high_edge_count": 14,
+    "high_edge_count": 15,
     "low_edge_count": 8,
-    "high_edge_deployed": 411.45,
+    "high_edge_deployed": 428.97,
     "low_edge_deployed": 147.27
   },
   "learning": {
@@ -254,10 +258,11 @@
     },
     {
       "date": "2026-04-01",
-      "count": 2,
+      "count": 3,
       "markets": [
         "Will OpenAI IPO and be a publicly traded company in the United States by the end of March 2026?",
-        "Bitcoin $80K in March?"
+        "Bitcoin $80K in March?",
+        "Will Viktor Orban remain Hungary's prime minister after the 2026 elections?"
       ]
     },
     {
@@ -304,6 +309,23 @@
     }
   ],
   "trades": [
+    {
+      "id": 23,
+      "market_id": "ZJ9LlySKX4dldqcpdQ4G",
+      "platform": "manifold",
+      "question": "Will Viktor Orban remain Hungary's prime minister after the 2026 elections?",
+      "direction": "yes",
+      "size": 17.52,
+      "entry_price": 0.32393861291211573,
+      "estimated_probability": 0.6200386129121157,
+      "edge": 0.2961,
+      "kelly_fraction": 0.0175,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T20:33:17.252178",
+      "resolved_at": null
+    },
     {
       "id": 22,
       "market_id": "NIhOcZOQZE",
@@ -680,6 +702,26 @@
     }
   ],
   "estimates": [
+    {
+      "id": 50,
+      "market_id": "ZJ9LlySKX4dldqcpdQ4G",
+      "probability": 0.62,
+      "confidence": 0.4,
+      "reasoning": "Without a clear base rate for Hungarian incumbent re-election, I'm starting from a general incumbent advantage assumption. Orban appears to be actively campaigning with established strategies (EU aid blocking, nationalist messaging) that suggest he has government resources and political machinery working for him. However, the evidence shows meaningful domestic opposition with rallies against him, and his major policy initiatives (pro-natalist spending 5.5% of GDP) are reportedly failing. The complete absence of polling data, opposition candidate information, or historical electoral context makes this highly uncertain. I'm estimating slightly above 50% due to typical incumbent advantages in democratic systems, but the confidence is low given the critical information gaps. The resolution timing issue (market closes before elections conclude) adds another layer of uncertainty about how this will actually resolve.",
+      "key_uncertainties": "[\"No polling data or approval ratings to gauge actual electoral prospects\", \"Unknown strength and unity of opposition candidates and coalitions\", \"Market resolution timing unclear - closes April 1 but elections are April 12\", \"No historical context on Hungarian incumbent re-election rates or Orban's past margins\", \"Uncertain whether opposition rallies represent significant threat or normal pre-election activity\", \"Impact of failed pro-natalist policies on voter sentiment unknown\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T20:33:17.069963"
+    },
+    {
+      "id": 49,
+      "market_id": "pulqzqzCnA",
+      "probability": 0.65,
+      "confidence": 0.2,
+      "reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data.",
+      "key_uncertainties": "[\"No historical data on typical MSPRF offer letter timing from previous years\", \"Unknown current status of NSF's 2026-2027 fellowship cycle\", \"Potential impact of mentioned NSF budget constraints on fellowship timelines\", \"Whether March 24 is a reasonable timeline for academic fellowship processes\", \"NSF's internal processing capacity and any COVID-related delays\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T20:21:21.450257"
+    },
     {
       "id": 48,
       "market_id": "zQ0dgER6SI",
@@ -1163,6 +1205,23 @@
   ],
   "markets": [
     {
+      "id": 113,
+      "platform": "manifold",
+      "market_id": "ZJ9LlySKX4dldqcpdQ4G",
+      "question": "Will Viktor Orban remain Hungary's prime minister after the 2026 elections?",
+      "current_yes_price": 0.32393861291211573,
+      "current_no_price": 0.6760613870878842,
+      "volume": 122.08605159297194,
+      "liquidity": 1100.0,
+      "close_date": "2026-04-01T21:59:00+00:00",
+      "category": "politics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:32:49.195983",
+      "est_prob": 0.62,
+      "est_conf": 0.4,
+      "est_reasoning": "Without a clear base rate for Hungarian incumbent re-election, I'm starting from a general incumbent advantage assumption. Orban appears to be actively campaigning with established strategies (EU aid blocking, nationalist messaging) that suggest he has government resources and political machinery working for him. However, the evidence shows meaningful domestic opposition with rallies against him, and his major policy initiatives (pro-natalist spending 5.5% of GDP) are reportedly failing. The complete absence of polling data, opposition candidate information, or historical electoral context makes this highly uncertain. I'm estimating slightly above 50% due to typical incumbent advantages in democratic systems, but the confidence is low given the critical information gaps. The resolution timing issue (market closes before elections conclude) adds another layer of uncertainty about how this will actually resolve."
+    },
+    {
       "id": 112,
       "platform": "manifold",
       "market_id": "pulqzqzCnA",
@@ -1175,9 +1234,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T20:20:19.668680",
-      "est_prob": 0.78,
-      "est_conf": 0.4,
-      "est_reasoning": "I'm estimating a base rate of 85% based on the research indicating NSF typically releases MSPRF offers in late February to early March, which would meet the March 24 deadline. However, I'm adjusting down to 78% due to several uncertainties: the definition of 'offer letters' could be ambiguous (initial notifications vs. formal offers), the specific March 24 date interpretation is unclear, and there's always risk of administrative delays, budget issues, or operational changes over a 2+ year timeframe. The confidence is relatively low (0.4) because we lack specific historical dates and there are many variables that could affect the 2026-2027 cycle timeline that we can't predict from current information."
+      "est_prob": 0.65,
+      "est_conf": 0.2,
+      "est_reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data."
     },
     {
       "id": 111,
@@ -1685,9 +1744,9 @@
       "category": "politics",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:19:54.843084",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.62,
+      "est_conf": 0.4,
+      "est_reasoning": "Without a clear base rate for Hungarian incumbent re-election, I'm starting from a general incumbent advantage assumption. Orban appears to be actively campaigning with established strategies (EU aid blocking, nationalist messaging) that suggest he has government resources and political machinery working for him. However, the evidence shows meaningful domestic opposition with rallies against him, and his major policy initiatives (pro-natalist spending 5.5% of GDP) are reportedly failing. The complete absence of polling data, opposition candidate information, or historical electoral context makes this highly uncertain. I'm estimating slightly above 50% due to typical incumbent advantages in democratic systems, but the confidence is low given the critical information gaps. The resolution timing issue (market closes before elections conclude) adds another layer of uncertainty about how this will actually resolve."
     },
     {
       "id": 81,
@@ -1702,9 +1761,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:19:52.078487",
-      "est_prob": 0.78,
-      "est_conf": 0.4,
-      "est_reasoning": "I'm estimating a base rate of 85% based on the research indicating NSF typically releases MSPRF offers in late February to early March, which would meet the March 24 deadline. However, I'm adjusting down to 78% due to several uncertainties: the definition of 'offer letters' could be ambiguous (initial notifications vs. formal offers), the specific March 24 date interpretation is unclear, and there's always risk of administrative delays, budget issues, or operational changes over a 2+ year timeframe. The confidence is relatively low (0.4) because we lack specific historical dates and there are many variables that could affect the 2026-2027 cycle timeline that we can't predict from current information."
+      "est_prob": 0.65,
+      "est_conf": 0.2,
+      "est_reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data."
     },
     {
       "id": 80,
@@ -2790,9 +2849,9 @@
       "category": "uncategorized",
       "resolution_source": "",
       "scanned_at": "2026-03-19T18:10:31.245989",
-      "est_prob": 0.78,
-      "est_conf": 0.4,
-      "est_reasoning": "I'm estimating a base rate of 85% based on the research indicating NSF typically releases MSPRF offers in late February to early March, which would meet the March 24 deadline. However, I'm adjusting down to 78% due to several uncertainties: the definition of 'offer letters' could be ambiguous (initial notifications vs. formal offers), the specific March 24 date interpretation is unclear, and there's always risk of administrative delays, budget issues, or operational changes over a 2+ year timeframe. The confidence is relatively low (0.4) because we lack specific historical dates and there are many variables that could affect the 2026-2027 cycle timeline that we can't predict from current information."
+      "est_prob": 0.65,
+      "est_conf": 0.2,
+      "est_reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data."
     },
     {
       "id": 16,
@@ -2844,23 +2903,6 @@
       "est_prob": 0.99,
       "est_conf": 0.9,
       "est_reasoning": "This question is so broadly defined that it's almost impossible for it to resolve NO. Iran is an active nation of 85+ million people with ongoing government functions, economic activity, social events, weather patterns, and international relations. On any given day, numerous events occur - from routine administrative decisions to news-worthy developments. The base rate for 'something happening' in any country over a month-long period is essentially 100%. Even if we interpret 'something' to mean only notable or reported events, Iran regularly appears in international news due to its geopolitical significance. The only scenarios where this could resolve NO would involve either: (1) an impossibly restrictive interpretation by the resolution source, (2) complete information isolation, or (3) some catastrophic event preventing all activity. Given the extreme vagueness favors a YES resolution and the practical certainty that events occur daily in Iran, the probability is very high."
-    },
-    {
-      "id": 13,
-      "platform": "manifold",
-      "market_id": "u6dgRuunsn",
-      "question": "Will any brackets remain perfect through the 1st round of March Madness?",
-      "current_yes_price": 0.6113455933759447,
-      "current_no_price": 0.38865440662405526,
-      "volume": 1775.334903138546,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-21T01:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:09:12.452603",
-      "est_prob": 0.75,
-      "est_conf": 0.4,
-      "est_reasoning": "With millions of brackets filled out across multiple platforms, even if individual bracket survival probability through 32 games is low (likely 0.1-1%), the large sample size makes it probable that some brackets will survive. The 1st round has fewer major upsets than later rounds, and conservative bracket strategies can achieve higher 1st round survival rates. However, significant uncertainty exists due to lack of historical base rates and unclear resolution criteria."
     }
   ]
 }
