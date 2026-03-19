@@ -343,7 +343,7 @@
   }
 
   .trade-card.expanded .trade-body {
-    max-height: 400px;
+    max-height: 2000px;
   }
 
   .trade-body-inner {
@@ -673,10 +673,10 @@
 <div class="widget">
   <div class="sticky-top">
     <div class="header-row">
-      <div class="header-label"><span id="strategyName">Parallax</span> <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:300;color:#6b6660;letter-spacing:0.04em" id="strategyVersion">v0.4</span></div>
+      <div class="header-label"><span id="strategyName">Parallax</span> <span style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:300;color:#8a857e;letter-spacing:0.04em" id="strategyVersion">v0.4</span></div>
       <div class="header-meta">
         <span class="phase-badge learning" id="phaseBadge">LEARNING</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#5a5650;letter-spacing:0.06em" id="strategyIter">iter 4</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#7a756e;letter-spacing:0.06em" id="strategyIter">iter 4</span>
         <div class="status-dot" id="statusDot"></div>
         <div class="last-update" id="lastUpdate">Loading...</div>
         <span class="refresh-btn" id="refreshBtn" title="Refresh now">&#8635;</span>
@@ -716,6 +716,7 @@
       <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
       <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
       <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Potential Profit</span></div>
+      <div class="stat"><span class="stat-value" id="sExpected">--</span><span class="stat-label">Expected Profit</span></div>
       <div class="stat"><span class="stat-value" id="sEdge">--</span><span class="stat-label">Avg Edge</span></div>
     </div>
 
@@ -813,6 +814,14 @@ function calcPotentialProfit(trade) {
   return (size / price) - size;
 }
 
+function calcExpectedProfit(trade) {
+  const potential = calcPotentialProfit(trade);
+  const prob = parseFloat(trade.estimated_probability) || 0;
+  const size = parseFloat(trade.size) || 0;
+  // EV = (prob * profit_if_win) - ((1 - prob) * amount_risked)
+  return (prob * potential) - ((1 - prob) * size);
+}
+
 function updateStrategy(strategy) {
   if (!strategy) return;
   const nameEl = document.getElementById('strategyName');
@@ -898,6 +907,11 @@ function updatePortfolio(stats) {
     const totalPotential = openTrades.reduce((sum, t) => sum + calcPotentialProfit(t), 0);
     const potEl = document.getElementById('sPotential');
     potEl.textContent = formatMoney(totalPotential);
+
+    const totalExpected = openTrades.reduce((sum, t) => sum + calcExpectedProfit(t), 0);
+    const expEl = document.getElementById('sExpected');
+    expEl.textContent = formatMoney(totalExpected);
+    expEl.className = 'stat-value' + (totalExpected > 0 ? ' positive' : totalExpected < 0 ? ' negative' : '');
   }
 
   if (feedData && feedData.stats) {
@@ -917,12 +931,15 @@ function buildPortfolioBarHTML(portfolio, stats, trades, idPrefix) {
   const ddClass = maxDD > 0 ? ' negative' : '';
 
   let potentialProfit = 0;
+  let expectedProfit = 0;
   if (trades) {
     const openTrades = trades.filter(t => t.status === 'filled');
     potentialProfit = openTrades.reduce((sum, t) => sum + calcPotentialProfit(t), 0);
+    expectedProfit = openTrades.reduce((sum, t) => sum + calcExpectedProfit(t), 0);
   }
 
   const avgEdge = stats && stats.avg_edge ? (stats.avg_edge * 100).toFixed(1) + '%' : '--';
+  const expClass = expectedProfit > 0 ? ' positive' : expectedProfit < 0 ? ' negative' : '';
 
   return `
     <div class="portfolio-bar">
@@ -932,6 +949,7 @@ function buildPortfolioBarHTML(portfolio, stats, trades, idPrefix) {
       <div class="stat"><span class="stat-value${pnlClass}">${formatMoney(totalPnl)}</span><span class="stat-label">Total P&L</span></div>
       <div class="stat"><span class="stat-value${ddClass}">${formatPct(maxDD)}</span><span class="stat-label">Max DD</span></div>
       <div class="stat"><span class="stat-value positive">${formatMoney(potentialProfit)}</span><span class="stat-label">Potential Profit</span></div>
+      <div class="stat"><span class="stat-value${expClass}">${formatMoney(expectedProfit)}</span><span class="stat-label">Expected Profit</span></div>
       <div class="stat"><span class="stat-value">${avgEdge}</span><span class="stat-label">Avg Edge</span></div>
     </div>
   `;
@@ -956,6 +974,7 @@ function buildTradeListHTML(trades, estimates) {
     const estimate = estimateMap[trade.market_id];
     const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
     const potentialProfit = calcPotentialProfit(trade);
+    const likelihood = trade.estimated_probability ? (trade.estimated_probability * 100).toFixed(0) + '%' : '';
 
     html += `
       <div class="trade-card" onclick="this.classList.toggle('expanded')">
@@ -963,6 +982,7 @@ function buildTradeListHTML(trades, estimates) {
           ${caretSVG}
           <span class="trade-direction ${trade.direction}">${trade.direction}</span>
           <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
+          ${likelihood ? `<span class="trade-size" style="color:#7eb8d0">${likelihood}</span>` : ''}
           <span class="trade-size">${formatMoney(trade.size)}</span>
           ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
           <span class="trade-time">${relativeTime(trade.created_at)}</span>
@@ -1010,7 +1030,7 @@ function buildTradeListHTML(trades, estimates) {
             ${estimate && estimate.reasoning ? `
             <div class="trade-reasoning">
               <span class="detail-label">Reasoning</span>
-              <div class="reasoning-text">${esc(estimate.reasoning.slice(0, 500))}</div>
+              <div class="reasoning-text">${esc(estimate.reasoning)}</div>
             </div>
             ` : ''}
           </div>
@@ -1151,12 +1171,14 @@ function renderTrades() {
     const estimate = estimateMap[trade.market_id];
     const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
     const potentialProfit = calcPotentialProfit(trade);
+    const likelihood = trade.estimated_probability ? (trade.estimated_probability * 100).toFixed(0) + '%' : '';
 
     card.innerHTML = `
       <div class="trade-header">
         ${caretSVG}
         <span class="trade-direction ${trade.direction}">${trade.direction}</span>
         <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
+        ${likelihood ? `<span class="trade-size" style="color:#7eb8d0">${likelihood}</span>` : ''}
         <span class="trade-size">${formatMoney(trade.size)}</span>
         ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
         <span class="trade-time">${relativeTime(trade.created_at)}</span>
@@ -1204,7 +1226,7 @@ function renderTrades() {
           ${estimate && estimate.reasoning ? `
           <div class="trade-reasoning">
             <span class="detail-label">Reasoning</span>
-            <div class="reasoning-text">${esc(estimate.reasoning.slice(0, 500))}</div>
+            <div class="reasoning-text">${esc(estimate.reasoning)}</div>
           </div>
           ` : ''}
         </div>
@@ -1299,7 +1321,7 @@ function renderMarkets() {
           ${market.est_reasoning ? `
           <div class="trade-reasoning">
             <span class="detail-label">Bot Analysis</span>
-            <div class="reasoning-text">${esc(market.est_reasoning.slice(0, 600))}</div>
+            <div class="reasoning-text">${esc(market.est_reasoning)}</div>
           </div>
           ` : ''}
         </div>
