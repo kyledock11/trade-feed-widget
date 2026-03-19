@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-19T22:51:10.507830+00:00",
+  "updated_at": "2026-03-19T23:03:19.840069+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T22:51:10.507838+00:00",
+    "last_heartbeat": "2026-03-19T23:03:19.840076+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -834,6 +834,16 @@
   ],
   "estimates": [
     {
+      "id": 73,
+      "market_id": "L2qLAZEntz",
+      "probability": 0.35,
+      "confidence": 0.4,
+      "reasoning": "Bitcoin needs to decline roughly 20-30% from current levels ($63k-$75k range) to reach below $52k by March 31, 2026. Key factors supporting YES: Bitcoin already showed weakness in Feb 2026 dropping below $63k, ongoing macro headwinds from Fed policy and economic uncertainty, and Bitcoin's historical volatility makes significant short-term moves possible. The question only requires touching below $52k once, not sustained trading. However, factors against include Bitcoin currently trading well above target in a 'strong relief rally', and survey data showing holder resilience. Without historical base rates for similar declines, I'm estimating around 35% probability - acknowledging Bitcoin's volatility could easily produce this magnitude of decline, but the current price positioning and recent rally suggest it's not the most likely outcome. My confidence is low due to missing key data points and the inherent unpredictability of crypto markets over short timeframes.",
+      "key_uncertainties": "[\"Exact current Bitcoin price and recent trading patterns unclear\", \"No historical base rate data for similar 20-30% declines within 3-month windows\", \"Unclear which exchange/data source will be used for resolution\", \"Macro economic developments (Fed policy, tariffs) could shift significantly\", \"Technical support levels and institutional sentiment not well defined\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T23:03:19.813591"
+    },
+    {
       "id": 72,
       "market_id": "6Zy0AhhshR",
       "probability": 0.5,
@@ -1322,19 +1332,26 @@
       "key_uncertainties": "[\"Exact timeline of the '1 month of attacking Iran' period - when it started and if it has ended\", \"What baseline approval rating is being used to measure 'improvement'\", \"Polling data between March 19 and March 28 market close date\", \"Whether any major developments occurred after March 19 that could shift public opinion\", \"Conflicting reports about independent voter approval trends\"]",
       "base_rate": 0.35,
       "created_at": "2026-03-19T18:39:55.399287"
-    },
-    {
-      "id": 23,
-      "market_id": "lqRAnA8qPO",
-      "probability": 0.15,
-      "confidence": 0.4,
-      "reasoning": "The base rate for perfect brackets is effectively 0% - no perfect bracket has ever been documented despite millions of annual entries. However, the question's wording creates significant ambiguity. If it asks whether Kalshi will actually pay out $1 billion (requiring a perfect bracket to occur), the answer is almost certainly no given the 1 in 9.2 quintillion odds. But if it asks whether Kalshi has committed to pay $1 billion for a perfect bracket (regardless of whether one occurs), then multiple credible sources confirm this is true. The evidence strongly supports that Kalshi has launched this challenge and made this commitment. Given the resolution ambiguity and the distinction between commitment vs. actual payout, I estimate 15% probability, accounting for the possibility that the market resolves based on Kalshi's commitment rather than requiring an actual perfect bracket winner.",
-      "key_uncertainties": "[\"Ambiguous resolution criteria - unclear if payment requires actual perfect bracket or just Kalshi's commitment to pay\", \"Missing official Kalshi terms and conditions for the contest\", \"Unknown financial backing or insurance arrangements for the $1 billion prize\", \"Lack of regulatory filing verification for such a large prize commitment\", \"Possible interpretation differences between 'will pay' vs 'commits to pay'\"]",
-      "base_rate": 0.0,
-      "created_at": "2026-03-19T18:39:22.653654"
     }
   ],
   "markets": [
+    {
+      "id": 180,
+      "platform": "manifold",
+      "market_id": "L2qLAZEntz",
+      "question": "Bitcoin below $52K before March 31, 2026?",
+      "current_yes_price": 0.01966277427759209,
+      "current_no_price": 0.9803372257224079,
+      "volume": 51.000000000000085,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T06:59:00+00:00",
+      "category": "crypto",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T23:02:49.448106",
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "Bitcoin needs to decline roughly 20-30% from current levels ($63k-$75k range) to reach below $52k by March 31, 2026. Key factors supporting YES: Bitcoin already showed weakness in Feb 2026 dropping below $63k, ongoing macro headwinds from Fed policy and economic uncertainty, and Bitcoin's historical volatility makes significant short-term moves possible. The question only requires touching below $52k once, not sustained trading. However, factors against include Bitcoin currently trading well above target in a 'strong relief rally', and survey data showing holder resilience. Without historical base rates for similar declines, I'm estimating around 35% probability - acknowledging Bitcoin's volatility could easily produce this magnitude of decline, but the current price positioning and recent rally suggest it's not the most likely outcome. My confidence is low due to missing key data points and the inherent unpredictability of crypto markets over short timeframes."
+    },
     {
       "id": 179,
       "platform": "manifold",
@@ -3017,23 +3034,6 @@
       "est_prob": 0.35,
       "est_conf": 0.2,
       "est_reasoning": "Without baseline data on NSF MSPRF timing, I'm estimating below 50% due to the specific budget delays mentioned and the tight timeline. March could plausibly be within a normal notification window for academic fellowships, but the uncertainty is extremely high. The 35% reflects that while there's some reasonable chance NSF maintains their schedule despite delays, the lack of information and mentioned budget issues suggest meaningful probability of delays pushing past March 24."
-    },
-    {
-      "id": 80,
-      "platform": "manifold",
-      "market_id": "5CPCpOg6SL",
-      "question": "Will Brent Oil Price go below $50 before March 31, 2026?",
-      "current_yes_price": 0.022762216295171195,
-      "current_no_price": 0.9772377837048288,
-      "volume": 271.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-30T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:19:51.870668",
-      "est_prob": 0.05,
-      "est_conf": 0.7,
-      "est_reasoning": "This requires an extraordinary 58% price decline from $119 to below $50 in just ~12 days. While oil markets are volatile, such dramatic crashes typically require major fundamental shifts like supply gluts, financial crises, or sudden geopolitical resolution. The current situation involves active warfare disrupting Middle East infrastructure and closing the Strait of Hormuz (affecting 20% of global oil/LNG transit), which creates strong upward price pressure. Even with Trump administration relaxing Russian sanctions as damage control, this appears insufficient to cause the required price collapse. Historical oil crashes of this magnitude have taken weeks or months, not days. The only realistic scenarios for YES would be an immediate ceasefire ending the Iran conflict or a sudden major global economic crisis - both possible but unlikely in such a short timeframe. The evidence strongly suggests prices will remain elevated through March 31st."
     }
   ]
 }
