@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-19T22:05:40.885381+00:00",
+  "updated_at": "2026-03-19T22:19:12.812332+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,70 +47,78 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T22:05:40.885388+00:00",
+    "last_heartbeat": "2026-03-19T22:19:12.812341+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "Pushed to GitHub Pages",
-      "Notion page updated: 24 positions, M$582.70 deployed",
-      "[15:45:38] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
-      "interval[0:30:00], next run at: 2026-03-19",
-      "16:15:01 MDT)\" executed successfully"
+      "INFO       Skipped: 21 recently analyzed, 12 already have run.py:167",
+      "position, 5 no edge",
+      "INFO       Quick mode: 11 low-volume markets              run.py:173",
+      "WARNING    Errors: 1 markets failed to process            run.py:175",
+      "INFO       Next cycle in 30 minutes                       run.py:176"
     ]
   },
   "portfolio": {
     "bankroll": 1000.0,
-    "deployed": 582.7,
-    "cash": 417.3,
-    "deployed_pct": 58.3,
+    "deployed": 689.51,
+    "cash": 310.49,
+    "deployed_pct": 69.0,
     "total_pnl": 0.0,
     "unrealized_pnl": 0.0,
     "max_drawdown": 0.0
   },
   "stats": {
-    "total_trades": 24,
-    "open_positions": 24,
+    "total_trades": 29,
+    "open_positions": 29,
     "resolved": 0,
     "win_rate": null,
     "brier_score": null,
-    "avg_edge": 0.1752
+    "avg_edge": 0.1645
   },
   "exposure": {
     "by_category": {
+      "politics": {
+        "count": 2,
+        "deployed": 30.79
+      },
+      "sports": {
+        "count": 1,
+        "deployed": 30.0
+      },
+      "tech": {
+        "count": 3,
+        "deployed": 51.26
+      },
+      "other": {
+        "count": 6,
+        "deployed": 94.73
+      },
+      "geopolitics": {
+        "count": 1,
+        "deployed": 30.0
+      },
       "uncategorized": {
         "count": 16,
         "deployed": 452.73
-      },
-      "politics": {
-        "count": 1,
-        "deployed": 17.52
-      },
-      "other": {
-        "count": 5,
-        "deployed": 78.59
-      },
-      "tech": {
-        "count": 2,
-        "deployed": 33.86
       }
     },
     "by_direction": {
       "yes": {
-        "count": 16,
-        "deployed": 306.24
+        "count": 19,
+        "deployed": 353.05
       },
       "no": {
-        "count": 8,
-        "deployed": 276.46
+        "count": 10,
+        "deployed": 336.46
       }
     },
-    "high_edge_count": 15,
-    "low_edge_count": 9,
-    "high_edge_deployed": 428.97,
-    "low_edge_deployed": 153.73
+    "high_edge_count": 18,
+    "low_edge_count": 11,
+    "high_edge_deployed": 475.78,
+    "low_edge_deployed": 213.73
   },
   "learning": {
     "resolved_trades": 0,
@@ -252,9 +260,10 @@
     },
     {
       "date": "2026-03-21",
-      "count": 1,
+      "count": 2,
       "markets": [
-        "Will any brackets remain perfect through the 1st round of March Madness?"
+        "Will any brackets remain perfect through the 1st round of March Madness?",
+        "Will Google announce a new quantum-related milestone within the next 60 days?"
       ]
     },
     {
@@ -287,13 +296,13 @@
     },
     {
       "date": "2026-03-31",
-      "count": 8,
+      "count": 11,
       "markets": [
+        "Will Trump apologize for bombing Iranian school?",
         "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
         "Will Iran shoot down a US military plane/helicopter by end of March?",
         "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
-        "Will the WTI Crude Oil Spot Price be above $95 on March 31, 2026?",
-        "Will ChatGPT launch an \"adult mode\" before 1 April 2026?"
+        "Will the WTI Crude Oil Spot Price be above $95 on March 31, 2026?"
       ]
     },
     {
@@ -303,6 +312,13 @@
         "Will OpenAI IPO and be a publicly traded company in the United States by the end of March 2026?",
         "Bitcoin $80K in March?",
         "Will Viktor Orban remain Hungary's prime minister after the 2026 elections?"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "count": 1,
+      "markets": [
+        "Will Purdue be in the Final Four of March Madness?"
       ]
     },
     {
@@ -348,426 +364,92 @@
       ]
     }
   ],
-  "strategies": [
-    {
-      "name": "Parallax",
-      "version": "0.5",
-      "label": "Agreement Filter",
-      "account": "primary",
-      "accent": "green",
-      "portfolio": {
-        "bankroll": 1000.0,
-        "deployed": 134.65,
-        "cash": 865.35
-      },
-      "stats": {
-        "total_trades": 8,
-        "open_positions": 8,
-        "resolved": 0,
-        "total_pnl": 0,
-        "avg_edge": 0.1384
-      },
-      "exposure": {
-        "by_direction": {
-          "yes": {
-            "count": 3,
-            "deployed": 38.4
-          },
-          "no": {
-            "count": 5,
-            "deployed": 96.25
-          }
-        },
-        "high_edge_count": 4,
-        "low_edge_count": 4,
-        "high_edge_deployed": 77.97,
-        "low_edge_deployed": 56.68
-      },
-      "trades": [
-        {
-          "id": 8,
-          "market_id": "9RNqh5yzqR",
-          "platform": "manifold",
-          "question": "Will Purdue be in the Final Four of March Madness?",
-          "direction": "no",
-          "size": 30.0,
-          "entry_price": 0.21542469378883447,
-          "estimated_probability": 0.12002469378883444,
-          "edge": 0.0954,
-          "kelly_fraction": 0.0443,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T21:06:29.586521",
-          "resolved_at": null
-        },
-        {
-          "id": 7,
-          "market_id": "Cyy96hnZcR",
-          "platform": "manifold",
-          "question": "Will Anthropic release a model with a higher version number than 4.6 by April 15th?",
-          "direction": "no",
-          "size": 30.0,
-          "entry_price": 0.44134503736242153,
-          "estimated_probability": 0.25004503736242145,
-          "edge": 0.1913,
-          "kelly_fraction": 0.0434,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:57:43.822137",
-          "resolved_at": null
-        },
-        {
-          "id": 6,
-          "market_id": "CdARQ20t2q",
-          "platform": "manifold",
-          "question": "Will Trump's approval rating improve after 1 month of attacking Iran?",
-          "direction": "yes",
-          "size": 10.57,
-          "entry_price": 0.04895175532736617,
-          "estimated_probability": 0.2499517553273662,
-          "edge": 0.201,
-          "kelly_fraction": 0.0106,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:31:23.211528",
-          "resolved_at": null
-        },
-        {
-          "id": 5,
-          "market_id": "u6dgRuunsn",
-          "platform": "manifold",
-          "question": "Will any brackets remain perfect through the 1st round of March Madness?",
-          "direction": "no",
-          "size": 23.96,
-          "entry_price": 0.5294628501255548,
-          "estimated_probability": 0.24999999999999997,
-          "edge": 0.23,
-          "kelly_fraction": 0.024,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:30:02.337544",
-          "resolved_at": null
-        },
-        {
-          "id": 4,
-          "market_id": "lSq6hLPQ20",
-          "platform": "manifold",
-          "question": "Florida Gators reach Final Four in 2026?",
-          "direction": "yes",
-          "size": 14.39,
-          "entry_price": 0.3225290049934712,
-          "estimated_probability": 0.4200290049934712,
-          "edge": 0.0975,
-          "kelly_fraction": 0.0144,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:20:37.540301",
-          "resolved_at": null
-        },
-        {
-          "id": 3,
-          "market_id": "NIhOcZOQZE",
-          "platform": "manifold",
-          "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
-          "direction": "yes",
-          "size": 13.44,
-          "entry_price": 0.11113020180278499,
-          "estimated_probability": 0.350030201802785,
-          "edge": 0.2389,
-          "kelly_fraction": 0.0134,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:15:05.767511",
-          "resolved_at": null
-        },
-        {
-          "id": 2,
-          "market_id": "NstCUAzyt2",
-          "platform": "manifold",
-          "question": "USA x Iran ceasefire by end of march 31?",
-          "direction": "no",
-          "size": 8.41,
-          "entry_price": 0.11113729021029815,
-          "estimated_probability": 0.08003729021029816,
-          "edge": 0.0311,
-          "kelly_fraction": 0.0084,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:13:05.505471",
-          "resolved_at": null
-        },
-        {
-          "id": 1,
-          "market_id": "ZctCIAhQsu",
-          "platform": "manifold",
-          "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-          "direction": "no",
-          "size": 3.88,
-          "entry_price": 0.17225253829250442,
-          "estimated_probability": 0.14995253829250443,
-          "edge": 0.0223,
-          "kelly_fraction": 0.0039,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:05:54.334707",
-          "resolved_at": null
-        }
-      ]
-    },
-    {
-      "name": "Contrarian",
-      "version": "0.1",
-      "label": "Disagreement + Blend",
-      "account": "account2",
-      "accent": "amber",
-      "portfolio": {
-        "bankroll": 1000.0,
-        "deployed": 14.19,
-        "cash": 985.81
-      },
-      "stats": {
-        "total_trades": 1,
-        "open_positions": 1,
-        "resolved": 0,
-        "total_pnl": 0,
-        "avg_edge": 0.0754
-      },
-      "exposure": {
-        "by_direction": {
-          "yes": {
-            "count": 1,
-            "deployed": 14.19
-          },
-          "no": {
-            "count": 0,
-            "deployed": 0
-          }
-        },
-        "high_edge_count": 0,
-        "low_edge_count": 1,
-        "high_edge_deployed": 0,
-        "low_edge_deployed": 14.19
-      },
-      "trades": [
-        {
-          "id": 1,
-          "market_id": "OoV1VLIGNMqu9mywrvii",
-          "platform": "manifold",
-          "question": "Will the Gaza death toll be over 150,000 at the end of the Israel-Hamas war",
-          "direction": "yes",
-          "size": 14.19,
-          "entry_price": 0.46863916560877544,
-          "estimated_probability": 0.5440391656087754,
-          "edge": 0.0754,
-          "kelly_fraction": 0.0142,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T21:04:39.100337",
-          "resolved_at": null
-        }
-      ]
-    },
-    {
-      "name": "Zeitgeist",
-      "version": "0.1",
-      "label": "Cultural Prediction",
-      "account": "paper",
-      "accent": "blue",
-      "portfolio": {
-        "bankroll": 974.24,
-        "deployed": 195.58,
-        "cash": 778.66
-      },
-      "stats": {
-        "total_trades": 9,
-        "open_positions": 8,
-        "resolved": 1,
-        "total_pnl": -25.76,
-        "avg_edge": 0.2188
-      },
-      "exposure": {
-        "by_direction": {
-          "yes": {
-            "count": 5,
-            "deployed": 130.79
-          },
-          "no": {
-            "count": 3,
-            "deployed": 64.79
-          }
-        },
-        "high_edge_count": 5,
-        "low_edge_count": 3,
-        "high_edge_deployed": 166.7,
-        "low_edge_deployed": 28.88
-      },
-      "trades": [
-        {
-          "id": 9,
-          "market_id": "9RNqh5yzqR",
-          "platform": "manifold",
-          "question": "Will Purdue be in the Final Four of March Madness?",
-          "direction": "no",
-          "size": 7.4,
-          "entry_price": 0.7845753062111656,
-          "estimated_probability": 0.18002469378883446,
-          "edge": 0.0354,
-          "kelly_fraction": 0.0074,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T21:07:10.739246",
-          "resolved_at": null
-        },
-        {
-          "id": 8,
-          "market_id": "OoV1VLIGNMqu9mywrvii",
-          "platform": "manifold",
-          "question": "Will the Gaza death toll be over 150,000 at the end of the Israel-Hamas war",
-          "direction": "yes",
-          "size": 35.48,
-          "entry_price": 0.46863916560877544,
-          "estimated_probability": 0.7200391656087755,
-          "edge": 0.2514,
-          "kelly_fraction": 0.0355,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T21:04:57.893161",
-          "resolved_at": null
-        },
-        {
-          "id": 7,
-          "market_id": "ARnqln6pRP",
-          "platform": "manifold",
-          "question": "Will Y Combinator fund 3 or more quantum-related startups in its next public batch update within the next 2 months?",
-          "direction": "no",
-          "size": 7.39,
-          "entry_price": 0.8205500949456682,
-          "estimated_probability": 0.15004990505433177,
-          "edge": 0.0294,
-          "kelly_fraction": 0.0074,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T21:00:04.182325",
-          "resolved_at": null
-        },
-        {
-          "id": 6,
-          "market_id": "USqgCAPAz5",
-          "platform": "manifold",
-          "question": "Will something happen in Iran this month?",
-          "direction": "yes",
-          "size": 41.94,
-          "entry_price": 0.2636878456112051,
-          "estimated_probability": 0.9499878456112052,
-          "edge": 0.6863,
-          "kelly_fraction": 0.0419,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:49:40.290373",
-          "resolved_at": null
-        },
-        {
-          "id": 5,
-          "market_id": "CdARQ20t2q",
-          "platform": "manifold",
-          "question": "Will Trump's approval rating improve after 1 month of attacking Iran?",
-          "direction": "yes",
-          "size": 15.85,
-          "entry_price": 0.04895175532736617,
-          "estimated_probability": 0.2499517553273662,
-          "edge": 0.201,
-          "kelly_fraction": 0.0159,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:31:57.614178",
-          "resolved_at": null
-        },
-        {
-          "id": 4,
-          "market_id": "u6dgRuunsn",
-          "platform": "manifold",
-          "question": "Will any brackets remain perfect through the 1st round of March Madness?",
-          "direction": "no",
-          "size": 50.0,
-          "entry_price": 0.52,
-          "estimated_probability": 0.14999999999999997,
-          "edge": 0.33,
-          "kelly_fraction": 0.0516,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:30:36.647096",
-          "resolved_at": null
-        },
-        {
-          "id": 3,
-          "market_id": "NIhOcZOQZE",
-          "platform": "manifold",
-          "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
-          "direction": "yes",
-          "size": 23.43,
-          "entry_price": 0.11113020180278499,
-          "estimated_probability": 0.250030201802785,
-          "edge": 0.1389,
-          "kelly_fraction": 0.0234,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:15:33.629709",
-          "resolved_at": null
-        },
-        {
-          "id": 2,
-          "market_id": "m7scZNu2LwMHTfnhW0IV",
-          "platform": "manifold",
-          "question": "Will Slay the Spire 2 get overwhelmingly positive reviews on Steam?",
-          "direction": "no",
-          "size": 25.76,
-          "entry_price": 0.009999999999999898,
-          "estimated_probability": 0.8200000000000001,
-          "edge": 0.17,
-          "kelly_fraction": 0.0258,
-          "status": "resolved",
-          "exit_price": 1.0,
-          "pnl": -25.76,
-          "created_at": "2026-03-19T20:10:26.380517",
-          "resolved_at": "2026-03-19T20:49:37.425833"
-        },
-        {
-          "id": 1,
-          "market_id": "ZctCIAhQsu",
-          "platform": "manifold",
-          "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-          "direction": "yes",
-          "size": 14.09,
-          "entry_price": 0.17225253829250442,
-          "estimated_probability": 0.2499525382925044,
-          "edge": 0.0777,
-          "kelly_fraction": 0.0141,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
-          "created_at": "2026-03-19T20:06:46.300933",
-          "resolved_at": null
-        }
-      ]
-    }
-  ],
   "trades": [
+    {
+      "id": 29,
+      "market_id": "U66RQ9sERU",
+      "platform": "manifold",
+      "question": "Will Trump apologize for bombing Iranian school?",
+      "direction": "yes",
+      "size": 13.27,
+      "entry_price": 0.020000000000000018,
+      "estimated_probability": 0.15000000000000002,
+      "edge": 0.13,
+      "kelly_fraction": 0.0133,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T22:19:12.515952",
+      "resolved_at": null
+    },
+    {
+      "id": 28,
+      "market_id": "9RNqh5yzqR",
+      "platform": "manifold",
+      "question": "Will Purdue be in the Final Four of March Madness?",
+      "direction": "no",
+      "size": 30.0,
+      "entry_price": 0.2087730282863229,
+      "estimated_probability": 0.11997302828632293,
+      "edge": 0.0888,
+      "kelly_fraction": 0.0425,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T22:18:39.340102",
+      "resolved_at": null
+    },
+    {
+      "id": 27,
+      "market_id": "quOPttCzRE",
+      "platform": "manifold",
+      "question": "Will Google announce a new quantum-related milestone within the next 60 days?",
+      "direction": "yes",
+      "size": 17.4,
+      "entry_price": 0.09206053226860247,
+      "estimated_probability": 0.2499605322686025,
+      "edge": 0.1579,
+      "kelly_fraction": 0.0174,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T22:17:52.058413",
+      "resolved_at": null
+    },
+    {
+      "id": 26,
+      "market_id": "NZS5REspAs",
+      "platform": "manifold",
+      "question": "US escorts commercial ship through Hormuz by March 31? [Polymarket]",
+      "direction": "yes",
+      "size": 16.14,
+      "entry_price": 0.2248936098788924,
+      "estimated_probability": 0.3499936098788924,
+      "edge": 0.1251,
+      "kelly_fraction": 0.0161,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T22:16:51.160930",
+      "resolved_at": null
+    },
+    {
+      "id": 25,
+      "market_id": "nQQU9OOlIO",
+      "platform": "manifold",
+      "question": "New Iranian Supreme Leader is chosen in March 2026 and killed in March 2026.",
+      "direction": "no",
+      "size": 30.0,
+      "entry_price": 0.14402482873771796,
+      "estimated_probability": 0.08002482873771793,
+      "edge": 0.064,
+      "kelly_fraction": 0.0445,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T22:15:38.619656",
+      "resolved_at": null
+    },
     {
       "id": 24,
       "market_id": "uZE6NZ6yl8",
@@ -1179,6 +861,116 @@
   ],
   "estimates": [
     {
+      "id": 64,
+      "market_id": "U66RQ9sERU",
+      "probability": 0.15,
+      "confidence": 0.4,
+      "reasoning": "Starting with a base rate of ~5% for presidential apologies on military actions, which are historically very rare. However, several factors adjust this upward: (1) The target was a school with 160+ children killed, creating maximum moral pressure, (2) 'Mounting evidence' of U.S. responsibility despite Trump's denials, (3) A Senator has already apologized on America's behalf, showing political cracks, (4) Trump said he would 'accept investigation results' which could bind him if they show clear U.S. fault. However, major factors work against an apology: Trump's well-documented pattern of rarely apologizing, his current stance of active denial and deflection to Iran, and the short 21-day timeframe. The adjustment to 15% reflects that while an apology remains unlikely given Trump's personality and current denials, the severity of civilian casualties (especially children) and reported mounting evidence create more pressure than typical military incidents. Confidence is moderate-low due to significant information gaps about evidence strength, investigation results, and what exactly would constitute an 'apology.'",
+      "key_uncertainties": "[\"Definition of what constitutes an 'apology' vs expressions of regret\", \"Strength and conclusiveness of evidence showing U.S. responsibility\", \"Level of domestic political pressure and public opinion\", \"Results of ongoing investigations that Trump said he would accept\", \"Whether definitive proof emerges forcing Trump's hand\", \"International diplomatic pressure and consequences\"]",
+      "base_rate": 0.05,
+      "created_at": "2026-03-19T22:19:12.275806"
+    },
+    {
+      "id": 63,
+      "market_id": "0RlldUN66A",
+      "probability": 0.15,
+      "confidence": 0.4,
+      "reasoning": "Starting with a base rate of ~30% for US-led regime changes based on mixed historical results (Iraq 2003 succeeded, Syria/Venezuela failed, Iran has resisted since 1979). However, several factors push this significantly lower: (1) US intelligence explicitly assessed regime change as 'unlikely' as of March 17, 2026, (2) IRGC reportedly maintains power despite ongoing conflict, (3) Iran has proven highly resistant to regime change for 45+ years, and (4) the extremely short 5-day window remaining makes complete regime transformation improbable even if military progress accelerates. The active conflict does create some upside possibility, but the evidence suggests this may be a limited military operation rather than a comprehensive regime change campaign. The ambiguous resolution criteria add uncertainty, but even under looser definitions of regime change, the timeframe and intelligence assessments point toward continuation of current Iranian institutions.",
+      "key_uncertainties": "[\"Definition of 'regime change' - could range from leadership change to complete institutional overthrow\", \"Rapid evolution of military situation in final 5 days before market close\", \"Reliability of anonymous intelligence sources vs named official statements\", \"Actual US war objectives and commitment to regime change vs limited military action\", \"Iranian government's current operational status and leadership continuity\", \"Potential for sudden collapse or negotiated settlement in remaining timeframe\"]",
+      "base_rate": 0.3,
+      "created_at": "2026-03-19T22:18:42.453350"
+    },
+    {
+      "id": 62,
+      "market_id": "9RNqh5yzqR",
+      "probability": 0.12,
+      "confidence": 0.4,
+      "reasoning": "Starting with the base rate of 5.9% (4 out of 68 teams reach the Final Four), I'm adjusting upward based on several positive factors. Purdue's Big Ten Tournament championship shows they can win when it matters, and multiple analysts are optimistic about their chances. However, their mixed regular season finish (4-2 in last 6) suggests some inconsistency. The most critical missing piece is their tournament seeding - a #1-3 seed might have 20-30% Final Four odds while a #7-10 seed might have only 3-8%. Given the positive momentum and expert sentiment, I'm roughly doubling the base rate to 12%, but my confidence is low due to the significant information gaps, particularly around seeding and bracket positioning.",
+      "key_uncertainties": "[\"Purdue's actual tournament seeding - higher seeds have dramatically better Final Four odds\", \"Specific bracket path and potential matchups in their region\", \"Health and availability of key players beyond Braden Smith\", \"How the mixed regular season finish (4-2 in last 6) affects their actual tournament performance\", \"Strength of competition in the West Region, particularly against #1 seed Arizona\"]",
+      "base_rate": 0.059,
+      "created_at": "2026-03-19T22:18:39.156938"
+    },
+    {
+      "id": 61,
+      "market_id": "ARnqln6pRP",
+      "probability": 0.25,
+      "confidence": 0.2,
+      "reasoning": "Without base rate data for Y Combinator's quantum funding patterns, I'm estimating conservatively. The strong quantum VC interest (\u20ac220M Quantonation fund) suggests sector momentum, but this doesn't guarantee Y Combinator applications or selections. The requirement for exactly 3+ quantum startups in one specific batch is quite specific. Given the complete lack of Y Combinator operational data and the tight timeline, I'm assigning a probability below 50% but not extremely low, acknowledging that quantum sector interest could drive applications. My confidence is very low due to the massive information gaps about Y Combinator's actual operations and quantum startup pipeline.",
+      "key_uncertainties": "[\"Y Combinator's actual batch schedule and timing\", \"Number and quality of quantum startup applications in their pipeline\", \"Y Combinator's historical quantum funding patterns and preferences\", \"Definition and timing of 'next public batch update'\", \"Whether current quantum market momentum translates to Y Combinator applications\", \"Y Combinator's typical batch size and sector distribution\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T22:17:55.144173"
+    },
+    {
+      "id": 60,
+      "market_id": "quOPttCzRE",
+      "probability": 0.25,
+      "confidence": 0.4,
+      "reasoning": "Without a clear base rate for Google quantum announcements, I'm working from limited information. The evidence shows Google has been active in quantum-adjacent areas recently (post-quantum cryptography in late Feb/early March 2026), which suggests ongoing quantum research initiatives. However, these appear to be defensive measures rather than breakthrough milestones. The key challenge is the very short timeframe - with only days remaining until March 21, 2026, the probability of a major announcement is constrained by timing. The ambiguous resolution criteria work both ways: if quantum cryptography advances count as 'milestones,' the recent activity suggests possible continuation; if only quantum computing breakthroughs count, the bar is much higher. Google's historical role as a quantum computing leader (quantum supremacy claims) supports some possibility, but the compressed timeline significantly reduces likelihood. I'm estimating 25% to reflect the recent quantum activity and Google's capabilities, while accounting for the severe time constraint and definitional uncertainty.",
+      "key_uncertainties": "[\"Definition of 'quantum-related milestone' is ambiguous - could include cryptography work or require computing breakthroughs\", \"Only days remaining until March 21, 2026 deadline creates severe time constraint\", \"No historical data on Google's frequency of quantum announcements\", \"Unknown if Google has any scheduled events or conferences in remaining timeframe\", \"Recent Google quantum activity focused on defensive cryptography rather than breakthrough advances\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T22:17:51.844837"
+    },
+    {
+      "id": 59,
+      "market_id": "NZS5REspAs",
+      "probability": 0.35,
+      "confidence": 0.4,
+      "reasoning": "I start with a base rate of ~75% based on historical precedent from the 1987-1988 Tanker War when the US did escort commercial vessels through the Persian Gulf during Iran-Iraq conflict. However, several factors push this significantly lower: (1) US officials explicitly stated they are 'not ready' for escort operations as of March 12, with the Navy refusing daily industry requests; (2) Only 2-3 weeks remain until the March 31 deadline, which may be insufficient time to organize complex naval operations in an active war zone; (3) The US is currently engaged in active war with Iran (not a third-party conflict like 1987-88), which increases operational complexity and risks. Factors supporting YES include Trump's public commitment to escorts 'if necessary,' escalating attacks on 5-6 commercial ships, and growing industry pressure with daily requests for protection. The tight timeline and explicit statements about unreadiness are the strongest factors pulling the estimate down from the historical base rate.",
+      "key_uncertainties": "[\"Whether US naval readiness can improve enough in 2-3 weeks for escort operations\", \"Escalation of Iranian attacks forcing immediate US action despite stated unreadiness\", \"Congressional or political pressure overriding military operational concerns\", \"Definition ambiguity - what constitutes official 'escorting' vs other naval protection\", \"Significant developments in the 2+ weeks between last reports and resolution deadline\"]",
+      "base_rate": 0.75,
+      "created_at": "2026-03-19T22:16:50.926532"
+    },
+    {
+      "id": 58,
+      "market_id": "P2d2C6l22A",
+      "probability": 0.15,
+      "confidence": 0.4,
+      "reasoning": "The complete absence of any information about 'Fooming Shoggoths' in music industry coverage is highly concerning and suggests either: (1) this is a fictional/non-existent artist, or (2) this is an extremely obscure artist with minimal industry presence. While the music industry is active with other artists releasing content in early 2026, the lack of any mention of Fooming Shoggoths despite comprehensive music coverage makes their existence questionable. Without being able to establish if this is even a real artist, I cannot use normal base rates for music releases. The narrow resolution window (April 1, 2026) and unspecified resolution criteria add additional uncertainty. I'm assigning a low probability (0.15) that accounts for the small chance this could be a real but very obscure artist, while heavily weighting the likelihood that this refers to a non-existent entity. My confidence is low given the fundamental uncertainty about the artist's existence.",
+      "key_uncertainties": "[\"Whether 'Fooming Shoggoths' is a real musical artist or fictional entity\", \"What constitutes a 'new song' for resolution purposes\", \"How releases would be verified given no specified resolution source\", \"Artist's current activity status and release patterns\", \"Whether this is an emerging artist not yet covered by mainstream music media\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T22:16:45.057503"
+    },
+    {
+      "id": 57,
+      "market_id": "USqgCAPAz5",
+      "probability": 0.88,
+      "confidence": 0.4,
+      "reasoning": "Given that multiple high-reliability sources (Washington Post, NBC, CNN) confirm an active military conflict between the U.S./Israel and Iran is already underway as of March 2026, I'm using a high base rate of ~85% for 'something significant happening' during active warfare periods within a 30-day window. The evidence strongly suggests ongoing military operations, with mentions of U.S. attacks on Iran, potential ground troop deployments, and CNN having journalists covering the conflict from Iran. In active conflict scenarios, significant developments (escalations, diplomatic moves, major operations, casualties, policy changes) occur frequently. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - 'something happen in Iran' could resolve YES for almost any newsworthy event, or it might require a very specific type of major development that hasn't been defined. The lack of a specified resolution source adds additional uncertainty about how this market would actually be adjudicated.",
+      "key_uncertainties": "[\"Extremely vague resolution criteria - 'something happen' could mean almost anything or require very specific events\", \"No clear resolution source specified for verification\", \"Unclear what event magnitude would trigger YES vs NO\", \"Information is 12+ days old in a rapidly evolving military situation\", \"Active conflict situations can either produce frequent developments or enter stalemate periods\"]",
+      "base_rate": 0.85,
+      "created_at": "2026-03-19T22:16:16.410857"
+    },
+    {
+      "id": 56,
+      "market_id": "lSq6hLPQ20",
+      "probability": 0.35,
+      "confidence": 0.4,
+      "reasoning": "Starting with the base rate of ~6% for any team to reach the Final Four, I'm adjusting significantly upward based on Florida being the defending national champion and currently ranked #4. Defending champions historically have strong programs and experienced players. However, the recent 17-point loss to #22 Vanderbilt is concerning and suggests they may not get a #1 seed, which would hurt their odds. Top seeds (#1-#2) typically have 30-45% Final Four chances, while #3-#4 seeds drop to around 15-25%. Given Florida's elite status but recent vulnerability, I estimate they'll likely be a #2 or #3 seed. The 'risky #1 seed' commentary suggests even if they get a top seed, they're more upset-prone than typical #1s. Balancing their championship pedigree against recent struggles, I estimate about 35% - well above the base rate but reflecting the meaningful downside risk from their recent performance.",
+      "key_uncertainties": "[\"Florida's actual NCAA Tournament seeding - could range from #1 to #3 seed based on recent loss\", \"Tournament bracket positioning and regional strength\", \"Key player injuries or roster changes not mentioned in reports\", \"Team's ability to bounce back from the momentum-killing Vanderbilt loss\", \"Quality of their likely opponents in tournament path\"]",
+      "base_rate": 0.06,
+      "created_at": "2026-03-19T22:16:13.756454"
+    },
+    {
+      "id": 55,
+      "market_id": "nC9pyPCgyc",
+      "probability": 0.25,
+      "confidence": 0.2,
+      "reasoning": "Without any specific data about Volt's presence or performance in Delft, I'm relying on general knowledge that Volt Europa exists as a political movement in the Netherlands. The 4,000 vote threshold represents a significant portion of likely votes cast (6-8%), which typically requires either strong local organization or favorable political conditions. Given the complete absence of relevant data and the substantial nature of the threshold, I'm estimating a relatively low probability while acknowledging extreme uncertainty. The estimate could reasonably range anywhere from 5% to 50% depending on Volt's actual local presence and performance history.",
+      "key_uncertainties": "[\"Complete lack of historical performance data for Volt in Delft\", \"Unknown current organizational strength and candidate quality in Delft\", \"Unclear political climate and competitive landscape for 2026 elections\", \"Uncertain timing of next municipal elections relative to March 2026 deadline\", \"No data on typical vote thresholds needed for meaningful representation\", \"Unknown whether Volt has active local presence or campaign infrastructure\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T22:15:41.260348"
+    },
+    {
+      "id": 54,
+      "market_id": "nQQU9OOlIO",
+      "probability": 0.08,
+      "confidence": 0.6,
+      "reasoning": "The first condition is clearly satisfied - multiple reliable sources confirm Mojtaba Khamenei was chosen as Supreme Leader in March 2026. For the second condition, the base rate is extremely low - only one Supreme Leader has been killed in Iran's 47-year history. However, several factors increase the probability above the base rate: (1) The new leader hasn't appeared publicly since appointment, creating genuine uncertainty about his status; (2) There are conflicting reports between official claims he's 'safe' and speculation about potential disfigurement/health issues; (3) The transition occurred during apparent conflict (his father was reportedly killed by Israeli strike), suggesting a volatile security environment; (4) With 14 days remaining, there's still time for the condition to be met. While Iranian officials deny he's been harmed, the lack of public appearances in a role that typically requires visibility creates meaningful doubt. I estimate 8% probability - significantly above the historical base rate due to these specific circumstances, but still low given the lack of direct evidence of death or serious harm.",
+      "key_uncertainties": "[\"Actual health status of Mojtaba Khamenei - officials claim he's safe but he hasn't appeared publicly\", \"Whether speculation about 'disfigurement' or health issues reflects actual incapacitation or death\", \"Potential for assassination attempts or health complications in remaining 14 days\", \"Definition of 'killed' in resolution criteria - could include natural death or other causes\", \"Reliability of Iranian official statements about the leader's wellbeing\"]",
+      "base_rate": 0.02,
+      "created_at": "2026-03-19T22:15:38.366900"
+    },
+    {
       "id": 53,
       "market_id": "uZE6NZ6yl8",
       "probability": 0.15,
@@ -1567,119 +1359,213 @@
       "key_uncertainties": "[\"Definition of what constitutes 'government falls' - unclear resolution criteria\", \"Supreme Leader Khamenei's health and potential succession crisis\", \"Scale and persistence of future protest movements\", \"Loyalty of military and security forces during major unrest\", \"Economic collapse threshold that could trigger regime instability\", \"Regional war escalation that could destabilize the government\", \"International sanctions relief or tightening effects\"]",
       "base_rate": 0.05,
       "created_at": "2026-03-19T18:19:34.042211"
-    },
-    {
-      "id": 14,
-      "market_id": "UCZNd6RdnR",
-      "probability": 0.15,
-      "confidence": 0.4,
-      "reasoning": "I cannot identify a meaningful base rate since 'adult mode' for AI assistants is poorly defined and unprecedented. OpenAI has consistently prioritized safety and broad accessibility, making explicit adult-oriented features seem unlikely given their brand positioning and corporate philosophy. However, they have shown some flexibility with content policies for creative use cases. The 16-month timeframe provides reasonable opportunity for policy evolution, especially if competitive pressure increases from less restricted models. The biggest challenge is the undefined resolution criteria - even minor relaxations of content filtering could potentially qualify, but OpenAI is more likely to make incremental safety adjustments rather than launch an explicitly branded 'adult mode.' The lack of clear definition creates both upside and downside uncertainty, but OpenAI's historical conservatism suggests they would avoid controversial explicit branding even if they do relax some restrictions.",
-      "key_uncertainties": "[\"Undefined resolution criteria - what exactly constitutes 'adult mode'\", \"OpenAI's internal roadmap and strategic priorities unknown\", \"Potential regulatory changes affecting AI content policies\", \"Competitive pressure from less restricted AI models\", \"Brand risk tolerance and stakeholder preferences\", \"Technical implementation challenges and safety concerns\"]",
-      "base_rate": null,
-      "created_at": "2026-03-19T18:19:11.084624"
-    },
-    {
-      "id": 13,
-      "market_id": "USqgCAPAz5",
-      "probability": 0.99,
-      "confidence": 0.9,
-      "reasoning": "This question is so broadly defined that it's almost impossible for it to resolve NO. Iran is an active nation of 85+ million people with ongoing government functions, economic activity, social events, weather patterns, and international relations. On any given day, numerous events occur - from routine administrative decisions to news-worthy developments. The base rate for 'something happening' in any country over a month-long period is essentially 100%. Even if we interpret 'something' to mean only notable or reported events, Iran regularly appears in international news due to its geopolitical significance. The only scenarios where this could resolve NO would involve either: (1) an impossibly restrictive interpretation by the resolution source, (2) complete information isolation, or (3) some catastrophic event preventing all activity. Given the extreme vagueness favors a YES resolution and the practical certainty that events occur daily in Iran, the probability is very high.",
-      "key_uncertainties": "[\"Interpretation of what constitutes 'something happening' by resolution source\", \"Possibility of complete information blackout from Iran\", \"Technical issues preventing any news or information from emerging\", \"Extreme edge case where literally nothing gets reported or documented\"]",
-      "base_rate": 1.0,
-      "created_at": "2026-03-19T18:18:49.891896"
-    },
-    {
-      "id": 12,
-      "market_id": "yShRpp25pR",
-      "probability": 0.32,
-      "confidence": 0.4,
-      "reasoning": "Looking at historical WTI crude oil prices, $95/barrel represents a relatively high price point that has been exceeded during periods of significant supply disruption or strong demand (like 2008, 2011-2014, and briefly in 2022). As a rough base rate, oil has traded above $95 perhaps 25% of the time in the past two decades. However, several factors suggest this could be higher by March 2026: ongoing geopolitical tensions, potential OPEC+ supply management, possible economic recovery driving demand, and the long timeframe allowing for various shock events. Conversely, the energy transition, potential US shale growth, and recession risks could suppress prices. The 15+ month timeframe increases uncertainty significantly, as oil markets are notoriously volatile and subject to unpredictable geopolitical and economic shocks. Without current market context, I'm moderately adjusting upward from the base rate due to the extended timeframe allowing for supply disruptions or demand surges, but maintaining significant uncertainty given oil's historical volatility.",
-      "key_uncertainties": "[\"Geopolitical tensions and potential conflicts in major oil-producing regions\", \"OPEC+ production decisions and compliance with quotas\", \"Global economic growth trajectory and recession risks\", \"US shale production capacity and growth rates\", \"Pace of energy transition and EV adoption\", \"Potential supply disruptions from weather or infrastructure issues\", \"Currency fluctuations, especially USD strength\", \"China's economic recovery and oil demand patterns\"]",
-      "base_rate": 0.25,
-      "created_at": "2026-03-19T18:18:26.470491"
-    },
-    {
-      "id": 11,
-      "market_id": "EcOt6EU68N",
-      "probability": 0.5,
-      "confidence": 0.3,
-      "reasoning": "Given the complete lack of specificity in the question, I must fall back on the most basic probability principle for coin flips. If this is asking about any binary outcome from a fair coin flip (heads vs tails), the theoretical base rate is 50%. However, my confidence is very low because the question could be asking about any number of different scenarios - a specific outcome on a single daily flip, multiple flips meeting certain criteria, or cumulative results over time. Without knowing the resolution criteria, the only rational approach is to assume equal probability for whatever binary outcome is being predicted, while acknowledging extreme uncertainty about what that outcome actually is.",
-      "key_uncertainties": "[\"Unknown what specific outcome constitutes YES resolution\", \"Unclear whether this involves single flip or multiple daily flips\", \"No information about coin fairness or flipping methodology\", \"Unknown resolution criteria and verification process\", \"Ambiguous meaning of 'daily' component\", \"No specified time period or success conditions\"]",
-      "base_rate": 0.5,
-      "created_at": "2026-03-19T18:17:34.191829"
-    },
-    {
-      "id": 10,
-      "market_id": "ZctCIAhQsu",
-      "probability": 0.08,
-      "confidence": 0.6,
-      "reasoning": "Starting with a low base rate (~2%) given that Iran has never shot down a US military aircraft with crew, despite decades of tensions. The 2019 incident involved an unmanned drone, which is significantly different from attacking manned aircraft. However, several factors warrant adjusting upward: (1) Iran operates in the same airspace/waters as US forces regularly, creating opportunities for confrontation; (2) Iranian Revolutionary Guard has shown willingness to engage US assets directly in some cases; (3) The 15-month timeframe is relatively long, increasing chances of an incident; (4) Regional tensions remain high with multiple proxy conflicts. Key mitigating factors: Iran generally prefers asymmetric/proxy warfare over direct confrontation that could trigger major US retaliation, and shooting down a manned US aircraft would represent an enormous escalation risk. The adjusted estimate of 8% reflects these competing dynamics while acknowledging this would still be a rare, high-stakes event that Iran would likely seek to avoid.",
-      "key_uncertainties": "[\"Current diplomatic status between US and Iran\", \"Level of US military operations in Persian Gulf region\", \"Iranian domestic political pressures and leadership decisions\", \"Potential for accidental engagement or mistaken identity\", \"Escalation from other regional conflicts involving Iranian proxies\", \"Changes in Iranian military doctrine or risk tolerance\"]",
-      "base_rate": 0.02,
-      "created_at": "2026-03-19T18:17:18.660681"
-    },
-    {
-      "id": 9,
-      "market_id": "s6AyzCILzL",
-      "probability": 0.88,
-      "confidence": 0.6,
-      "reasoning": "Starting with a base rate of ~92% for healthy 75-year-olds surviving 16 months, I adjust slightly downward to 88% considering the additional risks specific to Netanyahu's situation. While he's currently active and in a role requiring public appearances, several factors create uncertainty: his age (75) carries inherent health risks, Israel's security environment could limit public appearances, and political volatility could affect his position. However, the question sets a very low bar - just one verifiable live public appearance over 16 months. Even if health or political issues arise, a single brief appearance is highly likely unless there's severe incapacitation or death. The timeframe is relatively short, and Netanyahu has strong incentives to maintain public visibility as a political leader.",
-      "key_uncertainties": "[\"Netanyahu's specific current health status and any undisclosed medical conditions\", \"Definition of 'verifiable' public appearance - what sources count as verification\", \"Potential security threats or political instability that could limit public appearances\", \"Health risks that could emerge over the 16-month timeframe for a 75-year-old\", \"Political changes that might remove him from office or reduce public engagement\"]",
-      "base_rate": 0.92,
-      "created_at": "2026-03-19T18:16:57.211677"
-    },
-    {
-      "id": 8,
-      "market_id": "pulqzqzCnA",
-      "probability": 0.78,
-      "confidence": 0.4,
-      "reasoning": "I'm estimating a base rate of 85% based on the research indicating NSF typically releases MSPRF offers in late February to early March, which would meet the March 24 deadline. However, I'm adjusting down to 78% due to several uncertainties: the definition of 'offer letters' could be ambiguous (initial notifications vs. formal offers), the specific March 24 date interpretation is unclear, and there's always risk of administrative delays, budget issues, or operational changes over a 2+ year timeframe. The confidence is relatively low (0.4) because we lack specific historical dates and there are many variables that could affect the 2026-2027 cycle timeline that we can't predict from current information.",
-      "key_uncertainties": "[\"Exact historical dates of past MSPRF offer letter releases\", \"Definition of 'offer letters' versus other NSF communications\", \"Whether March 24 refers to send date, receipt date, or online availability\", \"Potential changes to NSF procedures or staffing for 2026-2027 cycle\", \"Impact of application volume growth on processing timeline\", \"Risk of government shutdowns or budget delays affecting timeline\", \"Whether NSF has announced any timeline changes for this specific cycle\"]",
-      "base_rate": 0.85,
-      "created_at": "2026-03-19T18:10:50.677591"
-    },
-    {
-      "id": 7,
-      "market_id": "C96pyn9Z5Z",
-      "probability": 0.12,
-      "confidence": 0.4,
-      "reasoning": "Starting with a base rate around 15% for authoritarian regime collapse over a ~16-month period based on historical precedent. The Iranian regime has shown remarkable durability over 45+ years, surviving major wars, economic crises, and protest movements. The multi-layered power structure with Supreme Leader, security apparatus, and patronage networks provides institutional resilience. However, adjusting slightly downward to 12% because: (1) The regime successfully weathered the 2022 protests without fundamental threat to survival, (2) The Revolutionary Guard and security forces have remained loyal through previous crises, (3) The economic sanctions, while damaging, haven't reached a tipping point for regime-threatening unrest. Key risk factors include Khamenei's age/health potentially triggering succession instability, economic collapse, or unprecedented scale of protests. The ambiguous resolution criteria add significant uncertainty - a leadership change might be more likely than full regime collapse.",
-      "key_uncertainties": "[\"Definition of 'government falls' - unclear if this means regime change, leadership transition, or constitutional change\", \"Supreme Leader Khamenei's health status and potential succession crisis\", \"Scale and persistence of future protest movements\", \"Economic tipping point from sanctions that could trigger mass unrest\", \"Unity within security forces and Revolutionary Guard\", \"Potential external shocks or regional conflicts affecting stability\", \"Internal factional disputes escalating to destabilizing levels\"]",
-      "base_rate": 0.15,
-      "created_at": "2026-03-19T18:10:31.241440"
-    },
-    {
-      "id": 6,
-      "market_id": "UCZNd6RdnR",
-      "probability": 0.25,
-      "confidence": 0.4,
-      "reasoning": "I cannot identify a clear base rate for AI companies launching 'adult modes' as this is a relatively new concept. The evidence suggests several competing forces: OpenAI has consistently emphasized safety and responsible AI development, which argues against such a feature. However, commercial pressures and user demand could push in the opposite direction. The 15-month timeframe (to April 2026) provides reasonable time for product development if OpenAI chose to pursue this. The biggest challenge is the ambiguous definition of 'adult mode' - this could range from minor content policy adjustments to significant changes in restrictions. Given OpenAI's conservative approach to content policies, regulatory scrutiny, and emphasis on enterprise customers who likely prefer stricter controls, I estimate a 25% probability. My confidence is moderate-low due to the definitional ambiguity and lack of visibility into OpenAI's internal plans.",
-      "key_uncertainties": "[\"Ambiguous definition of what constitutes 'adult mode'\", \"OpenAI's internal roadmap and priorities are unknown\", \"Regulatory environment could significantly constrain content policy changes\", \"Resolution criteria unclear - announcement vs. actual launch\", \"Commercial pressures from competitors may or may not materialize\", \"Reputational risks of relaxing content restrictions are hard to quantify\"]",
-      "base_rate": null,
-      "created_at": "2026-03-19T18:10:08.871092"
-    },
-    {
-      "id": 5,
-      "market_id": "USqgCAPAz5",
-      "probability": 0.99,
-      "confidence": 0.8,
-      "reasoning": "While the question suffers from extreme vagueness in its resolution criteria, the phrase 'something happen in Iran' is so broad that it would be virtually impossible for absolutely nothing to occur in any given month in a country of 85+ million people. Even with the most restrictive interpretation, routine government activities, economic transactions, social events, weather patterns, or news-worthy incidents occur daily in any functioning nation-state. The fundamental issue isn't whether something will happen (it almost certainly will), but rather how 'something' will be defined for resolution purposes. Given the inherent ambiguity, a resolver would likely interpret this broadly, making a YES outcome highly probable. The high confidence reflects the near-certainty that some event will occur, despite uncertainty about resolution criteria.",
-      "key_uncertainties": "[\"What specific definition of 'something' will be used for resolution\", \"Which month is being referenced given the 2026 close date\", \"Who will serve as the arbiter of whether 'something' happened\", \"Whether routine daily events qualify or if only significant events count\", \"The resolution methodology and verification process\"]",
-      "base_rate": null,
-      "created_at": "2026-03-19T18:09:48.277386"
-    },
-    {
-      "id": 4,
-      "market_id": "u6dgRuunsn",
-      "probability": 0.12,
-      "confidence": 0.4,
-      "reasoning": "I'm estimating a base rate around 15% based on the general understanding that while March Madness is unpredictable, the first round typically sees some level of chalk (higher seeds winning). However, I'm adjusting downward to 12% because: (1) The sheer volume of games in the first round (32 games) creates many opportunities for upsets, and even one upset can eliminate many brackets, (2) Modern college basketball has significant parity, making upsets more common, (3) The popularity of bracket contests means millions of brackets are submitted, but most casual participants make poor predictions, so the few that survive tend to be either very lucky or from knowledgeable participants. My confidence is low (0.4) due to the significant information gaps about which platforms count, the definition of 'first round,' and the inherent unpredictability of the tournament. Historical data would be crucial here but isn't specified in the research.",
-      "key_uncertainties": "[\"Definition of which bracket platforms are included in the count\", \"Total number of brackets submitted across all platforms\", \"Specific number and severity of first-round upsets in 2026\", \"Whether play-in games count as part of the first round\", \"Tournament field strength and parity in 2026\", \"Exact tournament format and scheduling\"]",
-      "base_rate": 0.15,
-      "created_at": "2026-03-19T18:09:31.575887"
     }
   ],
   "markets": [
+    {
+      "id": 170,
+      "platform": "manifold",
+      "market_id": "U66RQ9sERU",
+      "question": "Will Trump apologize for bombing Iranian school?",
+      "current_yes_price": 0.020000000000000018,
+      "current_no_price": 0.98,
+      "volume": 51.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T15:14:00+00:00",
+      "category": "politics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:18:39.344291",
+      "est_prob": 0.15,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate of ~5% for presidential apologies on military actions, which are historically very rare. However, several factors adjust this upward: (1) The target was a school with 160+ children killed, creating maximum moral pressure, (2) 'Mounting evidence' of U.S. responsibility despite Trump's denials, (3) A Senator has already apologized on America's behalf, showing political cracks, (4) Trump said he would 'accept investigation results' which could bind him if they show clear U.S. fault. However, major factors work against an apology: Trump's well-documented pattern of rarely apologizing, his current stance of active denial and deflection to Iran, and the short 21-day timeframe. The adjustment to 15% reflects that while an apology remains unlikely given Trump's personality and current denials, the severity of civilian casualties (especially children) and reported mounting evidence create more pressure than typical military incidents. Confidence is moderate-low due to significant information gaps about evidence strength, investigation results, and what exactly would constitute an 'apology.'"
+    },
+    {
+      "id": 169,
+      "platform": "manifold",
+      "market_id": "0RlldUN66A",
+      "question": "Will USA change Iran regime",
+      "current_yes_price": 0.22776321837740116,
+      "current_no_price": 0.7722367816225988,
+      "volume": 61.0,
+      "liquidity": 1300.0,
+      "close_date": "2026-03-24T22:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:17:55.147871",
+      "est_prob": 0.15,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate of ~30% for US-led regime changes based on mixed historical results (Iraq 2003 succeeded, Syria/Venezuela failed, Iran has resisted since 1979). However, several factors push this significantly lower: (1) US intelligence explicitly assessed regime change as 'unlikely' as of March 17, 2026, (2) IRGC reportedly maintains power despite ongoing conflict, (3) Iran has proven highly resistant to regime change for 45+ years, and (4) the extremely short 5-day window remaining makes complete regime transformation improbable even if military progress accelerates. The active conflict does create some upside possibility, but the evidence suggests this may be a limited military operation rather than a comprehensive regime change campaign. The ambiguous resolution criteria add uncertainty, but even under looser definitions of regime change, the timeframe and intelligence assessments point toward continuation of current Iranian institutions."
+    },
+    {
+      "id": 168,
+      "platform": "manifold",
+      "market_id": "9RNqh5yzqR",
+      "question": "Will Purdue be in the Final Four of March Madness?",
+      "current_yes_price": 0.2087730282863229,
+      "current_no_price": 0.7912269717136771,
+      "volume": 123.69967557766087,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-04T23:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:17:52.062326",
+      "est_prob": 0.12,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with the base rate of 5.9% (4 out of 68 teams reach the Final Four), I'm adjusting upward based on several positive factors. Purdue's Big Ten Tournament championship shows they can win when it matters, and multiple analysts are optimistic about their chances. However, their mixed regular season finish (4-2 in last 6) suggests some inconsistency. The most critical missing piece is their tournament seeding - a #1-3 seed might have 20-30% Final Four odds while a #7-10 seed might have only 3-8%. Given the positive momentum and expert sentiment, I'm roughly doubling the base rate to 12%, but my confidence is low due to the significant information gaps, particularly around seeding and bracket positioning."
+    },
+    {
+      "id": 167,
+      "platform": "manifold",
+      "market_id": "ARnqln6pRP",
+      "question": "Will Y Combinator fund 3 or more quantum-related startups in its next public batch update within the next 2 months?",
+      "current_yes_price": 0.17931225839386547,
+      "current_no_price": 0.8206877416061346,
+      "volume": 146.17906001644067,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-20T21:49:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:17:05.579378",
+      "est_prob": 0.25,
+      "est_conf": 0.2,
+      "est_reasoning": "Without base rate data for Y Combinator's quantum funding patterns, I'm estimating conservatively. The strong quantum VC interest (\u20ac220M Quantonation fund) suggests sector momentum, but this doesn't guarantee Y Combinator applications or selections. The requirement for exactly 3+ quantum startups in one specific batch is quite specific. Given the complete lack of Y Combinator operational data and the tight timeline, I'm assigning a probability below 50% but not extremely low, acknowledging that quantum sector interest could drive applications. My confidence is very low due to the massive information gaps about Y Combinator's actual operations and quantum startup pipeline."
+    },
+    {
+      "id": 166,
+      "platform": "manifold",
+      "market_id": "quOPttCzRE",
+      "question": "Will Google announce a new quantum-related milestone within the next 60 days?",
+      "current_yes_price": 0.09206053226860247,
+      "current_no_price": 0.9079394677313976,
+      "volume": 157.89485129747538,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T21:31:00+00:00",
+      "category": "tech",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:16:51.165455",
+      "est_prob": 0.25,
+      "est_conf": 0.4,
+      "est_reasoning": "Without a clear base rate for Google quantum announcements, I'm working from limited information. The evidence shows Google has been active in quantum-adjacent areas recently (post-quantum cryptography in late Feb/early March 2026), which suggests ongoing quantum research initiatives. However, these appear to be defensive measures rather than breakthrough milestones. The key challenge is the very short timeframe - with only days remaining until March 21, 2026, the probability of a major announcement is constrained by timing. The ambiguous resolution criteria work both ways: if quantum cryptography advances count as 'milestones,' the recent activity suggests possible continuation; if only quantum computing breakthroughs count, the bar is much higher. Google's historical role as a quantum computing leader (quantum supremacy claims) supports some possibility, but the compressed timeline significantly reduces likelihood. I'm estimating 25% to reflect the recent quantum activity and Google's capabilities, while accounting for the severe time constraint and definitional uncertainty."
+    },
+    {
+      "id": 165,
+      "platform": "manifold",
+      "market_id": "n62UyALzPc",
+      "question": "Will Africa be a global power house in the nest few months",
+      "current_yes_price": 0.1082591836079361,
+      "current_no_price": 0.8917408163920639,
+      "volume": 180.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T16:19:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:16:45.060692",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 164,
+      "platform": "manifold",
+      "market_id": "P2d2C6l22A",
+      "question": "new Fooming Shoggoths song by April 1st 2026?",
+      "current_yes_price": 0.1494689864352512,
+      "current_no_price": 0.8505310135647488,
+      "volume": 251.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-28T00:59:00+00:00",
+      "category": "entertainment",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:16:16.414809",
+      "est_prob": 0.15,
+      "est_conf": 0.4,
+      "est_reasoning": "The complete absence of any information about 'Fooming Shoggoths' in music industry coverage is highly concerning and suggests either: (1) this is a fictional/non-existent artist, or (2) this is an extremely obscure artist with minimal industry presence. While the music industry is active with other artists releasing content in early 2026, the lack of any mention of Fooming Shoggoths despite comprehensive music coverage makes their existence questionable. Without being able to establish if this is even a real artist, I cannot use normal base rates for music releases. The narrow resolution window (April 1, 2026) and unspecified resolution criteria add additional uncertainty. I'm assigning a low probability (0.15) that accounts for the small chance this could be a real but very obscure artist, while heavily weighting the likelihood that this refers to a non-existent entity. My confidence is low given the fundamental uncertainty about the artist's existence."
+    },
+    {
+      "id": 163,
+      "platform": "manifold",
+      "market_id": "NZS5REspAs",
+      "question": "US escorts commercial ship through Hormuz by March 31? [Polymarket]",
+      "current_yes_price": 0.2248936098788924,
+      "current_no_price": 0.7751063901211076,
+      "volume": 269.06575356123597,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:16:13.759651",
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "I start with a base rate of ~75% based on historical precedent from the 1987-1988 Tanker War when the US did escort commercial vessels through the Persian Gulf during Iran-Iraq conflict. However, several factors push this significantly lower: (1) US officials explicitly stated they are 'not ready' for escort operations as of March 12, with the Navy refusing daily industry requests; (2) Only 2-3 weeks remain until the March 31 deadline, which may be insufficient time to organize complex naval operations in an active war zone; (3) The US is currently engaged in active war with Iran (not a third-party conflict like 1987-88), which increases operational complexity and risks. Factors supporting YES include Trump's public commitment to escorts 'if necessary,' escalating attacks on 5-6 commercial ships, and growing industry pressure with daily requests for protection. The tight timeline and explicit statements about unreadiness are the strongest factors pulling the estimate down from the historical base rate."
+    },
+    {
+      "id": 162,
+      "platform": "manifold",
+      "market_id": "USqgCAPAz5",
+      "question": "Will something happen in Iran this month?",
+      "current_yes_price": 0.26345560219960273,
+      "current_no_price": 0.7365443978003973,
+      "volume": 371.06743082926533,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:15:41.263814",
+      "est_prob": 0.88,
+      "est_conf": 0.4,
+      "est_reasoning": "Given that multiple high-reliability sources (Washington Post, NBC, CNN) confirm an active military conflict between the U.S./Israel and Iran is already underway as of March 2026, I'm using a high base rate of ~85% for 'something significant happening' during active warfare periods within a 30-day window. The evidence strongly suggests ongoing military operations, with mentions of U.S. attacks on Iran, potential ground troop deployments, and CNN having journalists covering the conflict from Iran. In active conflict scenarios, significant developments (escalations, diplomatic moves, major operations, casualties, policy changes) occur frequently. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - 'something happen in Iran' could resolve YES for almost any newsworthy event, or it might require a very specific type of major development that hasn't been defined. The lack of a specified resolution source adds additional uncertainty about how this market would actually be adjudicated."
+    },
+    {
+      "id": 161,
+      "platform": "manifold",
+      "market_id": "lSq6hLPQ20",
+      "question": "Florida Gators reach Final Four in 2026?",
+      "current_yes_price": 0.33601274428226224,
+      "current_no_price": 0.6639872557177378,
+      "volume": 394.6729959749524,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-06T22:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:15:38.623926",
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with the base rate of ~6% for any team to reach the Final Four, I'm adjusting significantly upward based on Florida being the defending national champion and currently ranked #4. Defending champions historically have strong programs and experienced players. However, the recent 17-point loss to #22 Vanderbilt is concerning and suggests they may not get a #1 seed, which would hurt their odds. Top seeds (#1-#2) typically have 30-45% Final Four chances, while #3-#4 seeds drop to around 15-25%. Given Florida's elite status but recent vulnerability, I estimate they'll likely be a #2 or #3 seed. The 'risky #1 seed' commentary suggests even if they get a top seed, they're more upset-prone than typical #1s. Balancing their championship pedigree against recent struggles, I estimate about 35% - well above the base rate but reflecting the meaningful downside risk from their recent performance."
+    },
+    {
+      "id": 160,
+      "platform": "manifold",
+      "market_id": "nQQU9OOlIO",
+      "question": "New Iranian Supreme Leader is chosen in March 2026 and killed in March 2026.",
+      "current_yes_price": 0.14402482873771796,
+      "current_no_price": 0.8559751712622821,
+      "volume": 531.4360722818649,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:15:07.326486",
+      "est_prob": 0.08,
+      "est_conf": 0.6,
+      "est_reasoning": "The first condition is clearly satisfied - multiple reliable sources confirm Mojtaba Khamenei was chosen as Supreme Leader in March 2026. For the second condition, the base rate is extremely low - only one Supreme Leader has been killed in Iran's 47-year history. However, several factors increase the probability above the base rate: (1) The new leader hasn't appeared publicly since appointment, creating genuine uncertainty about his status; (2) There are conflicting reports between official claims he's 'safe' and speculation about potential disfigurement/health issues; (3) The transition occurred during apparent conflict (his father was reportedly killed by Israeli strike), suggesting a volatile security environment; (4) With 14 days remaining, there's still time for the condition to be met. While Iranian officials deny he's been harmed, the lack of public appearances in a role that typically requires visibility creates meaningful doubt. I estimate 8% probability - significantly above the historical base rate due to these specific circumstances, but still low given the lack of direct evidence of death or serious harm."
+    },
+    {
+      "id": 159,
+      "platform": "manifold",
+      "market_id": "nC9pyPCgyc",
+      "question": "Volt exceeds 4,000 votes in next Delft municipal elections.",
+      "current_yes_price": 0.018243181844988375,
+      "current_no_price": 0.9817568181550116,
+      "volume": 5501.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T22:59:00+00:00",
+      "category": "politics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:15:04.143622",
+      "est_prob": 0.25,
+      "est_conf": 0.2,
+      "est_reasoning": "Without any specific data about Volt's presence or performance in Delft, I'm relying on general knowledge that Volt Europa exists as a political movement in the Netherlands. The 4,000 vote threshold represents a significant portion of likely votes cast (6-8%), which typically requires either strong local organization or favorable political conditions. Given the complete absence of relevant data and the substantial nature of the threshold, I'm estimating a relatively low probability while acknowledging extreme uncertainty. The estimate could reasonably range anywhere from 5% to 50% depending on Volt's actual local presence and performance history."
+    },
     {
       "id": 158,
       "platform": "manifold",
@@ -2118,9 +2004,9 @@
       "category": "sports",
       "resolution_source": "",
       "scanned_at": "2026-03-19T21:15:34.058922",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.12,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with the base rate of 5.9% (4 out of 68 teams reach the Final Four), I'm adjusting upward based on several positive factors. Purdue's Big Ten Tournament championship shows they can win when it matters, and multiple analysts are optimistic about their chances. However, their mixed regular season finish (4-2 in last 6) suggests some inconsistency. The most critical missing piece is their tournament seeding - a #1-3 seed might have 20-30% Final Four odds while a #7-10 seed might have only 3-8%. Given the positive momentum and expert sentiment, I'm roughly doubling the base rate to 12%, but my confidence is low due to the significant information gaps, particularly around seeding and bracket positioning."
     },
     {
       "id": 132,
@@ -2135,9 +2021,9 @@
       "category": "geopolitics",
       "resolution_source": "",
       "scanned_at": "2026-03-19T21:15:30.969621",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.15,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate of ~30% for US-led regime changes based on mixed historical results (Iraq 2003 succeeded, Syria/Venezuela failed, Iran has resisted since 1979). However, several factors push this significantly lower: (1) US intelligence explicitly assessed regime change as 'unlikely' as of March 17, 2026, (2) IRGC reportedly maintains power despite ongoing conflict, (3) Iran has proven highly resistant to regime change for 45+ years, and (4) the extremely short 5-day window remaining makes complete regime transformation improbable even if military progress accelerates. The active conflict does create some upside possibility, but the evidence suggests this may be a limited military operation rather than a comprehensive regime change campaign. The ambiguous resolution criteria add uncertainty, but even under looser definitions of regime change, the timeframe and intelligence assessments point toward continuation of current Iranian institutions."
     },
     {
       "id": 131,
@@ -2152,9 +2038,9 @@
       "category": "geopolitics",
       "resolution_source": "",
       "scanned_at": "2026-03-19T21:15:28.035098",
-      "est_prob": 0.99,
-      "est_conf": 0.9,
-      "est_reasoning": "This question is so broadly defined that it's almost impossible for it to resolve NO. Iran is an active nation of 85+ million people with ongoing government functions, economic activity, social events, weather patterns, and international relations. On any given day, numerous events occur - from routine administrative decisions to news-worthy developments. The base rate for 'something happening' in any country over a month-long period is essentially 100%. Even if we interpret 'something' to mean only notable or reported events, Iran regularly appears in international news due to its geopolitical significance. The only scenarios where this could resolve NO would involve either: (1) an impossibly restrictive interpretation by the resolution source, (2) complete information isolation, or (3) some catastrophic event preventing all activity. Given the extreme vagueness favors a YES resolution and the practical certainty that events occur daily in Iran, the probability is very high."
+      "est_prob": 0.88,
+      "est_conf": 0.4,
+      "est_reasoning": "Given that multiple high-reliability sources (Washington Post, NBC, CNN) confirm an active military conflict between the U.S./Israel and Iran is already underway as of March 2026, I'm using a high base rate of ~85% for 'something significant happening' during active warfare periods within a 30-day window. The evidence strongly suggests ongoing military operations, with mentions of U.S. attacks on Iran, potential ground troop deployments, and CNN having journalists covering the conflict from Iran. In active conflict scenarios, significant developments (escalations, diplomatic moves, major operations, casualties, policy changes) occur frequently. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - 'something happen in Iran' could resolve YES for almost any newsworthy event, or it might require a very specific type of major development that hasn't been defined. The lack of a specified resolution source adds additional uncertainty about how this market would actually be adjudicated."
     },
     {
       "id": 130,
@@ -2169,9 +2055,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T21:15:25.243331",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with the base rate of ~6% for any team to reach the Final Four, I'm adjusting significantly upward based on Florida being the defending national champion and currently ranked #4. Defending champions historically have strong programs and experienced players. However, the recent 17-point loss to #22 Vanderbilt is concerning and suggests they may not get a #1 seed, which would hurt their odds. Top seeds (#1-#2) typically have 30-45% Final Four chances, while #3-#4 seeds drop to around 15-25%. Given Florida's elite status but recent vulnerability, I estimate they'll likely be a #2 or #3 seed. The 'risky #1 seed' commentary suggests even if they get a top seed, they're more upset-prone than typical #1s. Balancing their championship pedigree against recent struggles, I estimate about 35% - well above the base rate but reflecting the meaningful downside risk from their recent performance."
     },
     {
       "id": 129,
@@ -2271,9 +2157,9 @@
       "category": "uncategorized",
       "resolution_source": "",
       "scanned_at": "2026-03-19T21:05:07.086675",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "I start with a base rate of ~75% based on historical precedent from the 1987-1988 Tanker War when the US did escort commercial vessels through the Persian Gulf during Iran-Iraq conflict. However, several factors push this significantly lower: (1) US officials explicitly stated they are 'not ready' for escort operations as of March 12, with the Navy refusing daily industry requests; (2) Only 2-3 weeks remain until the March 31 deadline, which may be insufficient time to organize complex naval operations in an active war zone; (3) The US is currently engaged in active war with Iran (not a third-party conflict like 1987-88), which increases operational complexity and risks. Factors supporting YES include Trump's public commitment to escorts 'if necessary,' escalating attacks on 5-6 commercial ships, and growing industry pressure with daily requests for protection. The tight timeline and explicit statements about unreadiness are the strongest factors pulling the estimate down from the historical base rate."
     },
     {
       "id": 123,
@@ -2526,9 +2412,9 @@
       "category": "geopolitics",
       "resolution_source": "",
       "scanned_at": "2026-03-19T20:15:33.301634",
-      "est_prob": 0.35,
+      "est_prob": 0.25,
       "est_conf": 0.2,
-      "est_reasoning": "With no YC-specific data, I'm estimating based on general startup ecosystem patterns. If quantum represents ~1% of startups and YC funds ~300 per batch, we'd expect ~3 quantum startups on average. However, high variability means many batches could have 0-2. The Quantonation fund suggests VC interest exists, but quantum remains niche. Given the information vacuum and single-batch sample size, I'm moderately skeptical but acknowledge significant uncertainty."
+      "est_reasoning": "Without base rate data for Y Combinator's quantum funding patterns, I'm estimating conservatively. The strong quantum VC interest (\u20ac220M Quantonation fund) suggests sector momentum, but this doesn't guarantee Y Combinator applications or selections. The requirement for exactly 3+ quantum startups in one specific batch is quite specific. Given the complete lack of Y Combinator operational data and the tight timeline, I'm assigning a probability below 50% but not extremely low, acknowledging that quantum sector interest could drive applications. My confidence is very low due to the massive information gaps about Y Combinator's actual operations and quantum startup pipeline."
     },
     {
       "id": 108,
@@ -2577,9 +2463,9 @@
       "category": "uncategorized",
       "resolution_source": "",
       "scanned_at": "2026-03-19T20:05:08.412063",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "I start with a base rate of ~75% based on historical precedent from the 1987-1988 Tanker War when the US did escort commercial vessels through the Persian Gulf during Iran-Iraq conflict. However, several factors push this significantly lower: (1) US officials explicitly stated they are 'not ready' for escort operations as of March 12, with the Navy refusing daily industry requests; (2) Only 2-3 weeks remain until the March 31 deadline, which may be insufficient time to organize complex naval operations in an active war zone; (3) The US is currently engaged in active war with Iran (not a third-party conflict like 1987-88), which increases operational complexity and risks. Factors supporting YES include Trump's public commitment to escorts 'if necessary,' escalating attacks on 5-6 commercial ships, and growing industry pressure with daily requests for protection. The tight timeline and explicit statements about unreadiness are the strongest factors pulling the estimate down from the historical base rate."
     },
     {
       "id": 105,
@@ -2594,9 +2480,9 @@
       "category": "uncategorized",
       "resolution_source": "",
       "scanned_at": "2026-03-19T20:05:08.155152",
-      "est_prob": 0.99,
-      "est_conf": 0.9,
-      "est_reasoning": "This question is so broadly defined that it's almost impossible for it to resolve NO. Iran is an active nation of 85+ million people with ongoing government functions, economic activity, social events, weather patterns, and international relations. On any given day, numerous events occur - from routine administrative decisions to news-worthy developments. The base rate for 'something happening' in any country over a month-long period is essentially 100%. Even if we interpret 'something' to mean only notable or reported events, Iran regularly appears in international news due to its geopolitical significance. The only scenarios where this could resolve NO would involve either: (1) an impossibly restrictive interpretation by the resolution source, (2) complete information isolation, or (3) some catastrophic event preventing all activity. Given the extreme vagueness favors a YES resolution and the practical certainty that events occur daily in Iran, the probability is very high."
+      "est_prob": 0.88,
+      "est_conf": 0.4,
+      "est_reasoning": "Given that multiple high-reliability sources (Washington Post, NBC, CNN) confirm an active military conflict between the U.S./Israel and Iran is already underway as of March 2026, I'm using a high base rate of ~85% for 'something significant happening' during active warfare periods within a 30-day window. The evidence strongly suggests ongoing military operations, with mentions of U.S. attacks on Iran, potential ground troop deployments, and CNN having journalists covering the conflict from Iran. In active conflict scenarios, significant developments (escalations, diplomatic moves, major operations, casualties, policy changes) occur frequently. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - 'something happen in Iran' could resolve YES for almost any newsworthy event, or it might require a very specific type of major development that hasn't been defined. The lack of a specified resolution source adds additional uncertainty about how this market would actually be adjudicated."
     },
     {
       "id": 104,
@@ -2611,9 +2497,9 @@
       "category": "uncategorized",
       "resolution_source": "",
       "scanned_at": "2026-03-19T20:05:07.882961",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with the base rate of ~6% for any team to reach the Final Four, I'm adjusting significantly upward based on Florida being the defending national champion and currently ranked #4. Defending champions historically have strong programs and experienced players. However, the recent 17-point loss to #22 Vanderbilt is concerning and suggests they may not get a #1 seed, which would hurt their odds. Top seeds (#1-#2) typically have 30-45% Final Four chances, while #3-#4 seeds drop to around 15-25%. Given Florida's elite status but recent vulnerability, I estimate they'll likely be a #2 or #3 seed. The 'risky #1 seed' commentary suggests even if they get a top seed, they're more upset-prone than typical #1s. Balancing their championship pedigree against recent struggles, I estimate about 35% - well above the base rate but reflecting the meaningful downside risk from their recent performance."
     },
     {
       "id": 103,
@@ -2730,9 +2616,9 @@
       "category": "sports",
       "resolution_source": "",
       "scanned_at": "2026-03-19T20:03:08.989519",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.12,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with the base rate of 5.9% (4 out of 68 teams reach the Final Four), I'm adjusting upward based on several positive factors. Purdue's Big Ten Tournament championship shows they can win when it matters, and multiple analysts are optimistic about their chances. However, their mixed regular season finish (4-2 in last 6) suggests some inconsistency. The most critical missing piece is their tournament seeding - a #1-3 seed might have 20-30% Final Four odds while a #7-10 seed might have only 3-8%. Given the positive momentum and expert sentiment, I'm roughly doubling the base rate to 12%, but my confidence is low due to the significant information gaps, particularly around seeding and bracket positioning."
     },
     {
       "id": 96,
@@ -2747,9 +2633,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T20:02:53.471218",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with the base rate of ~6% for any team to reach the Final Four, I'm adjusting significantly upward based on Florida being the defending national champion and currently ranked #4. Defending champions historically have strong programs and experienced players. However, the recent 17-point loss to #22 Vanderbilt is concerning and suggests they may not get a #1 seed, which would hurt their odds. Top seeds (#1-#2) typically have 30-45% Final Four chances, while #3-#4 seeds drop to around 15-25%. Given Florida's elite status but recent vulnerability, I estimate they'll likely be a #2 or #3 seed. The 'risky #1 seed' commentary suggests even if they get a top seed, they're more upset-prone than typical #1s. Balancing their championship pedigree against recent struggles, I estimate about 35% - well above the base rate but reflecting the meaningful downside risk from their recent performance."
     },
     {
       "id": 95,
@@ -2917,9 +2803,9 @@
       "category": "entertainment",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:49:46.167846",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.15,
+      "est_conf": 0.4,
+      "est_reasoning": "The complete absence of any information about 'Fooming Shoggoths' in music industry coverage is highly concerning and suggests either: (1) this is a fictional/non-existent artist, or (2) this is an extremely obscure artist with minimal industry presence. While the music industry is active with other artists releasing content in early 2026, the lack of any mention of Fooming Shoggoths despite comprehensive music coverage makes their existence questionable. Without being able to establish if this is even a real artist, I cannot use normal base rates for music releases. The narrow resolution window (April 1, 2026) and unspecified resolution criteria add additional uncertainty. I'm assigning a low probability (0.15) that accounts for the small chance this could be a real but very obscure artist, while heavily weighting the likelihood that this refers to a non-existent entity. My confidence is low given the fundamental uncertainty about the artist's existence."
     },
     {
       "id": 85,
@@ -3036,9 +2922,9 @@
       "category": "geopolitics",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:19:48.648810",
-      "est_prob": 0.99,
-      "est_conf": 0.9,
-      "est_reasoning": "This question is so broadly defined that it's almost impossible for it to resolve NO. Iran is an active nation of 85+ million people with ongoing government functions, economic activity, social events, weather patterns, and international relations. On any given day, numerous events occur - from routine administrative decisions to news-worthy developments. The base rate for 'something happening' in any country over a month-long period is essentially 100%. Even if we interpret 'something' to mean only notable or reported events, Iran regularly appears in international news due to its geopolitical significance. The only scenarios where this could resolve NO would involve either: (1) an impossibly restrictive interpretation by the resolution source, (2) complete information isolation, or (3) some catastrophic event preventing all activity. Given the extreme vagueness favors a YES resolution and the practical certainty that events occur daily in Iran, the probability is very high."
+      "est_prob": 0.88,
+      "est_conf": 0.4,
+      "est_reasoning": "Given that multiple high-reliability sources (Washington Post, NBC, CNN) confirm an active military conflict between the U.S./Israel and Iran is already underway as of March 2026, I'm using a high base rate of ~85% for 'something significant happening' during active warfare periods within a 30-day window. The evidence strongly suggests ongoing military operations, with mentions of U.S. attacks on Iran, potential ground troop deployments, and CNN having journalists covering the conflict from Iran. In active conflict scenarios, significant developments (escalations, diplomatic moves, major operations, casualties, policy changes) occur frequently. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - 'something happen in Iran' could resolve YES for almost any newsworthy event, or it might require a very specific type of major development that hasn't been defined. The lack of a specified resolution source adds additional uncertainty about how this market would actually be adjudicated."
     },
     {
       "id": 78,
@@ -3104,9 +2990,9 @@
       "category": "uncategorized",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:05:09.682882",
-      "est_prob": 0.35,
+      "est_prob": 0.25,
       "est_conf": 0.2,
-      "est_reasoning": "With no YC-specific data, I'm estimating based on general startup ecosystem patterns. If quantum represents ~1% of startups and YC funds ~300 per batch, we'd expect ~3 quantum startups on average. However, high variability means many batches could have 0-2. The Quantonation fund suggests VC interest exists, but quantum remains niche. Given the information vacuum and single-batch sample size, I'm moderately skeptical but acknowledge significant uncertainty."
+      "est_reasoning": "Without base rate data for Y Combinator's quantum funding patterns, I'm estimating conservatively. The strong quantum VC interest (\u20ac220M Quantonation fund) suggests sector momentum, but this doesn't guarantee Y Combinator applications or selections. The requirement for exactly 3+ quantum startups in one specific batch is quite specific. Given the complete lack of Y Combinator operational data and the tight timeline, I'm assigning a probability below 50% but not extremely low, acknowledging that quantum sector interest could drive applications. My confidence is very low due to the massive information gaps about Y Combinator's actual operations and quantum startup pipeline."
     },
     {
       "id": 74,
@@ -3121,9 +3007,9 @@
       "category": "uncategorized",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:05:09.423424",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "I start with a base rate of ~75% based on historical precedent from the 1987-1988 Tanker War when the US did escort commercial vessels through the Persian Gulf during Iran-Iraq conflict. However, several factors push this significantly lower: (1) US officials explicitly stated they are 'not ready' for escort operations as of March 12, with the Navy refusing daily industry requests; (2) Only 2-3 weeks remain until the March 31 deadline, which may be insufficient time to organize complex naval operations in an active war zone; (3) The US is currently engaged in active war with Iran (not a third-party conflict like 1987-88), which increases operational complexity and risks. Factors supporting YES include Trump's public commitment to escorts 'if necessary,' escalating attacks on 5-6 commercial ships, and growing industry pressure with daily requests for protection. The tight timeline and explicit statements about unreadiness are the strongest factors pulling the estimate down from the historical base rate."
     },
     {
       "id": 73,
@@ -3175,210 +3061,6 @@
       "est_prob": 0.25,
       "est_conf": 0.3,
       "est_reasoning": "With no information about the specific individual, I must rely on general base rates for personal goal completion. Research suggests that most people fail to maintain weekly commitments over 2+ month periods - studies on habit formation and goal achievement typically show success rates of 15-25% for sustained behavioral changes lasting 10+ weeks. The 10-week timeframe is particularly challenging as it's long enough for motivation to wane but short enough to feel like it should be achievable. Weekly frequency is manageable compared to daily commitments, which slightly improves odds. However, the vague nature of 'experiment proposal' creates additional uncertainty - if these require significant research/preparation, success becomes less likely. I'm adjusting slightly upward from the base rate (20% to 25%) because weekly posting is more achievable than many other behavioral goals, but maintaining very low confidence due to the complete absence of individual-specific information."
-    },
-    {
-      "id": 70,
-      "platform": "manifold",
-      "market_id": "PspSScZSL9",
-      "question": "Will Enho be on the banzuke in Juryo for the May 2026 Grand Sumo Tournament (Natsu basho)",
-      "current_yes_price": 0.9220806393113348,
-      "current_no_price": 0.07791936068866523,
-      "volume": 546.2733860217458,
-      "liquidity": 5078.0,
-      "close_date": "2026-05-02T04:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:08.394631",
-      "est_prob": 0.45,
-      "est_conf": 0.3,
-      "est_reasoning": "I started with a base rate of ~70% for established professional sumo wrestlers maintaining their general division level over multiple tournaments, based on the sport's structure where dramatic rank changes are less common than gradual movement. However, I significantly adjusted downward to 45% due to several critical factors: (1) The 2+ year timeline to May 2026 creates substantial uncertainty for career longevity, especially in a physically demanding sport like sumo; (2) Complete lack of current data on Enho's status - he could already be retired, injured, or in a lower division; (3) Enho's smaller stature, while enabling his unique style, may contribute to career longevity concerns in sumo; (4) The specific requirement for Juryo division (not higher Makuuchi or lower divisions) creates a narrow target. My confidence is very low (0.3) because this estimate is essentially educated speculation given the critical information gaps about his current status and the long timeline involved."
-    },
-    {
-      "id": 69,
-      "platform": "manifold",
-      "market_id": "lsO2IQ5LlE",
-      "question": "Russian crewed aircraft shot down in NATO airspace by 2026-03-19?",
-      "current_yes_price": 0.034077522274081604,
-      "current_no_price": 0.9659224777259184,
-      "volume": 629.04060874068,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-20T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:08.143015",
-      "est_prob": 0.12,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a base rate: in the modern era, there's been essentially one confirmed case of a NATO member shooting down a Russian aircraft (Turkey in 2015), occurring over roughly 30 years of post-Cold War tensions. This suggests a base rate around 2% for any given 2-3 year period. However, several factors warrant upward adjustment: (1) The ongoing Ukraine conflict has significantly heightened Russia-NATO tensions beyond historical norms, (2) The 27-month window provides substantial opportunity for incidents, (3) Increased Russian military activity near NATO borders creates more opportunities for violations. Counterbalancing factors include NATO's strong institutional incentives to avoid direct confrontation and established de-escalation protocols. The significant information gaps about current tensions and military postures create substantial uncertainty. My estimate of 12% reflects meaningful upward adjustment from the base rate due to current geopolitical tensions, while acknowledging both the rarity of such events and the strong incentives both sides have to avoid direct military confrontation."
-    },
-    {
-      "id": 68,
-      "platform": "manifold",
-      "market_id": "NstCUAzyt2",
-      "question": "USA x Iran ceasefire by end of march 31?",
-      "current_yes_price": 0.11113729021029815,
-      "current_no_price": 0.8888627097897018,
-      "volume": 691.1496531353127,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:07.886009",
-      "est_prob": 0.15,
-      "est_conf": 0.6,
-      "est_reasoning": "I'm using a base rate of 25% for rapid conflict resolution based on historical patterns where economic disruption (like blocked shipping lanes affecting oil prices) creates strong incentives for quick diplomatic solutions. However, the evidence strongly suggests adjusting downward: (1) Both sides have publicly rejected ceasefire talks as of March 16, with Iran's Foreign Minister explicitly contradicting any willingness to negotiate; (2) Iran has set preconditions (end to US/Israeli strikes) that appear unacceptable to the US; (3) Trump reportedly rejected ceasefire efforts; (4) Only 15 days remain, which is very tight for formal diplomatic breakthrough. The main upside factor is Trump aide Chris Wright's prediction of resolution 'within weeks' and the severe economic pressure from disrupted oil flows. Given the public hardline positions and short timeline, I estimate 15% - notably below the base rate due to the specific negative evidence, but not extremely low given the economic incentives and potential for rapid policy shifts."
-    },
-    {
-      "id": 67,
-      "platform": "manifold",
-      "market_id": "u6dgRuunsn",
-      "question": "Will any brackets remain perfect through the 1st round of March Madness?",
-      "current_yes_price": 0.6254855481260666,
-      "current_no_price": 0.3745144518739334,
-      "volume": 1884.808851057144,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-21T01:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:07.634674",
-      "est_prob": 0.75,
-      "est_conf": 0.4,
-      "est_reasoning": "With millions of brackets filled out across multiple platforms, even if individual bracket survival probability through 32 games is low (likely 0.1-1%), the large sample size makes it probable that some brackets will survive. The 1st round has fewer major upsets than later rounds, and conservative bracket strategies can achieve higher 1st round survival rates. However, significant uncertainty exists due to lack of historical base rates and unclear resolution criteria."
-    },
-    {
-      "id": 66,
-      "platform": "manifold",
-      "market_id": "CdARQ20t2q",
-      "question": "Will Trump's approval rating improve after 1 month of attacking Iran?",
-      "current_yes_price": 0.05062549084090983,
-      "current_no_price": 0.9493745091590902,
-      "volume": 1973.388846972388,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-28T21:42:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:07.378246",
-      "est_prob": 0.2,
-      "est_conf": 0.6,
-      "est_reasoning": "Base rate of 35% reflects that military actions often produce mixed approval effects - some boost ratings (rally around flag) while controversial ones damage them. The specific evidence strongly suggests a downward trend: multiple polls show Trump at 'new lows' and 'all-time lows' through March 19, only 25% approve of Iran strikes per Reuters/Ipsos, and approval sits at 41-43% with 54-56% disapproval. The market closes just 9 days after the last negative polling data, leaving little time for a reversal. While there's some conflicting information about independent voters and potential for delayed rally effects, the consistent pattern of declining approval through March 19 and low support for the Iran action itself makes improvement unlikely in such a short timeframe. Adjusting significantly below base rate to 20% due to strong recent negative trend and proximity to resolution date."
-    },
-    {
-      "id": 65,
-      "platform": "manifold",
-      "market_id": "lqRAnA8qPO",
-      "question": "Will Kalshi pay $1 billion for a perfect bracket?",
-      "current_yes_price": 0.01351532803908976,
-      "current_no_price": 0.9864846719609103,
-      "volume": 2701.049604078399,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-06T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:07.126106",
-      "est_prob": 0.15,
-      "est_conf": 0.4,
-      "est_reasoning": "The base rate for perfect brackets is effectively 0% - no perfect bracket has ever been documented despite millions of annual entries. However, the question's wording creates significant ambiguity. If it asks whether Kalshi will actually pay out $1 billion (requiring a perfect bracket to occur), the answer is almost certainly no given the 1 in 9.2 quintillion odds. But if it asks whether Kalshi has committed to pay $1 billion for a perfect bracket (regardless of whether one occurs), then multiple credible sources confirm this is true. The evidence strongly supports that Kalshi has launched this challenge and made this commitment. Given the resolution ambiguity and the distinction between commitment vs. actual payout, I estimate 15% probability, accounting for the possibility that the market resolves based on Kalshi's commitment rather than requiring an actual perfect bracket winner."
-    },
-    {
-      "id": 64,
-      "platform": "manifold",
-      "market_id": "EcOt6EU68N",
-      "question": "Daily Coinflip",
-      "current_yes_price": 0.5084725535643327,
-      "current_no_price": 0.49152744643566726,
-      "volume": 7996.981554934244,
-      "liquidity": 10000.0,
-      "close_date": "2026-03-21T03:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:06.862220",
-      "est_prob": 0.5,
-      "est_conf": 0.3,
-      "est_reasoning": "Given the complete lack of information about what specific event is being predicted, I must rely solely on the title 'Daily Coinflip'. If this is literally referring to a coin toss, the mathematical base rate is exactly 50% for either outcome. However, the sports categorization suggests this might be metaphorical. Without any resolution criteria, context, or additional details, I cannot adjust meaningfully from the 50% base rate that a coinflip would theoretically provide. My confidence is very low (0.3) because this estimate could be completely wrong if 'Daily Coinflip' refers to something other than an actual coin toss, but I have no information to determine what that might be."
-    },
-    {
-      "id": 63,
-      "platform": "manifold",
-      "market_id": "ZctCIAhQsu",
-      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-      "current_yes_price": 0.1594554673375281,
-      "current_no_price": 0.8405445326624719,
-      "volume": 12408.940517609262,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:06.613139",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
-    },
-    {
-      "id": 62,
-      "platform": "manifold",
-      "market_id": "s6AyzCILzL",
-      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
-      "current_yes_price": 0.8475793247275932,
-      "current_no_price": 0.15242067527240677,
-      "volume": 31579.741066770148,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:06.352642",
-      "est_prob": 0.92,
-      "est_conf": 0.7,
-      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
-    },
-    {
-      "id": 61,
-      "platform": "manifold",
-      "market_id": "Y1YDkx1SzzL93AFDpG6v",
-      "question": "Will OpenAI IPO and be a publicly traded company in the United States by the end of March 2026?",
-      "current_yes_price": 0.011524631409208938,
-      "current_no_price": 0.9884753685907911,
-      "volume": 50.0,
-      "liquidity": 1100.0,
-      "close_date": "2026-04-01T03:59:00+00:00",
-      "category": "tech",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:49:20.640569",
-      "est_prob": 0.08,
-      "est_conf": 0.7,
-      "est_reasoning": "Starting with a base rate of ~15% for large tech companies to IPO within a 12-month window when early preparation signals exist. However, the critical constraint here is timing. The Information's March 9, 2026 report stating OpenAI is 'at least six months away' from going public directly conflicts with the March 31, 2026 deadline - this would push the earliest IPO to September 2026. While investment banks are gauging investor sentiment (indicating serious preparation), no official SEC filing or company announcement exists. The 6-12 month typical timeline for large tech IPOs, combined with AI companies potentially needing longer due diligence, makes the March 2026 deadline extremely challenging. I'm adjusting significantly downward to 8% to account for the possibility of an unexpectedly accelerated timeline or incomplete information, but the timeline constraint is the dominant factor here."
-    },
-    {
-      "id": 60,
-      "platform": "manifold",
-      "market_id": "2Iz0RIh290",
-      "question": "Will the Taylor swift wedding be rescheduled at least one time. (Will it not happen on June 13th)",
-      "current_yes_price": 0.4612440180928343,
-      "current_no_price": 0.5387559819071657,
-      "volume": 50.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-06-13T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:49:08.404050",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 59,
-      "platform": "manifold",
-      "market_id": "QIAgQyS5tU",
-      "question": "Will Hamilton finish the Japanese Grand Prix 2026 higher than Leclerc?",
-      "current_yes_price": 0.4022561937488817,
-      "current_no_price": 0.5977438062511182,
-      "volume": 56.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-29T05:00:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:48:56.407043",
-      "est_prob": 0.55,
-      "est_conf": 0.3,
-      "est_reasoning": "Without a clear base rate for Hamilton vs Leclerc head-to-head performance, I'm starting near 50% for two competitive drivers. The key positive evidence is Hamilton finishing 3rd at the Chinese Grand Prix while 'overcoming his Ferrari teammate in battle,' suggesting he outperformed Leclerc there. This indicates Hamilton is adapting well to Ferrari and currently has momentum. However, this is a very small sample size from his first Ferrari season, and Leclerc is a proven performer who likely knows the Ferrari car better. The fact they're teammates could lead to team orders affecting the outcome. Given the recent evidence slightly favors Hamilton but with enormous uncertainty about sustained performance differences and many unknown variables, I'm estimating slightly above 50% but with very low confidence due to the limited data and long prediction horizon."
     }
   ]
 }
