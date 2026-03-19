@@ -901,12 +901,37 @@ let activeTab = 'all';
 let isMultiStrategy = false;
 let selectedStrategy = 'all'; // 'all' or strategy name
 
-// Strategy accent colors
+// Strategy accent colors and account mappings
 const STRATEGY_COLORS = {
   'Parallax': 'green',
   'Contrarian': 'amber',
   'Zeitgeist': 'blue'
 };
+
+const ACCOUNT_MAP = {
+  'primary': 'Jarvis',
+  'account2': 'Apo11o',
+  'account3': 'Hal',
+  // Also map strategy names directly
+  'Parallax': 'Jarvis',
+  'Contrarian': 'Apo11o',
+  'Zeitgeist': 'Hal'
+};
+
+const ACCOUNT_COLORS = {
+  'Jarvis': '#6ec07a',
+  'Apo11o': '#c4a35a',
+  'Hal': '#7eb8d0'
+};
+
+function getAccountName(strategy) {
+  if (!strategy) return 'Unknown';
+  // Check strategy.account field first, then strategy name
+  if (strategy.account && ACCOUNT_MAP[strategy.account]) return ACCOUNT_MAP[strategy.account];
+  if (typeof strategy === 'string') return ACCOUNT_MAP[strategy] || strategy;
+  if (strategy.name) return ACCOUNT_MAP[strategy.name] || strategy.name;
+  return 'Unknown';
+}
 
 function getStrategyAccent(name) {
   return STRATEGY_COLORS[name] || 'green';
@@ -928,7 +953,7 @@ function getActiveData() {
   if (selectedStrategy === 'all') {
     // If multi-strategy, combine all strategies
     if (isMultiStrategy && feedData.strategies) {
-      const allTrades = feedData.strategies.flatMap(s => (s.trades || []).map(t => ({...t, _strategy: s.name})));
+      const allTrades = feedData.strategies.flatMap(s => (s.trades || []).map(t => ({...t, _strategy: s.name, _account: getAccountName(s)})));
       // Sum portfolio values
       const portfolio = { bankroll: 0, deployed: 0, cash: 0, total_pnl: 0, max_drawdown: 0 };
       const stats = { total_trades: 0, open_positions: 0, resolved: 0, avg_edge: 0 };
@@ -951,7 +976,7 @@ function getActiveData() {
     }
     // Single strategy — use top-level data
     return {
-      trades: (feedData.trades || []).map(t => ({...t, _strategy: feedData.strategy?.name || 'Parallax'})),
+      trades: (feedData.trades || []).map(t => ({...t, _strategy: feedData.strategy?.name || 'Parallax', _account: getAccountName(feedData.strategy || 'Parallax')})),
       portfolio: feedData.portfolio,
       stats: feedData.stats,
       exposure: feedData.exposure,
@@ -959,12 +984,20 @@ function getActiveData() {
     };
   }
 
-  // Specific strategy selected
+  // Specific strategy or account selected
   if (isMultiStrategy && feedData.strategies) {
-    const strat = feedData.strategies.find(s => s.name === selectedStrategy);
+    // Check if filtering by account name
+    const accountFilter = Object.entries(ACCOUNT_MAP).find(([k, v]) => v === selectedStrategy);
+    let strat;
+    if (accountFilter) {
+      // Find strategy by account name
+      strat = feedData.strategies.find(s => getAccountName(s) === selectedStrategy);
+    } else {
+      strat = feedData.strategies.find(s => s.name === selectedStrategy);
+    }
     if (strat) {
       return {
-        trades: (strat.trades || []).map(t => ({...t, _strategy: strat.name})),
+        trades: (strat.trades || []).map(t => ({...t, _strategy: strat.name, _account: getAccountName(strat)})),
         portfolio: strat.portfolio,
         stats: strat.stats,
         exposure: strat.exposure,
@@ -975,7 +1008,7 @@ function getActiveData() {
 
   // Fallback
   return {
-    trades: (feedData.trades || []).map(t => ({...t, _strategy: feedData.strategy?.name || 'Parallax'})),
+    trades: (feedData.trades || []).map(t => ({...t, _strategy: feedData.strategy?.name || 'Parallax', _account: getAccountName(feedData.strategy || 'Parallax')})),
     portfolio: feedData.portfolio,
     stats: feedData.stats,
     exposure: feedData.exposure,
@@ -988,25 +1021,39 @@ function buildStrategyDropdown() {
   const nameEl = document.getElementById('strategyName');
   const verEl = document.getElementById('strategyVersion');
 
-  let options = [];
+  let stratOptions = [];
 
   if (isMultiStrategy && feedData.strategies) {
-    options = feedData.strategies.map(s => ({
+    stratOptions = feedData.strategies.map(s => ({
       name: s.name,
       version: s.version,
+      account: getAccountName(s),
       count: s.trades ? s.trades.length : 0
     }));
   } else if (feedData.strategy) {
-    options = [{ name: feedData.strategy.name || 'Parallax', version: feedData.strategy.version, count: feedData.trades ? feedData.trades.length : 0 }];
+    stratOptions = [{ name: feedData.strategy.name || 'Parallax', version: feedData.strategy.version, account: getAccountName(feedData.strategy || 'Parallax'), count: feedData.trades ? feedData.trades.length : 0 }];
   } else {
-    options = [{ name: 'Parallax', count: feedData.trades ? feedData.trades.length : 0 }];
+    stratOptions = [{ name: 'Parallax', account: 'Jarvis', count: feedData.trades ? feedData.trades.length : 0 }];
   }
 
-  const totalCount = options.reduce((s, o) => s + o.count, 0);
+  const totalCount = stratOptions.reduce((s, o) => s + o.count, 0);
 
+  // Build dropdown with sections
   let html = `<div class="strategy-option ${selectedStrategy === 'all' ? 'active' : ''}" data-strat="all">All Accounts<span class="strat-count">${totalCount}</span></div>`;
-  options.forEach(o => {
-    html += `<div class="strategy-option ${selectedStrategy === o.name ? 'active' : ''}" data-strat="${esc(o.name)}">${esc(o.name)}${o.version ? ' v'+o.version : ''}<span class="strat-count">${o.count}</span></div>`;
+
+  // Accounts section
+  html += `<div style="padding:0.3rem 0.75rem 0.15rem;font-size:0.5rem;color:#4a4640;text-transform:uppercase;letter-spacing:0.12em;margin-top:0.2rem;border-top:1px solid rgba(255,255,255,0.06)">Accounts</div>`;
+  const accounts = [...new Set(stratOptions.map(o => o.account))];
+  accounts.forEach(acct => {
+    const acctCount = stratOptions.filter(o => o.account === acct).reduce((s, o) => s + o.count, 0);
+    const color = ACCOUNT_COLORS[acct] || '#b0aba5';
+    html += `<div class="strategy-option ${selectedStrategy === acct ? 'active' : ''}" data-strat="${esc(acct)}"><span style="color:${color}">${esc(acct)}</span><span class="strat-count">${acctCount}</span></div>`;
+  });
+
+  // Strategies section
+  html += `<div style="padding:0.3rem 0.75rem 0.15rem;font-size:0.5rem;color:#4a4640;text-transform:uppercase;letter-spacing:0.12em;margin-top:0.2rem;border-top:1px solid rgba(255,255,255,0.06)">Strategies</div>`;
+  stratOptions.forEach(o => {
+    html += `<div class="strategy-option ${selectedStrategy === o.name ? 'active' : ''}" data-strat="${esc(o.name)}">${esc(o.name)}${o.version ? ' v'+o.version : ''} <span style="font-size:0.5rem;color:#5a5650">(${o.account})</span><span class="strat-count">${o.count}</span></div>`;
   });
 
   dropdown.innerHTML = html;
@@ -1022,9 +1069,17 @@ function buildStrategyDropdown() {
         nameEl.textContent = 'All Accounts';
         verEl.textContent = '';
       } else {
-        const s = options.find(o => o.name === selectedStrategy);
-        nameEl.textContent = selectedStrategy;
-        verEl.textContent = s && s.version ? 'v' + s.version : '';
+        // Check if it's an account name
+        const isAccount = accounts.includes(selectedStrategy);
+        if (isAccount) {
+          nameEl.textContent = selectedStrategy;
+          const matchedStrat = stratOptions.find(o => o.account === selectedStrategy);
+          verEl.textContent = matchedStrat ? matchedStrat.name : '';
+        } else {
+          const s = stratOptions.find(o => o.name === selectedStrategy);
+          nameEl.textContent = selectedStrategy;
+          verEl.textContent = s ? `(${s.account})` : '';
+        }
       }
 
       refreshView();
@@ -1121,7 +1176,7 @@ function renderTradesFromData(data) {
     <span class="th th-data">Prob</span>
     <span class="th th-data">Risked</span>
     <span class="th th-data">Profit</span>
-    ${selectedStrategy === 'all' ? '<span class="th th-data">Acct</span>' : ''}
+    <span class="th th-data">Acct</span>
     <span class="th th-time">Time</span>
   </div>`;
 
@@ -1149,7 +1204,7 @@ function renderTradesFromData(data) {
         ${likelihood ? `<span class="trade-size" style="color:#7eb8d0">${likelihood}</span>` : ''}
         <span class="trade-size">${formatMoney(trade.size)}</span>
         ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
-        ${selectedStrategy === 'all' && trade._strategy ? `<span class="trade-account">${esc(trade._strategy)}</span>` : ''}
+        ${trade._account ? `<span class="trade-account" style="color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account)}</span>` : ''}${selectedStrategy === 'all' && trade._strategy ? `<span class="trade-account">${esc(trade._strategy)}</span>` : ''}
         <span class="trade-time">${relativeTime(trade.created_at)}</span>
       </div>
       <div class="trade-body">
@@ -1162,7 +1217,8 @@ function renderTradesFromData(data) {
           <div class="detail"><span class="detail-label">Profit if Win</span><span class="detail-value edge-positive">+${formatMoney(potentialProfit)}</span></div>
           <div class="detail"><span class="detail-label">Expected Value</span><span class="detail-value ${calcExpectedProfit(trade) >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(calcExpectedProfit(trade))}</span></div>
           <div class="detail"><span class="detail-label">Platform</span><span class="detail-value">${esc(trade.platform || '--')}</span></div>
-          ${trade._strategy ? `<div class="detail"><span class="detail-label">Account</span><span class="detail-value">${esc(trade._strategy)}</span></div>` : ''}
+          ${trade._account ? `<div class="detail"><span class="detail-label">Account</span><span class="detail-value" style="color:${ACCOUNT_COLORS[trade._account] || '#b0aba5'}">${esc(trade._account)}</span></div>` : ''}
+          ${trade._strategy ? `<div class="detail"><span class="detail-label">Strategy</span><span class="detail-value">${esc(trade._strategy)}</span></div>` : ''}
           <div class="detail"><span class="detail-label">Status</span><span class="detail-value">${esc(trade.status || '--')}</span></div>
           ${trade.pnl !== null && trade.pnl !== undefined ? `<div class="detail"><span class="detail-label">P&L</span><span class="detail-value ${trade.pnl >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(trade.pnl)}</span></div>` : ''}
           ${estimate && estimate.reasoning ? `<div class="trade-reasoning"><span class="detail-label">Reasoning</span><div class="reasoning-text">${esc(estimate.reasoning)}</div></div>` : ''}
@@ -1639,7 +1695,7 @@ function renderTrades() {
     <span class="th th-data">Prob</span>
     <span class="th th-data">Risked</span>
     <span class="th th-data">Profit</span>
-    ${selectedStrategy === 'all' ? '<span class="th th-data">Acct</span>' : ''}
+    <span class="th th-data">Acct</span>
     <span class="th th-time">Time</span>
   </div>`;
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
@@ -1674,7 +1730,7 @@ function renderTrades() {
         ${likelihood ? `<span class="trade-size" style="color:#7eb8d0">${likelihood}</span>` : ''}
         <span class="trade-size">${formatMoney(trade.size)}</span>
         ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
-        ${selectedStrategy === 'all' && trade._strategy ? `<span class="trade-account">${esc(trade._strategy)}</span>` : ''}
+        ${trade._account ? `<span class="trade-account" style="color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account)}</span>` : ''}${selectedStrategy === 'all' && trade._strategy ? `<span class="trade-account">${esc(trade._strategy)}</span>` : ''}
         <span class="trade-time">${relativeTime(trade.created_at)}</span>
       </div>
       <div class="trade-body">
