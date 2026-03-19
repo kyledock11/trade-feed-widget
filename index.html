@@ -861,6 +861,7 @@
       <div class="stat"><span class="stat-value" id="sDeployed">--</span><span class="stat-label">Deployed</span></div>
       <div class="stat"><span class="stat-value" id="sPositions">--</span><span class="stat-label">Open</span></div>
       <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
+      <div class="stat"><span class="stat-value" id="sRealized">--</span><span class="stat-label">Realized P&L</span></div>
       <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
       <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Potential Profit</span></div>
       <div class="stat"><span class="stat-value" id="sExpected">--</span><span class="stat-label">Expected Profit</span></div>
@@ -912,10 +913,15 @@ const ACCOUNT_MAP = {
   'primary': 'Jarvis',
   'account2': 'Apo11o',
   'account3': 'Hal',
-  // Also map strategy names directly
   'Parallax': 'Jarvis',
   'Contrarian': 'Apo11o',
   'Zeitgeist': 'Hal'
+};
+
+const ACCOUNT_USERNAMES = {
+  'Jarvis': 'Jarvis',
+  'Apo11o': 'apo11o',
+  'Hal': 'Hal'
 };
 
 const ACCOUNT_COLORS = {
@@ -923,6 +929,9 @@ const ACCOUNT_COLORS = {
   'Apo11o': '#c4a35a',
   'Hal': '#7eb8d0'
 };
+
+// Live account balances from Manifold
+const liveAccounts = {};
 
 function getAccountName(strategy) {
   if (!strategy) return 'Unknown';
@@ -1113,6 +1122,13 @@ function updatePortfolioFromData(data) {
   const pnlEl = document.getElementById('sPnl');
   pnlEl.textContent = formatMoney(pnl);
   pnlEl.className = 'stat-value' + (pnl > 0 ? ' positive' : pnl < 0 ? ' negative' : '');
+
+  // Realized P&L from resolved trades
+  const resolvedTrades = (data.trades || []).filter(t => t.status === 'resolved');
+  const realizedPnl = resolvedTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
+  const realEl = document.getElementById('sRealized');
+  realEl.textContent = formatMoney(realizedPnl);
+  realEl.className = 'stat-value' + (realizedPnl > 0.01 ? ' positive' : realizedPnl < -0.01 ? ' negative' : '');
 
   const dd = portfolio.max_drawdown || stats.max_drawdown || 0;
   const ddEl = document.getElementById('sDrawdown');
@@ -1342,8 +1358,64 @@ function updateLiveSpreads() {
 
 function startLiveRefresh(trades) {
   fetchLivePrices(trades);
+  fetchLiveAccounts();
   if (liveRefreshTimer) clearInterval(liveRefreshTimer);
-  liveRefreshTimer = setInterval(() => fetchLivePrices(trades), 30000); // 30s refresh
+  liveRefreshTimer = setInterval(() => {
+    fetchLivePrices(trades);
+    fetchLiveAccounts();
+  }, 30000);
+}
+
+async function fetchLiveAccounts() {
+  for (const [display, username] of Object.entries(ACCOUNT_USERNAMES)) {
+    try {
+      const res = await fetch(`https://api.manifold.markets/v0/user/${username}`);
+      if (!res.ok) continue;
+      const data = await res.json();
+      liveAccounts[display] = {
+        balance: data.balance || 0,
+        totalDeposits: data.totalDeposits || 0,
+        invested: Math.max(0, (data.totalDeposits || 0) - (data.balance || 0)),
+        updatedAt: Date.now()
+      };
+    } catch {}
+  }
+  updatePortfolioFromLive();
+}
+
+function updatePortfolioFromLive() {
+  const data = getActiveData();
+  const acctNames = Object.keys(liveAccounts);
+  if (acctNames.length === 0) return;
+
+  let balance = 0, deployed = 0, deposits = 0;
+
+  if (selectedStrategy === 'all') {
+    acctNames.forEach(name => {
+      const a = liveAccounts[name];
+      balance += a.balance;
+      deployed += a.invested;
+      deposits += a.totalDeposits;
+    });
+  } else {
+    // Find which account matches
+    const acctName = ACCOUNT_MAP[selectedStrategy] || selectedStrategy;
+    const a = liveAccounts[acctName];
+    if (a) {
+      balance = a.balance;
+      deployed = a.invested;
+      deposits = a.totalDeposits;
+    }
+  }
+
+  document.getElementById('sBankroll').textContent = formatMoney(balance + deployed);
+  document.getElementById('sDeployed').textContent = formatMoney(deployed);
+
+  // Total P&L = (current balance + invested) - total deposits
+  const totalPnl = (balance + deployed) - deposits;
+  const pnlEl = document.getElementById('sPnl');
+  pnlEl.textContent = formatMoney(totalPnl);
+  pnlEl.className = 'stat-value' + (totalPnl > 0.01 ? ' positive' : totalPnl < -0.01 ? ' negative' : '');
 }
 
 function updateStrategy(strategy) {
