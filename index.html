@@ -384,6 +384,177 @@
     background: rgba(255, 255, 255, 0.04);
     margin: 0.5rem 0;
   }
+
+  /* Phase badge */
+  .phase-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .phase-badge.learning {
+    color: #6ec07a;
+    background: rgba(110, 192, 122, 0.1);
+    border: 1px solid rgba(110, 192, 122, 0.2);
+  }
+
+  .phase-badge.validating {
+    color: #c4a35a;
+    background: rgba(196, 163, 90, 0.1);
+    border: 1px solid rgba(196, 163, 90, 0.2);
+  }
+
+  .phase-badge.live_trading {
+    color: #c06e6e;
+    background: rgba(192, 110, 110, 0.1);
+    border: 1px solid rgba(192, 110, 110, 0.2);
+  }
+
+  /* Learning progress bar */
+  .learning-bar {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .learning-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.6rem;
+    color: #8a857e;
+    margin-bottom: 0.35rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .progress-track {
+    height: 4px;
+    background: #2a2725;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #5a9e5a, #7eb8d0);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+
+  /* Exposure bar */
+  .exposure-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .exposure-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.6rem;
+    color: #8a857e;
+  }
+
+  .exposure-item .val {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    color: #b0aba5;
+  }
+
+  /* Backtest card */
+  .backtest-card {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .backtest-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.55rem;
+    color: #6b6660;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.35rem;
+  }
+
+  .backtest-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .backtest-stat .label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.5rem;
+    color: #5a5650;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .backtest-stat .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #b0aba5;
+  }
+
+  .backtest-stat .value.good { color: #6ec07a; }
+  .backtest-stat .value.bad { color: #c06e6e; }
+
+  /* Resolution timeline */
+  .timeline-section {
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.55rem;
+    color: #6b6660;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.35rem;
+  }
+
+  .timeline-items {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .timeline-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #8a857e;
+  }
+
+  .timeline-item.soon {
+    border-color: rgba(126, 184, 208, 0.3);
+    color: #7eb8d0;
+    background: rgba(126, 184, 208, 0.05);
+  }
+
+  .timeline-item .tl-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    margin-left: 0.3rem;
+  }
 </style>
 </head>
 <body>
@@ -391,6 +562,7 @@
   <div class="header-row">
     <div class="header-label">Trade Feed</div>
     <div class="header-meta">
+      <span class="phase-badge learning" id="phaseBadge">LEARNING</span>
       <div class="status-dot" id="statusDot"></div>
       <div class="last-update" id="lastUpdate">Loading...</div>
     </div>
@@ -406,6 +578,16 @@
     <div class="bot-log-inner" id="botLogInner">No log data.</div>
   </div>
 
+  <div class="learning-bar" id="learningBar" style="display:none">
+    <div class="learning-label">
+      <span id="learningText">Learning Progress</span>
+      <span id="learningPct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="learningFill" style="width:0%"></div>
+    </div>
+  </div>
+
   <div class="portfolio-bar" id="portfolioBar">
     <div class="stat"><span class="stat-value" id="sBankroll">--</span><span class="stat-label">Bankroll</span></div>
     <div class="stat"><span class="stat-value" id="sDeployed">--</span><span class="stat-label">Deployed</span></div>
@@ -413,6 +595,19 @@
     <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
     <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
     <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Potential Profit</span></div>
+    <div class="stat"><span class="stat-value" id="sEdge">--</span><span class="stat-label">Avg Edge</span></div>
+  </div>
+
+  <div class="exposure-row" id="exposureRow"></div>
+
+  <div class="backtest-card" id="backtestCard" style="display:none">
+    <div class="backtest-title">Backtest Results</div>
+    <div class="backtest-grid" id="backtestGrid"></div>
+  </div>
+
+  <div class="timeline-section" id="timelineSection" style="display:none">
+    <div class="timeline-title">Resolution Timeline</div>
+    <div class="timeline-items" id="timelineItems"></div>
   </div>
 
   <div class="tabs" id="tabs">
@@ -532,8 +727,9 @@ document.getElementById('botLogToggle').addEventListener('click', () => {
 
 function updatePortfolio(stats) {
   if (!stats) return;
-  document.getElementById('sBankroll').textContent = formatMoney(stats.bankroll);
-  document.getElementById('sDeployed').textContent = formatMoney(stats.deployed);
+  const portfolio = (feedData && feedData.portfolio) || {};
+  document.getElementById('sBankroll').textContent = formatMoney(portfolio.bankroll || stats.bankroll);
+  document.getElementById('sDeployed').textContent = formatMoney(portfolio.deployed || stats.deployed);
 
   const posEl = document.getElementById('sPositions');
   posEl.textContent = stats.open_positions || 0;
@@ -552,6 +748,13 @@ function updatePortfolio(stats) {
     const totalPotential = openTrades.reduce((sum, t) => sum + calcPotentialProfit(t), 0);
     const potEl = document.getElementById('sPotential');
     potEl.textContent = formatMoney(totalPotential);
+  }
+
+  // Avg edge
+  if (feedData && feedData.stats) {
+    const edgeEl = document.getElementById('sEdge');
+    const avgEdge = feedData.stats.avg_edge;
+    edgeEl.textContent = avgEdge ? (avgEdge * 100).toFixed(1) + '%' : '--';
   }
 }
 
@@ -778,6 +981,114 @@ function renderMarkets() {
   });
 }
 
+function updatePhase(botStatus) {
+  const badge = document.getElementById('phaseBadge');
+  if (!botStatus) return;
+  const phase = botStatus.phase || 'learning';
+  const mode = botStatus.mode || 'paper';
+  const labels = { learning: 'LEARNING', validating: 'VALIDATING', live_trading: 'LIVE' };
+  badge.textContent = labels[phase] || phase.toUpperCase();
+  badge.className = `phase-badge ${phase}`;
+
+  // Add mode to bot text
+  const modeStr = mode.replace('_', ' ').toUpperCase();
+  const botText = document.getElementById('botText');
+  if (botText && botText.textContent.includes('BOT')) {
+    botText.textContent = botText.textContent + ` · ${modeStr}`;
+  }
+}
+
+function updateLearning(learning) {
+  const bar = document.getElementById('learningBar');
+  if (!learning) { bar.style.display = 'none'; return; }
+  bar.style.display = 'block';
+
+  const resolved = learning.resolved_trades || 0;
+  const target = learning.target_resolved || 100;
+  const pct = Math.min(100, Math.round(resolved / target * 100));
+
+  document.getElementById('learningText').textContent = `${resolved}/${target} resolved — ${pct}% to validation`;
+  document.getElementById('learningPct').textContent = `${pct}%`;
+  document.getElementById('learningFill').style.width = `${pct}%`;
+}
+
+function updateExposure(exposure, stats) {
+  const row = document.getElementById('exposureRow');
+  if (!exposure) { row.innerHTML = ''; return; }
+
+  let html = '';
+
+  // Edge quality
+  html += `<span class="exposure-item">High Edge (≥10%): <span class="val">${exposure.high_edge_count} trades (${formatMoney(exposure.high_edge_deployed)})</span></span>`;
+  html += `<span class="exposure-item">Low Edge: <span class="val">${exposure.low_edge_count} trades (${formatMoney(exposure.low_edge_deployed)})</span></span>`;
+
+  // Direction
+  if (exposure.by_direction) {
+    const yes = exposure.by_direction.yes || {count:0,deployed:0};
+    const no = exposure.by_direction.no || {count:0,deployed:0};
+    html += `<span class="exposure-item">YES: <span class="val">${yes.count} (${formatMoney(yes.deployed)})</span></span>`;
+    html += `<span class="exposure-item">NO: <span class="val">${no.count} (${formatMoney(no.deployed)})</span></span>`;
+  }
+
+  // Categories
+  if (exposure.by_category) {
+    const cats = Object.entries(exposure.by_category).sort((a,b) => b[1].deployed - a[1].deployed).slice(0, 4);
+    cats.forEach(([cat, data]) => {
+      html += `<span class="exposure-item">${cat}: <span class="val">${data.count} (${formatMoney(data.deployed)})</span></span>`;
+    });
+  }
+
+  row.innerHTML = html;
+}
+
+function updateBacktest(learning) {
+  const card = document.getElementById('backtestCard');
+  const grid = document.getElementById('backtestGrid');
+
+  if (!learning || !learning.backtest_results) { card.style.display = 'none'; return; }
+  card.style.display = 'block';
+
+  const bt = learning.backtest_results;
+  let html = '';
+
+  const brierClass = bt.brier_score !== null ? (bt.brier_score < 0.25 ? 'good' : 'bad') : '';
+  html += `<div class="backtest-stat"><div class="label">Brier</div><div class="value ${brierClass}">${bt.brier_score !== null ? bt.brier_score.toFixed(3) : '--'}</div></div>`;
+  html += `<div class="backtest-stat"><div class="label">Mkt Brier</div><div class="value">${bt.market_brier_score !== null ? bt.market_brier_score.toFixed(3) : '--'}</div></div>`;
+  html += `<div class="backtest-stat"><div class="label">Skill</div><div class="value ${bt.brier_skill > 0 ? 'good' : 'bad'}">${bt.brier_skill !== null ? bt.brier_skill.toFixed(3) : '--'}</div></div>`;
+
+  if (bt.roi_at_5pct_edge !== null && bt.roi_at_5pct_edge !== undefined) {
+    html += `<div class="backtest-stat"><div class="label">ROI ≥5%</div><div class="value ${bt.roi_at_5pct_edge > 0 ? 'good' : 'bad'}">${bt.roi_at_5pct_edge}%</div></div>`;
+  }
+  if (bt.roi_at_10pct_edge !== null && bt.roi_at_10pct_edge !== undefined) {
+    html += `<div class="backtest-stat"><div class="label">ROI ≥10%</div><div class="value ${bt.roi_at_10pct_edge > 0 ? 'good' : 'bad'}">${bt.roi_at_10pct_edge}%</div></div>`;
+  }
+  if (bt.roi_at_20pct_edge !== null && bt.roi_at_20pct_edge !== undefined) {
+    html += `<div class="backtest-stat"><div class="label">ROI ≥20%</div><div class="value ${bt.roi_at_20pct_edge > 0 ? 'good' : 'bad'}">${bt.roi_at_20pct_edge}%</div></div>`;
+  }
+
+  grid.innerHTML = html;
+}
+
+function updateTimeline(timeline) {
+  const section = document.getElementById('timelineSection');
+  const items = document.getElementById('timelineItems');
+
+  if (!timeline || timeline.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+
+  const now = new Date();
+  const soon = new Date(now.getTime() + 48 * 60 * 60 * 1000); // 48 hours
+
+  let html = '';
+  timeline.slice(0, 8).forEach(t => {
+    const date = new Date(t.date + 'T23:59:59');
+    const isSoon = date <= soon;
+    html += `<div class="timeline-item ${isSoon ? 'soon' : ''}">${t.date}<span class="tl-count">${t.count}</span></div>`;
+  });
+
+  items.innerHTML = html;
+}
+
 async function fetchFeed() {
   const dot = document.getElementById('statusDot');
   const update = document.getElementById('lastUpdate');
@@ -792,6 +1103,11 @@ async function fetchFeed() {
     update.textContent = `Updated ${updatedAt}`;
 
     updateBotStatus(feedData.bot_status);
+    updatePhase(feedData.bot_status);
+    updateLearning(feedData.learning);
+    updateExposure(feedData.exposure, feedData.stats);
+    updateBacktest(feedData.learning);
+    updateTimeline(feedData.resolution_timeline);
     updatePortfolio(feedData.stats);
     renderTrades();
   } catch {
