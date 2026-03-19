@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-19T20:16:34.333901+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-19T20:20:49.780180+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T20:16:34.333911+00:00",
+    "last_heartbeat": "2026-03-19T20:20:49.780189+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 18 recently analyzed, 12 already have run.py:167",
-      "position, 1 no edge",
-      "INFO       Quick mode: 4 low-volume markets               run.py:173",
-      "WARNING    Errors: 4 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 22 positions, M$558.72 deployed",
+      "[14:17:47] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-19",
+      "14:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -118,125 +74,125 @@
     "brier_score": null,
     "win_rate": null,
     "backtest_results": {
-      "last_run": "2026-03-19T19:24:17.769663",
-      "markets_tested": 100,
-      "brier_score": 0.2227,
-      "market_brier_score": 0.0829,
-      "brier_skill": -1.6877,
-      "roi_at_5pct_edge": -59.8,
-      "roi_at_10pct_edge": -53.6,
-      "roi_at_20pct_edge": -38.6,
+      "last_run": "2026-03-19T20:19:45.947156",
+      "markets_tested": 189,
+      "brier_score": 0.2426,
+      "market_brier_score": 0.0941,
+      "brier_skill": -1.5785,
+      "roi_at_5pct_edge": -60.5,
+      "roi_at_10pct_edge": -56.9,
+      "roi_at_20pct_edge": -51.2,
       "categories": {
         "uncategorized": {
-          "count": 51,
-          "brier": 0.2402,
-          "market_brier": 0.0907,
-          "avg_bias": -0.1108,
-          "roi_pct": -42.4
+          "count": 95,
+          "brier": 0.2457,
+          "market_brier": 0.09,
+          "avg_bias": -0.0341,
+          "roi_pct": -46.2
         },
         "technology": {
-          "count": 16,
-          "brier": 0.1536,
-          "market_brier": 0.0637,
-          "avg_bias": 0.034,
-          "roi_pct": -76.9
-        },
-        "entertainment": {
-          "count": 10,
-          "brier": 0.29,
-          "market_brier": 0.0486,
-          "avg_bias": -0.2654,
-          "roi_pct": -59.7
+          "count": 36,
+          "brier": 0.2132,
+          "market_brier": 0.0856,
+          "avg_bias": 0.073,
+          "roi_pct": -71.5
         },
         "sports": {
-          "count": 8,
-          "brier": 0.1677,
-          "market_brier": 0.1559,
-          "avg_bias": 0.0506,
-          "roi_pct": -100.0
+          "count": 18,
+          "brier": 0.2181,
+          "market_brier": 0.1693,
+          "avg_bias": -0.0245,
+          "roi_pct": -53.7
+        },
+        "entertainment": {
+          "count": 13,
+          "brier": 0.2857,
+          "market_brier": 0.0826,
+          "avg_bias": -0.1776,
+          "roi_pct": -75.2
         },
         "geopolitics": {
-          "count": 7,
-          "brier": 0.1753,
-          "market_brier": 0.026,
-          "avg_bias": -0.0856,
-          "roi_pct": -78.9
+          "count": 12,
+          "brier": 0.2831,
+          "market_brier": 0.0653,
+          "avg_bias": -0.1643,
+          "roi_pct": -100.0
         },
         "politics": {
-          "count": 4,
-          "brier": 0.2298,
-          "market_brier": 0.0057,
-          "avg_bias": -0.2481,
+          "count": 8,
+          "brier": 0.2882,
+          "market_brier": 0.007,
+          "avg_bias": -0.3689,
           "roi_pct": -100.0
         },
         "finance": {
-          "count": 4,
-          "brier": 0.2937,
-          "market_brier": 0.1754,
-          "avg_bias": 0.188,
+          "count": 7,
+          "brier": 0.2127,
+          "market_brier": 0.1705,
+          "avg_bias": 0.1015,
           "roi_pct": -100.0
         }
       },
       "calibration": {
         "0-10%": {
-          "count": 13,
-          "avg_estimate": 0.048,
-          "avg_actual": 0.385,
-          "gap": -0.337
+          "count": 27,
+          "avg_estimate": 0.05,
+          "avg_actual": 0.37,
+          "gap": -0.32
         },
         "10-20%": {
-          "count": 27,
-          "avg_estimate": 0.144,
-          "avg_actual": 0.222,
-          "gap": -0.078
+          "count": 30,
+          "avg_estimate": 0.147,
+          "avg_actual": 0.233,
+          "gap": -0.086
         },
         "20-30%": {
-          "count": 10,
+          "count": 35,
           "avg_estimate": 0.25,
-          "avg_actual": 0.2,
-          "gap": 0.05
+          "avg_actual": 0.257,
+          "gap": -0.007
         },
         "30-40%": {
           "count": 10,
-          "avg_estimate": 0.353,
-          "avg_actual": 0.3,
-          "gap": 0.053
+          "avg_estimate": 0.35,
+          "avg_actual": 0.4,
+          "gap": -0.05
         },
         "40-50%": {
-          "count": 5,
-          "avg_estimate": 0.444,
-          "avg_actual": 0.6,
-          "gap": -0.156
+          "count": 9,
+          "avg_estimate": 0.438,
+          "avg_actual": 0.333,
+          "gap": 0.104
         },
         "50-60%": {
-          "count": 13,
-          "avg_estimate": 0.51,
-          "avg_actual": 0.615,
-          "gap": -0.105
+          "count": 41,
+          "avg_estimate": 0.514,
+          "avg_actual": 0.439,
+          "gap": 0.075
         },
         "60-70%": {
-          "count": 6,
-          "avg_estimate": 0.655,
+          "count": 12,
+          "avg_estimate": 0.658,
           "avg_actual": 0.5,
-          "gap": 0.155
+          "gap": 0.158
         },
         "70-80%": {
-          "count": 12,
-          "avg_estimate": 0.745,
-          "avg_actual": 0.75,
-          "gap": -0.005
+          "count": 13,
+          "avg_estimate": 0.738,
+          "avg_actual": 0.615,
+          "gap": 0.123
         },
         "80-90%": {
-          "count": 2,
-          "avg_estimate": 0.82,
-          "avg_actual": 0.5,
-          "gap": 0.32
+          "count": 8,
+          "avg_estimate": 0.843,
+          "avg_actual": 0.625,
+          "gap": 0.218
         },
         "90-100%": {
-          "count": 2,
-          "avg_estimate": 0.935,
-          "avg_actual": 1.0,
-          "gap": -0.065
+          "count": 4,
+          "avg_estimate": 0.945,
+          "avg_actual": 0.75,
+          "gap": 0.195
         }
       }
     }
@@ -1206,6 +1162,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 112,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.3902439024390245,
+      "current_no_price": 0.6097560975609755,
+      "volume": 250.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:20:19.668680",
+      "est_prob": 0.78,
+      "est_conf": 0.4,
+      "est_reasoning": "I'm estimating a base rate of 85% based on the research indicating NSF typically releases MSPRF offers in late February to early March, which would meet the March 24 deadline. However, I'm adjusting down to 78% due to several uncertainties: the definition of 'offer letters' could be ambiguous (initial notifications vs. formal offers), the specific March 24 date interpretation is unclear, and there's always risk of administrative delays, budget issues, or operational changes over a 2+ year timeframe. The confidence is relatively low (0.4) because we lack specific historical dates and there are many variables that could affect the 2026-2027 cycle timeline that we can't predict from current information."
+    },
     {
       "id": 111,
       "platform": "manifold",
@@ -2888,23 +2861,6 @@
       "est_prob": 0.75,
       "est_conf": 0.4,
       "est_reasoning": "With millions of brackets filled out across multiple platforms, even if individual bracket survival probability through 32 games is low (likely 0.1-1%), the large sample size makes it probable that some brackets will survive. The 1st round has fewer major upsets than later rounds, and conservative bracket strategies can achieve higher 1st round survival rates. However, significant uncertainty exists due to lack of historical base rates and unclear resolution criteria."
-    },
-    {
-      "id": 12,
-      "platform": "manifold",
-      "market_id": "EcOt6EU68N",
-      "question": "Daily Coinflip",
-      "current_yes_price": 0.5100000000000001,
-      "current_no_price": 0.4899999999999999,
-      "volume": 7899.005798799897,
-      "liquidity": 10000.0,
-      "close_date": "2026-03-21T03:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:08:57.143477",
-      "est_prob": 0.5,
-      "est_conf": 0.3,
-      "est_reasoning": "Given the complete lack of information about what specific event is being predicted, I must rely solely on the title 'Daily Coinflip'. If this is literally referring to a coin toss, the mathematical base rate is exactly 50% for either outcome. However, the sports categorization suggests this might be metaphorical. Without any resolution criteria, context, or additional details, I cannot adjust meaningfully from the 50% base rate that a coinflip would theoretically provide. My confidence is very low (0.3) because this estimate could be completely wrong if 'Daily Coinflip' refers to something other than an actual coin toss, but I have no information to determine what that might be."
     }
   ]
 }
