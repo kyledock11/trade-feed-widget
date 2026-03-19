@@ -1,41 +1,45 @@
 {
-  "updated_at": "2026-03-19T19:23:09.117640+00:00",
+  "updated_at": "2026-03-19T19:31:17.407798+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T19:23:09.117650+00:00",
+    "last_heartbeat": "2026-03-19T19:31:17.407806+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "scheduled when the scheduler starts",
-      "INFO     Added job \"TradingBot.run_cycle\" to job store  base.py:1090",
-      "\"default\"",
-      "INFO     Scheduler started                               base.py:214",
-      "Scheduler running (every 30 min). Press Ctrl+C to stop."
+      "INFO     Cycle complete: 1 trades from 39 markets in 0m   run.py:163",
+      "36s",
+      "INFO       Skipped: 37 recently analyzed, 1 already have  run.py:167",
+      "position, 0 no edge",
+      "INFO       Next cycle in 30 minutes                       run.py:176"
     ]
   },
   "portfolio": {
     "bankroll": 1000.0,
-    "deployed": 502.03,
-    "cash": 497.97,
-    "deployed_pct": 50.2,
+    "deployed": 523.05,
+    "cash": 476.95,
+    "deployed_pct": 52.3,
     "total_pnl": 0.0,
     "unrealized_pnl": 0.0,
     "max_drawdown": 0.0
   },
   "stats": {
-    "total_trades": 19,
-    "open_positions": 19,
+    "total_trades": 20,
+    "open_positions": 20,
     "resolved": 0,
     "win_rate": null,
     "brier_score": null,
-    "avg_edge": 0.1738
+    "avg_edge": 0.1737
   },
   "exposure": {
     "by_category": {
+      "crypto": {
+        "count": 1,
+        "deployed": 21.02
+      },
       "other": {
         "count": 5,
         "deployed": 103.87
@@ -51,17 +55,17 @@
     },
     "by_direction": {
       "yes": {
-        "count": 12,
-        "deployed": 232.03
+        "count": 13,
+        "deployed": 253.05
       },
       "no": {
         "count": 7,
         "deployed": 270.0
       }
     },
-    "high_edge_count": 11,
+    "high_edge_count": 12,
     "low_edge_count": 8,
-    "high_edge_deployed": 354.76,
+    "high_edge_deployed": 375.78,
     "low_edge_deployed": 147.27
   },
   "learning": {
@@ -70,118 +74,125 @@
     "brier_score": null,
     "win_rate": null,
     "backtest_results": {
-      "last_run": "2026-03-19T19:05:14.834644",
-      "markets_tested": 19,
-      "brier_score": 0.1943,
-      "market_brier_score": 0.1592,
-      "brier_skill": -0.2205,
-      "roi_at_5pct_edge": -0.9,
-      "roi_at_10pct_edge": 15.6,
-      "roi_at_20pct_edge": 38.7,
+      "last_run": "2026-03-19T19:24:17.769663",
+      "markets_tested": 100,
+      "brier_score": 0.2227,
+      "market_brier_score": 0.0829,
+      "brier_skill": -1.6877,
+      "roi_at_5pct_edge": -59.8,
+      "roi_at_10pct_edge": -53.6,
+      "roi_at_20pct_edge": -38.6,
       "categories": {
         "uncategorized": {
-          "count": 8,
-          "brier": 0.1884,
-          "market_brier": 0.2108,
-          "avg_bias": -0.0545,
-          "roi_pct": 73.4
+          "count": 51,
+          "brier": 0.2402,
+          "market_brier": 0.0907,
+          "avg_bias": -0.1108,
+          "roi_pct": -42.4
         },
         "technology": {
-          "count": 3,
-          "brier": 0.1518,
-          "market_brier": 0.0292,
-          "avg_bias": 0.0541,
+          "count": 16,
+          "brier": 0.1536,
+          "market_brier": 0.0637,
+          "avg_bias": 0.034,
+          "roi_pct": -76.9
+        },
+        "entertainment": {
+          "count": 10,
+          "brier": 0.29,
+          "market_brier": 0.0486,
+          "avg_bias": -0.2654,
+          "roi_pct": -59.7
+        },
+        "sports": {
+          "count": 8,
+          "brier": 0.1677,
+          "market_brier": 0.1559,
+          "avg_bias": 0.0506,
+          "roi_pct": -100.0
+        },
+        "geopolitics": {
+          "count": 7,
+          "brier": 0.1753,
+          "market_brier": 0.026,
+          "avg_bias": -0.0856,
+          "roi_pct": -78.9
+        },
+        "politics": {
+          "count": 4,
+          "brier": 0.2298,
+          "market_brier": 0.0057,
+          "avg_bias": -0.2481,
           "roi_pct": -100.0
         },
         "finance": {
-          "count": 3,
-          "brier": 0.2406,
-          "market_brier": 0.2338,
-          "avg_bias": 0.014,
-          "roi_pct": 0.0
-        },
-        "politics": {
-          "count": 2,
-          "brier": 0.0424,
-          "market_brier": 0.0075,
-          "avg_bias": -0.0441,
-          "roi_pct": -100.0
-        },
-        "sports": {
-          "count": 2,
-          "brier": 0.25,
-          "market_brier": 0.2533,
-          "avg_bias": -0.0067,
-          "roi_pct": 0.0
-        },
-        "geopolitics": {
-          "count": 1,
-          "brier": 0.4225,
-          "market_brier": 0.0278,
-          "avg_bias": -0.4831,
+          "count": 4,
+          "brier": 0.2937,
+          "market_brier": 0.1754,
+          "avg_bias": 0.188,
           "roi_pct": -100.0
         }
       },
       "calibration": {
         "0-10%": {
-          "count": 1,
-          "avg_estimate": 0.08,
-          "avg_actual": 0.0,
-          "gap": 0.08
+          "count": 13,
+          "avg_estimate": 0.048,
+          "avg_actual": 0.385,
+          "gap": -0.337
         },
         "10-20%": {
-          "count": 3,
-          "avg_estimate": 0.15,
-          "avg_actual": 0.0,
-          "gap": 0.15
+          "count": 27,
+          "avg_estimate": 0.144,
+          "avg_actual": 0.222,
+          "gap": -0.078
         },
         "20-30%": {
-          "count": 0,
-          "avg_estimate": 0,
-          "avg_actual": 0,
-          "gap": 0
+          "count": 10,
+          "avg_estimate": 0.25,
+          "avg_actual": 0.2,
+          "gap": 0.05
         },
         "30-40%": {
-          "count": 1,
-          "avg_estimate": 0.35,
-          "avg_actual": 1.0,
-          "gap": -0.65
+          "count": 10,
+          "avg_estimate": 0.353,
+          "avg_actual": 0.3,
+          "gap": 0.053
         },
         "40-50%": {
-          "count": 4,
-          "avg_estimate": 0.435,
-          "avg_actual": 0.5,
-          "gap": -0.065
+          "count": 5,
+          "avg_estimate": 0.444,
+          "avg_actual": 0.6,
+          "gap": -0.156
         },
         "50-60%": {
-          "count": 5,
-          "avg_estimate": 0.512,
-          "avg_actual": 0.4,
-          "gap": 0.112
+          "count": 13,
+          "avg_estimate": 0.51,
+          "avg_actual": 0.615,
+          "gap": -0.105
         },
         "60-70%": {
-          "count": 1,
-          "avg_estimate": 0.65,
-          "avg_actual": 1.0,
-          "gap": -0.35
+          "count": 6,
+          "avg_estimate": 0.655,
+          "avg_actual": 0.5,
+          "gap": 0.155
         },
         "70-80%": {
-          "count": 4,
-          "avg_estimate": 0.735,
+          "count": 12,
+          "avg_estimate": 0.745,
           "avg_actual": 0.75,
-          "gap": -0.015
+          "gap": -0.005
         },
         "80-90%": {
-          "count": 0,
-          "avg_estimate": 0,
-          "avg_actual": 0,
-          "gap": 0
+          "count": 2,
+          "avg_estimate": 0.82,
+          "avg_actual": 0.5,
+          "gap": 0.32
         },
         "90-100%": {
-          "count": 0,
-          "avg_estimate": 0,
-          "avg_actual": 0,
-          "gap": 0
+          "count": 2,
+          "avg_estimate": 0.935,
+          "avg_actual": 1.0,
+          "gap": -0.065
         }
       }
     }
@@ -236,9 +247,10 @@
     },
     {
       "date": "2026-04-01",
-      "count": 1,
+      "count": 2,
       "markets": [
-        "Will OpenAI IPO and be a publicly traded company in the United States by the end of March 2026?"
+        "Will OpenAI IPO and be a publicly traded company in the United States by the end of March 2026?",
+        "Bitcoin $80K in March?"
       ]
     },
     {
@@ -278,6 +290,23 @@
     }
   ],
   "trades": [
+    {
+      "id": 20,
+      "market_id": "L9q0LNRZgq",
+      "platform": "manifold",
+      "question": "Bitcoin $80K in March?",
+      "direction": "yes",
+      "size": 21.02,
+      "entry_price": 0.17696037638920453,
+      "estimated_probability": 0.3499603763892045,
+      "edge": 0.173,
+      "kelly_fraction": 0.021,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T19:31:17.377717",
+      "resolved_at": null
+    },
     {
       "id": 19,
       "market_id": "5CPCpOg6SL",
@@ -603,6 +632,16 @@
     }
   ],
   "estimates": [
+    {
+      "id": 43,
+      "market_id": "L9q0LNRZgq",
+      "probability": 0.35,
+      "confidence": 0.3,
+      "reasoning": "Starting with a base rate around 25% based on Bitcoin's historical pattern of major bull runs every ~4 years coinciding with halving cycles. However, $80K would represent a significant milestone above Bitcoin's previous ~$69K peak from 2021. The timing (March 2025) falls roughly 11 months after the April 2024 halving, which historically has been associated with price appreciation cycles. I'm adjusting upward to 35% because: (1) the halving cycle timing suggests potential for a bull run in this timeframe, (2) continued institutional adoption trends, and (3) the question only requires touching $80K briefly in March, not sustaining it. However, confidence is very low (0.3) due to critical information gaps - most importantly not knowing the current Bitcoin price, which is essential for assessing how much appreciation would be needed. Without knowing if Bitcoin is currently at $30K, $50K, or $70K, the probability changes dramatically. The rapid evolution of crypto markets also makes historical patterns less reliable predictors.",
+      "key_uncertainties": "[\"Current Bitcoin price level unknown - critical for assessing required appreciation\", \"Impact of April 2024 halving on price cycles unclear without recent data\", \"Current regulatory environment and institutional adoption trends unknown\", \"Macro economic conditions (interest rates, inflation) that affect risk assets\", \"Resolution criteria ambiguity - which exchanges, sustained vs brief touch\", \"Rapid evolution of crypto markets makes historical patterns less reliable\"]",
+      "base_rate": 0.25,
+      "created_at": "2026-03-19T19:31:17.197108"
+    },
     {
       "id": 42,
       "market_id": "5CPCpOg6SL",
@@ -1025,6 +1064,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 83,
+      "platform": "manifold",
+      "market_id": "L9q0LNRZgq",
+      "question": "Bitcoin $80K in March?",
+      "current_yes_price": 0.17696037638920453,
+      "current_no_price": 0.8230396236107955,
+      "volume": 2778.898441118116,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T06:59:00+00:00",
+      "category": "crypto",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T19:30:43.136513",
+      "est_prob": 0.35,
+      "est_conf": 0.3,
+      "est_reasoning": "Starting with a base rate around 25% based on Bitcoin's historical pattern of major bull runs every ~4 years coinciding with halving cycles. However, $80K would represent a significant milestone above Bitcoin's previous ~$69K peak from 2021. The timing (March 2025) falls roughly 11 months after the April 2024 halving, which historically has been associated with price appreciation cycles. I'm adjusting upward to 35% because: (1) the halving cycle timing suggests potential for a bull run in this timeframe, (2) continued institutional adoption trends, and (3) the question only requires touching $80K briefly in March, not sustaining it. However, confidence is very low (0.3) due to critical information gaps - most importantly not knowing the current Bitcoin price, which is essential for assessing how much appreciation would be needed. Without knowing if Bitcoin is currently at $30K, $50K, or $70K, the probability changes dramatically. The rapid evolution of crypto markets also makes historical patterns less reliable predictors."
+    },
     {
       "id": 82,
       "platform": "manifold",
@@ -1923,8 +1979,8 @@
       "resolution_source": "",
       "scanned_at": "2026-03-19T18:30:16.146155",
       "est_prob": 0.35,
-      "est_conf": 0.4,
-      "est_reasoning": "I start with a base rate of ~25% for Bitcoin achieving significant monthly price targets based on historical bull market patterns where 15-20% monthly gains occurred multiple times. The target of $80K represents only ~16% above Bitcoin's previous ATH of ~$69K, which is achievable given Bitcoin's historical volatility. Adjusting upward to 35% because: (1) The 15-16 month timeframe to March 2025 provides substantial runway, (2) Bitcoin halving cycles historically drive bull markets with the next expected in 2024, (3) Institutional adoption trends and potential ETF approvals could drive major inflows. However, confidence is low at 0.4 due to critical information gaps, particularly the current Bitcoin price which fundamentally determines the required percentage move. Without knowing if Bitcoin is currently at $30K, $50K, or $70K, the probability changes dramatically. Additional uncertainties around regulatory environment, macro conditions, and exact resolution criteria further limit confidence in this estimate."
+      "est_conf": 0.3,
+      "est_reasoning": "Starting with a base rate around 25% based on Bitcoin's historical pattern of major bull runs every ~4 years coinciding with halving cycles. However, $80K would represent a significant milestone above Bitcoin's previous ~$69K peak from 2021. The timing (March 2025) falls roughly 11 months after the April 2024 halving, which historically has been associated with price appreciation cycles. I'm adjusting upward to 35% because: (1) the halving cycle timing suggests potential for a bull run in this timeframe, (2) continued institutional adoption trends, and (3) the question only requires touching $80K briefly in March, not sustaining it. However, confidence is very low (0.3) due to critical information gaps - most importantly not knowing the current Bitcoin price, which is essential for assessing how much appreciation would be needed. Without knowing if Bitcoin is currently at $30K, $50K, or $70K, the probability changes dramatically. The rapid evolution of crypto markets also makes historical patterns less reliable predictors."
     },
     {
       "id": 29,
