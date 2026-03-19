@@ -1384,38 +1384,30 @@ async function fetchLiveAccounts() {
 }
 
 function updatePortfolioFromLive() {
-  const data = getActiveData();
   const acctNames = Object.keys(liveAccounts);
   if (acctNames.length === 0) return;
 
-  let balance = 0, deployed = 0, deposits = 0;
+  let balance = 0, deployed = 0;
 
   if (selectedStrategy === 'all') {
     acctNames.forEach(name => {
       const a = liveAccounts[name];
       balance += a.balance;
       deployed += a.invested;
-      deposits += a.totalDeposits;
     });
   } else {
-    // Find which account matches
     const acctName = ACCOUNT_MAP[selectedStrategy] || selectedStrategy;
     const a = liveAccounts[acctName];
     if (a) {
       balance = a.balance;
       deployed = a.invested;
-      deposits = a.totalDeposits;
     }
   }
 
+  // Only update balance and deployed from live API
+  // P&L comes from feed data (resolved trades) which is more accurate
   document.getElementById('sBankroll').textContent = formatMoney(balance + deployed);
   document.getElementById('sDeployed').textContent = formatMoney(deployed);
-
-  // Total P&L = (current balance + invested) - total deposits
-  const totalPnl = (balance + deployed) - deposits;
-  const pnlEl = document.getElementById('sPnl');
-  pnlEl.textContent = formatMoney(totalPnl);
-  pnlEl.className = 'stat-value' + (totalPnl > 0.01 ? ' positive' : totalPnl < -0.01 ? ' negative' : '');
 }
 
 function updateStrategy(strategy) {
