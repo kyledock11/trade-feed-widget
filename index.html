@@ -692,13 +692,107 @@
   .strategy-body-inner .trade-list {
     margin-top: 0;
   }
+
+  /* Strategy selector dropdown */
+  .strategy-selector {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .strategy-selector-current {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .strategy-selector-arrow {
+    font-size: 0.5rem;
+    color: #6b6660;
+    transition: transform 0.2s;
+  }
+
+  .strategy-selector.open .strategy-selector-arrow {
+    transform: rotate(180deg);
+  }
+
+  .strategy-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.35rem;
+    background: #222;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.25rem 0;
+    min-width: 180px;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+
+  .strategy-selector.open .strategy-dropdown {
+    display: block;
+  }
+
+  .strategy-option {
+    padding: 0.4rem 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    color: #b0aba5;
+    cursor: pointer;
+    transition: background 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .strategy-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .strategy-option.active {
+    color: #f2efea;
+    font-weight: 400;
+  }
+
+  .strategy-option .strat-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #5a5650;
+  }
+
+  .strategy-option.active .strat-count {
+    color: #7a756e;
+  }
+
+  /* Trade account tag */
+  .trade-account {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    font-size: 0.55rem;
+    color: #5a5650;
+    padding: 0.05rem 0.3rem;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.03);
+    flex-shrink: 0;
+  }
 </style>
 </head>
 <body>
 <div class="widget">
   <div class="sticky-top">
     <div class="header-row">
-      <div class="header-label"><span id="strategyName">Parallax</span> <span style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:300;color:#8a857e;letter-spacing:0.04em" id="strategyVersion">v0.4</span></div>
+      <div class="header-label">
+        <div class="strategy-selector" id="stratSelector">
+          <div class="strategy-selector-current">
+            <span id="strategyName">All Accounts</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:300;color:#8a857e;letter-spacing:0.04em" id="strategyVersion"></span>
+            <span class="strategy-selector-arrow">&#9660;</span>
+          </div>
+          <div class="strategy-dropdown" id="stratDropdown"></div>
+        </div>
+      </div>
       <div class="header-meta">
         <span class="phase-badge learning" id="phaseBadge">LEARNING</span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#7a756e;letter-spacing:0.06em" id="strategyIter">iter 4</span>
@@ -777,6 +871,7 @@ const REFRESH_INTERVAL = 15000; // 15 seconds
 let feedData = null;
 let activeTab = 'all';
 let isMultiStrategy = false;
+let selectedStrategy = 'all'; // 'all' or strategy name
 
 // Strategy accent colors
 const STRATEGY_COLORS = {
@@ -787,6 +882,269 @@ const STRATEGY_COLORS = {
 
 function getStrategyAccent(name) {
   return STRATEGY_COLORS[name] || 'green';
+}
+
+// Strategy selector
+document.getElementById('stratSelector').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('stratSelector').classList.toggle('open');
+});
+
+document.addEventListener('click', () => {
+  document.getElementById('stratSelector').classList.remove('open');
+});
+
+function getActiveData() {
+  if (!feedData) return { trades: [], portfolio: null, stats: null, exposure: null };
+
+  if (selectedStrategy === 'all') {
+    // If multi-strategy, combine all strategies
+    if (isMultiStrategy && feedData.strategies) {
+      const allTrades = feedData.strategies.flatMap(s => (s.trades || []).map(t => ({...t, _strategy: s.name})));
+      // Sum portfolio values
+      const portfolio = { bankroll: 0, deployed: 0, cash: 0, total_pnl: 0, max_drawdown: 0 };
+      const stats = { total_trades: 0, open_positions: 0, resolved: 0, avg_edge: 0 };
+      let totalEdge = 0;
+      feedData.strategies.forEach(s => {
+        const p = s.portfolio || {};
+        const st = s.stats || {};
+        portfolio.bankroll += p.bankroll || 0;
+        portfolio.deployed += (p.deployed || 0);
+        portfolio.cash += (p.cash || 0);
+        portfolio.total_pnl += (p.total_pnl || st.total_pnl || 0);
+        stats.total_trades += (st.total_trades || 0);
+        stats.open_positions += (st.open_positions || 0);
+        stats.resolved += (st.resolved || 0);
+        totalEdge += (st.avg_edge || 0) * (st.open_positions || 0);
+      });
+      stats.avg_edge = stats.open_positions > 0 ? totalEdge / stats.open_positions : 0;
+      stats.total_pnl = portfolio.total_pnl;
+      return { trades: allTrades, portfolio, stats, exposure: feedData.exposure, estimates: feedData.estimates };
+    }
+    // Single strategy — use top-level data
+    return {
+      trades: (feedData.trades || []).map(t => ({...t, _strategy: feedData.strategy?.name || 'Parallax'})),
+      portfolio: feedData.portfolio,
+      stats: feedData.stats,
+      exposure: feedData.exposure,
+      estimates: feedData.estimates
+    };
+  }
+
+  // Specific strategy selected
+  if (isMultiStrategy && feedData.strategies) {
+    const strat = feedData.strategies.find(s => s.name === selectedStrategy);
+    if (strat) {
+      return {
+        trades: (strat.trades || []).map(t => ({...t, _strategy: strat.name})),
+        portfolio: strat.portfolio,
+        stats: strat.stats,
+        exposure: strat.exposure,
+        estimates: strat.estimates || feedData.estimates
+      };
+    }
+  }
+
+  // Fallback
+  return {
+    trades: (feedData.trades || []).map(t => ({...t, _strategy: feedData.strategy?.name || 'Parallax'})),
+    portfolio: feedData.portfolio,
+    stats: feedData.stats,
+    exposure: feedData.exposure,
+    estimates: feedData.estimates
+  };
+}
+
+function buildStrategyDropdown() {
+  const dropdown = document.getElementById('stratDropdown');
+  const nameEl = document.getElementById('strategyName');
+  const verEl = document.getElementById('strategyVersion');
+
+  let options = [];
+
+  if (isMultiStrategy && feedData.strategies) {
+    options = feedData.strategies.map(s => ({
+      name: s.name,
+      version: s.version,
+      count: s.trades ? s.trades.length : 0
+    }));
+  } else if (feedData.strategy) {
+    options = [{ name: feedData.strategy.name || 'Parallax', version: feedData.strategy.version, count: feedData.trades ? feedData.trades.length : 0 }];
+  } else {
+    options = [{ name: 'Parallax', count: feedData.trades ? feedData.trades.length : 0 }];
+  }
+
+  const totalCount = options.reduce((s, o) => s + o.count, 0);
+
+  let html = `<div class="strategy-option ${selectedStrategy === 'all' ? 'active' : ''}" data-strat="all">All Accounts<span class="strat-count">${totalCount}</span></div>`;
+  options.forEach(o => {
+    html += `<div class="strategy-option ${selectedStrategy === o.name ? 'active' : ''}" data-strat="${esc(o.name)}">${esc(o.name)}${o.version ? ' v'+o.version : ''}<span class="strat-count">${o.count}</span></div>`;
+  });
+
+  dropdown.innerHTML = html;
+
+  dropdown.querySelectorAll('.strategy-option').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selectedStrategy = opt.dataset.strat;
+      document.getElementById('stratSelector').classList.remove('open');
+
+      // Update header label
+      if (selectedStrategy === 'all') {
+        nameEl.textContent = 'All Accounts';
+        verEl.textContent = '';
+      } else {
+        const s = options.find(o => o.name === selectedStrategy);
+        nameEl.textContent = selectedStrategy;
+        verEl.textContent = s && s.version ? 'v' + s.version : '';
+      }
+
+      refreshView();
+    });
+  });
+}
+
+function refreshView() {
+  const data = getActiveData();
+
+  // Always show single strategy view
+  document.getElementById('strategySections').style.display = 'none';
+  document.getElementById('singleStrategyView').style.display = 'block';
+
+  updatePortfolioFromData(data);
+  updateExposure(data.exposure, data.stats);
+  updateBacktest(feedData.learning);
+  updateTimeline(feedData.resolution_timeline);
+  renderTradesFromData(data);
+}
+
+function updatePortfolioFromData(data) {
+  const portfolio = data.portfolio || {};
+  const stats = data.stats || {};
+
+  document.getElementById('sBankroll').textContent = formatMoney(portfolio.bankroll || stats.bankroll);
+  document.getElementById('sDeployed').textContent = formatMoney(portfolio.deployed || stats.deployed);
+  document.getElementById('sPositions').textContent = stats.open_positions || 0;
+
+  const pnl = portfolio.total_pnl || stats.total_pnl || 0;
+  const pnlEl = document.getElementById('sPnl');
+  pnlEl.textContent = formatMoney(pnl);
+  pnlEl.className = 'stat-value' + (pnl > 0 ? ' positive' : pnl < 0 ? ' negative' : '');
+
+  const dd = portfolio.max_drawdown || stats.max_drawdown || 0;
+  const ddEl = document.getElementById('sDrawdown');
+  ddEl.textContent = formatPct(dd);
+  ddEl.className = 'stat-value' + (dd > 0 ? ' negative' : '');
+
+  const trades = data.trades || [];
+  const openTrades = trades.filter(t => t.status === 'filled');
+
+  const totalPotential = openTrades.reduce((sum, t) => sum + calcPotentialProfit(t), 0);
+  document.getElementById('sPotential').textContent = formatMoney(totalPotential);
+
+  const totalExpected = openTrades.reduce((sum, t) => sum + calcExpectedProfit(t), 0);
+  const expEl = document.getElementById('sExpected');
+  expEl.textContent = formatMoney(totalExpected);
+  expEl.className = 'stat-value' + (totalExpected > 0 ? ' positive' : totalExpected < 0 ? ' negative' : '');
+
+  const avgEdge = stats.avg_edge ? (stats.avg_edge * 100).toFixed(1) + '%' : '--';
+  document.getElementById('sEdge').textContent = avgEdge;
+}
+
+function renderTradesFromData(data) {
+  const list = document.getElementById('tradeList');
+
+  if (activeTab === 'markets') {
+    renderMarkets();
+    return;
+  }
+
+  let trades = data.trades || [];
+  if (activeTab === 'open') trades = trades.filter(t => t.status === 'filled');
+  if (activeTab === 'resolved') trades = trades.filter(t => t.status === 'resolved');
+
+  // Update tab counts
+  const allTrades = data.trades || [];
+  const allCount = allTrades.length;
+  const openCount = allTrades.filter(t => t.status === 'filled').length;
+  const resolvedCount = allTrades.filter(t => t.status === 'resolved').length;
+  const marketsCount = feedData.markets ? feedData.markets.length : 0;
+  document.querySelectorAll('#tabs .tab').forEach(tab => {
+    const counts = { all: allCount, open: openCount, resolved: resolvedCount, markets: marketsCount };
+    const existing = tab.querySelector('.count');
+    if (existing) existing.remove();
+    if (counts[tab.dataset.tab] !== undefined) {
+      const span = document.createElement('span');
+      span.className = 'count';
+      span.textContent = counts[tab.dataset.tab];
+      tab.appendChild(span);
+    }
+  });
+
+  if (trades.length === 0) {
+    list.innerHTML = '<div class="empty-state">No trades in this view.</div>';
+    return;
+  }
+
+  list.innerHTML = `<div class="trade-list-header">
+    <span class="th th-spacer"></span>
+    <span class="th th-dir">Side</span>
+    <span class="th th-question">Market</span>
+    <span class="th th-data">Prob</span>
+    <span class="th th-data">Risked</span>
+    <span class="th th-data">Profit</span>
+    ${selectedStrategy === 'all' ? '<span class="th th-data">Acct</span>' : ''}
+    <span class="th th-time">Time</span>
+  </div>`;
+
+  const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
+
+  const estimateMap = {};
+  const estimates = data.estimates || feedData.estimates || [];
+  estimates.forEach(e => {
+    if (!estimateMap[e.market_id]) estimateMap[e.market_id] = e;
+  });
+
+  trades.forEach(trade => {
+    const card = document.createElement('div');
+    card.className = 'trade-card';
+    const estimate = estimateMap[trade.market_id];
+    const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
+    const potentialProfit = calcPotentialProfit(trade);
+    const likelihood = trade.estimated_probability ? (trade.estimated_probability * 100).toFixed(0) + '%' : '';
+
+    card.innerHTML = `
+      <div class="trade-header">
+        ${caretSVG}
+        <span class="trade-direction ${trade.direction}">${trade.direction}</span>
+        <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
+        ${likelihood ? `<span class="trade-size" style="color:#7eb8d0">${likelihood}</span>` : ''}
+        <span class="trade-size">${formatMoney(trade.size)}</span>
+        ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
+        ${selectedStrategy === 'all' && trade._strategy ? `<span class="trade-account">${esc(trade._strategy)}</span>` : ''}
+        <span class="trade-time">${relativeTime(trade.created_at)}</span>
+      </div>
+      <div class="trade-body">
+        <div class="trade-body-inner">
+          <div class="detail"><span class="detail-label">Entry Price</span><span class="detail-value">${formatPct(trade.entry_price)}</span></div>
+          <div class="detail"><span class="detail-label">Est. Probability</span><span class="detail-value">${formatPct(trade.estimated_probability)}</span></div>
+          <div class="detail"><span class="detail-label">Edge</span><span class="detail-value ${trade.edge > 0 ? 'edge-positive' : 'edge-negative'}">${edge}%</span></div>
+          <div class="detail"><span class="detail-label">Kelly</span><span class="detail-value">${formatPct(trade.kelly_fraction)}</span></div>
+          <div class="detail"><span class="detail-label">Risked</span><span class="detail-value">${formatMoney(trade.size)}</span></div>
+          <div class="detail"><span class="detail-label">Profit if Win</span><span class="detail-value edge-positive">+${formatMoney(potentialProfit)}</span></div>
+          <div class="detail"><span class="detail-label">Expected Value</span><span class="detail-value ${calcExpectedProfit(trade) >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(calcExpectedProfit(trade))}</span></div>
+          <div class="detail"><span class="detail-label">Platform</span><span class="detail-value">${esc(trade.platform || '--')}</span></div>
+          ${trade._strategy ? `<div class="detail"><span class="detail-label">Account</span><span class="detail-value">${esc(trade._strategy)}</span></div>` : ''}
+          <div class="detail"><span class="detail-label">Status</span><span class="detail-value">${esc(trade.status || '--')}</span></div>
+          ${trade.pnl !== null && trade.pnl !== undefined ? `<div class="detail"><span class="detail-label">P&L</span><span class="detail-value ${trade.pnl >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(trade.pnl)}</span></div>` : ''}
+          ${estimate && estimate.reasoning ? `<div class="trade-reasoning"><span class="detail-label">Reasoning</span><div class="reasoning-text">${esc(estimate.reasoning)}</div></div>` : ''}
+        </div>
+      </div>
+    `;
+
+    card.querySelector('.trade-header').addEventListener('click', () => card.classList.toggle('expanded'));
+    list.appendChild(card);
+  });
 }
 
 // Refresh button
@@ -804,7 +1162,7 @@ document.getElementById('tabs').addEventListener('click', e => {
   document.querySelectorAll('#tabs .tab').forEach(t => t.classList.remove('active'));
   tab.classList.add('active');
   activeTab = tab.dataset.tab;
-  renderTrades();
+  refreshView();
 });
 
 function relativeTime(dateStr) {
@@ -1494,28 +1852,18 @@ async function fetchFeed() {
     const updatedAt = feedData.updated_at ? relativeTime(feedData.updated_at) : 'unknown';
     update.textContent = `Updated ${updatedAt}`;
 
-    updateStrategy(feedData.strategy);
     updateBotStatus(feedData.bot_status);
     updatePhase(feedData.bot_status);
     updateLearning(feedData.learning);
 
-    // Check for multi-strategy format
+    // Detect multi-strategy
     isMultiStrategy = feedData.strategies && Array.isArray(feedData.strategies) && feedData.strategies.length > 0;
 
-    if (isMultiStrategy) {
-      // Multi-strategy view
-      document.getElementById('singleStrategyView').style.display = 'none';
-      renderMultiStrategy();
-    } else {
-      // Single-strategy view (backward compat)
-      document.getElementById('strategySections').style.display = 'none';
-      document.getElementById('singleStrategyView').style.display = 'block';
-      updateExposure(feedData.exposure, feedData.stats);
-      updateBacktest(feedData.learning);
-      updateTimeline(feedData.resolution_timeline);
-      updatePortfolio(feedData.stats);
-      renderTrades();
-    }
+    // Build strategy dropdown
+    buildStrategyDropdown();
+
+    // Render based on selected strategy
+    refreshView();
   } catch {
     dot.className = 'status-dot offline';
     update.textContent = 'Feed offline';
