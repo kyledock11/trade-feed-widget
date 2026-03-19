@@ -1,20 +1,58 @@
 {
-  "updated_at": "2026-03-19T19:31:17.407798+00:00",
+  "updated_at": "2026-03-19T19:36:32.592396+00:00",
+  "strategy": {
+    "name": "Parallax",
+    "version": "0.4",
+    "full_name": "Parallax v0.4",
+    "iteration": 4,
+    "current": {
+      "version": "0.4",
+      "date": "2026-03-19",
+      "name": "Tiered Exposure",
+      "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
+    },
+    "changelog": [
+      {
+        "version": "0.1",
+        "date": "2026-03-19",
+        "name": "Genesis",
+        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
+      },
+      {
+        "version": "0.2",
+        "date": "2026-03-19",
+        "name": "Deep Research",
+        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
+      },
+      {
+        "version": "0.3",
+        "date": "2026-03-19",
+        "name": "Learning Loop",
+        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
+      },
+      {
+        "version": "0.4",
+        "date": "2026-03-19",
+        "name": "Tiered Exposure",
+        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
+      }
+    ]
+  },
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T19:31:17.407806+00:00",
+    "last_heartbeat": "2026-03-19T19:36:32.592408+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO     Cycle complete: 1 trades from 39 markets in 0m   run.py:163",
-      "36s",
-      "INFO       Skipped: 37 recently analyzed, 1 already have  run.py:167",
-      "position, 0 no edge",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "scheduled when the scheduler starts",
+      "INFO     Added job \"TradingBot.run_cycle\" to job store  base.py:1090",
+      "\"default\"",
+      "INFO     Scheduler started                               base.py:214",
+      "Scheduler running (every 30 min). Press Ctrl+C to stop."
     ]
   },
   "portfolio": {
