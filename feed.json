@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-19T21:15:38.342982+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-19T21:20:49.925603+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T21:15:38.342991+00:00",
+    "last_heartbeat": "2026-03-19T21:20:49.925610+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 16 recently analyzed, 11 already have run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 4 low-volume markets               run.py:173",
-      "WARNING    Errors: 6 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 24 positions, M$582.70 deployed",
+      "[15:17:16] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-19",
+      "15:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1265,6 +1221,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 135,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.3902439024390245,
+      "current_no_price": 0.6097560975609755,
+      "volume": 250.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:20:19.792520",
+      "est_prob": 0.65,
+      "est_conf": 0.2,
+      "est_reasoning": "Without any historical base rate data for MSPRF offer timing, I'm working from general knowledge of academic fellowship processes. Most major academic fellowships (NSF GRFP, NIH F32, etc.) typically announce results in March-April timeframe, which suggests March 24 could be plausible. However, the mention of NSF budget constraints introduces downside risk for delays. The one-day window between market close and resolution (March 23 vs March 24) suggests the date was chosen as meaningful. Given the complete lack of specific evidence, I'm estimating slightly above 50% based on: (1) March timing aligns with typical academic cycles, (2) the specific date choice implies some knowledge of typical timing, but (3) budget constraints and information gaps create significant uncertainty. My confidence is very low due to the complete absence of relevant data."
+    },
+    {
+      "id": 134,
+      "platform": "manifold",
+      "market_id": "uphA9gU6z0",
+      "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
+      "current_yes_price": 0.34000000000000014,
+      "current_no_price": 0.6599999999999999,
+      "volume": 6269.615471855391,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-04T20:15:00+00:00",
+      "category": "tech",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:19:47.656688",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 133,
       "platform": "manifold",
@@ -2930,40 +2920,6 @@
       "est_prob": 0.2,
       "est_conf": 0.6,
       "est_reasoning": "Base rate of 35% reflects that military actions often produce mixed approval effects - some boost ratings (rally around flag) while controversial ones damage them. The specific evidence strongly suggests a downward trend: multiple polls show Trump at 'new lows' and 'all-time lows' through March 19, only 25% approve of Iran strikes per Reuters/Ipsos, and approval sits at 41-43% with 54-56% disapproval. The market closes just 9 days after the last negative polling data, leaving little time for a reversal. While there's some conflicting information about independent voters and potential for delayed rally effects, the consistent pattern of declining approval through March 19 and low support for the Iran action itself makes improvement unlikely in such a short timeframe. Adjusting significantly below base rate to 20% due to strong recent negative trend and proximity to resolution date."
-    },
-    {
-      "id": 35,
-      "platform": "manifold",
-      "market_id": "lqRAnA8qPO",
-      "question": "Will Kalshi pay $1 billion for a perfect bracket?",
-      "current_yes_price": 0.010000000000000005,
-      "current_no_price": 0.99,
-      "volume": 2686.9096040783993,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-06T23:59:00+00:00",
-      "category": "sports",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:38:49.667562",
-      "est_prob": 0.15,
-      "est_conf": 0.4,
-      "est_reasoning": "The base rate for perfect brackets is effectively 0% - no perfect bracket has ever been documented despite millions of annual entries. However, the question's wording creates significant ambiguity. If it asks whether Kalshi will actually pay out $1 billion (requiring a perfect bracket to occur), the answer is almost certainly no given the 1 in 9.2 quintillion odds. But if it asks whether Kalshi has committed to pay $1 billion for a perfect bracket (regardless of whether one occurs), then multiple credible sources confirm this is true. The evidence strongly supports that Kalshi has launched this challenge and made this commitment. Given the resolution ambiguity and the distinction between commitment vs. actual payout, I estimate 15% probability, accounting for the possibility that the market resolves based on Kalshi's commitment rather than requiring an actual perfect bracket winner."
-    },
-    {
-      "id": 34,
-      "platform": "manifold",
-      "market_id": "EzEhQEA0pp",
-      "question": "UK gov accepts all 47 Fingleton nuclear review recommendations by Q1 2026?",
-      "current_yes_price": 0.17616509521666313,
-      "current_no_price": 0.8238349047833369,
-      "volume": 6395.349098849175,
-      "liquidity": 8000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:38:23.414316",
-      "est_prob": 0.25,
-      "est_conf": 0.2,
-      "est_reasoning": "This is a highly uncertain prediction due to multiple critical information gaps. While there is some positive evidence from March 2026 news indicating UK government commitment to nuclear regulatory reforms with completion expected by end of next year, this falls short of the specific requirements for YES resolution. The news doesn't explicitly mention the 'Fingleton' review, doesn't confirm exactly 47 recommendations, and doesn't clarify whether 'acceptance' has occurred versus just implementation planning. The timing is also problematic - with the market closing March 31, 2026, there's minimal time for additional official confirmations. Without being able to definitively link the news about nuclear regulatory reforms to the specific Fingleton review and its 47 recommendations, and without clear resolution criteria for what constitutes 'acceptance,' I estimate a low probability while acknowledging very high uncertainty."
     }
   ]
 }
