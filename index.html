@@ -317,12 +317,14 @@
     <div class="stat"><span class="stat-value" id="sPositions">--</span><span class="stat-label">Open</span></div>
     <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
     <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
+    <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Potential Profit</span></div>
   </div>
 
   <div class="tabs" id="tabs">
     <div class="tab active" data-tab="all">All</div>
     <div class="tab" data-tab="open">Open</div>
     <div class="tab" data-tab="resolved">Resolved</div>
+    <div class="tab" data-tab="markets" style="font-style:italic;color:#7eb8d0;">Live Markets</div>
   </div>
 
   <div class="trade-list" id="tradeList">
@@ -332,7 +334,7 @@
 
 <script>
 const FEED_URL = 'https://kyledock11.github.io/trade-feed-widget/feed.json';
-const REFRESH_INTERVAL = 60000; // 1 minute
+const REFRESH_INTERVAL = 15000; // 15 seconds
 
 let feedData = null;
 let activeTab = 'all';
@@ -372,6 +374,16 @@ function formatPct(val) {
   return (parseFloat(val) * 100).toFixed(1) + '%';
 }
 
+function calcPotentialProfit(trade) {
+  // If direction is YES and it resolves YES: payout = size / entry_price
+  // If direction is NO and it resolves NO: payout = size / (1 - yes_price)
+  // But entry_price is already the price of the direction bought
+  const size = parseFloat(trade.size) || 0;
+  const price = parseFloat(trade.entry_price) || 0;
+  if (price <= 0 || price >= 1) return 0;
+  return (size / price) - size;
+}
+
 function updatePortfolio(stats) {
   if (!stats) return;
   document.getElementById('sBankroll').textContent = formatMoney(stats.bankroll);
@@ -387,10 +399,25 @@ function updatePortfolio(stats) {
   const ddEl = document.getElementById('sDrawdown');
   ddEl.textContent = formatPct(stats.max_drawdown);
   ddEl.className = 'stat-value' + (stats.max_drawdown > 0 ? ' negative' : '');
+
+  // Calculate total potential profit from all open trades
+  if (feedData && feedData.trades) {
+    const openTrades = feedData.trades.filter(t => t.status === 'filled');
+    const totalPotential = openTrades.reduce((sum, t) => sum + calcPotentialProfit(t), 0);
+    const potEl = document.getElementById('sPotential');
+    potEl.textContent = formatMoney(totalPotential);
+  }
 }
 
 function renderTrades() {
   const list = document.getElementById('tradeList');
+
+  // Handle markets tab separately
+  if (activeTab === 'markets') {
+    renderMarkets();
+    return;
+  }
+
   if (!feedData || !feedData.trades) {
     list.innerHTML = '<div class="empty-state">No trades yet.</div>';
     return;
@@ -404,14 +431,17 @@ function renderTrades() {
   const allCount = feedData.trades.length;
   const openCount = feedData.trades.filter(t => t.status === 'filled').length;
   const resolvedCount = feedData.trades.filter(t => t.status === 'resolved').length;
+  const marketsCount = feedData.markets ? feedData.markets.length : 0;
   document.querySelectorAll('.tab').forEach(tab => {
-    const counts = { all: allCount, open: openCount, resolved: resolvedCount };
+    const counts = { all: allCount, open: openCount, resolved: resolvedCount, markets: marketsCount };
     const existing = tab.querySelector('.count');
     if (existing) existing.remove();
-    const span = document.createElement('span');
-    span.className = 'count';
-    span.textContent = counts[tab.dataset.tab] || 0;
-    tab.appendChild(span);
+    if (counts[tab.dataset.tab] !== undefined) {
+      const span = document.createElement('span');
+      span.className = 'count';
+      span.textContent = counts[tab.dataset.tab];
+      tab.appendChild(span);
+    }
   });
 
   if (trades.length === 0) {
@@ -436,6 +466,7 @@ function renderTrades() {
 
     const estimate = estimateMap[trade.market_id];
     const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
+    const potentialProfit = calcPotentialProfit(trade);
 
     card.innerHTML = `
       <div class="trade-header">
@@ -443,6 +474,7 @@ function renderTrades() {
         <span class="trade-direction ${trade.direction}">${trade.direction}</span>
         <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
         <span class="trade-size">${formatMoney(trade.size)}</span>
+        ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
         <span class="trade-time">${relativeTime(trade.created_at)}</span>
       </div>
       <div class="trade-body">
@@ -462,6 +494,14 @@ function renderTrades() {
           <div class="detail">
             <span class="detail-label">Kelly</span>
             <span class="detail-value">${formatPct(trade.kelly_fraction)}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Risked</span>
+            <span class="detail-value">${formatMoney(trade.size)}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Profit if Win</span>
+            <span class="detail-value edge-positive">+${formatMoney(potentialProfit)}</span>
           </div>
           <div class="detail">
             <span class="detail-label">Platform</span>
@@ -498,6 +538,98 @@ function renderTrades() {
 function esc(str) {
   if (!str) return '';
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function renderMarkets() {
+  const list = document.getElementById('tradeList');
+
+  if (!feedData || !feedData.markets || feedData.markets.length === 0) {
+    list.innerHTML = '<div class="empty-state">No market scans available. Run the bot to populate.</div>';
+    return;
+  }
+
+  list.innerHTML = '';
+  const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
+
+  // Deduplicate by market_id (keep latest scan)
+  const seen = new Set();
+  const unique = feedData.markets.filter(m => {
+    if (seen.has(m.market_id)) return false;
+    seen.add(m.market_id);
+    return true;
+  });
+
+  // Sort by estimated edge (if estimate exists)
+  unique.sort((a, b) => {
+    const edgeA = a.est_prob ? Math.abs(a.est_prob - a.current_yes_price) : 0;
+    const edgeB = b.est_prob ? Math.abs(b.est_prob - b.current_yes_price) : 0;
+    return edgeB - edgeA;
+  });
+
+  unique.forEach(market => {
+    const card = document.createElement('div');
+    card.className = 'trade-card';
+
+    const yesPrice = parseFloat(market.current_yes_price) || 0;
+    const estProb = market.est_prob ? parseFloat(market.est_prob) : null;
+    const edge = estProb !== null ? ((estProb - yesPrice) * 100).toFixed(1) : null;
+    const edgeAbs = estProb !== null ? (Math.abs(estProb - yesPrice) * 100).toFixed(1) : null;
+    const direction = estProb !== null ? (estProb > yesPrice ? 'YES' : 'NO') : '--';
+    const dirClass = direction === 'YES' ? 'yes' : direction === 'NO' ? 'no' : '';
+
+    card.innerHTML = `
+      <div class="trade-header">
+        ${caretSVG}
+        ${edgeAbs ? `<span class="trade-direction ${dirClass}">${direction}</span>` : ''}
+        <span class="trade-question">${esc(market.question || market.market_id)}</span>
+        <span class="trade-size" style="color:#8a857e">${formatPct(yesPrice)}</span>
+        ${edgeAbs ? `<span class="trade-size" style="color:${parseFloat(edgeAbs) > 5 ? '#6ec07a' : '#8a857e'}">${edgeAbs}% edge</span>` : ''}
+        <span class="trade-time">${relativeTime(market.scanned_at)}</span>
+      </div>
+      <div class="trade-body">
+        <div class="trade-body-inner">
+          <div class="detail">
+            <span class="detail-label">YES Price</span>
+            <span class="detail-value">${formatPct(market.current_yes_price)}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">NO Price</span>
+            <span class="detail-value">${formatPct(market.current_no_price)}</span>
+          </div>
+          ${estProb !== null ? `
+          <div class="detail">
+            <span class="detail-label">Bot Estimate</span>
+            <span class="detail-value">${formatPct(estProb)}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Edge</span>
+            <span class="detail-value ${parseFloat(edgeAbs) > 5 ? 'edge-positive' : ''}">${edge > 0 ? '+' : ''}${edge}%</span>
+          </div>
+          ` : ''}
+          <div class="detail">
+            <span class="detail-label">Volume</span>
+            <span class="detail-value">${formatMoney(market.volume)}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Liquidity</span>
+            <span class="detail-value">${formatMoney(market.liquidity)}</span>
+          </div>
+          ${market.est_reasoning ? `
+          <div class="trade-reasoning">
+            <span class="detail-label">Bot Analysis</span>
+            <div class="reasoning-text">${esc(market.est_reasoning.slice(0, 600))}</div>
+          </div>
+          ` : ''}
+        </div>
+      </div>
+    `;
+
+    card.querySelector('.trade-header').addEventListener('click', () => {
+      card.classList.toggle('expanded');
+    });
+
+    list.appendChild(card);
+  });
 }
 
 async function fetchFeed() {
