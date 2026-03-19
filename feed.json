@@ -1,5 +1,16 @@
 {
-  "updated_at": "2026-03-19T19:09:42.723788",
+  "updated_at": "2026-03-19T19:12:44.636184",
+  "bot_status": {
+    "last_heartbeat": "2026-03-19T19:12:44.636318",
+    "last_log_time": null,
+    "last_log_lines": [
+      "scheduled when the scheduler starts",
+      "INFO     Added job \"TradingBot.run_cycle\" to job store  base.py:1090",
+      "\"default\"",
+      "INFO     Scheduler started                               base.py:214",
+      "Scheduler running (every 30 min). Press Ctrl+C to stop."
+    ]
+  },
   "portfolio": {
     "id": 5,
     "timestamp": "2026-03-19T19:05:10.446072",
