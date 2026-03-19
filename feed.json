@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-19T22:48:41.377737+00:00",
+  "updated_at": "2026-03-19T22:50:14.787934+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,7 +47,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T22:48:41.377746+00:00",
+    "last_heartbeat": "2026-03-19T22:50:14.787943+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1603,6 +1603,16 @@
   ],
   "estimates": [
     {
+      "id": 68,
+      "market_id": "p2c9nlgPEg",
+      "probability": 0.5,
+      "confidence": 0.15,
+      "reasoning": "Coin flip market \u2014 pure randomness, no edge possible.",
+      "key_uncertainties": "[\"Random outcome \\u2014 no information advantage\"]",
+      "base_rate": 0.5,
+      "created_at": "2026-03-19T22:50:09.822317"
+    },
+    {
       "id": 67,
       "market_id": "Au9C6AOg9Z",
       "probability": 0.05,
@@ -2091,19 +2101,43 @@
       "key_uncertainties": "[\"Current Bitcoin price level - determines required percentage move\", \"Regulatory developments especially around Bitcoin ETFs\", \"Macroeconomic conditions and interest rate environment\", \"Timing of next Bitcoin halving cycle and market positioning\", \"Institutional adoption momentum and capital inflows\", \"Resolution criteria specifics - intraday touch vs sustained level\"]",
       "base_rate": 0.25,
       "created_at": "2026-03-19T18:30:50.622650"
-    },
-    {
-      "id": 18,
-      "market_id": "EcOt6EU68N",
-      "probability": 0.5,
-      "confidence": 0.3,
-      "reasoning": "Given the complete lack of information about what specific event is being predicted, I must rely solely on the title 'Daily Coinflip'. If this is literally referring to a coin toss, the mathematical base rate is exactly 50% for either outcome. However, the sports categorization suggests this might be metaphorical. Without any resolution criteria, context, or additional details, I cannot adjust meaningfully from the 50% base rate that a coinflip would theoretically provide. My confidence is very low (0.3) because this estimate could be completely wrong if 'Daily Coinflip' refers to something other than an actual coin toss, but I have no information to determine what that might be.",
-      "key_uncertainties": "[\"Unknown what specific event is being predicted\", \"No resolution criteria provided\", \"Unclear if this is a literal coinflip or metaphorical reference\", \"Sports categorization doesn't match obvious coinflip interpretation\", \"Unknown resolution source or methodology\", \"Ambiguous whether this involves daily events or single outcome\"]",
-      "base_rate": 0.5,
-      "created_at": "2026-03-19T18:30:16.143373"
     }
   ],
   "markets": [
+    {
+      "id": 176,
+      "platform": "manifold",
+      "market_id": "p2c9nlgPEg",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.4943294919251623,
+      "current_no_price": 0.5056705080748377,
+      "volume": 279.4949490200823,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-20T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:49:53.399206",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 175,
+      "platform": "manifold",
+      "market_id": "EzEhQEA0pp",
+      "question": "UK gov accepts all 47 Fingleton nuclear review recommendations by Q1 2026?",
+      "current_yes_price": 0.1753844574199778,
+      "current_no_price": 0.8246155425800222,
+      "volume": 2985.3804700340393,
+      "liquidity": 8000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T22:49:50.771992",
+      "est_prob": 0.25,
+      "est_conf": 0.2,
+      "est_reasoning": "This is a highly uncertain prediction due to multiple critical information gaps. While there is some positive evidence from March 2026 news indicating UK government commitment to nuclear regulatory reforms with completion expected by end of next year, this falls short of the specific requirements for YES resolution. The news doesn't explicitly mention the 'Fingleton' review, doesn't confirm exactly 47 recommendations, and doesn't clarify whether 'acceptance' has occurred versus just implementation planning. The timing is also problematic - with the market closing March 31, 2026, there's minimal time for additional official confirmations. Without being able to definitively link the news about nuclear regulatory reforms to the specific Fingleton review and its 47 recommendations, and without clear resolution criteria for what constitutes 'acceptance,' I estimate a low probability while acknowledging very high uncertainty."
+    },
     {
       "id": 174,
       "platform": "manifold",
@@ -3769,40 +3803,6 @@
       "est_prob": 0.15,
       "est_conf": 0.6,
       "est_reasoning": "Current death toll of ~72,000-75,000 would need to nearly double to reach 150,000. With current daily casualty rates in single/low double digits and only ~2.5 months remaining, reaching 150,000 would require either massive escalation (~1,000 deaths/day average) or discovery of severe systematic underreporting. While Lancet study suggests some underreporting, the scale needed seems unlikely. The declining casualty trajectory typical of prolonged conflicts makes this mathematically challenging."
-    },
-    {
-      "id": 76,
-      "platform": "manifold",
-      "market_id": "zQ0dgER6SI",
-      "question": "In retrospect will \u201cBuy gas now, don\u2019t wait\u201d be reasonable advice?",
-      "current_yes_price": 0.8704639777016067,
-      "current_no_price": 0.12953602229839334,
-      "volume": 132.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-22T15:37:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:09.933038",
-      "est_prob": 0.35,
-      "est_conf": 0.2,
-      "est_reasoning": "This is an extremely difficult prediction due to fundamental ambiguities in the question and severe information gaps. Without knowing current gas prices, the specific timeframe for 'buy now' advice, or objective criteria for 'reasonable,' any estimate is highly speculative. The limited evidence is mixed: a $6.28/gallon price in NJ suggests potential for high prices (supporting YES), while CNBC discussion of $3-4 range suggests more moderate levels (supporting NO). The very short timeframe to resolution (days from current date based on sources) limits potential for major price movements. Given the subjective nature of 'reasonable advice' and complete lack of baseline data, I'm assigning a slightly below-neutral probability, acknowledging this could easily swing either direction with clearer information. My confidence is very low due to the fundamental ambiguities in the question structure."
-    },
-    {
-      "id": 75,
-      "platform": "manifold",
-      "market_id": "ARnqln6pRP",
-      "question": "Will Y Combinator fund 3 or more quantum-related startups in its next public batch update within the next 2 months?",
-      "current_yes_price": 0.1794499050543318,
-      "current_no_price": 0.8205500949456682,
-      "volume": 146.17906001644067,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-20T21:49:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T19:05:09.682882",
-      "est_prob": 0.25,
-      "est_conf": 0.2,
-      "est_reasoning": "Without base rate data for Y Combinator's quantum funding patterns, I'm estimating conservatively. The strong quantum VC interest (\u20ac220M Quantonation fund) suggests sector momentum, but this doesn't guarantee Y Combinator applications or selections. The requirement for exactly 3+ quantum startups in one specific batch is quite specific. Given the complete lack of Y Combinator operational data and the tight timeline, I'm assigning a probability below 50% but not extremely low, acknowledging that quantum sector interest could drive applications. My confidence is very low due to the massive information gaps about Y Combinator's actual operations and quantum startup pipeline."
     }
   ]
 }
