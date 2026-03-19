@@ -83,6 +83,19 @@
     text-transform: uppercase;
   }
 
+  .refresh-btn {
+    font-size: 0.7rem;
+    color: #5a5650;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s, transform 0.3s;
+    margin-left: 0.4rem;
+    display: inline-block;
+  }
+  .refresh-btn:hover { color: #a09a92; }
+  .refresh-btn.spinning { animation: spin 0.8s linear; }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+
   .bot-status-bar {
     display: flex;
     align-items: center;
@@ -564,6 +577,96 @@
     font-weight: 400;
     margin-left: 0.3rem;
   }
+
+  /* Strategy sections (multi-strategy view) */
+  .strategy-sections {
+    margin-bottom: 0.75rem;
+  }
+
+  .strategy-section {
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .strategy-section[data-accent="green"] { border-left: 2px solid rgba(110, 192, 122, 0.4); }
+  .strategy-section[data-accent="amber"] { border-left: 2px solid rgba(196, 163, 90, 0.4); }
+  .strategy-section[data-accent="blue"]  { border-left: 2px solid rgba(126, 184, 208, 0.4); }
+
+  .strategy-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.15s;
+  }
+
+  .strategy-header:hover { background: rgba(255, 255, 255, 0.04); }
+
+  .strategy-caret {
+    width: 10px;
+    color: #5a5650;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+  }
+
+  .strategy-section.expanded .strategy-caret { transform: rotate(90deg); }
+
+  .strategy-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #d0cbc5;
+  }
+
+  .strategy-section[data-accent="green"] .strategy-name { color: #6ec07a; }
+  .strategy-section[data-accent="amber"] .strategy-name { color: #c4a35a; }
+  .strategy-section[data-accent="blue"]  .strategy-name { color: #7eb8d0; }
+
+  .strategy-version {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #6b6660;
+  }
+
+  .strategy-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.6rem;
+    color: #5a5650;
+    flex: 1;
+  }
+
+  .strategy-pnl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+  }
+
+  .strategy-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .strategy-section.expanded .strategy-body {
+    max-height: 5000px;
+  }
+
+  .strategy-body-inner {
+    padding: 0.5rem 0.75rem 0.75rem;
+  }
+
+  .strategy-body-inner .portfolio-bar {
+    margin-bottom: 0.75rem;
+  }
+
+  .strategy-body-inner .trade-list {
+    margin-top: 0;
+  }
 </style>
 </head>
 <body>
@@ -576,6 +679,7 @@
         <span style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#5a5650;letter-spacing:0.06em" id="strategyIter">iter 4</span>
         <div class="status-dot" id="statusDot"></div>
         <div class="last-update" id="lastUpdate">Loading...</div>
+        <span class="refresh-btn" id="refreshBtn" title="Refresh now">&#8635;</span>
       </div>
     </div>
 
@@ -600,37 +704,43 @@
     </div>
   </div>
 
-  <div class="portfolio-bar" id="portfolioBar">
-    <div class="stat"><span class="stat-value" id="sBankroll">--</span><span class="stat-label">Bankroll</span></div>
-    <div class="stat"><span class="stat-value" id="sDeployed">--</span><span class="stat-label">Deployed</span></div>
-    <div class="stat"><span class="stat-value" id="sPositions">--</span><span class="stat-label">Open</span></div>
-    <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
-    <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
-    <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Potential Profit</span></div>
-    <div class="stat"><span class="stat-value" id="sEdge">--</span><span class="stat-label">Avg Edge</span></div>
-  </div>
+  <!-- Multi-strategy sections container (shown when strategies array present) -->
+  <div id="strategySections" class="strategy-sections" style="display:none"></div>
 
-  <div class="exposure-row" id="exposureRow"></div>
+  <!-- Single-strategy view (backward compat) -->
+  <div id="singleStrategyView">
+    <div class="portfolio-bar" id="portfolioBar">
+      <div class="stat"><span class="stat-value" id="sBankroll">--</span><span class="stat-label">Bankroll</span></div>
+      <div class="stat"><span class="stat-value" id="sDeployed">--</span><span class="stat-label">Deployed</span></div>
+      <div class="stat"><span class="stat-value" id="sPositions">--</span><span class="stat-label">Open</span></div>
+      <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
+      <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
+      <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Potential Profit</span></div>
+      <div class="stat"><span class="stat-value" id="sEdge">--</span><span class="stat-label">Avg Edge</span></div>
+    </div>
 
-  <div class="backtest-card" id="backtestCard" style="display:none">
-    <div class="backtest-title">Backtest Results</div>
-    <div class="backtest-grid" id="backtestGrid"></div>
-  </div>
+    <div class="exposure-row" id="exposureRow"></div>
 
-  <div class="timeline-section" id="timelineSection" style="display:none">
-    <div class="timeline-title">Resolution Timeline</div>
-    <div class="timeline-items" id="timelineItems"></div>
-  </div>
+    <div class="backtest-card" id="backtestCard" style="display:none">
+      <div class="backtest-title">Backtest Results</div>
+      <div class="backtest-grid" id="backtestGrid"></div>
+    </div>
 
-  <div class="tabs" id="tabs">
-    <div class="tab active" data-tab="all">All</div>
-    <div class="tab" data-tab="open">Open</div>
-    <div class="tab" data-tab="resolved">Resolved</div>
-    <div class="tab" data-tab="markets" style="font-style:italic;color:#7eb8d0;">Live Markets</div>
-  </div>
+    <div class="timeline-section" id="timelineSection" style="display:none">
+      <div class="timeline-title">Resolution Timeline</div>
+      <div class="timeline-items" id="timelineItems"></div>
+    </div>
 
-  <div class="trade-list" id="tradeList">
-    <div class="loading-state">Loading feed...</div>
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-tab="all">All</div>
+      <div class="tab" data-tab="open">Open</div>
+      <div class="tab" data-tab="resolved">Resolved</div>
+      <div class="tab" data-tab="markets" style="font-style:italic;color:#7eb8d0;">Live Markets</div>
+    </div>
+
+    <div class="trade-list" id="tradeList">
+      <div class="loading-state">Loading feed...</div>
+    </div>
   </div>
 </div>
 
@@ -640,12 +750,32 @@ const REFRESH_INTERVAL = 15000; // 15 seconds
 
 let feedData = null;
 let activeTab = 'all';
+let isMultiStrategy = false;
+
+// Strategy accent colors
+const STRATEGY_COLORS = {
+  'Parallax': 'green',
+  'Contrarian': 'amber',
+  'Zeitgeist': 'blue'
+};
+
+function getStrategyAccent(name) {
+  return STRATEGY_COLORS[name] || 'green';
+}
+
+// Refresh button
+document.getElementById('refreshBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('refreshBtn');
+  btn.classList.add('spinning');
+  await fetchFeed();
+  btn.classList.remove('spinning');
+});
 
 // Tabs
 document.getElementById('tabs').addEventListener('click', e => {
   const tab = e.target.closest('.tab');
   if (!tab) return;
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#tabs .tab').forEach(t => t.classList.remove('active'));
   tab.classList.add('active');
   activeTab = tab.dataset.tab;
   renderTrades();
@@ -677,9 +807,6 @@ function formatPct(val) {
 }
 
 function calcPotentialProfit(trade) {
-  // If direction is YES and it resolves YES: payout = size / entry_price
-  // If direction is NO and it resolves NO: payout = size / (1 - yes_price)
-  // But entry_price is already the price of the direction bought
   const size = parseFloat(trade.size) || 0;
   const price = parseFloat(trade.entry_price) || 0;
   if (price <= 0 || price >= 1) return 0;
@@ -720,7 +847,6 @@ function updateBotStatus(botStatus) {
   const ageMs = Date.now() - heartbeat.getTime();
   const ageMin = Math.floor(ageMs / 60000);
 
-  // Status thresholds: <15 min = running, 15-60 min = stale, >60 min = down
   let status;
   if (ageMin < 15) {
     status = 'running';
@@ -738,7 +864,6 @@ function updateBotStatus(botStatus) {
   text.className = `bot-status-text ${status}`;
   time.textContent = `Heartbeat: ${relativeTime(botStatus.last_heartbeat)}`;
 
-  // Log lines
   if (botStatus.last_log_lines && botStatus.last_log_lines.length > 0) {
     logInner.textContent = botStatus.last_log_lines.join('\n');
   } else {
@@ -768,7 +893,6 @@ function updatePortfolio(stats) {
   ddEl.textContent = formatPct(stats.max_drawdown);
   ddEl.className = 'stat-value' + (stats.max_drawdown > 0 ? ' negative' : '');
 
-  // Calculate total potential profit from all open trades
   if (feedData && feedData.trades) {
     const openTrades = feedData.trades.filter(t => t.status === 'filled');
     const totalPotential = openTrades.reduce((sum, t) => sum + calcPotentialProfit(t), 0);
@@ -776,12 +900,198 @@ function updatePortfolio(stats) {
     potEl.textContent = formatMoney(totalPotential);
   }
 
-  // Avg edge
   if (feedData && feedData.stats) {
     const edgeEl = document.getElementById('sEdge');
     const avgEdge = feedData.stats.avg_edge;
     edgeEl.textContent = avgEdge ? (avgEdge * 100).toFixed(1) + '%' : '--';
   }
+}
+
+function buildPortfolioBarHTML(portfolio, stats, trades, idPrefix) {
+  const bankroll = formatMoney((portfolio && portfolio.bankroll) || (stats && stats.bankroll));
+  const deployed = formatMoney((portfolio && portfolio.deployed) || (stats && stats.deployed));
+  const positions = (stats && stats.open_positions) || 0;
+  const totalPnl = (stats && stats.total_pnl) || 0;
+  const pnlClass = totalPnl > 0 ? ' positive' : totalPnl < 0 ? ' negative' : '';
+  const maxDD = stats && stats.max_drawdown;
+  const ddClass = maxDD > 0 ? ' negative' : '';
+
+  let potentialProfit = 0;
+  if (trades) {
+    const openTrades = trades.filter(t => t.status === 'filled');
+    potentialProfit = openTrades.reduce((sum, t) => sum + calcPotentialProfit(t), 0);
+  }
+
+  const avgEdge = stats && stats.avg_edge ? (stats.avg_edge * 100).toFixed(1) + '%' : '--';
+
+  return `
+    <div class="portfolio-bar">
+      <div class="stat"><span class="stat-value">${bankroll}</span><span class="stat-label">Bankroll</span></div>
+      <div class="stat"><span class="stat-value">${deployed}</span><span class="stat-label">Deployed</span></div>
+      <div class="stat"><span class="stat-value">${positions}</span><span class="stat-label">Open</span></div>
+      <div class="stat"><span class="stat-value${pnlClass}">${formatMoney(totalPnl)}</span><span class="stat-label">Total P&L</span></div>
+      <div class="stat"><span class="stat-value${ddClass}">${formatPct(maxDD)}</span><span class="stat-label">Max DD</span></div>
+      <div class="stat"><span class="stat-value positive">${formatMoney(potentialProfit)}</span><span class="stat-label">Potential Profit</span></div>
+      <div class="stat"><span class="stat-value">${avgEdge}</span><span class="stat-label">Avg Edge</span></div>
+    </div>
+  `;
+}
+
+function buildTradeListHTML(trades, estimates) {
+  if (!trades || trades.length === 0) {
+    return '<div class="empty-state">No trades yet.</div>';
+  }
+
+  const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
+
+  const estimateMap = {};
+  if (estimates) {
+    estimates.forEach(e => {
+      if (!estimateMap[e.market_id]) estimateMap[e.market_id] = e;
+    });
+  }
+
+  let html = '';
+  trades.forEach(trade => {
+    const estimate = estimateMap[trade.market_id];
+    const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
+    const potentialProfit = calcPotentialProfit(trade);
+
+    html += `
+      <div class="trade-card" onclick="this.classList.toggle('expanded')">
+        <div class="trade-header">
+          ${caretSVG}
+          <span class="trade-direction ${trade.direction}">${trade.direction}</span>
+          <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
+          <span class="trade-size">${formatMoney(trade.size)}</span>
+          ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
+          <span class="trade-time">${relativeTime(trade.created_at)}</span>
+        </div>
+        <div class="trade-body">
+          <div class="trade-body-inner">
+            <div class="detail">
+              <span class="detail-label">Entry Price</span>
+              <span class="detail-value">${formatPct(trade.entry_price)}</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Est. Probability</span>
+              <span class="detail-value">${formatPct(trade.estimated_probability)}</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Edge</span>
+              <span class="detail-value ${trade.edge > 0 ? 'edge-positive' : 'edge-negative'}">${edge}%</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Kelly</span>
+              <span class="detail-value">${formatPct(trade.kelly_fraction)}</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Risked</span>
+              <span class="detail-value">${formatMoney(trade.size)}</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Profit if Win</span>
+              <span class="detail-value edge-positive">+${formatMoney(potentialProfit)}</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Platform</span>
+              <span class="detail-value">${esc(trade.platform || '--')}</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Status</span>
+              <span class="detail-value">${esc(trade.status || '--')}</span>
+            </div>
+            ${trade.pnl !== null && trade.pnl !== undefined ? `
+            <div class="detail">
+              <span class="detail-label">P&L</span>
+              <span class="detail-value ${trade.pnl >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(trade.pnl)}</span>
+            </div>
+            ` : ''}
+            ${estimate && estimate.reasoning ? `
+            <div class="trade-reasoning">
+              <span class="detail-label">Reasoning</span>
+              <div class="reasoning-text">${esc(estimate.reasoning.slice(0, 500))}</div>
+            </div>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  return html;
+}
+
+function renderMultiStrategy() {
+  const container = document.getElementById('strategySections');
+  const strategies = feedData.strategies;
+
+  if (!strategies || strategies.length === 0) return;
+
+  container.style.display = 'block';
+  document.getElementById('singleStrategyView').style.display = 'none';
+
+  let html = '';
+  strategies.forEach((strat, idx) => {
+    const accent = getStrategyAccent(strat.name);
+    const expanded = idx === 0 ? 'expanded' : '';
+    const totalPnl = strat.stats ? strat.stats.total_pnl : null;
+    const pnlColor = totalPnl > 0 ? '#6ec07a' : totalPnl < 0 ? '#c06e6e' : '#8a857e';
+    const pnlText = totalPnl !== null && totalPnl !== undefined ? formatMoney(totalPnl) : '';
+
+    html += `
+      <div class="strategy-section ${expanded}" data-accent="${accent}" data-strategy-idx="${idx}">
+        <div class="strategy-header" onclick="toggleStrategy(this)">
+          <span class="strategy-caret">&#9654;</span>
+          <span class="strategy-name">${esc(strat.name)}</span>
+          <span class="strategy-version">v${esc(strat.version || '?')}</span>
+          <span class="strategy-label">— ${esc(strat.label || '')}</span>
+          ${pnlText ? `<span class="strategy-pnl" style="color:${pnlColor}">${pnlText}</span>` : ''}
+        </div>
+        <div class="strategy-body">
+          <div class="strategy-body-inner">
+            ${buildPortfolioBarHTML(strat.portfolio, strat.stats, strat.trades, 'strat' + idx)}
+            ${strat.exposure ? buildExposureHTML(strat.exposure) : ''}
+            <div class="trade-list">
+              ${buildTradeListHTML(strat.trades, strat.estimates || (feedData.estimates || null))}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function toggleStrategy(headerEl) {
+  const section = headerEl.closest('.strategy-section');
+  section.classList.toggle('expanded');
+}
+
+function buildExposureHTML(exposure) {
+  if (!exposure) return '';
+  let html = '<div class="exposure-row">';
+
+  html += `<span class="exposure-item">High Edge (≥10%): <span class="val">${exposure.high_edge_count || 0} trades (${formatMoney(exposure.high_edge_deployed)})</span></span>`;
+  html += `<span class="exposure-item">Low Edge: <span class="val">${exposure.low_edge_count || 0} trades (${formatMoney(exposure.low_edge_deployed)})</span></span>`;
+
+  if (exposure.by_direction) {
+    const yes = exposure.by_direction.yes || {count:0,deployed:0};
+    const no = exposure.by_direction.no || {count:0,deployed:0};
+    html += `<span class="exposure-item">YES: <span class="val">${yes.count} (${formatMoney(yes.deployed)})</span></span>`;
+    html += `<span class="exposure-item">NO: <span class="val">${no.count} (${formatMoney(no.deployed)})</span></span>`;
+  }
+
+  if (exposure.by_category) {
+    const cats = Object.entries(exposure.by_category).sort((a,b) => b[1].deployed - a[1].deployed).slice(0, 4);
+    cats.forEach(([cat, data]) => {
+      html += `<span class="exposure-item">${cat}: <span class="val">${data.count} (${formatMoney(data.deployed)})</span></span>`;
+    });
+  }
+
+  html += '</div>';
+  return html;
 }
 
 function renderTrades() {
@@ -807,7 +1117,7 @@ function renderTrades() {
   const openCount = feedData.trades.filter(t => t.status === 'filled').length;
   const resolvedCount = feedData.trades.filter(t => t.status === 'resolved').length;
   const marketsCount = feedData.markets ? feedData.markets.length : 0;
-  document.querySelectorAll('.tab').forEach(tab => {
+  document.querySelectorAll('#tabs .tab').forEach(tab => {
     const counts = { all: allCount, open: openCount, resolved: resolvedCount, markets: marketsCount };
     const existing = tab.querySelector('.count');
     if (existing) existing.remove();
@@ -827,7 +1137,6 @@ function renderTrades() {
   list.innerHTML = '';
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
 
-  // Find matching estimates for reasoning
   const estimateMap = {};
   if (feedData.estimates) {
     feedData.estimates.forEach(e => {
@@ -926,7 +1235,6 @@ function renderMarkets() {
   list.innerHTML = '';
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
 
-  // Deduplicate by market_id (keep latest scan)
   const seen = new Set();
   const unique = feedData.markets.filter(m => {
     if (seen.has(m.market_id)) return false;
@@ -934,7 +1242,6 @@ function renderMarkets() {
     return true;
   });
 
-  // Sort by estimated edge (if estimate exists)
   unique.sort((a, b) => {
     const edgeA = a.est_prob ? Math.abs(a.est_prob - a.current_yes_price) : 0;
     const edgeB = b.est_prob ? Math.abs(b.est_prob - b.current_yes_price) : 0;
@@ -1016,7 +1323,6 @@ function updatePhase(botStatus) {
   badge.textContent = labels[phase] || phase.toUpperCase();
   badge.className = `phase-badge ${phase}`;
 
-  // Add mode to bot text
   const modeStr = mode.replace('_', ' ').toUpperCase();
   const botText = document.getElementById('botText');
   if (botText && botText.textContent.includes('BOT')) {
@@ -1044,11 +1350,9 @@ function updateExposure(exposure, stats) {
 
   let html = '';
 
-  // Edge quality
   html += `<span class="exposure-item">High Edge (≥10%): <span class="val">${exposure.high_edge_count} trades (${formatMoney(exposure.high_edge_deployed)})</span></span>`;
   html += `<span class="exposure-item">Low Edge: <span class="val">${exposure.low_edge_count} trades (${formatMoney(exposure.low_edge_deployed)})</span></span>`;
 
-  // Direction
   if (exposure.by_direction) {
     const yes = exposure.by_direction.yes || {count:0,deployed:0};
     const no = exposure.by_direction.no || {count:0,deployed:0};
@@ -1056,7 +1360,6 @@ function updateExposure(exposure, stats) {
     html += `<span class="exposure-item">NO: <span class="val">${no.count} (${formatMoney(no.deployed)})</span></span>`;
   }
 
-  // Categories
   if (exposure.by_category) {
     const cats = Object.entries(exposure.by_category).sort((a,b) => b[1].deployed - a[1].deployed).slice(0, 4);
     cats.forEach(([cat, data]) => {
@@ -1103,7 +1406,7 @@ function updateTimeline(timeline) {
   section.style.display = 'block';
 
   const now = new Date();
-  const soon = new Date(now.getTime() + 48 * 60 * 60 * 1000); // 48 hours
+  const soon = new Date(now.getTime() + 48 * 60 * 60 * 1000);
 
   let html = '';
   timeline.slice(0, 8).forEach(t => {
@@ -1132,11 +1435,24 @@ async function fetchFeed() {
     updateBotStatus(feedData.bot_status);
     updatePhase(feedData.bot_status);
     updateLearning(feedData.learning);
-    updateExposure(feedData.exposure, feedData.stats);
-    updateBacktest(feedData.learning);
-    updateTimeline(feedData.resolution_timeline);
-    updatePortfolio(feedData.stats);
-    renderTrades();
+
+    // Check for multi-strategy format
+    isMultiStrategy = feedData.strategies && Array.isArray(feedData.strategies) && feedData.strategies.length > 0;
+
+    if (isMultiStrategy) {
+      // Multi-strategy view
+      document.getElementById('singleStrategyView').style.display = 'none';
+      renderMultiStrategy();
+    } else {
+      // Single-strategy view (backward compat)
+      document.getElementById('strategySections').style.display = 'none';
+      document.getElementById('singleStrategyView').style.display = 'block';
+      updateExposure(feedData.exposure, feedData.stats);
+      updateBacktest(feedData.learning);
+      updateTimeline(feedData.resolution_timeline);
+      updatePortfolio(feedData.stats);
+      renderTrades();
+    }
   } catch {
     dot.className = 'status-dot offline';
     update.textContent = 'Feed offline';
