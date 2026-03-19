@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-03-19T19:20:46.030288+00:00",
+  "updated_at": "2026-03-19T19:23:09.117640+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T19:20:46.030297+00:00",
+    "last_heartbeat": "2026-03-19T19:23:09.117650+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 38 recently analyzed, 1 already have  run.py:167",
-      "position, 0 no edge",
-      "[13:20:46] INFO       Quick mode: 2 low-volume markets               run.py:173",
-      "WARNING    Errors: 1 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "scheduled when the scheduler starts",
+      "INFO     Added job \"TradingBot.run_cycle\" to job store  base.py:1090",
+      "\"default\"",
+      "INFO     Scheduler started                               base.py:214",
+      "Scheduler running (every 30 min). Press Ctrl+C to stop."
     ]
   },
   "portfolio": {
