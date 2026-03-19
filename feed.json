@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-03-19T19:36:32.592396+00:00",
+  "updated_at": "2026-03-19T19:43:39.120536+00:00",
   "strategy": {
     "name": "Parallax",
-    "version": "0.4",
-    "full_name": "Parallax v0.4",
-    "iteration": 4,
+    "version": "0.5",
+    "full_name": "Parallax v0.5",
+    "iteration": 5,
     "current": {
-      "version": "0.4",
+      "version": "0.5",
       "date": "2026-03-19",
-      "name": "Tiered Exposure",
-      "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
+      "name": "Agreement Filter",
+      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
     },
     "changelog": [
       {
@@ -35,13 +35,19 @@
         "date": "2026-03-19",
         "name": "Tiered Exposure",
         "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
+      },
+      {
+        "version": "0.5",
+        "date": "2026-03-19",
+        "name": "Agreement Filter",
+        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
       }
     ]
   },
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T19:36:32.592408+00:00",
+    "last_heartbeat": "2026-03-19T19:43:39.120548+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
