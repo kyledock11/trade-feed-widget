@@ -570,9 +570,10 @@
 <div class="widget">
   <div class="sticky-top">
     <div class="header-row">
-      <div class="header-label">Trade Feed</div>
+      <div class="header-label"><span id="strategyName">Parallax</span> <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:300;color:#6b6660;letter-spacing:0.04em" id="strategyVersion">v0.4</span></div>
       <div class="header-meta">
         <span class="phase-badge learning" id="phaseBadge">LEARNING</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#5a5650;letter-spacing:0.06em" id="strategyIter">iter 4</span>
         <div class="status-dot" id="statusDot"></div>
         <div class="last-update" id="lastUpdate">Loading...</div>
       </div>
@@ -683,6 +684,20 @@ function calcPotentialProfit(trade) {
   const price = parseFloat(trade.entry_price) || 0;
   if (price <= 0 || price >= 1) return 0;
   return (size / price) - size;
+}
+
+function updateStrategy(strategy) {
+  if (!strategy) return;
+  const nameEl = document.getElementById('strategyName');
+  const verEl = document.getElementById('strategyVersion');
+  const iterEl = document.getElementById('strategyIter');
+  if (nameEl) nameEl.textContent = strategy.name || 'Parallax';
+  if (verEl) verEl.textContent = 'v' + (strategy.version || '?');
+  if (iterEl) {
+    const iter = strategy.iteration || '?';
+    const label = strategy.current ? strategy.current.name : '';
+    iterEl.textContent = label ? `iter ${iter} — ${label}` : `iter ${iter}`;
+  }
 }
 
 function updateBotStatus(botStatus) {
@@ -1113,6 +1128,7 @@ async function fetchFeed() {
     const updatedAt = feedData.updated_at ? relativeTime(feedData.updated_at) : 'unknown';
     update.textContent = `Updated ${updatedAt}`;
 
+    updateStrategy(feedData.strategy);
     updateBotStatus(feedData.bot_status);
     updatePhase(feedData.bot_status);
     updateLearning(feedData.learning);
