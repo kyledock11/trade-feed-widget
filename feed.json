@@ -1,20 +1,64 @@
 {
-  "updated_at": "2026-03-19T20:03:58.062527+00:00",
+  "updated_at": "2026-03-19T20:10:17.250114+00:00",
+  "strategy": {
+    "name": "Parallax",
+    "version": "0.5",
+    "full_name": "Parallax v0.5",
+    "iteration": 5,
+    "current": {
+      "version": "0.5",
+      "date": "2026-03-19",
+      "name": "Agreement Filter",
+      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
+    },
+    "changelog": [
+      {
+        "version": "0.1",
+        "date": "2026-03-19",
+        "name": "Genesis",
+        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
+      },
+      {
+        "version": "0.2",
+        "date": "2026-03-19",
+        "name": "Deep Research",
+        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
+      },
+      {
+        "version": "0.3",
+        "date": "2026-03-19",
+        "name": "Learning Loop",
+        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
+      },
+      {
+        "version": "0.4",
+        "date": "2026-03-19",
+        "name": "Tiered Exposure",
+        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
+      },
+      {
+        "version": "0.5",
+        "date": "2026-03-19",
+        "name": "Agreement Filter",
+        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
+      }
+    ]
+  },
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T20:03:58.062536+00:00",
+    "last_heartbeat": "2026-03-19T20:10:17.250125+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 28 recently analyzed, 6 already have  run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 3 low-volume markets               run.py:173",
-      "WARNING    Errors: 2 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 22 positions, M$558.72 deployed",
+      "[14:05:01] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-19",
+      "14:32:46 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -36,13 +80,13 @@
   },
   "exposure": {
     "by_category": {
-      "sports": {
-        "count": 1,
-        "deployed": 10.95
+      "uncategorized": {
+        "count": 14,
+        "deployed": 425.25
       },
       "other": {
-        "count": 6,
-        "deployed": 128.59
+        "count": 5,
+        "deployed": 78.59
       },
       "crypto": {
         "count": 1,
@@ -51,10 +95,6 @@
       "tech": {
         "count": 2,
         "deployed": 33.86
-      },
-      "uncategorized": {
-        "count": 12,
-        "deployed": 364.3
       }
     },
     "by_direction": {
@@ -307,6 +347,7 @@
       ]
     }
   ],
+  "strategies": [],
   "trades": [
     {
       "id": 22,
@@ -1156,6 +1197,159 @@
     }
   ],
   "markets": [
+    {
+      "id": 106,
+      "platform": "manifold",
+      "market_id": "NZS5REspAs",
+      "question": "US escorts commercial ship through Hormuz by March 31? [Polymarket]",
+      "current_yes_price": 0.22524674995977165,
+      "current_no_price": 0.7747532500402283,
+      "volume": 274.06575356123597,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:08.412063",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 105,
+      "platform": "manifold",
+      "market_id": "USqgCAPAz5",
+      "question": "Will something happen in Iran this month?",
+      "current_yes_price": 0.2636878456112051,
+      "current_no_price": 0.7363121543887949,
+      "volume": 360.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:08.155152",
+      "est_prob": 0.99,
+      "est_conf": 0.9,
+      "est_reasoning": "This question is so broadly defined that it's almost impossible for it to resolve NO. Iran is an active nation of 85+ million people with ongoing government functions, economic activity, social events, weather patterns, and international relations. On any given day, numerous events occur - from routine administrative decisions to news-worthy developments. The base rate for 'something happening' in any country over a month-long period is essentially 100%. Even if we interpret 'something' to mean only notable or reported events, Iran regularly appears in international news due to its geopolitical significance. The only scenarios where this could resolve NO would involve either: (1) an impossibly restrictive interpretation by the resolution source, (2) complete information isolation, or (3) some catastrophic event preventing all activity. Given the extreme vagueness favors a YES resolution and the practical certainty that events occur daily in Iran, the probability is very high."
+    },
+    {
+      "id": 104,
+      "platform": "manifold",
+      "market_id": "lSq6hLPQ20",
+      "question": "Florida Gators reach Final Four in 2026?",
+      "current_yes_price": 0.3218955124197534,
+      "current_no_price": 0.6781044875802467,
+      "volume": 372.2829959749524,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-06T22:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:07.882961",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 103,
+      "platform": "manifold",
+      "market_id": "NIhOcZOQZE",
+      "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
+      "current_yes_price": 0.11113020180278499,
+      "current_no_price": 0.888869798197215,
+      "volume": 456.77513953630256,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-15T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:07.625754",
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with NHL base rate of 53.1% (17/32 teams make playoffs). The Flyers have 31-23-12 record (74 points) with approximately 16 games remaining, which puts them on pace for ~92-94 points - historically around the playoff bubble. However, the key negative signal is that recent reporting specifically states they have 'fallen further out of playoff position' and face a 'crucial road trip,' suggesting they're currently outside the playoff picture despite a decent record. The language used implies they're chasing a playoff spot rather than holding one. The team appears competitive but in a rebuilding phase, and the March timing means there's limited room for error. Adjusting significantly below base rate due to the 'fallen out of position' reporting, but maintaining meaningful probability given their record and remaining games."
+    },
+    {
+      "id": 102,
+      "platform": "manifold",
+      "market_id": "yShRpp25pR",
+      "question": "Will the WTI Crude Oil Spot Price be above $95 on March 31, 2026?",
+      "current_yes_price": 0.6887140893777048,
+      "current_no_price": 0.31128591062229516,
+      "volume": 1585.7869449242362,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:07.363293",
+      "est_prob": 0.32,
+      "est_conf": 0.4,
+      "est_reasoning": "Looking at historical WTI crude oil prices, $95/barrel represents a relatively high price point that has been exceeded during periods of significant supply disruption or strong demand (like 2008, 2011-2014, and briefly in 2022). As a rough base rate, oil has traded above $95 perhaps 25% of the time in the past two decades. However, several factors suggest this could be higher by March 2026: ongoing geopolitical tensions, potential OPEC+ supply management, possible economic recovery driving demand, and the long timeframe allowing for various shock events. Conversely, the energy transition, potential US shale growth, and recession risks could suppress prices. The 15+ month timeframe increases uncertainty significantly, as oil markets are notoriously volatile and subject to unpredictable geopolitical and economic shocks. Without current market context, I'm moderately adjusting upward from the base rate due to the extended timeframe allowing for supply disruptions or demand surges, but maintaining significant uncertainty given oil's historical volatility."
+    },
+    {
+      "id": 101,
+      "platform": "manifold",
+      "market_id": "u6dgRuunsn",
+      "question": "Will any brackets remain perfect through the 1st round of March Madness?",
+      "current_yes_price": 0.5334688556941399,
+      "current_no_price": 0.46653114430586007,
+      "volume": 2184.1044874738873,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T01:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:07.107077",
+      "est_prob": 0.75,
+      "est_conf": 0.4,
+      "est_reasoning": "With millions of brackets filled out across multiple platforms, even if individual bracket survival probability through 32 games is low (likely 0.1-1%), the large sample size makes it probable that some brackets will survive. The 1st round has fewer major upsets than later rounds, and conservative bracket strategies can achieve higher 1st round survival rates. However, significant uncertainty exists due to lack of historical base rates and unclear resolution criteria."
+    },
+    {
+      "id": 100,
+      "platform": "manifold",
+      "market_id": "m7scZNu2LwMHTfnhW0IV",
+      "question": "Will Slay the Spire 2 get overwhelmingly positive reviews on Steam?",
+      "current_yes_price": 0.9900000000000001,
+      "current_no_price": 0.009999999999999898,
+      "volume": 6883.634992197933,
+      "liquidity": 1000.0,
+      "close_date": "2026-05-01T21:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:06.844082",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 99,
+      "platform": "manifold",
+      "market_id": "ZctCIAhQsu",
+      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
+      "current_yes_price": 0.17225253829250442,
+      "current_no_price": 0.8277474617074956,
+      "volume": 12801.711390965322,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:06.590385",
+      "est_prob": 0.08,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
+    },
+    {
+      "id": 98,
+      "platform": "manifold",
+      "market_id": "s6AyzCILzL",
+      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
+      "current_yes_price": 0.9625824599174075,
+      "current_no_price": 0.03741754008259246,
+      "volume": 43289.39775784074,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:05:06.328010",
+      "est_prob": 0.92,
+      "est_conf": 0.7,
+      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
+    },
     {
       "id": 97,
       "platform": "manifold",
@@ -2702,108 +2896,6 @@
       "est_prob": 0.15,
       "est_conf": 0.4,
       "est_reasoning": "I cannot identify a meaningful base rate since 'adult mode' for AI assistants is poorly defined and unprecedented. OpenAI has consistently prioritized safety and broad accessibility, making explicit adult-oriented features seem unlikely given their brand positioning and corporate philosophy. However, they have shown some flexibility with content policies for creative use cases. The 16-month timeframe provides reasonable opportunity for policy evolution, especially if competitive pressure increases from less restricted models. The biggest challenge is the undefined resolution criteria - even minor relaxations of content filtering could potentially qualify, but OpenAI is more likely to make incremental safety adjustments rather than launch an explicitly branded 'adult mode.' The lack of clear definition creates both upside and downside uncertainty, but OpenAI's historical conservatism suggests they would avoid controversial explicit branding even if they do relax some restrictions."
-    },
-    {
-      "id": 6,
-      "platform": "manifold",
-      "market_id": "USqgCAPAz5",
-      "question": "Will something happen in Iran this month?",
-      "current_yes_price": 0.2611325003332145,
-      "current_no_price": 0.7388674996667854,
-      "volume": 360.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:05.079602",
-      "est_prob": 0.99,
-      "est_conf": 0.9,
-      "est_reasoning": "This question is so broadly defined that it's almost impossible for it to resolve NO. Iran is an active nation of 85+ million people with ongoing government functions, economic activity, social events, weather patterns, and international relations. On any given day, numerous events occur - from routine administrative decisions to news-worthy developments. The base rate for 'something happening' in any country over a month-long period is essentially 100%. Even if we interpret 'something' to mean only notable or reported events, Iran regularly appears in international news due to its geopolitical significance. The only scenarios where this could resolve NO would involve either: (1) an impossibly restrictive interpretation by the resolution source, (2) complete information isolation, or (3) some catastrophic event preventing all activity. Given the extreme vagueness favors a YES resolution and the practical certainty that events occur daily in Iran, the probability is very high."
-    },
-    {
-      "id": 5,
-      "platform": "manifold",
-      "market_id": "m7scZNu2LwMHTfnhW0IV",
-      "question": "Will Slay the Spire 2 get overwhelmingly positive reviews on Steam?",
-      "current_yes_price": 0.9779494875805075,
-      "current_no_price": 0.02205051241949252,
-      "volume": 850.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-05-01T21:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:04.819915",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 4,
-      "platform": "manifold",
-      "market_id": "u6dgRuunsn",
-      "question": "Will any brackets remain perfect through the 1st round of March Madness?",
-      "current_yes_price": 0.6113455933759447,
-      "current_no_price": 0.38865440662405526,
-      "volume": 1775.334903138546,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-21T01:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:04.553584",
-      "est_prob": 0.75,
-      "est_conf": 0.4,
-      "est_reasoning": "With millions of brackets filled out across multiple platforms, even if individual bracket survival probability through 32 games is low (likely 0.1-1%), the large sample size makes it probable that some brackets will survive. The 1st round has fewer major upsets than later rounds, and conservative bracket strategies can achieve higher 1st round survival rates. However, significant uncertainty exists due to lack of historical base rates and unclear resolution criteria."
-    },
-    {
-      "id": 3,
-      "platform": "manifold",
-      "market_id": "EcOt6EU68N",
-      "question": "Daily Coinflip",
-      "current_yes_price": 0.5100000000000001,
-      "current_no_price": 0.4899999999999999,
-      "volume": 7899.005798799897,
-      "liquidity": 10000.0,
-      "close_date": "2026-03-21T03:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:04.297415",
-      "est_prob": 0.5,
-      "est_conf": 0.3,
-      "est_reasoning": "Given the complete lack of information about what specific event is being predicted, I must rely solely on the title 'Daily Coinflip'. If this is literally referring to a coin toss, the mathematical base rate is exactly 50% for either outcome. However, the sports categorization suggests this might be metaphorical. Without any resolution criteria, context, or additional details, I cannot adjust meaningfully from the 50% base rate that a coinflip would theoretically provide. My confidence is very low (0.3) because this estimate could be completely wrong if 'Daily Coinflip' refers to something other than an actual coin toss, but I have no information to determine what that might be."
-    },
-    {
-      "id": 2,
-      "platform": "manifold",
-      "market_id": "ZctCIAhQsu",
-      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-      "current_yes_price": 0.11549825916531666,
-      "current_no_price": 0.8845017408346834,
-      "volume": 9528.687687960592,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:04.026851",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
-    },
-    {
-      "id": 1,
-      "platform": "manifold",
-      "market_id": "s6AyzCILzL",
-      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
-      "current_yes_price": 0.7395993649460441,
-      "current_no_price": 0.26040063505395594,
-      "volume": 23720.580415641954,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:05:03.701441",
-      "est_prob": 0.92,
-      "est_conf": 0.7,
-      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
     }
   ]
 }
