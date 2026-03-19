@@ -1,9 +1,53 @@
 {
-  "updated_at": "2026-03-19T21:03:25.458616+00:00",
+  "updated_at": "2026-03-19T21:09:09.220709+00:00",
+  "strategy": {
+    "name": "Parallax",
+    "version": "0.5",
+    "full_name": "Parallax v0.5",
+    "iteration": 5,
+    "current": {
+      "version": "0.5",
+      "date": "2026-03-19",
+      "name": "Agreement Filter",
+      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
+    },
+    "changelog": [
+      {
+        "version": "0.1",
+        "date": "2026-03-19",
+        "name": "Genesis",
+        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
+      },
+      {
+        "version": "0.2",
+        "date": "2026-03-19",
+        "name": "Deep Research",
+        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
+      },
+      {
+        "version": "0.3",
+        "date": "2026-03-19",
+        "name": "Learning Loop",
+        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
+      },
+      {
+        "version": "0.4",
+        "date": "2026-03-19",
+        "name": "Tiered Exposure",
+        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
+      },
+      {
+        "version": "0.5",
+        "date": "2026-03-19",
+        "name": "Agreement Filter",
+        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
+      }
+    ]
+  },
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T21:03:25.458625+00:00",
+    "last_heartbeat": "2026-03-19T21:09:09.220718+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -36,17 +80,17 @@
   },
   "exposure": {
     "by_category": {
-      "other": {
-        "count": 6,
-        "deployed": 85.05
+      "uncategorized": {
+        "count": 15,
+        "deployed": 431.71
       },
       "politics": {
         "count": 1,
         "deployed": 17.52
       },
-      "uncategorized": {
-        "count": 14,
-        "deployed": 425.25
+      "other": {
+        "count": 5,
+        "deployed": 78.59
       },
       "crypto": {
         "count": 1,
@@ -305,6 +349,425 @@
       "count": 1,
       "markets": [
         "Will the Gaza death toll be over 150,000 at the end of the Israel-Hamas war"
+      ]
+    }
+  ],
+  "strategies": [
+    {
+      "name": "Parallax",
+      "version": "0.5",
+      "label": "Agreement Filter",
+      "account": "primary",
+      "accent": "green",
+      "portfolio": {
+        "bankroll": 1000.0,
+        "deployed": 134.65,
+        "cash": 865.35
+      },
+      "stats": {
+        "total_trades": 8,
+        "open_positions": 8,
+        "resolved": 0,
+        "total_pnl": 0,
+        "avg_edge": 0.1384
+      },
+      "exposure": {
+        "by_direction": {
+          "yes": {
+            "count": 3,
+            "deployed": 38.4
+          },
+          "no": {
+            "count": 5,
+            "deployed": 96.25
+          }
+        },
+        "high_edge_count": 4,
+        "low_edge_count": 4,
+        "high_edge_deployed": 77.97,
+        "low_edge_deployed": 56.68
+      },
+      "trades": [
+        {
+          "id": 8,
+          "market_id": "9RNqh5yzqR",
+          "platform": "manifold",
+          "question": "Will Purdue be in the Final Four of March Madness?",
+          "direction": "no",
+          "size": 30.0,
+          "entry_price": 0.21542469378883447,
+          "estimated_probability": 0.12002469378883444,
+          "edge": 0.0954,
+          "kelly_fraction": 0.0443,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T21:06:29.586521",
+          "resolved_at": null
+        },
+        {
+          "id": 7,
+          "market_id": "Cyy96hnZcR",
+          "platform": "manifold",
+          "question": "Will Anthropic release a model with a higher version number than 4.6 by April 15th?",
+          "direction": "no",
+          "size": 30.0,
+          "entry_price": 0.44134503736242153,
+          "estimated_probability": 0.25004503736242145,
+          "edge": 0.1913,
+          "kelly_fraction": 0.0434,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:57:43.822137",
+          "resolved_at": null
+        },
+        {
+          "id": 6,
+          "market_id": "CdARQ20t2q",
+          "platform": "manifold",
+          "question": "Will Trump's approval rating improve after 1 month of attacking Iran?",
+          "direction": "yes",
+          "size": 10.57,
+          "entry_price": 0.04895175532736617,
+          "estimated_probability": 0.2499517553273662,
+          "edge": 0.201,
+          "kelly_fraction": 0.0106,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:31:23.211528",
+          "resolved_at": null
+        },
+        {
+          "id": 5,
+          "market_id": "u6dgRuunsn",
+          "platform": "manifold",
+          "question": "Will any brackets remain perfect through the 1st round of March Madness?",
+          "direction": "no",
+          "size": 23.96,
+          "entry_price": 0.5294628501255548,
+          "estimated_probability": 0.24999999999999997,
+          "edge": 0.23,
+          "kelly_fraction": 0.024,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:30:02.337544",
+          "resolved_at": null
+        },
+        {
+          "id": 4,
+          "market_id": "lSq6hLPQ20",
+          "platform": "manifold",
+          "question": "Florida Gators reach Final Four in 2026?",
+          "direction": "yes",
+          "size": 14.39,
+          "entry_price": 0.3225290049934712,
+          "estimated_probability": 0.4200290049934712,
+          "edge": 0.0975,
+          "kelly_fraction": 0.0144,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:20:37.540301",
+          "resolved_at": null
+        },
+        {
+          "id": 3,
+          "market_id": "NIhOcZOQZE",
+          "platform": "manifold",
+          "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
+          "direction": "yes",
+          "size": 13.44,
+          "entry_price": 0.11113020180278499,
+          "estimated_probability": 0.350030201802785,
+          "edge": 0.2389,
+          "kelly_fraction": 0.0134,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:15:05.767511",
+          "resolved_at": null
+        },
+        {
+          "id": 2,
+          "market_id": "NstCUAzyt2",
+          "platform": "manifold",
+          "question": "USA x Iran ceasefire by end of march 31?",
+          "direction": "no",
+          "size": 8.41,
+          "entry_price": 0.11113729021029815,
+          "estimated_probability": 0.08003729021029816,
+          "edge": 0.0311,
+          "kelly_fraction": 0.0084,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:13:05.505471",
+          "resolved_at": null
+        },
+        {
+          "id": 1,
+          "market_id": "ZctCIAhQsu",
+          "platform": "manifold",
+          "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
+          "direction": "no",
+          "size": 3.88,
+          "entry_price": 0.17225253829250442,
+          "estimated_probability": 0.14995253829250443,
+          "edge": 0.0223,
+          "kelly_fraction": 0.0039,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:05:54.334707",
+          "resolved_at": null
+        }
+      ]
+    },
+    {
+      "name": "Contrarian",
+      "version": "0.1",
+      "label": "Disagreement + Blend",
+      "account": "account2",
+      "accent": "amber",
+      "portfolio": {
+        "bankroll": 1000.0,
+        "deployed": 14.19,
+        "cash": 985.81
+      },
+      "stats": {
+        "total_trades": 1,
+        "open_positions": 1,
+        "resolved": 0,
+        "total_pnl": 0,
+        "avg_edge": 0.0754
+      },
+      "exposure": {
+        "by_direction": {
+          "yes": {
+            "count": 1,
+            "deployed": 14.19
+          },
+          "no": {
+            "count": 0,
+            "deployed": 0
+          }
+        },
+        "high_edge_count": 0,
+        "low_edge_count": 1,
+        "high_edge_deployed": 0,
+        "low_edge_deployed": 14.19
+      },
+      "trades": [
+        {
+          "id": 1,
+          "market_id": "OoV1VLIGNMqu9mywrvii",
+          "platform": "manifold",
+          "question": "Will the Gaza death toll be over 150,000 at the end of the Israel-Hamas war",
+          "direction": "yes",
+          "size": 14.19,
+          "entry_price": 0.46863916560877544,
+          "estimated_probability": 0.5440391656087754,
+          "edge": 0.0754,
+          "kelly_fraction": 0.0142,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T21:04:39.100337",
+          "resolved_at": null
+        }
+      ]
+    },
+    {
+      "name": "Zeitgeist",
+      "version": "0.1",
+      "label": "Cultural Prediction",
+      "account": "paper",
+      "accent": "blue",
+      "portfolio": {
+        "bankroll": 974.24,
+        "deployed": 195.58,
+        "cash": 778.66
+      },
+      "stats": {
+        "total_trades": 9,
+        "open_positions": 8,
+        "resolved": 1,
+        "total_pnl": -25.76,
+        "avg_edge": 0.2188
+      },
+      "exposure": {
+        "by_direction": {
+          "yes": {
+            "count": 5,
+            "deployed": 130.79
+          },
+          "no": {
+            "count": 3,
+            "deployed": 64.79
+          }
+        },
+        "high_edge_count": 5,
+        "low_edge_count": 3,
+        "high_edge_deployed": 166.7,
+        "low_edge_deployed": 28.88
+      },
+      "trades": [
+        {
+          "id": 9,
+          "market_id": "9RNqh5yzqR",
+          "platform": "manifold",
+          "question": "Will Purdue be in the Final Four of March Madness?",
+          "direction": "no",
+          "size": 7.4,
+          "entry_price": 0.7845753062111656,
+          "estimated_probability": 0.18002469378883446,
+          "edge": 0.0354,
+          "kelly_fraction": 0.0074,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T21:07:10.739246",
+          "resolved_at": null
+        },
+        {
+          "id": 8,
+          "market_id": "OoV1VLIGNMqu9mywrvii",
+          "platform": "manifold",
+          "question": "Will the Gaza death toll be over 150,000 at the end of the Israel-Hamas war",
+          "direction": "yes",
+          "size": 35.48,
+          "entry_price": 0.46863916560877544,
+          "estimated_probability": 0.7200391656087755,
+          "edge": 0.2514,
+          "kelly_fraction": 0.0355,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T21:04:57.893161",
+          "resolved_at": null
+        },
+        {
+          "id": 7,
+          "market_id": "ARnqln6pRP",
+          "platform": "manifold",
+          "question": "Will Y Combinator fund 3 or more quantum-related startups in its next public batch update within the next 2 months?",
+          "direction": "no",
+          "size": 7.39,
+          "entry_price": 0.8205500949456682,
+          "estimated_probability": 0.15004990505433177,
+          "edge": 0.0294,
+          "kelly_fraction": 0.0074,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T21:00:04.182325",
+          "resolved_at": null
+        },
+        {
+          "id": 6,
+          "market_id": "USqgCAPAz5",
+          "platform": "manifold",
+          "question": "Will something happen in Iran this month?",
+          "direction": "yes",
+          "size": 41.94,
+          "entry_price": 0.2636878456112051,
+          "estimated_probability": 0.9499878456112052,
+          "edge": 0.6863,
+          "kelly_fraction": 0.0419,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:49:40.290373",
+          "resolved_at": null
+        },
+        {
+          "id": 5,
+          "market_id": "CdARQ20t2q",
+          "platform": "manifold",
+          "question": "Will Trump's approval rating improve after 1 month of attacking Iran?",
+          "direction": "yes",
+          "size": 15.85,
+          "entry_price": 0.04895175532736617,
+          "estimated_probability": 0.2499517553273662,
+          "edge": 0.201,
+          "kelly_fraction": 0.0159,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:31:57.614178",
+          "resolved_at": null
+        },
+        {
+          "id": 4,
+          "market_id": "u6dgRuunsn",
+          "platform": "manifold",
+          "question": "Will any brackets remain perfect through the 1st round of March Madness?",
+          "direction": "no",
+          "size": 50.0,
+          "entry_price": 0.52,
+          "estimated_probability": 0.14999999999999997,
+          "edge": 0.33,
+          "kelly_fraction": 0.0516,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:30:36.647096",
+          "resolved_at": null
+        },
+        {
+          "id": 3,
+          "market_id": "NIhOcZOQZE",
+          "platform": "manifold",
+          "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
+          "direction": "yes",
+          "size": 23.43,
+          "entry_price": 0.11113020180278499,
+          "estimated_probability": 0.250030201802785,
+          "edge": 0.1389,
+          "kelly_fraction": 0.0234,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:15:33.629709",
+          "resolved_at": null
+        },
+        {
+          "id": 2,
+          "market_id": "m7scZNu2LwMHTfnhW0IV",
+          "platform": "manifold",
+          "question": "Will Slay the Spire 2 get overwhelmingly positive reviews on Steam?",
+          "direction": "no",
+          "size": 25.76,
+          "entry_price": 0.009999999999999898,
+          "estimated_probability": 0.8200000000000001,
+          "edge": 0.17,
+          "kelly_fraction": 0.0258,
+          "status": "resolved",
+          "exit_price": 1.0,
+          "pnl": -25.76,
+          "created_at": "2026-03-19T20:10:26.380517",
+          "resolved_at": "2026-03-19T20:49:37.425833"
+        },
+        {
+          "id": 1,
+          "market_id": "ZctCIAhQsu",
+          "platform": "manifold",
+          "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
+          "direction": "yes",
+          "size": 14.09,
+          "entry_price": 0.17225253829250442,
+          "estimated_probability": 0.2499525382925044,
+          "edge": 0.0777,
+          "kelly_fraction": 0.0141,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-19T20:06:46.300933",
+          "resolved_at": null
+        }
       ]
     }
   ],
@@ -1221,6 +1684,125 @@
     }
   ],
   "markets": [
+    {
+      "id": 127,
+      "platform": "manifold",
+      "market_id": "OoV1VLIGNMqu9mywrvii",
+      "question": "Will the Gaza death toll be over 150,000 at the end of the Israel-Hamas war",
+      "current_yes_price": 0.47916423629833244,
+      "current_no_price": 0.5208357637016676,
+      "volume": 118.0630174582386,
+      "liquidity": 1000.0,
+      "close_date": "2026-06-01T05:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:05:07.855523",
+      "est_prob": 0.15,
+      "est_conf": 0.6,
+      "est_reasoning": "Current death toll of ~72,000-75,000 would need to nearly double to reach 150,000. With current daily casualty rates in single/low double digits and only ~2.5 months remaining, reaching 150,000 would require either massive escalation (~1,000 deaths/day average) or discovery of severe systematic underreporting. While Lancet study suggests some underreporting, the scale needed seems unlikely. The declining casualty trajectory typical of prolonged conflicts makes this mathematically challenging."
+    },
+    {
+      "id": 126,
+      "platform": "manifold",
+      "market_id": "uZE6NZ6yl8",
+      "question": "Another American cartel leader killed/captured before end of march?",
+      "current_yes_price": 0.19021231962845975,
+      "current_no_price": 0.8097876803715403,
+      "volume": 151.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:05:07.597544",
+      "est_prob": 0.15,
+      "est_conf": 0.4,
+      "est_reasoning": "Without a clear base rate, I'm estimating conservatively. The recent killing of El Mencho demonstrates active high-level anti-cartel operations, and increased U.S. military intervention plans suggest heightened activity. However, El Mencho was Mexican, not American, so this doesn't directly establish precedent. The key factors pushing probability up include: (1) increased anti-cartel operations and U.S. military involvement, (2) formation of Americas Counter Cartel Coalition, and (3) demonstrated capability to target high-value cartel figures. Factors pushing probability down include: (1) very short remaining timeframe of ~20 days, (2) American cartel leaders may be less prominent/targetable than Mexican ones like El Mencho, and (3) such events appear historically rare. The definitional ambiguity around 'American cartel leader' adds significant uncertainty. Given the limited timeframe and lack of specific intelligence on current American targets, I estimate a 15% probability - acknowledging the increased anti-cartel activity while recognizing the constraints."
+    },
+    {
+      "id": 125,
+      "platform": "manifold",
+      "market_id": "Cyy96hnZcR",
+      "question": "Will Anthropic release a model with a higher version number than 4.6 by April 15th?",
+      "current_yes_price": 0.42841127062383105,
+      "current_no_price": 0.571588729376169,
+      "volume": 165.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-16T02:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:05:07.345847",
+      "est_prob": 0.25,
+      "est_conf": 0.4,
+      "est_reasoning": "With only 3-4 weeks until deadline and Anthropic's emphasis on safety over speed, a new version release seems unlikely. The indirect evidence of Opus 4.6 suggests we're already at or near that version level. While minor incremental updates are possible, the short timeframe and lack of clear signals about imminent releases point toward a low probability. The 25% estimate reflects some possibility of a quick incremental release or announcement, but the weight of evidence suggests this is unlikely."
+    },
+    {
+      "id": 124,
+      "platform": "manifold",
+      "market_id": "NZS5REspAs",
+      "question": "US escorts commercial ship through Hormuz by March 31? [Polymarket]",
+      "current_yes_price": 0.2248936098788924,
+      "current_no_price": 0.7751063901211076,
+      "volume": 268.06575356123597,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:05:07.086675",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 123,
+      "platform": "manifold",
+      "market_id": "PspSScZSL9",
+      "question": "Will Enho be on the banzuke in Juryo for the May 2026 Grand Sumo Tournament (Natsu basho)",
+      "current_yes_price": 0.85,
+      "current_no_price": 0.15000000000000002,
+      "volume": 1622.3471289448514,
+      "liquidity": 5078.0,
+      "close_date": "2026-05-02T04:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:05:06.834410",
+      "est_prob": 0.45,
+      "est_conf": 0.3,
+      "est_reasoning": "I started with a base rate of ~70% for established professional sumo wrestlers maintaining their general division level over multiple tournaments, based on the sport's structure where dramatic rank changes are less common than gradual movement. However, I significantly adjusted downward to 45% due to several critical factors: (1) The 2+ year timeline to May 2026 creates substantial uncertainty for career longevity, especially in a physically demanding sport like sumo; (2) Complete lack of current data on Enho's status - he could already be retired, injured, or in a lower division; (3) Enho's smaller stature, while enabling his unique style, may contribute to career longevity concerns in sumo; (4) The specific requirement for Juryo division (not higher Makuuchi or lower divisions) creates a narrow target. My confidence is very low (0.3) because this estimate is essentially educated speculation given the critical information gaps about his current status and the long timeline involved."
+    },
+    {
+      "id": 122,
+      "platform": "manifold",
+      "market_id": "ZctCIAhQsu",
+      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
+      "current_yes_price": 0.16999999999999993,
+      "current_no_price": 0.8300000000000001,
+      "volume": 14764.26957055796,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:05:06.571208",
+      "est_prob": 0.08,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
+    },
+    {
+      "id": 121,
+      "platform": "manifold",
+      "market_id": "s6AyzCILzL",
+      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
+      "current_yes_price": 0.9717785631293032,
+      "current_no_price": 0.02822143687069678,
+      "volume": 41998.96139735798,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "uncategorized",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T21:05:06.324471",
+      "est_prob": 0.92,
+      "est_conf": 0.7,
+      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
+    },
     {
       "id": 120,
       "platform": "manifold",
@@ -2801,125 +3383,6 @@
       "est_prob": 0.08,
       "est_conf": 0.4,
       "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
-    },
-    {
-      "id": 27,
-      "platform": "manifold",
-      "market_id": "s6AyzCILzL",
-      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
-      "current_yes_price": 0.8104587818309003,
-      "current_no_price": 0.18954121816909975,
-      "volume": 28877.81822764186,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "geopolitics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:28:42.697560",
-      "est_prob": 0.92,
-      "est_conf": 0.7,
-      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
-    },
-    {
-      "id": 26,
-      "platform": "manifold",
-      "market_id": "5CPCpOg6SL",
-      "question": "Will Brent Oil Price go below $50 before March 31, 2026?",
-      "current_yes_price": 0.022762216295171195,
-      "current_no_price": 0.9772377837048288,
-      "volume": 201.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-30T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:19:34.046431",
-      "est_prob": 0.05,
-      "est_conf": 0.7,
-      "est_reasoning": "This requires an extraordinary 58% price decline from $119 to below $50 in just ~12 days. While oil markets are volatile, such dramatic crashes typically require major fundamental shifts like supply gluts, financial crises, or sudden geopolitical resolution. The current situation involves active warfare disrupting Middle East infrastructure and closing the Strait of Hormuz (affecting 20% of global oil/LNG transit), which creates strong upward price pressure. Even with Trump administration relaxing Russian sanctions as damage control, this appears insufficient to cause the required price collapse. Historical oil crashes of this magnitude have taken weeks or months, not days. The only realistic scenarios for YES would be an immediate ceasefire ending the Iran conflict or a sudden major global economic crisis - both possible but unlikely in such a short timeframe. The evidence strongly suggests prices will remain elevated through March 31st."
-    },
-    {
-      "id": 25,
-      "platform": "manifold",
-      "market_id": "C96pyn9Z5Z",
-      "question": "Iran Government falls before end of March 2026",
-      "current_yes_price": 0.03754890752752743,
-      "current_no_price": 0.9624510924724725,
-      "volume": 213.9319714012992,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "geopolitics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:19:11.276706",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a base rate: authoritarian regimes that have survived 45+ years (like Iran since 1979) rarely collapse in any given 15-month period - perhaps 5% historically. Iran's Islamic Republic has demonstrated remarkable institutional resilience, surviving the Iran-Iraq War, multiple protest waves, and severe economic sanctions. The regime maintains control through extensive security apparatus, economic patronage networks, and religious legitimacy among core supporters. However, several factors could increase instability risk: ongoing economic pressures from sanctions, a large young population with limited opportunities, periodic protest movements, and potential succession uncertainty given Khamenei's age. The 2022-23 protests showed significant popular discontent but were ultimately contained. The biggest wild card is the unclear resolution criteria - 'government falls' could mean anything from regime change to leadership transition. Given Iran's track record of stability, the strong repressive capacity, and lack of immediate catalysts for collapse, I estimate slightly above the base rate but remain highly uncertain due to definitional ambiguity and the inherent unpredictability of revolutionary moments."
-    },
-    {
-      "id": 24,
-      "platform": "manifold",
-      "market_id": "UCZNd6RdnR",
-      "question": "Will ChatGPT launch an \"adult mode\" before 1 April 2026?",
-      "current_yes_price": 0.047392449773703466,
-      "current_no_price": 0.9526075502262965,
-      "volume": 311.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "tech",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:18:49.896485",
-      "est_prob": 0.15,
-      "est_conf": 0.4,
-      "est_reasoning": "I cannot identify a meaningful base rate since 'adult mode' for AI assistants is poorly defined and unprecedented. OpenAI has consistently prioritized safety and broad accessibility, making explicit adult-oriented features seem unlikely given their brand positioning and corporate philosophy. However, they have shown some flexibility with content policies for creative use cases. The 16-month timeframe provides reasonable opportunity for policy evolution, especially if competitive pressure increases from less restricted models. The biggest challenge is the undefined resolution criteria - even minor relaxations of content filtering could potentially qualify, but OpenAI is more likely to make incremental safety adjustments rather than launch an explicitly branded 'adult mode.' The lack of clear definition creates both upside and downside uncertainty, but OpenAI's historical conservatism suggests they would avoid controversial explicit branding even if they do relax some restrictions."
-    },
-    {
-      "id": 23,
-      "platform": "manifold",
-      "market_id": "USqgCAPAz5",
-      "question": "Will something happen in Iran this month?",
-      "current_yes_price": 0.2611325003332145,
-      "current_no_price": 0.7388674996667854,
-      "volume": 360.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "geopolitics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:18:26.680868",
-      "est_prob": 0.99,
-      "est_conf": 0.9,
-      "est_reasoning": "This question is so broadly defined that it's almost impossible for it to resolve NO. Iran is an active nation of 85+ million people with ongoing government functions, economic activity, social events, weather patterns, and international relations. On any given day, numerous events occur - from routine administrative decisions to news-worthy developments. The base rate for 'something happening' in any country over a month-long period is essentially 100%. Even if we interpret 'something' to mean only notable or reported events, Iran regularly appears in international news due to its geopolitical significance. The only scenarios where this could resolve NO would involve either: (1) an impossibly restrictive interpretation by the resolution source, (2) complete information isolation, or (3) some catastrophic event preventing all activity. Given the extreme vagueness favors a YES resolution and the practical certainty that events occur daily in Iran, the probability is very high."
-    },
-    {
-      "id": 22,
-      "platform": "manifold",
-      "market_id": "yShRpp25pR",
-      "question": "Will the WTI Crude Oil Spot Price be above $95 on March 31, 2026?",
-      "current_yes_price": 0.7299144879098496,
-      "current_no_price": 0.2700855120901504,
-      "volume": 1658.4597219395987,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:18:02.298709",
-      "est_prob": 0.32,
-      "est_conf": 0.4,
-      "est_reasoning": "Looking at historical WTI crude oil prices, $95/barrel represents a relatively high price point that has been exceeded during periods of significant supply disruption or strong demand (like 2008, 2011-2014, and briefly in 2022). As a rough base rate, oil has traded above $95 perhaps 25% of the time in the past two decades. However, several factors suggest this could be higher by March 2026: ongoing geopolitical tensions, potential OPEC+ supply management, possible economic recovery driving demand, and the long timeframe allowing for various shock events. Conversely, the energy transition, potential US shale growth, and recession risks could suppress prices. The 15+ month timeframe increases uncertainty significantly, as oil markets are notoriously volatile and subject to unpredictable geopolitical and economic shocks. Without current market context, I'm moderately adjusting upward from the base rate due to the extended timeframe allowing for supply disruptions or demand surges, but maintaining significant uncertainty given oil's historical volatility."
-    },
-    {
-      "id": 21,
-      "platform": "manifold",
-      "market_id": "u6dgRuunsn",
-      "question": "Will any brackets remain perfect through the 1st round of March Madness?",
-      "current_yes_price": 0.62,
-      "current_no_price": 0.38,
-      "volume": 1775.334903138546,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-21T01:59:00+00:00",
-      "category": "sports",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T18:17:34.194570",
-      "est_prob": 0.75,
-      "est_conf": 0.4,
-      "est_reasoning": "With millions of brackets filled out across multiple platforms, even if individual bracket survival probability through 32 games is low (likely 0.1-1%), the large sample size makes it probable that some brackets will survive. The 1st round has fewer major upsets than later rounds, and conservative bracket strategies can achieve higher 1st round survival rates. However, significant uncertainty exists due to lack of historical base rates and unclear resolution criteria."
     }
   ]
 }
