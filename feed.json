@@ -1,48 +1,52 @@
 {
-  "updated_at": "2026-03-19T19:50:49.243606+00:00",
+  "updated_at": "2026-03-19T20:03:58.062527+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-19T19:50:49.243614+00:00",
+    "last_heartbeat": "2026-03-19T20:03:58.062536+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "scheduled when the scheduler starts",
-      "INFO     Added job \"TradingBot.run_cycle\" to job store  base.py:1090",
-      "\"default\"",
-      "INFO     Scheduler started                               base.py:214",
-      "Scheduler running (every 30 min). Press Ctrl+C to stop."
+      "INFO       Skipped: 28 recently analyzed, 6 already have  run.py:167",
+      "position, 0 no edge",
+      "INFO       Quick mode: 3 low-volume markets               run.py:173",
+      "WARNING    Errors: 2 markets failed to process            run.py:175",
+      "INFO       Next cycle in 30 minutes                       run.py:176"
     ]
   },
   "portfolio": {
     "bankroll": 1000.0,
-    "deployed": 523.05,
-    "cash": 476.95,
-    "deployed_pct": 52.3,
+    "deployed": 558.72,
+    "cash": 441.28,
+    "deployed_pct": 55.9,
     "total_pnl": 0.0,
     "unrealized_pnl": 0.0,
     "max_drawdown": 0.0
   },
   "stats": {
-    "total_trades": 20,
-    "open_positions": 20,
+    "total_trades": 22,
+    "open_positions": 22,
     "resolved": 0,
     "win_rate": null,
     "brier_score": null,
-    "avg_edge": 0.1737
+    "avg_edge": 0.1758
   },
   "exposure": {
     "by_category": {
+      "sports": {
+        "count": 1,
+        "deployed": 10.95
+      },
+      "other": {
+        "count": 6,
+        "deployed": 128.59
+      },
       "crypto": {
         "count": 1,
         "deployed": 21.02
-      },
-      "other": {
-        "count": 5,
-        "deployed": 103.87
       },
       "tech": {
         "count": 2,
@@ -55,17 +59,17 @@
     },
     "by_direction": {
       "yes": {
-        "count": 13,
-        "deployed": 253.05
+        "count": 15,
+        "deployed": 288.72
       },
       "no": {
         "count": 7,
         "deployed": 270.0
       }
     },
-    "high_edge_count": 12,
+    "high_edge_count": 14,
     "low_edge_count": 8,
-    "high_edge_deployed": 375.78,
+    "high_edge_deployed": 411.45,
     "low_edge_deployed": 147.27
   },
   "learning": {
@@ -228,6 +232,13 @@
       ]
     },
     {
+      "date": "2026-03-29",
+      "count": 1,
+      "markets": [
+        "Will Hamilton finish the Japanese Grand Prix 2026 higher than Leclerc?"
+      ]
+    },
+    {
       "date": "2026-03-30",
       "count": 1,
       "markets": [
@@ -261,6 +272,13 @@
       ]
     },
     {
+      "date": "2026-04-15",
+      "count": 1,
+      "markets": [
+        "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season"
+      ]
+    },
+    {
       "date": "2026-04-16",
       "count": 1,
       "markets": [
@@ -290,6 +308,40 @@
     }
   ],
   "trades": [
+    {
+      "id": 22,
+      "market_id": "NIhOcZOQZE",
+      "platform": "manifold",
+      "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
+      "direction": "yes",
+      "size": 10.95,
+      "entry_price": 0.10506572838158813,
+      "estimated_probability": 0.3499657283815881,
+      "edge": 0.2449,
+      "kelly_fraction": 0.0109,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T20:03:52.236320",
+      "resolved_at": null
+    },
+    {
+      "id": 21,
+      "market_id": "QIAgQyS5tU",
+      "platform": "manifold",
+      "question": "Will Hamilton finish the Japanese Grand Prix 2026 higher than Leclerc?",
+      "direction": "yes",
+      "size": 24.72,
+      "entry_price": 0.4022561937488817,
+      "estimated_probability": 0.5499561937488817,
+      "edge": 0.1477,
+      "kelly_fraction": 0.0247,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-19T19:51:05.906698",
+      "resolved_at": null
+    },
     {
       "id": 20,
       "market_id": "L9q0LNRZgq",
@@ -632,6 +684,26 @@
     }
   ],
   "estimates": [
+    {
+      "id": 47,
+      "market_id": "NIhOcZOQZE",
+      "probability": 0.35,
+      "confidence": 0.4,
+      "reasoning": "Starting with NHL base rate of 53.1% (17/32 teams make playoffs). The Flyers have 31-23-12 record (74 points) with approximately 16 games remaining, which puts them on pace for ~92-94 points - historically around the playoff bubble. However, the key negative signal is that recent reporting specifically states they have 'fallen further out of playoff position' and face a 'crucial road trip,' suggesting they're currently outside the playoff picture despite a decent record. The language used implies they're chasing a playoff spot rather than holding one. The team appears competitive but in a rebuilding phase, and the March timing means there's limited room for error. Adjusting significantly below base rate due to the 'fallen out of position' reporting, but maintaining meaningful probability given their record and remaining games.",
+      "key_uncertainties": "[\"Current playoff standings and exact points gap to cutoff\", \"Number of games remaining and strength of schedule\", \"Team's recent performance trend beyond isolated losses mentioned\", \"Injury status of key players affecting playoff push\", \"How competitive the Eastern Conference playoff race is this season\"]",
+      "base_rate": 0.531,
+      "created_at": "2026-03-19T20:03:52.023056"
+    },
+    {
+      "id": 46,
+      "market_id": "QIAgQyS5tU",
+      "probability": 0.55,
+      "confidence": 0.3,
+      "reasoning": "Without a clear base rate for Hamilton vs Leclerc head-to-head performance, I'm starting near 50% for two competitive drivers. The key positive evidence is Hamilton finishing 3rd at the Chinese Grand Prix while 'overcoming his Ferrari teammate in battle,' suggesting he outperformed Leclerc there. This indicates Hamilton is adapting well to Ferrari and currently has momentum. However, this is a very small sample size from his first Ferrari season, and Leclerc is a proven performer who likely knows the Ferrari car better. The fact they're teammates could lead to team orders affecting the outcome. Given the recent evidence slightly favors Hamilton but with enormous uncertainty about sustained performance differences and many unknown variables, I'm estimating slightly above 50% but with very low confidence due to the limited data and long prediction horizon.",
+      "key_uncertainties": "[\"Leclerc's actual performance level in 2026 - no finishing position data from Chinese GP\", \"How Hamilton's adaptation to Ferrari progresses between Chinese GP and Japanese GP\", \"Ferrari's team strategy and whether they favor one driver over another\", \"Track-specific performance differences at Suzuka Circuit\", \"Potential mechanical reliability issues or penalties affecting either driver\", \"Weather conditions and race circumstances on race day\"]",
+      "base_rate": null,
+      "created_at": "2026-03-19T19:51:05.723537"
+    },
     {
       "id": 45,
       "market_id": "UtAAhN6Eh8",
@@ -1085,6 +1157,57 @@
   ],
   "markets": [
     {
+      "id": 97,
+      "platform": "manifold",
+      "market_id": "9RNqh5yzqR",
+      "question": "Will Purdue be in the Final Four of March Madness?",
+      "current_yes_price": 0.21542469378883447,
+      "current_no_price": 0.7845753062111656,
+      "volume": 93.69967557766087,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-04T23:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:03:08.989519",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 96,
+      "platform": "manifold",
+      "market_id": "lSq6hLPQ20",
+      "question": "Florida Gators reach Final Four in 2026?",
+      "current_yes_price": 0.3218955124197534,
+      "current_no_price": 0.6781044875802467,
+      "volume": 372.2829959749524,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-06T22:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:02:53.471218",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 95,
+      "platform": "manifold",
+      "market_id": "NIhOcZOQZE",
+      "question": "Will the NHL Philadelphia Flyers make the playoffs in the 25-26 Season",
+      "current_yes_price": 0.10506572838158813,
+      "current_no_price": 0.8949342716184119,
+      "volume": 456.77513953630256,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-15T23:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-19T20:02:50.184582",
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with NHL base rate of 53.1% (17/32 teams make playoffs). The Flyers have 31-23-12 record (74 points) with approximately 16 games remaining, which puts them on pace for ~92-94 points - historically around the playoff bubble. However, the key negative signal is that recent reporting specifically states they have 'fallen further out of playoff position' and face a 'crucial road trip,' suggesting they're currently outside the playoff picture despite a decent record. The language used implies they're chasing a playoff spot rather than holding one. The team appears competitive but in a rebuilding phase, and the March timing means there's limited room for error. Adjusting significantly below base rate due to the 'fallen out of position' reporting, but maintaining meaningful probability given their record and remaining games."
+    },
+    {
       "id": 94,
       "platform": "manifold",
       "market_id": "2Iz0RIh290",
@@ -1114,9 +1237,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T19:50:27.731637",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.55,
+      "est_conf": 0.3,
+      "est_reasoning": "Without a clear base rate for Hamilton vs Leclerc head-to-head performance, I'm starting near 50% for two competitive drivers. The key positive evidence is Hamilton finishing 3rd at the Chinese Grand Prix while 'overcoming his Ferrari teammate in battle,' suggesting he outperformed Leclerc there. This indicates Hamilton is adapting well to Ferrari and currently has momentum. However, this is a very small sample size from his first Ferrari season, and Leclerc is a proven performer who likely knows the Ferrari car better. The fact they're teammates could lead to team orders affecting the outcome. Given the recent evidence slightly favors Hamilton but with enormous uncertainty about sustained performance differences and many unknown variables, I'm estimating slightly above 50% but with very low confidence due to the limited data and long prediction horizon."
     },
     {
       "id": 92,
@@ -1692,9 +1815,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-19T18:48:56.407043",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
+      "est_prob": 0.55,
+      "est_conf": 0.3,
+      "est_reasoning": "Without a clear base rate for Hamilton vs Leclerc head-to-head performance, I'm starting near 50% for two competitive drivers. The key positive evidence is Hamilton finishing 3rd at the Chinese Grand Prix while 'overcoming his Ferrari teammate in battle,' suggesting he outperformed Leclerc there. This indicates Hamilton is adapting well to Ferrari and currently has momentum. However, this is a very small sample size from his first Ferrari season, and Leclerc is a proven performer who likely knows the Ferrari car better. The fact they're teammates could lead to team orders affecting the outcome. Given the recent evidence slightly favors Hamilton but with enormous uncertainty about sustained performance differences and many unknown variables, I'm estimating slightly above 50% but with very low confidence due to the limited data and long prediction horizon."
     },
     {
       "id": 58,
