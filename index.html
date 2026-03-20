@@ -1351,7 +1351,7 @@ function renderTradesFromData(data) {
       <th class="th-r">Live</th>
       <th class="th-r">Prob</th>
       <th class="th-r">Risked</th>
-      <th class="th-r">Profit</th>
+      <th class="th-r">P&amp;L</th>
       <th class="th-r">Acct</th>
       <th class="th-r">Strat</th>
       <th class="th-r">Time</th>
@@ -1366,7 +1366,15 @@ function renderTradesFromData(data) {
     const isExpanded = expandedTrades.has(tradeKey);
     const dirColor = trade.direction === 'yes' ? '#6ec07a' : '#c06e6e';
     const acctColor = ACCOUNT_COLORS[trade._account] || '#5a5650';
-    const profitStr = trade.status === 'filled' ? `<span style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : '--';
+    let profitStr = '--';
+    if (trade.status === 'filled') {
+      profitStr = `<span style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>`;
+    } else if (trade.status === 'resolved' && trade.pnl !== null && trade.pnl !== undefined) {
+      const pnl = trade.pnl;
+      const pnlColor = pnl >= 0 ? '#6ec07a' : '#c06e6e';
+      const pnlSign = pnl >= 0 ? '+' : '';
+      profitStr = `<span style="color:${pnlColor};font-weight:400">${pnlSign}${formatMoney(pnl)}</span>`;
+    }
     const caretChar = isExpanded ? '&#9660;' : '&#9654;';
 
     html += `<tr data-key="${esc(tradeKey)}" onclick="toggleTradeRow(this)">
