@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T19:20:50.284013+00:00",
+  "updated_at": "2026-03-20T19:33:21.850231+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T19:20:50.284020+00:00",
+    "last_heartbeat": "2026-03-20T19:33:21.850238+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -970,6 +970,16 @@
   ],
   "estimates": [
     {
+      "id": 170,
+      "market_id": "g2lE0I6Etq",
+      "probability": 0.25,
+      "confidence": 0.4,
+      "reasoning": "Base rate analysis shows WTI rarely reaches $150/barrel - historically occurred briefly in 2008 but such extreme levels are uncommon, suggesting roughly 5% base rate for such events. However, current conditions warrant significant upward adjustment: ongoing Iran conflict with energy infrastructure attacks, Asian crude already at $166/barrel, and geopolitical tensions that historically drive oil spikes. The strongest factor supporting YES is the active Middle East conflict affecting energy supply. Key factors against include recent 8% WTI crash showing downward pressure, potential Iranian sanctions relief increasing supply, and WTI trading at significant discount to Brent (suggesting US-specific supply dynamics). The 2+ month timeframe until market close provides sufficient time for either major escalation or de-escalation. The high volatility (ranging $94-120+ recently) indicates potential for large moves in either direction. Given the combination of active geopolitical risk, some precedent for extreme price spikes during supply disruptions, but also significant countervailing factors, I estimate 25% probability - well above base rate due to current tensions but acknowledging substantial uncertainty and downside risks.",
+      "key_uncertainties": "[\"Escalation or de-escalation of Iran conflict and Middle East tensions\", \"Timeline and implementation of potential Iranian sanctions relief\", \"Sustained supply disruptions vs temporary volatility\", \"WTI-specific dynamics vs global oil market movements\", \"Resolution criteria timing - daily close vs intraday high\", \"US strategic petroleum reserve intervention decisions\"]",
+      "base_rate": 0.05,
+      "created_at": "2026-03-20T19:33:21.814508"
+    },
+    {
       "id": 169,
       "market_id": "qOupANU6Zl",
       "probability": 0.5,
@@ -1458,19 +1468,26 @@
       "key_uncertainties": "[\"METR 50% time horizon benchmark is undefined - unclear what capability it measures\", \"No confirmation that GPT-5.4 and Claude Opus 4.6 actually exist as named models\", \"No resolution source specified creates uncertainty about outcome determination\", \"Performance can vary dramatically across different AI benchmarks\", \"Only indirect evidence from third-party model comparisons on coding tasks\"]",
       "base_rate": null,
       "created_at": "2026-03-20T17:15:38.264817"
-    },
-    {
-      "id": 120,
-      "market_id": "OgnlLCUuCA",
-      "probability": 0.05,
-      "confidence": 0.1,
-      "reasoning": "Using a base rate of ~3% for manufacturing defects in jigsaw puzzles from reputable manufacturers. However, the fundamental problem is that this question appears unresolvable - it references 'this jigsaw puzzle' without identifying which specific puzzle. Without knowing which puzzle is being evaluated, no one can actually verify piece counts or completeness. I'm adjusting slightly upward to 5% to account for the possibility that: (1) there is some implied context I'm missing, (2) lower-quality puzzles have higher defect rates, or (3) the question setter has reason to suspect a missing piece. But my confidence is extremely low (0.1) because the question seems fundamentally flawed - it cannot be properly resolved without identifying the specific puzzle in question.",
-      "key_uncertainties": "[\"Which specific jigsaw puzzle is being referenced\", \"Definition of 'missing' - manufacturing defect vs lost piece\", \"Puzzle manufacturer and quality standards\", \"Age and handling history of the puzzle\", \"Whether the question can even be resolved given lack of identification\"]",
-      "base_rate": 0.03,
-      "created_at": "2026-03-20T17:15:33.624545"
     }
   ],
   "markets": [
+    {
+      "id": 757,
+      "platform": "manifold",
+      "market_id": "g2lE0I6Etq",
+      "question": "Will WTI crude oil cost more than $150/barrel before June? (According to investing.com)",
+      "current_yes_price": 0.3872307181032205,
+      "current_no_price": 0.6127692818967795,
+      "volume": 567.3195181862056,
+      "liquidity": 1000.0,
+      "close_date": "2026-05-31T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T19:32:50.006526",
+      "est_prob": 0.25,
+      "est_conf": 0.4,
+      "est_reasoning": "Base rate analysis shows WTI rarely reaches $150/barrel - historically occurred briefly in 2008 but such extreme levels are uncommon, suggesting roughly 5% base rate for such events. However, current conditions warrant significant upward adjustment: ongoing Iran conflict with energy infrastructure attacks, Asian crude already at $166/barrel, and geopolitical tensions that historically drive oil spikes. The strongest factor supporting YES is the active Middle East conflict affecting energy supply. Key factors against include recent 8% WTI crash showing downward pressure, potential Iranian sanctions relief increasing supply, and WTI trading at significant discount to Brent (suggesting US-specific supply dynamics). The 2+ month timeframe until market close provides sufficient time for either major escalation or de-escalation. The high volatility (ranging $94-120+ recently) indicates potential for large moves in either direction. Given the combination of active geopolitical risk, some precedent for extreme price spikes during supply disruptions, but also significant countervailing factors, I estimate 25% probability - well above base rate due to current tensions but acknowledging substantial uncertainty and downside risks."
+    },
     {
       "id": 756,
       "platform": "manifold",
@@ -3153,23 +3170,6 @@
       "est_prob": 0.08,
       "est_conf": 0.4,
       "est_reasoning": "Starting with a very low base rate of ~2% for theocratic government collapses in short timeframes - Iran's Islamic Republic has survived 47 years and multiple severe crises. However, I adjust upward to 8% due to the reported killing of 'several top Iranian officials' by U.S.-Israeli strikes, which could potentially destabilize the leadership structure in ways previous crises have not. The active military campaign against Iranian leadership represents a new type of external pressure. That said, there's no evidence of the typical precursors to government collapse: mass uprisings, military defections, or loss of territorial control. The 11-day remaining timeframe is extremely short for such dramatic political transformation. The resolution criteria ambiguity adds uncertainty - we don't know exactly what constitutes the 'government falling.' Most concerning is that our evidence comes primarily from exiled opposition groups rather than verified internal intelligence, making it difficult to assess actual regime vulnerability."
-    },
-    {
-      "id": 657,
-      "platform": "manifold",
-      "market_id": "OgnlLCUuCA",
-      "question": "Is this jigsaw puzzle missing some piece?",
-      "current_yes_price": 0.6029556082788835,
-      "current_no_price": 0.3970443917211165,
-      "volume": 3813.4862442022213,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-02T21:41:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T16:15:04.289952",
-      "est_prob": 0.5,
-      "est_conf": 0.1,
-      "est_reasoning": "While I can estimate a base rate of ~0.5% for manufacturing defects in jigsaw puzzles, this question is fundamentally flawed and unresolvable. Without knowing which specific puzzle is referenced, who will assess it, when, or by what criteria, there's no meaningful way to determine the outcome. The complete absence of resolution mechanisms means this could resolve either way arbitrarily. Given the extreme uncertainty and lack of any actionable information, I'm forced to assign a 50% probability as the maximum entropy estimate. My confidence is extremely low (0.1) because this appears to be an unresolvable question that shouldn't exist in a prediction market."
     }
   ]
 }
