@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T09:15:24.623936+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T09:20:50.052806+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T09:15:24.623945+00:00",
+    "last_heartbeat": "2026-03-20T09:20:50.052814+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 17 recently analyzed, 12 already have run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 7 low-volume markets               run.py:173",
-      "WARNING    Errors: 7 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[03:16:24] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-20",
+      "03:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1371,6 +1327,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 471,
+      "platform": "manifold",
+      "market_id": "mIQ8YdCJlAcMz9fFmIUX",
+      "question": "Will Italy qualify for the 2026 FIFA World Cup?",
+      "current_yes_price": 0.6315610984192883,
+      "current_no_price": 0.3684389015807117,
+      "volume": 78.18014146752613,
+      "liquidity": 1000.0,
+      "close_date": "2026-06-02T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T09:19:49.309632",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 470,
+      "platform": "manifold",
+      "market_id": "zOSd5nE56c",
+      "question": "Will Iran actually participate in the 2026 FIFA World Cup?",
+      "current_yes_price": 0.2273382618932612,
+      "current_no_price": 0.7726617381067388,
+      "volume": 78.40862432762562,
+      "liquidity": 1200.0,
+      "close_date": "2026-06-10T23:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T09:19:46.369949",
+      "est_prob": 0.25,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate of 95% (qualified teams historically participate), I must heavily adjust downward due to exceptional circumstances. Iran's sports minister has explicitly stated they cannot participate following Khamenei's killing, active military conflict with U.S./Israel creates severe security barriers, FIFA refused Iran's venue change request, and Iran already withdrew from Paralympics citing safety - establishing precedent for sports withdrawal. However, uncertainty remains high because: the situation is rapidly evolving, the sports minister's statement may not be final, there are still months for diplomatic resolution, and FIFA has strong incentives to include all qualified teams. The combination of explicit government statements against participation and active military conflict outweighs the historical tendency for qualified teams to participate, but significant uncertainty remains given the fluid nature of the situation."
+    },
     {
       "id": 469,
       "platform": "manifold",
@@ -3033,40 +3023,6 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-20T05:33:02.262150",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 371,
-      "platform": "manifold",
-      "market_id": "OEsAggs2sp",
-      "question": "Leader of USA Enemy Out in March 2026?",
-      "current_yes_price": 0.231317371617681,
-      "current_no_price": 0.7686826283823189,
-      "volume": 201.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T05:32:59.529285",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 370,
-      "platform": "manifold",
-      "market_id": "q8dtCdNgsn",
-      "question": "Will a G7 country announce new quantum legislation within the next 2 months?",
-      "current_yes_price": 0.1934272359814988,
-      "current_no_price": 0.8065727640185012,
-      "volume": 658.3333333333338,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-02T06:18:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T05:32:52.702869",
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
