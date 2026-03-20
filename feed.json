@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-20T15:35:27.109206+00:00",
+  "updated_at": "2026-03-20T15:44:20.013077+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,7 +47,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T15:35:27.109214+00:00",
+    "last_heartbeat": "2026-03-20T15:44:20.013085+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -361,21 +361,21 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 993.6,
-        "deployed": 514.48,
-        "cash": 479.12
+        "deployed": 693.85,
+        "cash": 299.75
       },
       "stats": {
-        "total_trades": 32,
-        "open_positions": 31,
+        "total_trades": 39,
+        "open_positions": 38,
         "resolved": 1,
         "total_pnl": -6.4,
-        "avg_edge": 0.1239
+        "avg_edge": 0.1011
       },
       "exposure": {
         "by_direction": {
           "yes": {
-            "count": 18,
-            "deployed": 218.81
+            "count": 25,
+            "deployed": 398.18
           },
           "no": {
             "count": 13,
@@ -383,11 +383,130 @@
           }
         },
         "high_edge_count": 16,
-        "low_edge_count": 15,
+        "low_edge_count": 22,
         "high_edge_deployed": 316.43,
-        "low_edge_deployed": 198.05
+        "low_edge_deployed": 377.42
       },
       "trades": [
+        {
+          "id": 39,
+          "market_id": "ZctCIAhQsu",
+          "platform": "manifold",
+          "question": "[HEDGE] Will Iran shoot down a US military plane/helicopter by end of March?",
+          "direction": "yes",
+          "size": 4.03,
+          "entry_price": 0.23087811198629082,
+          "estimated_probability": 0.23087811198629082,
+          "edge": 0.0,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:40:33.687067+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 38,
+          "market_id": "uZE6NZ6yl8",
+          "platform": "manifold",
+          "question": "[HEDGE] Another American cartel leader killed/captured before end of march?",
+          "direction": "yes",
+          "size": 6.19,
+          "entry_price": 0.18912373623085016,
+          "estimated_probability": 0.18912373623085016,
+          "edge": 0.0,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:40:33.548952+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 37,
+          "market_id": "NstCUAzyt2",
+          "platform": "manifold",
+          "question": "[HEDGE] USA x Iran ceasefire by end of march 31?",
+          "direction": "yes",
+          "size": 17.86,
+          "entry_price": 0.10234307826339059,
+          "estimated_probability": 0.10234307826339059,
+          "edge": 0.0,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:40:33.419826+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 36,
+          "market_id": "9RNqh5yzqR",
+          "platform": "manifold",
+          "question": "[HEDGE] Will Purdue be in the Final Four of March Madness?",
+          "direction": "yes",
+          "size": 23.39,
+          "entry_price": 0.22459727445254157,
+          "estimated_probability": 0.22459727445254157,
+          "edge": 0.0,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:40:33.309131+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 35,
+          "market_id": "0RlldUN66A",
+          "platform": "manifold",
+          "question": "[HEDGE] Will USA change Iran regime",
+          "direction": "yes",
+          "size": 22.13,
+          "entry_price": 0.21220936034450216,
+          "estimated_probability": 0.21220936034450216,
+          "edge": 0.0,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:40:33.194251+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 34,
+          "market_id": "nQQU9OOlIO",
+          "platform": "manifold",
+          "question": "[HEDGE] New Iranian Supreme Leader is chosen in March 2026 and killed in March 2026.",
+          "direction": "yes",
+          "size": 46.0,
+          "entry_price": 0.1381331358084966,
+          "estimated_probability": 0.1381331358084966,
+          "edge": 0.0,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:40:33.085428+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 33,
+          "market_id": "n62UyALzPc",
+          "platform": "manifold",
+          "question": "[HEDGE] Will Africa be a global power house in the nest few months",
+          "direction": "yes",
+          "size": 59.77,
+          "entry_price": 0.11378844172243355,
+          "estimated_probability": 0.11378844172243355,
+          "edge": 0.0,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:40:32.964063+00:00",
+          "resolved_at": null
+        },
         {
           "id": 32,
           "market_id": "ZRO2t5uApn",
@@ -942,33 +1061,84 @@
       "accent": "amber",
       "portfolio": {
         "bankroll": 1000.0,
-        "deployed": 68.04,
-        "cash": 931.96
+        "deployed": 118.04,
+        "cash": 881.96
       },
       "stats": {
-        "total_trades": 4,
-        "open_positions": 4,
+        "total_trades": 7,
+        "open_positions": 7,
         "resolved": 0,
         "total_pnl": 0,
-        "avg_edge": 0.1037
+        "avg_edge": 0.1621
       },
       "exposure": {
         "by_direction": {
           "yes": {
-            "count": 1,
-            "deployed": 14.19
+            "count": 2,
+            "deployed": 29.19
           },
           "no": {
-            "count": 3,
-            "deployed": 53.85
+            "count": 5,
+            "deployed": 88.85
           }
         },
-        "high_edge_count": 2,
-        "low_edge_count": 2,
-        "high_edge_deployed": 37.49,
-        "low_edge_deployed": 30.55
+        "high_edge_count": 4,
+        "low_edge_count": 3,
+        "high_edge_deployed": 72.49,
+        "low_edge_deployed": 45.55
       },
       "trades": [
+        {
+          "id": 7,
+          "market_id": "qp29pcz9ZO",
+          "platform": "manifold",
+          "question": "Will Gold be between $5000 - $6000 by the end of March?",
+          "direction": "no",
+          "size": 20.0,
+          "entry_price": 0.49527309047390317,
+          "estimated_probability": 0.02,
+          "edge": 0.48,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:38:06.510699+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 6,
+          "market_id": "Gk0rSk3vqy1RvqQn9smz",
+          "platform": "manifold",
+          "question": "Will Vladimir Putin be in power at the conclusion of the Russia-Ukraine war?",
+          "direction": "yes",
+          "size": 15.0,
+          "entry_price": 0.7686111782494174,
+          "estimated_probability": 0.92,
+          "edge": 0.15,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:38:06.388522+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 5,
+          "market_id": "uphA9gU6z0",
+          "platform": "manifold",
+          "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
+          "direction": "no",
+          "size": 15.0,
+          "entry_price": 0.3367976686831395,
+          "estimated_probability": 0.25,
+          "edge": 0.09,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:38:06.284410+00:00",
+          "resolved_at": null
+        },
         {
           "id": 4,
           "market_id": "yShRpp25pR",
@@ -1047,33 +1217,84 @@
       "accent": "blue",
       "portfolio": {
         "bankroll": 964.63,
-        "deployed": 388.67,
-        "cash": 575.96
+        "deployed": 425.67,
+        "cash": 538.96
       },
       "stats": {
-        "total_trades": 23,
-        "open_positions": 21,
+        "total_trades": 26,
+        "open_positions": 24,
         "resolved": 2,
         "total_pnl": -35.37,
-        "avg_edge": 0.1318
+        "avg_edge": 0.1453
       },
       "exposure": {
         "by_direction": {
           "yes": {
-            "count": 16,
-            "deployed": 234.12
+            "count": 17,
+            "deployed": 246.12
           },
           "no": {
-            "count": 5,
-            "deployed": 154.55
+            "count": 7,
+            "deployed": 179.55
           }
         },
-        "high_edge_count": 9,
-        "low_edge_count": 12,
-        "high_edge_deployed": 246.25,
-        "low_edge_deployed": 142.42
+        "high_edge_count": 11,
+        "low_edge_count": 13,
+        "high_edge_deployed": 273.25,
+        "low_edge_deployed": 152.42
       },
       "trades": [
+        {
+          "id": 26,
+          "market_id": "qp29pcz9ZO",
+          "platform": "manifold",
+          "question": "Will Gold be between $5000 - $6000 by the end of March?",
+          "direction": "no",
+          "size": 15.0,
+          "entry_price": 0.5027580993776818,
+          "estimated_probability": 0.02,
+          "edge": 0.48,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:37:18.119521+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 25,
+          "market_id": "Gk0rSk3vqy1RvqQn9smz",
+          "platform": "manifold",
+          "question": "Will Vladimir Putin be in power at the conclusion of the Russia-Ukraine war?",
+          "direction": "yes",
+          "size": 12.0,
+          "entry_price": 0.7666556514657832,
+          "estimated_probability": 0.92,
+          "edge": 0.15,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:37:17.904228+00:00",
+          "resolved_at": null
+        },
+        {
+          "id": 24,
+          "market_id": "uphA9gU6z0",
+          "platform": "manifold",
+          "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
+          "direction": "no",
+          "size": 10.0,
+          "entry_price": 0.34,
+          "estimated_probability": 0.25,
+          "edge": 0.09,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T15:37:17.715431+00:00",
+          "resolved_at": null
+        },
         {
           "id": 23,
           "market_id": "zOSd5nE56c",
