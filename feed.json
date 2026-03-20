@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T19:50:50.195966+00:00",
+  "updated_at": "2026-03-20T20:03:24.065193+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T19:50:50.195972+00:00",
+    "last_heartbeat": "2026-03-20T20:03:24.065205+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -970,6 +970,26 @@
   ],
   "estimates": [
     {
+      "id": 175,
+      "market_id": "cp9s0lqSCy",
+      "probability": 0.35,
+      "confidence": 0.2,
+      "reasoning": "This is an extremely difficult prediction to calibrate due to fundamental definitional and evidential problems. I cannot establish a meaningful base rate because 'more authoritarian' is undefined - it could range from minor administrative changes to major democratic backsliding. The research report provides virtually no France-specific information from 2025, making evidence-based assessment nearly impossible. However, I can consider some general factors: France is a well-established democracy with strong institutions and EU membership that constrains authoritarian drift. Historically, major democratic backsliding in Western European democracies is relatively rare. On the other hand, global trends show some democratic erosion even in established democracies, and various pressures (economic, security, social) could theoretically drive authoritarian responses. Given the complete lack of specific evidence and clear criteria, I'm essentially making an uninformed guess. I lean slightly below 50% because France's institutional strength and EU constraints make dramatic authoritarian shifts less likely, but the vague definition means even minor changes could qualify. My confidence is very low due to the fundamental ambiguity of the question and lack of relevant evidence.",
+      "key_uncertainties": "[\"Complete lack of definition for 'more authoritarian' - could mean anything from minor policy changes to major institutional shifts\", \"No baseline measurement of France's current authoritarian level to compare against\", \"Extremely limited France-specific evidence from 2025 in the provided sources\", \"Unclear resolution criteria and measurement methodology\", \"Gap between evaluation period (2025) and resolution date (March 2026)\"]",
+      "base_rate": null,
+      "created_at": "2026-03-20T20:03:24.007470"
+    },
+    {
+      "id": 174,
+      "market_id": "2uLLLSqAzt",
+      "probability": 0.15,
+      "confidence": 0.2,
+      "reasoning": "This question suffers from severe definitional ambiguity that makes meaningful probability estimation extremely difficult. Without knowing what constitutes 'famous' or which specific market is referenced, I cannot establish reliable base rates. However, I can consider general patterns: (1) Celebrities typically avoid public gambling due to reputation risks and potential legal issues, (2) Prediction markets remain niche platforms with limited mainstream celebrity engagement, (3) Most celebrity betting behavior occurs in private or traditional venues rather than public prediction markets. The research shows some celebrities do engage in betting activities, but this is typically in established contexts like sports betting rather than prediction markets. Given the reputation risks, niche nature of prediction markets, and lack of historical precedent for celebrity participation, I estimate a low probability. My confidence is very low due to the critical information gaps - the actual probability could vary dramatically depending on how 'famous' is defined and what the specific market entails.",
+      "key_uncertainties": "[\"No definition of what constitutes a 'famous person'\", \"Unclear which specific market is being referenced\", \"Unknown market topic and platform\", \"Ambiguous resolution criteria for what counts as 'betting'\", \"No baseline data on celebrity participation in prediction markets\", \"Potential reputation and legal risks for celebrities\"]",
+      "base_rate": null,
+      "created_at": "2026-03-20T20:03:20.125180"
+    },
+    {
       "id": 173,
       "market_id": "8R52Cn0nAq",
       "probability": 0.65,
@@ -1448,29 +1468,43 @@
       "key_uncertainties": "[\"Definition of 'government falls' - unclear if this means complete regime change or partial leadership change\", \"Current status of Iranian military loyalty and potential defections\", \"Actual scope and intensity of reported U.S.-Israel military conflict with Iran\", \"Supreme Leader Khamenei's current condition and control\", \"Control over major Iranian cities and infrastructure\", \"Only 11 days remaining until market close - rapid developments could occur\", \"Reliability of exile sources vs. actual on-ground conditions\"]",
       "base_rate": 0.02,
       "created_at": "2026-03-20T17:17:07.504295"
-    },
-    {
-      "id": 125,
-      "market_id": "Ehyqgs0czE",
-      "probability": 0.25,
-      "confidence": 0.4,
-      "reasoning": "Starting from a base rate where healthy leaders typically appear on video (~85%), I'm adjusting significantly downward due to credible reports of serious health issues. The opposition claims of coma, the pattern of only written statements, and Iran's historical secrecy during leadership health crises all point toward incapacitation. The high bar of video evidence within just 24 days makes this unlikely unless he recovers substantially. However, uncertainty remains high due to the secretive nature of the situation and potential for rapid changes in his condition.",
-      "key_uncertainties": "[\"Actual severity of his medical condition\", \"Whether opposition diaspora claims about coma are accurate\", \"Iranian regime's willingness to produce video if he's partially incapacitated\", \"What constitutes sufficient video evidence for resolution\", \"Potential for recovery within the 24-day window\"]",
-      "base_rate": 0.85,
-      "created_at": "2026-03-20T17:16:47.163723"
-    },
-    {
-      "id": 124,
-      "market_id": "EcOt6EU68N",
-      "probability": 0.5,
-      "confidence": 0.15,
-      "reasoning": "Coin flip market \u2014 pure randomness, no edge possible.",
-      "key_uncertainties": "[\"Random outcome \\u2014 no information advantage\"]",
-      "base_rate": 0.5,
-      "created_at": "2026-03-20T17:16:24.198355"
     }
   ],
   "markets": [
+    {
+      "id": 762,
+      "platform": "manifold",
+      "market_id": "cp9s0lqSCy",
+      "question": "Will France become more authoritarian in 2025?",
+      "current_yes_price": 0.58,
+      "current_no_price": 0.42000000000000004,
+      "volume": 78.3887411069213,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T22:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T20:02:53.041102",
+      "est_prob": 0.35,
+      "est_conf": 0.2,
+      "est_reasoning": "This is an extremely difficult prediction to calibrate due to fundamental definitional and evidential problems. I cannot establish a meaningful base rate because 'more authoritarian' is undefined - it could range from minor administrative changes to major democratic backsliding. The research report provides virtually no France-specific information from 2025, making evidence-based assessment nearly impossible. However, I can consider some general factors: France is a well-established democracy with strong institutions and EU membership that constrains authoritarian drift. Historically, major democratic backsliding in Western European democracies is relatively rare. On the other hand, global trends show some democratic erosion even in established democracies, and various pressures (economic, security, social) could theoretically drive authoritarian responses. Given the complete lack of specific evidence and clear criteria, I'm essentially making an uninformed guess. I lean slightly below 50% because France's institutional strength and EU constraints make dramatic authoritarian shifts less likely, but the vague definition means even minor changes could qualify. My confidence is very low due to the fundamental ambiguity of the question and lack of relevant evidence."
+    },
+    {
+      "id": 761,
+      "platform": "manifold",
+      "market_id": "2uLLLSqAzt",
+      "question": "Will 5 famous people bet on this market?",
+      "current_yes_price": 0.06277716320921906,
+      "current_no_price": 0.9372228367907809,
+      "volume": 150.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T16:22:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T20:02:50.069340",
+      "est_prob": 0.15,
+      "est_conf": 0.2,
+      "est_reasoning": "This question suffers from severe definitional ambiguity that makes meaningful probability estimation extremely difficult. Without knowing what constitutes 'famous' or which specific market is referenced, I cannot establish reliable base rates. However, I can consider general patterns: (1) Celebrities typically avoid public gambling due to reputation risks and potential legal issues, (2) Prediction markets remain niche platforms with limited mainstream celebrity engagement, (3) Most celebrity betting behavior occurs in private or traditional venues rather than public prediction markets. The research shows some celebrities do engage in betting activities, but this is typically in established contexts like sports betting rather than prediction markets. Given the reputation risks, niche nature of prediction markets, and lack of historical precedent for celebrity participation, I estimate a low probability. My confidence is very low due to the critical information gaps - the actual probability could vary dramatically depending on how 'famous' is defined and what the specific market entails."
+    },
     {
       "id": 760,
       "platform": "manifold",
@@ -1892,9 +1926,9 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-20T19:02:49.942436",
-      "est_prob": 0.15,
+      "est_prob": 0.35,
       "est_conf": 0.2,
-      "est_reasoning": "I'm starting with a low base rate of ~5% based on the rarity of established Western democracies like France experiencing significant authoritarian drift in a single year. France has strong democratic institutions, rule of law, and checks and balances that typically prevent rapid authoritarian shifts. However, I'm adjusting upward to 15% primarily due to the extremely ambiguous resolution criteria. Without clear definitions of what constitutes 'more authoritarian' or baseline measurements, this question is highly susceptible to subjective interpretation. The resolver could potentially point to any number of normal governmental actions (enhanced security measures, protest restrictions, administrative changes) as evidence of increased authoritarianism. My confidence is very low (0.2) because: 1) The resolution criteria are fundamentally flawed and unmeasurable, 2) There's virtually no relevant evidence about France's 2025 domestic policies, and 3) The question essentially becomes a prediction about how the resolver will subjectively interpret France's actions rather than an objective assessment of democratic backsliding."
+      "est_reasoning": "This is an extremely difficult prediction to calibrate due to fundamental definitional and evidential problems. I cannot establish a meaningful base rate because 'more authoritarian' is undefined - it could range from minor administrative changes to major democratic backsliding. The research report provides virtually no France-specific information from 2025, making evidence-based assessment nearly impossible. However, I can consider some general factors: France is a well-established democracy with strong institutions and EU membership that constrains authoritarian drift. Historically, major democratic backsliding in Western European democracies is relatively rare. On the other hand, global trends show some democratic erosion even in established democracies, and various pressures (economic, security, social) could theoretically drive authoritarian responses. Given the complete lack of specific evidence and clear criteria, I'm essentially making an uninformed guess. I lean slightly below 50% because France's institutional strength and EU constraints make dramatic authoritarian shifts less likely, but the vague definition means even minor changes could qualify. My confidence is very low due to the fundamental ambiguity of the question and lack of relevant evidence."
     },
     {
       "id": 735,
@@ -3136,40 +3170,6 @@
       "est_prob": 0.78,
       "est_conf": 0.6,
       "est_reasoning": "Base rate analysis shows the US has conducted strikes on Yemen multiple times per year since 2016, giving a strong historical precedent (~85% annual probability). The current active US-Iran conflict as of March 2026 significantly increases the likelihood of strikes on Iranian proxies like Yemen's Houthis. However, several factors create uncertainty: (1) The narrow 1-2 month remaining window limits opportunities, (2) Current US military focus appears concentrated on direct Iran confrontation rather than proxy targets, (3) No specific reports of recent Houthi provocations or US Yemen operations despite regional escalation, (4) Unclear resolution criteria for what constitutes 'striking Yemen.' The active conflict context is the strongest factor favoring YES, but the lack of Yemen-specific developments and potential resource constraints from direct Iran operations moderately reduce the probability from the base rate. The short timeframe and information gaps about current Houthi activities add significant uncertainty to the estimate."
-    },
-    {
-      "id": 662,
-      "platform": "manifold",
-      "market_id": "Q8Q0QcEOzp",
-      "question": "Will there be widespread heating outages in Moscow this winter?",
-      "current_yes_price": 0.048267436271602446,
-      "current_no_price": 0.9517325637283975,
-      "volume": 301.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-21T00:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T16:45:07.689465",
-      "est_prob": 0.15,
-      "est_conf": 0.3,
-      "est_reasoning": "Without a clear base rate for Moscow heating outages, I'm starting from limited information. The key positive indicator is evidence of infrastructure vulnerability (airport closures from drone attacks in February 2026), suggesting Moscow's critical systems face real threats. However, heating infrastructure is typically more hardened and redundant than airports. Major cities like Moscow usually have robust heating systems given the life-or-death nature of winter heating. The lack of any reported heating issues in available sources suggests systems are currently functioning. The biggest uncertainty is the definition of 'widespread' - if it means affecting even 5-10% of the city, the probability would be higher than if it requires 30-50% affected. Given the strategic importance of Moscow and typical infrastructure resilience, but acknowledging the demonstrated vulnerability to attacks, I estimate a 15% chance with low confidence due to significant information gaps."
-    },
-    {
-      "id": 661,
-      "platform": "manifold",
-      "market_id": "Au9C6AOg9Z",
-      "question": "Is/Was Benjamin Netanyahu dead or grievously injured as of March 12-14, 2026",
-      "current_yes_price": 0.01696745160062218,
-      "current_no_price": 0.9830325483993778,
-      "volume": 6730.7883173977225,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T04:15:00+00:00",
-      "category": "geopolitics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T16:45:04.443578",
-      "est_prob": 0.05,
-      "est_conf": 0.8,
-      "est_reasoning": "Base rate for leader deaths/grievous injuries is extremely low (~0.5%). The evidence strongly suggests this was a misinformation campaign - Netanyahu posted video proof of being alive on March 15, and credible fact-checkers systematically debunked the rumors as manipulated content. While there's a narrow information gap for the specific March 12-14 dates, the pattern of evidence overwhelmingly points to him being alive and well. I adjust slightly upward from base rate only due to the timeline gap and lack of direct official statements from those specific dates."
     }
   ]
 }
