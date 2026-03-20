@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T06:15:21.113296+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T06:20:49.862715+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T06:15:21.113303+00:00",
+    "last_heartbeat": "2026-03-20T06:20:49.862723+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 23 recently analyzed, 6 already have  run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 1 low-volume markets               run.py:173",
-      "WARNING    Errors: 5 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[00:16:25] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-20",
+      "00:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1371,6 +1327,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 393,
+      "platform": "manifold",
+      "market_id": "Ehyqgs0czE",
+      "question": "Will Mojtaba Khamenei be shown alive on video between March 8th and April 1, 2026?",
+      "current_yes_price": 0.26730206525533595,
+      "current_no_price": 0.732697934744664,
+      "volume": 325.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T00:00:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T06:20:20.243561",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 392,
       "platform": "manifold",
@@ -3053,23 +3026,6 @@
       "est_prob": 0.25,
       "est_conf": 0.4,
       "est_reasoning": "Base rate is effectively 0% as no Fed Chair has ever been fired in 113+ years. However, several factors suggest higher probability: (1) Trump has already shown willingness to take action against Powell through DOJ investigations, demonstrating intent beyond normal political pressure, (2) Trump previously attempted to remove Powell and has nominated a replacement, showing sustained motivation, (3) The narrow 2-week window between market close and Powell's term expiration creates urgency that might prompt desperate attempts. Against this: legal protections are strong, courts have already blocked Trump's indirect approach, and the short timeframe makes waiting potentially more rational. The ambiguous resolution criteria ('attempt to fire') is crucial - if it includes public demands or failed legal challenges, probability is higher; if it requires formal dismissal attempts, probability is lower. Given Trump's demonstrated willingness to push boundaries and the political incentives, I estimate 25% while acknowledging high uncertainty due to definitional ambiguity and unknown current intentions."
-    },
-    {
-      "id": 293,
-      "platform": "manifold",
-      "market_id": "ZRO2t5uApn",
-      "question": "Confrontation between ICE and Minnesota police",
-      "current_yes_price": 0.12553014389173756,
-      "current_no_price": 0.8744698561082624,
-      "volume": 624.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T01:16:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T02:15:11.194696",
-      "est_prob": 0.25,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting from a 10% base rate for ICE-police confrontations during major operations, I adjust upward to 25% due to the documented large-scale ICE surge, significant community resistance (evidenced by the courage award), and remaining time window. However, confidence is low due to the undefined resolution criteria, lack of current police-ICE interaction reports, and significant information gaps about recent developments."
     }
   ]
 }
