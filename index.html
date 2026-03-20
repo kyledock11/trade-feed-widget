@@ -924,6 +924,15 @@
     font-size: 0.6rem;
   }
 
+  .dash-table .status-next {
+    color: #7eb8d0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
   /* Trade account tag */
   .trade-account {
     font-family: 'JetBrains Mono', monospace;
@@ -1379,6 +1388,21 @@ function renderTradesFromData(data) {
       const pnlSign = pnl >= 0 ? '+' : '';
       profitStr = `<span style="color:${pnlColor};font-weight:400">${pnlSign}${formatMoney(pnl)}</span>`;
     }
+    // Sell target for NO positions
+    let sellSignal = '';
+    if (trade.direction === 'no' && trade.status === 'filled') {
+      const live = livePrices[trade.market_id];
+      if (live) {
+        const currentYes = live.probability;
+        const entryYes = parseFloat(trade.entry_price) || 0;
+        const sellTarget = entryYes * 0.85;
+        if (currentYes <= sellTarget) {
+          sellSignal = '<span style="font-size:0.5rem;color:#6ec07a;background:rgba(110,192,122,0.12);padding:0.1rem 0.3rem;border-radius:3px;margin-left:0.3rem;font-family:Inter,sans-serif;letter-spacing:0.06em">SELL</span>';
+        } else if (currentYes <= entryYes * 0.95) {
+          sellSignal = '<span style="font-size:0.5rem;color:#c4a35a;background:rgba(196,163,90,0.12);padding:0.1rem 0.3rem;border-radius:3px;margin-left:0.3rem;font-family:Inter,sans-serif;letter-spacing:0.06em">CLOSE</span>';
+        }
+      }
+    }
     const caretChar = isExpanded ? '&#9660;' : '&#9654;';
 
     html += `<tr data-key="${esc(tradeKey)}" onclick="toggleTradeRow(this)">
@@ -1389,7 +1413,7 @@ function renderTradesFromData(data) {
       <td class="td-data" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</td>
       <td class="td-data" style="color:#7eb8d0">${likelihood}</td>
       <td class="td-data">${formatMoney(trade.size)}</td>
-      <td class="td-data">${profitStr}</td>
+      <td class="td-data">${profitStr}${sellSignal}</td>
       <td class="td-acct" style="color:${acctColor}">${esc(trade._account || '--')}</td>
       <td class="td-acct" style="color:#8a857e">${esc(trade._strategy || '--')}</td>
       <td class="td-time">${relativeTime(trade.created_at)}</td>
@@ -2076,62 +2100,87 @@ function renderStrategy() {
 
   const actualWinRate = totalResolved > 0 ? Math.round(totalWins / totalResolved * 100) : null;
   const winRateStr = actualWinRate !== null ? actualWinRate + '%' : 'N/A';
-  const winRateClass = actualWinRate === null ? 'muted' : actualWinRate >= 60 ? 'good' : actualWinRate >= 40 ? 'warn' : 'bad';
-  const phase1Status = totalResolved >= 50 ? 'COMPLETE' : 'ACTIVE';
+  const winRateClass = actualWinRate === null ? 'muted' : actualWinRate >= 80 ? 'good' : actualWinRate >= 60 ? 'warn' : 'bad';
+
+  // Edge decay status
+  const edgeDecay = feedData.learning && feedData.learning.edge_decay;
+  const decayStatus = edgeDecay ? edgeDecay.status : 'unknown';
+  const decayColor = decayStatus === 'healthy' ? '#6ec07a' : decayStatus === 'decaying' ? '#c4a35a' : decayStatus === 'broken' ? '#c06e6e' : '#5a5650';
+  const decayAccuracy = edgeDecay ? edgeDecay.accuracy : null;
 
   let html = '<div class="strategy-dash">';
 
-  // Table 1: Edge Structure
-  html += '<h3>Edge Structure (Backtest Reference)</h3>';
+  // Edge decay indicator
+  html += `<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;padding:0.4rem 0.6rem;background:rgba(255,255,255,0.02);border-radius:6px;border:1px solid rgba(255,255,255,0.04)">
+    <span style="width:8px;height:8px;border-radius:50%;background:${decayColor};flex-shrink:0"></span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:${decayColor};text-transform:uppercase">Edge ${decayStatus}</span>
+    ${decayAccuracy !== null ? `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#8a857e">${(decayAccuracy * 100).toFixed(0)}% accuracy</span>` : ''}
+  </div>`;
+
+  // Table 1: Calibration Curve
+  html += '<h3>Calibration Curve (6,264 resolved questions)</h3>';
+  html += '<div style="font-family:Inter,sans-serif;font-size:0.65rem;color:#8a857e;margin-bottom:0.5rem">Crowd systematically overestimates. We correct and trade the difference.</div>';
   html += `<table class="dash-table">
-    <thead><tr><th>Zone</th><th>Win Rate</th><th>EV / $10</th><th>Role</th></tr></thead>
+    <thead><tr><th>Crowd Says</th><th>Reality</th><th>Correction</th><th>Edge</th></tr></thead>
     <tbody>
-      <tr><td class="label-cell">Sweet spot (5-20% edge, agree)</td><td class="good">95%</td><td class="good">+$11.85</td><td>Primary trades</td></tr>
-      <tr><td class="label-cell">Medium edge (5-10%, agree)</td><td class="good">88%</td><td class="good">+$9.01</td><td>Steady grinder</td></tr>
-      <tr><td class="label-cell">High edge (20%+, agree)</td><td class="warn">50%</td><td class="good">+$3.50</td><td>Asymmetric longshots</td></tr>
-      <tr><td class="label-cell">Low edge (&lt;5%)</td><td class="warn">58%</td><td>+$1.95</td><td>Noise — minimize</td></tr>
-      <tr><td class="label-cell">Disagreement trades</td><td class="bad">21%</td><td class="bad">-$4.54</td><td class="bad">FILTERED OUT</td></tr>
+      <tr><td class="label-cell">0-10% (2.9%)</td><td>1.2%</td><td>0.42x</td><td class="muted">Tiny — skip</td></tr>
+      <tr><td class="label-cell">10-20% (14.2%)</td><td>4.5%</td><td>0.32x</td><td class="good">Strong NO edge</td></tr>
+      <tr><td class="label-cell">20-30% (24.9%)</td><td>11.3%</td><td>0.46x</td><td class="good">Strong NO edge</td></tr>
+      <tr><td class="label-cell">30-40% (35.0%)</td><td class="good">13.1%</td><td class="good">0.38x</td><td class="good">Strongest zone — 22% edge</td></tr>
+      <tr><td class="label-cell">40-50% (45.2%)</td><td>29.7%</td><td>0.66x</td><td class="good">Strong NO edge</td></tr>
+      <tr><td class="label-cell">50-60% (52.1%)</td><td>38.7%</td><td>0.74x</td><td class="warn">Moderate NO edge</td></tr>
+      <tr><td class="label-cell">60-70% (64.8%)</td><td>58.3%</td><td>0.90x</td><td class="muted">Small edge</td></tr>
+      <tr><td class="label-cell">70-80% (74.8%)</td><td>66.8%</td><td>0.89x</td><td class="muted">Small edge</td></tr>
+      <tr><td class="label-cell">80-90% (84.5%)</td><td>80.3%</td><td>0.95x</td><td class="muted">Negligible</td></tr>
+      <tr><td class="label-cell">90-100% (98.0%)</td><td>96.0%</td><td>0.98x</td><td class="muted">Negligible</td></tr>
     </tbody>
   </table>`;
 
-  // Table 2: Phase Targets
-  html += '<h3>Phase Targets vs Actual</h3>';
+  // Table 2: Phase Targets (v0.6)
+  html += '<h3>Phase Targets</h3>';
   html += `<table class="dash-table">
-    <thead><tr><th>Phase</th><th>Target WR</th><th>Actual WR</th><th>Target ROI/mo</th><th>Status</th></tr></thead>
+    <thead><tr><th>Phase</th><th>Strategy</th><th>Target</th><th>Actual</th><th>Status</th></tr></thead>
     <tbody>
       <tr>
-        <td class="label-cell">Phase 1: Learning</td>
-        <td>60-70%</td>
+        <td class="label-cell">Phase 1: Learning (v0.1-v0.5)</td>
+        <td>LLM estimation + agreement filter</td>
+        <td>60-70% WR</td>
         <td class="${winRateClass}">${winRateStr} (${totalResolved} resolved)</td>
-        <td>5-10%</td>
-        <td><span class="${phase1Status === 'ACTIVE' ? 'status-active' : 'status-pending'}">${phase1Status}</span></td>
+        <td><span class="status-pending">COMPLETE</span></td>
       </tr>
       <tr>
-        <td class="label-cell">Phase 2: Validated</td>
-        <td>70-80%</td>
-        <td class="muted">—</td>
-        <td>10-20%</td>
-        <td><span class="status-pending">Need 50+ resolved</span></td>
+        <td class="label-cell">Phase 2: Calibration (v0.6)</td>
+        <td>Statistical correction, NO bias</td>
+        <td>80-87% WR</td>
+        <td class="muted">In progress</td>
+        <td><span class="status-active">ACTIVE</span></td>
       </tr>
       <tr>
-        <td class="label-cell">Phase 3: Kalshi Live</td>
-        <td>65-75%</td>
+        <td class="label-cell">Phase 3: Capital Rotation</td>
+        <td>Sell winners early, redeploy</td>
+        <td>Faster compounding</td>
         <td class="muted">—</td>
-        <td>15-30%</td>
-        <td><span class="status-pending">Pending</span></td>
+        <td><span class="status-pending">NEXT</span></td>
       </tr>
       <tr>
-        <td class="label-cell">Phase 4: Scaled</td>
-        <td>65-75%</td>
+        <td class="label-cell">Phase 4: Kalshi Live</td>
+        <td>Real money deployment</td>
+        <td>$500 start</td>
         <td class="muted">—</td>
-        <td>20-40%</td>
-        <td><span class="status-pending">Pending</span></td>
+        <td><span class="status-pending">PENDING</span></td>
+      </tr>
+      <tr>
+        <td class="label-cell">Phase 5: Multi-platform</td>
+        <td>Kalshi + Polymarket</td>
+        <td>Cross-platform</td>
+        <td class="muted">—</td>
+        <td><span class="status-pending">FUTURE</span></td>
       </tr>
     </tbody>
   </table>`;
 
   // Table 3: Scaling Projections
-  html += '<h3>Scaling Projections</h3>';
+  html += '<h3>Scaling Projections (at 85% win rate)</h3>';
   html += `<table class="dash-table">
     <thead><tr><th>Bankroll</th><th>Trades/Mo</th><th>Expected Monthly</th><th>Expected Annual</th></tr></thead>
     <tbody>
