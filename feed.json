@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T00:20:49.740695+00:00",
+  "updated_at": "2026-03-20T00:33:18.099125+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T00:20:49.740703+00:00",
+    "last_heartbeat": "2026-03-20T00:33:18.099132+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -826,6 +826,36 @@
   ],
   "estimates": [
     {
+      "id": 98,
+      "market_id": "sPppzuLEqR",
+      "probability": 0.15,
+      "confidence": 0.2,
+      "reasoning": "The base rate for USAMO qualification is extremely low - roughly 250-300 students out of ~100,000+ who take the AIME annually, giving a base rate around 0.3%. However, this question being asked at all suggests some level of mathematical engagement or optimism about qualification. People rarely ask about extremely unlikely events unless they have some reason to believe they're possible. Since this appears to be a personal prediction market question, the person asking likely has some mathematical background or competitive experience that makes USAMO qualification at least conceivable. I'm adjusting upward from the base rate to reflect this selection bias, but keeping the estimate relatively low given the extreme selectivity of USAMO. My confidence is very low due to the complete lack of information about the person's identity and mathematical ability.",
+      "key_uncertainties": "[\"Identity of 'I' is completely unknown - could be anyone from a mathematical novice to a competition veteran\", \"Mathematical background and previous competition performance of the person is unspecified\", \"2026 AIME score which directly determines USAMO qualification is unknown\", \"Grade level of the person affects eligibility and typical performance patterns\", \"Whether this is asked by someone with inside knowledge of their mathematical ability\"]",
+      "base_rate": 0.003,
+      "created_at": "2026-03-20T00:33:18.075058"
+    },
+    {
+      "id": 97,
+      "market_id": "pulqzqzCnA",
+      "probability": 0.35,
+      "confidence": 0.3,
+      "reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status.",
+      "key_uncertainties": "[\"No historical data on typical MSPRF offer letter timing\", \"Unclear current status of NSF budget delays reported in early March\", \"Unknown impact of budget constraints on fellowship processing timelines\", \"Ambiguous resolution criteria for what constitutes 'sending' offer letters\", \"Missing official NSF communications about 2026-2027 MSPRF schedule\", \"Very short time window remaining (deadline is March 24, 2026)\"]",
+      "base_rate": null,
+      "created_at": "2026-03-20T00:20:52.163761"
+    },
+    {
+      "id": 96,
+      "market_id": "0RlldUN66A",
+      "probability": 0.08,
+      "confidence": 0.4,
+      "reasoning": "Starting with a base rate of ~15% for successful US-led regime changes historically, I adjust significantly downward due to several factors. The 5-day timeline is extremely constraining - genuine regime changes typically unfold over months or years, not days. While there's active military conflict described as coordinated US-Israel efforts to 'topple the Islamic Republic,' US intelligence explicitly assesses regime change as 'unlikely' with the IRGC 'maintaining power.' The information quality is concerning - mostly anonymous sources and secondary reporting without official confirmation. Most critically, the resolution criteria are ambiguous about what constitutes 'regime change,' and there's no specified resolution mechanism. Even if military pressure continues, achieving complete regime transformation in 5 days seems highly improbable. The evidence suggests ongoing conflict but points toward regime survival rather than collapse.",
+      "key_uncertainties": "[\"Unclear definition of what constitutes 'regime change' for resolution\", \"No official resolution mechanism specified\", \"Rapidly evolving military situation with limited reliable information\", \"Only 5 days remaining until resolution deadline\", \"Conflicting signals between military action and intelligence assessments\", \"Lack of direct reporting on Iranian government's actual status\"]",
+      "base_rate": 0.15,
+      "created_at": "2026-03-20T00:20:52.146795"
+    },
+    {
       "id": 95,
       "market_id": "ARnqln6pRP",
       "probability": 0.25,
@@ -1294,39 +1324,26 @@
       "key_uncertainties": "[\"No historical data on typical MSPRF offer letter timing from previous years\", \"Unknown current status of NSF's 2026-2027 fellowship cycle\", \"Potential impact of mentioned NSF budget constraints on fellowship timelines\", \"Whether March 24 is a reasonable timeline for academic fellowship processes\", \"NSF's internal processing capacity and any COVID-related delays\"]",
       "base_rate": null,
       "created_at": "2026-03-19T20:21:21.450257"
-    },
-    {
-      "id": 48,
-      "market_id": "zQ0dgER6SI",
-      "probability": 0.35,
-      "confidence": 0.2,
-      "reasoning": "This is an extremely difficult prediction due to fundamental ambiguities in the question and severe information gaps. Without knowing current gas prices, the specific timeframe for 'buy now' advice, or objective criteria for 'reasonable,' any estimate is highly speculative. The limited evidence is mixed: a $6.28/gallon price in NJ suggests potential for high prices (supporting YES), while CNBC discussion of $3-4 range suggests more moderate levels (supporting NO). The very short timeframe to resolution (days from current date based on sources) limits potential for major price movements. Given the subjective nature of 'reasonable advice' and complete lack of baseline data, I'm assigning a slightly below-neutral probability, acknowledging this could easily swing either direction with clearer information. My confidence is very low due to the fundamental ambiguities in the question structure.",
-      "key_uncertainties": "[\"What constitutes 'reasonable advice' - no objective threshold defined\", \"Current baseline gas prices unknown - cannot assess if buying now makes sense\", \"Timeframe for the advice unclear - immediate purchase vs longer period\", \"Geographic scope uncertain - local vs national price patterns\", \"Geopolitical factors mentioned but vague and unspecific\", \"Whether $6.28/gallon NJ price represents broader trend or anomaly\"]",
-      "base_rate": null,
-      "created_at": "2026-03-19T20:16:30.360296"
-    },
-    {
-      "id": 47,
-      "market_id": "NIhOcZOQZE",
-      "probability": 0.35,
-      "confidence": 0.4,
-      "reasoning": "Starting with NHL base rate of 53.1% (17/32 teams make playoffs). The Flyers have 31-23-12 record (74 points) with approximately 16 games remaining, which puts them on pace for ~92-94 points - historically around the playoff bubble. However, the key negative signal is that recent reporting specifically states they have 'fallen further out of playoff position' and face a 'crucial road trip,' suggesting they're currently outside the playoff picture despite a decent record. The language used implies they're chasing a playoff spot rather than holding one. The team appears competitive but in a rebuilding phase, and the March timing means there's limited room for error. Adjusting significantly below base rate due to the 'fallen out of position' reporting, but maintaining meaningful probability given their record and remaining games.",
-      "key_uncertainties": "[\"Current playoff standings and exact points gap to cutoff\", \"Number of games remaining and strength of schedule\", \"Team's recent performance trend beyond isolated losses mentioned\", \"Injury status of key players affecting playoff push\", \"How competitive the Eastern Conference playoff race is this season\"]",
-      "base_rate": 0.531,
-      "created_at": "2026-03-19T20:03:52.023056"
-    },
-    {
-      "id": 46,
-      "market_id": "QIAgQyS5tU",
-      "probability": 0.55,
-      "confidence": 0.3,
-      "reasoning": "Without a clear base rate for Hamilton vs Leclerc head-to-head performance, I'm starting near 50% for two competitive drivers. The key positive evidence is Hamilton finishing 3rd at the Chinese Grand Prix while 'overcoming his Ferrari teammate in battle,' suggesting he outperformed Leclerc there. This indicates Hamilton is adapting well to Ferrari and currently has momentum. However, this is a very small sample size from his first Ferrari season, and Leclerc is a proven performer who likely knows the Ferrari car better. The fact they're teammates could lead to team orders affecting the outcome. Given the recent evidence slightly favors Hamilton but with enormous uncertainty about sustained performance differences and many unknown variables, I'm estimating slightly above 50% but with very low confidence due to the limited data and long prediction horizon.",
-      "key_uncertainties": "[\"Leclerc's actual performance level in 2026 - no finishing position data from Chinese GP\", \"How Hamilton's adaptation to Ferrari progresses between Chinese GP and Japanese GP\", \"Ferrari's team strategy and whether they favor one driver over another\", \"Track-specific performance differences at Suzuka Circuit\", \"Potential mechanical reliability issues or penalties affecting either driver\", \"Weather conditions and race circumstances on race day\"]",
-      "base_rate": null,
-      "created_at": "2026-03-19T19:51:05.723537"
     }
   ],
   "markets": [
+    {
+      "id": 245,
+      "platform": "manifold",
+      "market_id": "sPppzuLEqR",
+      "question": "Will I make USAMO?",
+      "current_yes_price": 0.07617823355582605,
+      "current_no_price": 0.9238217664441739,
+      "volume": 50.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T04:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T00:32:50.019808",
+      "est_prob": 0.15,
+      "est_conf": 0.2,
+      "est_reasoning": "The base rate for USAMO qualification is extremely low - roughly 250-300 students out of ~100,000+ who take the AIME annually, giving a base rate around 0.3%. However, this question being asked at all suggests some level of mathematical engagement or optimism about qualification. People rarely ask about extremely unlikely events unless they have some reason to believe they're possible. Since this appears to be a personal prediction market question, the person asking likely has some mathematical background or competitive experience that makes USAMO qualification at least conceivable. I'm adjusting upward from the base rate to reflect this selection bias, but keeping the estimate relatively low given the extreme selectivity of USAMO. My confidence is very low due to the complete lack of information about the person's identity and mathematical ability."
+    },
     {
       "id": 244,
       "platform": "manifold",
@@ -1341,8 +1358,8 @@
       "resolution_source": "",
       "scanned_at": "2026-03-20T00:20:24.514111",
       "est_prob": 0.35,
-      "est_conf": 0.2,
-      "est_reasoning": "This estimate is highly uncertain due to the extreme lack of relevant information. Without any historical baseline for when NSF typically sends MSPRF offer letters, I cannot establish a meaningful base rate. The only concrete evidence is a March 2026 report of NSF spending slowdowns, which provides weak negative evidence that could delay fellowship processes. However, this is very indirect and non-specific. The March 24 deadline gives very little time from the current date (March 3 report), which might favor a NO resolution if typical government processes require longer timelines. Given the complete absence of historical patterns, program status updates, or official timelines, I'm estimating slightly below 50% (0.35) with very low confidence (0.2). This reflects the uncertainty about whether a 3-week window from early March is sufficient for NSF fellowship decisions, combined with the weak negative signal from reported funding delays."
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
     },
     {
       "id": 243,
@@ -1357,9 +1374,9 @@
       "category": "geopolitics",
       "resolution_source": "",
       "scanned_at": "2026-03-20T00:20:23.284280",
-      "est_prob": 0.15,
-      "est_conf": 0.2,
-      "est_reasoning": "Starting from a base rate of ~35% for US regime change attempts, I'm adjusting significantly downward due to: (1) the extremely short timeframe remaining, (2) US intelligence reportedly predicting regime survival, (3) limited military commitment without ground forces, (4) the questionable nature of the source material, and (5) undefined resolution criteria. The active military conflict suggests some possibility, but the structural constraints and contradictory assessments point toward a low probability of success in this timeframe."
+      "est_prob": 0.08,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate of ~15% for successful US-led regime changes historically, I adjust significantly downward due to several factors. The 5-day timeline is extremely constraining - genuine regime changes typically unfold over months or years, not days. While there's active military conflict described as coordinated US-Israel efforts to 'topple the Islamic Republic,' US intelligence explicitly assesses regime change as 'unlikely' with the IRGC 'maintaining power.' The information quality is concerning - mostly anonymous sources and secondary reporting without official confirmation. Most critically, the resolution criteria are ambiguous about what constitutes 'regime change,' and there's no specified resolution mechanism. Even if military pressure continues, achieving complete regime transformation in 5 days seems highly improbable. The evidence suggests ongoing conflict but points toward regime survival rather than collapse."
     },
     {
       "id": 242,
@@ -1868,8 +1885,8 @@
       "resolution_source": "",
       "scanned_at": "2026-03-19T23:20:20.649435",
       "est_prob": 0.35,
-      "est_conf": 0.2,
-      "est_reasoning": "This estimate is highly uncertain due to the extreme lack of relevant information. Without any historical baseline for when NSF typically sends MSPRF offer letters, I cannot establish a meaningful base rate. The only concrete evidence is a March 2026 report of NSF spending slowdowns, which provides weak negative evidence that could delay fellowship processes. However, this is very indirect and non-specific. The March 24 deadline gives very little time from the current date (March 3 report), which might favor a NO resolution if typical government processes require longer timelines. Given the complete absence of historical patterns, program status updates, or official timelines, I'm estimating slightly below 50% (0.35) with very low confidence (0.2). This reflects the uncertainty about whether a 3-week window from early March is sufficient for NSF fellowship decisions, combined with the weak negative signal from reported funding delays."
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
     },
     {
       "id": 212,
@@ -1884,9 +1901,9 @@
       "category": "geopolitics",
       "resolution_source": "",
       "scanned_at": "2026-03-19T23:19:50.193957",
-      "est_prob": 0.15,
-      "est_conf": 0.2,
-      "est_reasoning": "Starting from a base rate of ~35% for US regime change attempts, I'm adjusting significantly downward due to: (1) the extremely short timeframe remaining, (2) US intelligence reportedly predicting regime survival, (3) limited military commitment without ground forces, (4) the questionable nature of the source material, and (5) undefined resolution criteria. The active military conflict suggests some possibility, but the structural constraints and contradictory assessments point toward a low probability of success in this timeframe."
+      "est_prob": 0.08,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate of ~15% for successful US-led regime changes historically, I adjust significantly downward due to several factors. The 5-day timeline is extremely constraining - genuine regime changes typically unfold over months or years, not days. While there's active military conflict described as coordinated US-Israel efforts to 'topple the Islamic Republic,' US intelligence explicitly assesses regime change as 'unlikely' with the IRGC 'maintaining power.' The information quality is concerning - mostly anonymous sources and secondary reporting without official confirmation. Most critically, the resolution criteria are ambiguous about what constitutes 'regime change,' and there's no specified resolution mechanism. Even if military pressure continues, achieving complete regime transformation in 5 days seems highly improbable. The evidence suggests ongoing conflict but points toward regime survival rather than collapse."
     },
     {
       "id": 211,
@@ -2582,8 +2599,8 @@
       "resolution_source": "",
       "scanned_at": "2026-03-19T22:20:20.287660",
       "est_prob": 0.35,
-      "est_conf": 0.2,
-      "est_reasoning": "This estimate is highly uncertain due to the extreme lack of relevant information. Without any historical baseline for when NSF typically sends MSPRF offer letters, I cannot establish a meaningful base rate. The only concrete evidence is a March 2026 report of NSF spending slowdowns, which provides weak negative evidence that could delay fellowship processes. However, this is very indirect and non-specific. The March 24 deadline gives very little time from the current date (March 3 report), which might favor a NO resolution if typical government processes require longer timelines. Given the complete absence of historical patterns, program status updates, or official timelines, I'm estimating slightly below 50% (0.35) with very low confidence (0.2). This reflects the uncertainty about whether a 3-week window from early March is sufficient for NSF fellowship decisions, combined with the weak negative signal from reported funding delays."
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
     },
     {
       "id": 170,
@@ -2615,9 +2632,9 @@
       "category": "geopolitics",
       "resolution_source": "",
       "scanned_at": "2026-03-19T22:17:55.147871",
-      "est_prob": 0.15,
-      "est_conf": 0.2,
-      "est_reasoning": "Starting from a base rate of ~35% for US regime change attempts, I'm adjusting significantly downward due to: (1) the extremely short timeframe remaining, (2) US intelligence reportedly predicting regime survival, (3) limited military commitment without ground forces, (4) the questionable nature of the source material, and (5) undefined resolution criteria. The active military conflict suggests some possibility, but the structural constraints and contradictory assessments point toward a low probability of success in this timeframe."
+      "est_prob": 0.08,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate of ~15% for successful US-led regime changes historically, I adjust significantly downward due to several factors. The 5-day timeline is extremely constraining - genuine regime changes typically unfold over months or years, not days. While there's active military conflict described as coordinated US-Israel efforts to 'topple the Islamic Republic,' US intelligence explicitly assesses regime change as 'unlikely' with the IRGC 'maintaining power.' The information quality is concerning - mostly anonymous sources and secondary reporting without official confirmation. Most critically, the resolution criteria are ambiguous about what constitutes 'regime change,' and there's no specified resolution mechanism. Even if military pressure continues, achieving complete regime transformation in 5 days seems highly improbable. The evidence suggests ongoing conflict but points toward regime survival rather than collapse."
     },
     {
       "id": 168,
@@ -3009,23 +3026,6 @@
       "est_prob": 0.08,
       "est_conf": 0.4,
       "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
-    },
-    {
-      "id": 145,
-      "platform": "manifold",
-      "market_id": "s6AyzCILzL",
-      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
-      "current_yes_price": 0.9869628556353671,
-      "current_no_price": 0.01303714436463288,
-      "volume": 48491.17691200196,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T22:05:06.350030",
-      "est_prob": 0.92,
-      "est_conf": 0.7,
-      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
     }
   ]
 }
