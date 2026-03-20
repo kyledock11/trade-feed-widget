@@ -993,7 +993,7 @@
       <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
       <div class="stat"><span class="stat-value" id="sRealized">--</span><span class="stat-label">Realized P&L</span></div>
       <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
-      <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Potential Profit</span></div>
+      <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Max If All Win</span></div>
       <div class="stat"><span class="stat-value" id="sExpected">--</span><span class="stat-label">Expected Profit</span></div>
       <div class="stat"><span class="stat-value" id="sEdge">--</span><span class="stat-label">Avg Edge</span></div>
       <div class="stat"><span class="stat-value" id="sMktImpact">--</span><span class="stat-label">Mkt Impact</span></div>
@@ -1053,7 +1053,7 @@ const ACCOUNT_MAP = {
 
 const ACCOUNT_USERNAMES = {
   '@apo11o': 'apo11o',
-  '@hal': 'Hal',
+  '@hal': 'hal',
   '@Jarvis': 'Jarvis'
 };
 
@@ -1568,30 +1568,20 @@ async function fetchLiveAccounts() {
 }
 
 function updatePortfolioFromLive() {
-  const acctNames = Object.keys(liveAccounts);
-  if (acctNames.length === 0) return;
+  // Use feed's account_balances as source of truth for bankroll/deployed/impact
+  // These are fetched from Manifold API during export and are more accurate
+  if (!feedData || !feedData.account_balances) return;
 
-  let balance = 0, deployed = 0;
+  const ab = feedData.account_balances;
+  document.getElementById('sBankroll').textContent = formatMoney(ab.total_deposited);
+  document.getElementById('sDeployed').textContent = formatMoney(ab.total_in_positions);
 
-  if (selectedStrategy === 'all') {
-    acctNames.forEach(name => {
-      const a = liveAccounts[name];
-      balance += a.balance;
-      deployed += a.invested;
-    });
-  } else {
-    const acctName = ACCOUNT_MAP[selectedStrategy] || selectedStrategy;
-    const a = liveAccounts[acctName];
-    if (a) {
-      balance = a.balance;
-      deployed = a.invested;
-    }
+  // Market impact
+  const impactEl = document.getElementById('sMktImpact');
+  if (impactEl) {
+    impactEl.textContent = formatMoney(ab.market_impact);
+    impactEl.className = 'stat-value' + (ab.market_impact > 0.01 ? ' positive' : ab.market_impact < -0.01 ? ' negative' : '');
   }
-
-  // Only update balance and deployed from live API
-  // P&L comes from feed data (resolved trades) which is more accurate
-  document.getElementById('sBankroll').textContent = formatMoney(balance + deployed);
-  document.getElementById('sDeployed').textContent = formatMoney(deployed);
 }
 
 function updateStrategy(strategy) {
@@ -1720,7 +1710,7 @@ function buildPortfolioBarHTML(portfolio, stats, trades, idPrefix) {
       <div class="stat"><span class="stat-value">${positions}</span><span class="stat-label">Open</span></div>
       <div class="stat"><span class="stat-value${pnlClass}">${formatMoney(totalPnl)}</span><span class="stat-label">Total P&L</span></div>
       <div class="stat"><span class="stat-value${ddClass}">${formatPct(maxDD)}</span><span class="stat-label">Max DD</span></div>
-      <div class="stat"><span class="stat-value positive">${formatMoney(potentialProfit)}</span><span class="stat-label">Potential Profit</span></div>
+      <div class="stat"><span class="stat-value positive">${formatMoney(potentialProfit)}</span><span class="stat-label">Max If All Win</span></div>
       <div class="stat"><span class="stat-value${expClass}">${formatMoney(expectedProfit)}</span><span class="stat-label">Expected Profit</span></div>
       <div class="stat"><span class="stat-value">${avgEdge}</span><span class="stat-label">Avg Edge</span></div>
     </div>
