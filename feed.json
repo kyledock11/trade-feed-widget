@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-20T08:44:53.625825+00:00",
+  "updated_at": "2026-03-20T08:45:06.010879+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,18 +47,18 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T08:44:53.625832+00:00",
+    "last_heartbeat": "2026-03-20T08:45:06.010886+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "Pushed to GitHub Pages",
-      "Notion page updated: 28 positions, M$598.56 deployed",
-      "[02:17:07] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
-      "interval[0:30:00], next run at: 2026-03-20",
-      "02:45:01 MDT)\" executed successfully"
+      "C:\\Users\\Kyle Dockstader\\OneDrive\\Desktop\\Claude Code\\bot\\core\\research.py:256: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.",
+      "for query in queries:",
+      "INFO     response:                                        lib.rs:404",
+      "https://duckduckgo.com/?q=OpenAI+releases+model+",
+      "latest+news 200"
     ]
   },
   "portfolio": {
@@ -2488,6 +2488,23 @@
   ],
   "markets": [
     {
+      "id": 447,
+      "platform": "manifold",
+      "market_id": "5sAtd088ZR",
+      "question": "OpenAI releases model with 5M+ context by end of March 2026?",
+      "current_yes_price": 0.020181739381667223,
+      "current_no_price": 0.9798182606183328,
+      "volume": 2271.699693499219,
+      "liquidity": 2000.0,
+      "close_date": "2026-04-01T23:59:00+00:00",
+      "category": "tech",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T08:45:04.101898",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
       "id": 446,
       "platform": "manifold",
       "market_id": "L2qLAZEntz",
@@ -4169,23 +4186,6 @@
       "est_prob": 0.5,
       "est_conf": 0.15,
       "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
-    },
-    {
-      "id": 347,
-      "platform": "manifold",
-      "market_id": "0RlldUN66A",
-      "question": "Will USA change Iran regime",
-      "current_yes_price": 0.21220936034450216,
-      "current_no_price": 0.7877906396554979,
-      "volume": 242.6197039120748,
-      "liquidity": 1300.0,
-      "close_date": "2026-03-24T22:59:00+00:00",
-      "category": "geopolitics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T04:20:23.506095",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a base rate of ~15% for successful US-led regime changes historically, I adjust significantly downward due to several factors. The 5-day timeline is extremely constraining - genuine regime changes typically unfold over months or years, not days. While there's active military conflict described as coordinated US-Israel efforts to 'topple the Islamic Republic,' US intelligence explicitly assesses regime change as 'unlikely' with the IRGC 'maintaining power.' The information quality is concerning - mostly anonymous sources and secondary reporting without official confirmation. Most critically, the resolution criteria are ambiguous about what constitutes 'regime change,' and there's no specified resolution mechanism. Even if military pressure continues, achieving complete regime transformation in 5 days seems highly improbable. The evidence suggests ongoing conflict but points toward regime survival rather than collapse."
     }
   ]
 }
