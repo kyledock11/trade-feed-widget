@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T14:20:50.010893+00:00",
+  "updated_at": "2026-03-20T14:32:53.096542+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T14:20:50.010900+00:00",
+    "last_heartbeat": "2026-03-20T14:32:53.096548+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1323,6 +1323,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 601,
+      "platform": "manifold",
+      "market_id": "Ehyqgs0czE",
+      "question": "Will Mojtaba Khamenei be shown alive on video between March 8th and April 1, 2026?",
+      "current_yes_price": 0.27,
+      "current_no_price": 0.73,
+      "volume": 250.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T00:00:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T14:32:49.670325",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 600,
       "platform": "manifold",
@@ -3002,23 +3019,6 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-20T11:02:52.372039",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 501,
-      "platform": "manifold",
-      "market_id": "A8ytA8RAUQ",
-      "question": "Will Labour's planned inheritance tax on UK farms over \u00a31m be scrapped before April 2026?",
-      "current_yes_price": 0.99,
-      "current_no_price": 0.010000000000000009,
-      "volume": 2923.233286917623,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-30T22:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:02:49.446748",
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
