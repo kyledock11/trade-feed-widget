@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T13:20:50.996063+00:00",
+  "updated_at": "2026-03-20T13:33:02.394709+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T13:20:50.996070+00:00",
+    "last_heartbeat": "2026-03-20T13:33:02.394715+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1323,6 +1323,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 577,
+      "platform": "manifold",
+      "market_id": "C96pyn9Z5Z",
+      "question": "Iran Government falls before end of March 2026",
+      "current_yes_price": 0.045791798137718824,
+      "current_no_price": 0.9542082018622812,
+      "volume": 466.58,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T13:32:58.654142",
+      "est_prob": 0.15,
+      "est_conf": 0.3,
+      "est_reasoning": "Starting with a base rate of ~5% for established government collapse in a given year, which I'm adjusting upward due to the active military conflict. However, several factors limit confidence: (1) Israeli officials explicitly stated uncertainty about government collapse despite ongoing war, suggesting even military pressure may not be sufficient; (2) The extremely short 12-day timeframe makes collapse unlikely without clear precipitating events; (3) The resolution criteria are ambiguous - 'government falls' could mean anything from leadership change to regime collapse; (4) Critical information gaps about Iran's internal situation, military status, and actual government control. While active conflict with major powers increases collapse probability above the base rate, the lack of evidence for internal instability, mass protests, or military defections - combined with the very short timeframe - keeps the estimate relatively low at 15%."
+    },
+    {
+      "id": 576,
+      "platform": "manifold",
+      "market_id": "g2lE0I6Etq",
+      "question": "Will WTI crude oil cost more than $150/barrel before June? (According to investing.com)",
+      "current_yes_price": 0.4000000000000003,
+      "current_no_price": 0.5999999999999996,
+      "volume": 606.9950807342941,
+      "liquidity": 1000.0,
+      "close_date": "2026-05-31T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T13:32:55.894867",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 575,
       "platform": "manifold",
@@ -2988,40 +3022,6 @@
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
-    },
-    {
-      "id": 477,
-      "platform": "manifold",
-      "market_id": "Au9C6AOg9Z",
-      "question": "Is/Was Benjamin Netanyahu dead or grievously injured as of March 12-14, 2026",
-      "current_yes_price": 0.014724341653845164,
-      "current_no_price": 0.9852756583461548,
-      "volume": 10664.737002711283,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T04:15:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T10:05:07.717077",
-      "est_prob": 0.02,
-      "est_conf": 0.8,
-      "est_reasoning": "Starting with a base rate of ~1% for deaths/serious injuries of world leaders annually, the evidence strongly points toward NO. Netanyahu posted a video on March 15 (immediately after the resolution period), multiple credible sources report the death rumors as false, and a U.S. Senator confirmed he was alive on March 19. The timeline is crucial here - the resolution period (March 12-14, 2026) has passed, and Netanyahu's immediate video response suggests he was healthy during that timeframe. While 'grievous injury' adds some uncertainty since it's undefined and could theoretically be concealed, the pattern of evidence (quick video response, consistent reporting of false rumors, official confirmations) makes this highly unlikely. The main uncertainty is the lack of direct official statements from the exact resolution period, but the circumstantial evidence is very strong for a NO resolution."
-    },
-    {
-      "id": 476,
-      "platform": "manifold",
-      "market_id": "ZctCIAhQsu",
-      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-      "current_yes_price": 0.23173469158005097,
-      "current_no_price": 0.768265308419949,
-      "volume": 26280.310748148593,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T10:05:07.474277",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
     }
   ]
 }
