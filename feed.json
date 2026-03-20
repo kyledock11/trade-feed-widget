@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-20T16:40:24.199179+00:00",
+  "updated_at": "2026-03-20T16:41:06.440736+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,7 +47,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T16:40:24.199191+00:00",
+    "last_heartbeat": "2026-03-20T16:41:06.440747+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -246,19 +246,19 @@
       },
       {
         "name": "hal",
-        "balance": 2.19,
-        "deposited": 1000
+        "balance": 200,
+        "deposited": 101.43
       },
       {
         "name": "Jarvis",
-        "balance": 2.19,
+        "balance": 682.02,
         "deposited": 1000
       }
     ],
-    "total_cash": 6.57,
+    "total_cash": 884.21,
     "total_deposited": 3000,
     "total_in_positions": 1200.6,
-    "market_impact": -1792.83
+    "market_impact": -915.19
   },
   "resolution_timeline": [
     {
