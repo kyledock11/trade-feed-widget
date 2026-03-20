@@ -991,7 +991,7 @@
       <div class="stat"><span class="stat-value" id="sDeployed">--</span><span class="stat-label">Deployed</span></div>
       <div class="stat"><span class="stat-value" id="sPositions">--</span><span class="stat-label">Open</span></div>
       <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
-      <div class="stat"><span class="stat-value" id="sUnrealized">--</span><span class="stat-label">Unrealized P&L</span></div>
+      <div class="stat"><span class="stat-value" id="sUnrealized">--</span><span class="stat-label">Realized P&L</span></div>
       <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
       <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Max If All Win</span></div>
       <div class="stat"><span class="stat-value" id="sExpected">--</span><span class="stat-label">Expected Profit</span></div>
@@ -1255,29 +1255,14 @@ function updatePortfolioFromData(data) {
   const resolvedTrades = (data.trades || []).filter(t => t.status === 'resolved');
   const realizedPnl = resolvedTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
 
-  // Unrealized P&L from live spread vs entry on open trades
-  const openForPnl = (data.trades || []).filter(t => t.status === 'filled');
-  let unrealizedPnl = 0;
-  openForPnl.forEach(t => {
-    const live = livePrices[t.market_id];
-    if (!live) return;
-    const entryPrice = parseFloat(t.entry_price) || 0;
-    const currentPrice = t.direction === 'yes' ? live.probability : (1 - live.probability);
-    const size = parseFloat(t.size) || 0;
-    if (entryPrice > 0 && entryPrice < 1) {
-      // Current value = size * (currentPrice / entryPrice)
-      // Unrealized = current value - cost
-      const currentValue = size * (currentPrice / entryPrice);
-      unrealizedPnl += currentValue - size;
-    }
-  });
+  const realEl = document.getElementById('sUnrealized');
+  realEl.textContent = formatMoney(realizedPnl);
+  realEl.className = 'stat-value' + (realizedPnl > 0.01 ? ' positive' : realizedPnl < -0.01 ? ' negative' : '');
 
-  const unrEl = document.getElementById('sUnrealized');
-  unrEl.textContent = formatMoney(unrealizedPnl);
-  unrEl.className = 'stat-value' + (unrealizedPnl > 0.01 ? ' positive' : unrealizedPnl < -0.01 ? ' negative' : '');
-
-  // Total P&L = realized + unrealized
-  const totalPnl = realizedPnl + unrealizedPnl;
+  // Total P&L = Market Impact from account balances (source of truth)
+  // Formula: (cash + deployed) - deposits = net gain/loss
+  const ab = feedData && feedData.account_balances;
+  const totalPnl = ab ? ab.market_impact : realizedPnl;
   const pnlEl = document.getElementById('sPnl');
   pnlEl.textContent = formatMoney(totalPnl);
   pnlEl.className = 'stat-value' + (totalPnl > 0.01 ? ' positive' : totalPnl < -0.01 ? ' negative' : '');
