@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T05:45:04.270392+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T05:50:54.049703+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T05:45:04.270399+00:00",
+    "last_heartbeat": "2026-03-20T05:50:54.049710+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO     Cycle complete: 0 trades from 32 markets in 0m   run.py:163",
-      "02s",
-      "INFO       Skipped: 22 recently analyzed, 10 already have run.py:167",
-      "position, 0 no edge",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[23:45:44] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-20",
+      "00:15:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1371,6 +1327,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 377,
+      "platform": "manifold",
+      "market_id": "ARnqln6pRP",
+      "question": "Will Y Combinator fund 3 or more quantum-related startups in its next public batch update within the next 2 months?",
+      "current_yes_price": 0.17114692164175166,
+      "current_no_price": 0.8288530783582484,
+      "volume": 129.78906001644066,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-20T21:49:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:50:49.703482",
+      "est_prob": 0.25,
+      "est_conf": 0.3,
+      "est_reasoning": "This estimate faces severe information constraints. I have no base rate for Y Combinator quantum startup funding, no data on typical batch sizes, and unclear resolution criteria. The general quantum investment momentum (Quantonation's \u20ac220M fund, IonQ performance) suggests market interest, but this doesn't directly translate to Y Combinator batch composition. Y Combinator typically funds diverse portfolios across emerging technologies, which supports quantum inclusion, but quantum startups may be too capital-intensive or early-stage for their model. The 2-month timeline creates additional uncertainty about when the next batch update occurs. Given the complete lack of Y Combinator-specific data and multiple definitional ambiguities, I'm estimating 25% - acknowledging some possibility due to general quantum momentum and Y Combinator's broad investment approach, but with very low confidence due to the information gaps."
+    },
+    {
+      "id": 376,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.38986339576475815,
+      "current_no_price": 0.6101366042352419,
+      "volume": 151.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:49:46.423331",
+      "est_prob": 0.35,
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
+    },
     {
       "id": 375,
       "platform": "manifold",
@@ -3036,40 +3026,6 @@
       "est_prob": 0.15,
       "est_conf": 0.2,
       "est_reasoning": "The base rate for USAMO qualification is extremely low - roughly 250-300 students out of ~100,000+ who take the AIME annually, giving a base rate around 0.3%. However, this question being asked at all suggests some level of mathematical engagement or optimism about qualification. People rarely ask about extremely unlikely events unless they have some reason to believe they're possible. Since this appears to be a personal prediction market question, the person asking likely has some mathematical background or competitive experience that makes USAMO qualification at least conceivable. I'm adjusting upward from the base rate to reflect this selection bias, but keeping the estimate relatively low given the extreme selectivity of USAMO. My confidence is very low due to the complete lack of information about the person's identity and mathematical ability."
-    },
-    {
-      "id": 277,
-      "platform": "manifold",
-      "market_id": "mIQ8YdCJlAcMz9fFmIUX",
-      "question": "Will Italy qualify for the 2026 FIFA World Cup?",
-      "current_yes_price": 0.6317397991490695,
-      "current_no_price": 0.3682602008509305,
-      "volume": 62.01199589449177,
-      "liquidity": 1000.0,
-      "close_date": "2026-06-02T03:59:00+00:00",
-      "category": "sports",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:32:49.853554",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 276,
-      "platform": "manifold",
-      "market_id": "pulqzqzCnA",
-      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
-      "current_yes_price": 0.38986339576475815,
-      "current_no_price": 0.6101366042352419,
-      "volume": 251.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-23T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:20:54.981155",
-      "est_prob": 0.35,
-      "est_conf": 0.3,
-      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
     }
   ]
 }
