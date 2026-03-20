@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-20T10:05:37.860269+00:00",
+  "updated_at": "2026-03-20T10:14:47.127582+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,7 +47,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T10:05:37.860277+00:00",
+    "last_heartbeat": "2026-03-20T10:14:47.127591+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
