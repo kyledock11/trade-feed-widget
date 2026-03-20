@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T17:20:50.129608+00:00",
+  "updated_at": "2026-03-20T17:33:22.663463+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T17:20:50.129616+00:00",
+    "last_heartbeat": "2026-03-20T17:33:22.663471+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -19,23 +19,27 @@
   },
   "portfolio": {
     "bankroll": 1031.53,
-    "deployed": 599.61,
-    "cash": 431.92,
-    "deployed_pct": 58.1,
+    "deployed": 601.08,
+    "cash": 430.45,
+    "deployed_pct": 58.3,
     "total_pnl": 31.53,
     "unrealized_pnl": 0.0,
     "max_drawdown": 0.0
   },
   "stats": {
-    "total_trades": 31,
-    "open_positions": 29,
+    "total_trades": 32,
+    "open_positions": 30,
     "resolved": 2,
     "win_rate": 100.0,
     "brier_score": 0.0144,
-    "avg_edge": 0.1598
+    "avg_edge": 0.156
   },
   "exposure": {
     "by_category": {
+      "other": {
+        "count": 3,
+        "deployed": 53.56
+      },
       "geopolitics": {
         "count": 1,
         "deployed": 1.05
@@ -44,10 +48,6 @@
         "count": 25,
         "deployed": 539.54
       },
-      "other": {
-        "count": 2,
-        "deployed": 52.09
-      },
       "tech": {
         "count": 1,
         "deployed": 6.93
@@ -55,8 +55,8 @@
     },
     "by_direction": {
       "yes": {
-        "count": 19,
-        "deployed": 263.15
+        "count": 20,
+        "deployed": 264.62
       },
       "no": {
         "count": 10,
@@ -64,9 +64,9 @@
       }
     },
     "high_edge_count": 17,
-    "low_edge_count": 12,
+    "low_edge_count": 13,
     "high_edge_deployed": 425.78,
-    "low_edge_deployed": 173.83
+    "low_edge_deployed": 175.3
   },
   "learning": {
     "resolved_trades": 2,
@@ -256,10 +256,11 @@
     },
     {
       "date": "2026-04-01",
-      "count": 3,
+      "count": 4,
       "markets": [
         "Will OpenAI IPO and be a publicly traded company in the United States by the end of March 2026?",
         "Bitcoin $80K in March?",
+        "Grok 5 released before March 31?",
         "Will Viktor Orban remain Hungary's prime minister after the 2026 elections?"
       ]
     },
@@ -314,6 +315,23 @@
     }
   ],
   "trades": [
+    {
+      "id": 32,
+      "market_id": "5gZ2ZcSA2u",
+      "platform": "manifold",
+      "question": "Grok 5 released before March 31?",
+      "direction": "yes",
+      "size": 1.47,
+      "entry_price": 0.03264852580292842,
+      "estimated_probability": 0.08004852580292843,
+      "edge": 0.0474,
+      "kelly_fraction": 0.0015,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T17:33:22.530166",
+      "resolved_at": null
+    },
     {
       "id": 31,
       "market_id": "0RlldUN66A",
@@ -844,6 +862,26 @@
   ],
   "estimates": [
     {
+      "id": 132,
+      "market_id": "5gZ2ZcSA2u",
+      "probability": 0.08,
+      "confidence": 0.6,
+      "reasoning": "With no evidence of Grok 5's existence, development, or announcement, and only an 11-day window remaining, the probability is very low. Major AI model releases typically require advance notice, testing phases, and marketing buildup. The complete information vacuum around Grok 5, combined with current legal distractions for the company, suggests this release is highly unlikely in the specified timeframe. I assign 8% to account for the small possibility of an unexpected surprise release or very limited/enterprise-only deployment that could technically qualify as 'released.'",
+      "key_uncertainties": "[\"Definition of 'released' - could be enterprise-only or limited beta\", \"Possibility of surprise announcement in remaining 11-day window\", \"Unknown internal development timeline at xAI\", \"Competitive pressure from other AI companies potentially accelerating release\", \"Impact of current legal controversies on development priorities\"]",
+      "base_rate": null,
+      "created_at": "2026-03-20T17:33:22.352140"
+    },
+    {
+      "id": 131,
+      "market_id": "gLs6SNcP6L",
+      "probability": 0.5,
+      "confidence": 0.15,
+      "reasoning": "Coin flip market \u2014 pure randomness, no edge possible.",
+      "key_uncertainties": "[\"Random outcome \\u2014 no information advantage\"]",
+      "base_rate": 0.5,
+      "created_at": "2026-03-20T17:33:09.482487"
+    },
+    {
       "id": 130,
       "market_id": "pulqzqzCnA",
       "probability": 0.65,
@@ -1322,29 +1360,43 @@
       "key_uncertainties": "[\"No historical data on Y Combinator's quantum startup funding patterns\", \"Unknown definition and timing of 'public batch update'\", \"Unclear size and composition of Y Combinator's current application pipeline\", \"Temporal mismatch between 2026 news sources and apparent 2024 timeline\", \"Unknown specialization requirements and readiness of quantum startups for acceleration\"]",
       "base_rate": null,
       "created_at": "2026-03-19T23:20:16.145152"
-    },
-    {
-      "id": 82,
-      "market_id": "n62UyALzPc",
-      "probability": 0.15,
-      "confidence": 0.2,
-      "reasoning": "This question is fundamentally flawed and nearly impossible to evaluate objectively. There is no historical base rate for continents becoming 'global power houses' because this is not a well-defined, measurable event. The 2-3 month timeframe makes dramatic transformation extremely unlikely - continental economic and geopolitical shifts typically occur over years or decades, not months. While Africa has strategic advantages (rare earth minerals, renewable energy potential, growing crypto adoption), these don't constitute becoming a 'global power house' in such a short timeframe. The spelling error and complete absence of resolution criteria make this more of a subjective opinion poll than a proper prediction market question. I'm assigning a low probability (0.15) primarily because without clear criteria, there's a small chance the resolution could be arbitrary or based on very loose interpretation of 'power house' status. My confidence is very low (0.2) due to the fundamental ambiguity of the question.",
-      "key_uncertainties": "[\"Complete lack of resolution criteria - 'global power house' is undefined\", \"Spelling error creates ambiguity about timeframe ('nest' vs 'next')\", \"No resolution source specified for verification\", \"Extremely short timeframe (2-3 months) for continental transformation\", \"Unknown what specific metrics or events would trigger YES resolution\", \"Unclear whether question refers to economic, military, diplomatic, or other forms of power\"]",
-      "base_rate": null,
-      "created_at": "2026-03-19T23:17:25.051775"
-    },
-    {
-      "id": 81,
-      "market_id": "gLs6SNcP6L",
-      "probability": 0.5,
-      "confidence": 0.15,
-      "reasoning": "Coin flip market \u2014 pure randomness, no edge possible.",
-      "key_uncertainties": "[\"Random outcome \\u2014 no information advantage\"]",
-      "base_rate": 0.5,
-      "created_at": "2026-03-19T23:17:03.540218"
     }
   ],
   "markets": [
+    {
+      "id": 695,
+      "platform": "manifold",
+      "market_id": "gLs6SNcP6L",
+      "question": "Daily Coin Flip - Day 703",
+      "current_yes_price": 0.49990052233428267,
+      "current_no_price": 0.5000994776657173,
+      "volume": 113.56544123872578,
+      "liquidity": 1100.0,
+      "close_date": "2026-03-21T16:56:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T17:32:52.334388",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 694,
+      "platform": "manifold",
+      "market_id": "5gZ2ZcSA2u",
+      "question": "Grok 5 released before March 31?",
+      "current_yes_price": 0.03264852580292842,
+      "current_no_price": 0.9673514741970716,
+      "volume": 750.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T06:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T17:32:49.454796",
+      "est_prob": 0.08,
+      "est_conf": 0.6,
+      "est_reasoning": "With no evidence of Grok 5's existence, development, or announcement, and only an 11-day window remaining, the probability is very low. Major AI model releases typically require advance notice, testing phases, and marketing buildup. The complete information vacuum around Grok 5, combined with current legal distractions for the company, suggests this release is highly unlikely in the specified timeframe. I assign 8% to account for the small possibility of an unexpected surprise release or very limited/enterprise-only deployment that could technically qualify as 'released.'"
+    },
     {
       "id": 693,
       "platform": "manifold",
@@ -3010,40 +3062,6 @@
       "est_prob": 0.02,
       "est_conf": 0.85,
       "est_reasoning": "Starting with a base rate of ~1% for deaths of sitting heads of government annually. The evidence strongly contradicts the death rumors: multiple high-reliability sources (BBC, NBC, Snopes, Poynter Institute) have debunked the claims as misinformation, and Netanyahu himself posted a video response on March 15. The death rumors appear to be part of a documented misinformation campaign using fake screenshots and AI-generated content. While I cannot directly verify the authenticity of Netanyahu's video or access official government statements from the exact March 12-14 window, the convergence of multiple credible sources reporting him alive, combined with the documented nature of the misinformation campaign, provides strong evidence against the YES outcome. I'm adjusting only slightly above the base rate to account for the information gaps and the sophisticated nature of modern misinformation, but the preponderance of evidence points strongly toward Netanyahu being alive during the specified period."
-    },
-    {
-      "id": 595,
-      "platform": "manifold",
-      "market_id": "q8dtCdNgsn",
-      "question": "Will a G7 country announce new quantum legislation within the next 2 months?",
-      "current_yes_price": 0.18599093402539493,
-      "current_no_price": 0.8140090659746051,
-      "volume": 683.3333333333338,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-02T06:18:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T14:19:46.335388",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 594,
-      "platform": "manifold",
-      "market_id": "4kreogtql1",
-      "question": "Will US inflation go above 3% before unemployment goes below 4%?",
-      "current_yes_price": 0.8478385444848827,
-      "current_no_price": 0.15216145551511728,
-      "volume": 275.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-11T12:59:00+00:00",
-      "category": "sports",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T14:15:13.679679",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
     }
   ]
 }
