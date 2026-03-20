@@ -251,11 +251,15 @@
 
   .tab.active .count { color: #7a756e; }
 
-  /* Trade list header */
-  .trade-list-header {
-    display: flex;
+  /* Trade grid layout — shared between header and rows */
+  .trade-grid {
+    display: grid;
+    grid-template-columns: 12px 36px 1fr 52px 52px 40px 58px 62px 52px 52px;
+    gap: 0 0.4rem;
     align-items: center;
-    gap: 0.5rem;
+  }
+
+  .trade-list-header {
     padding: 0.35rem 0.25rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     margin-bottom: 0.25rem;
@@ -268,23 +272,21 @@
     color: #5a5650;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    flex-shrink: 0;
   }
 
-  .trade-list-header .th-spacer { width: 12px; }
-  .trade-list-header .th-dir { width: 32px; text-align: center; }
-  .trade-list-header .th-question { flex: 1; flex-shrink: 1; }
-  .trade-list-header .th-data { width: 55px; text-align: right; }
+  .trade-list-header .th-r { text-align: right; }
+  .trade-list-header .th-c { text-align: center; }
 
-  /* Trade row data cells — must match th-data width */
+  /* Trade row data cells */
   .trade-header .td {
-    width: 55px;
-    flex-shrink: 0;
     text-align: right;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 300;
     font-size: 0.7rem;
     color: #8a857e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Trade cards */
@@ -301,9 +303,6 @@
   .trade-card:last-child { border-bottom: none; }
 
   .trade-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     padding: 0.6rem 0.25rem;
     cursor: pointer;
     transition: background 0.15s ease;
@@ -351,6 +350,7 @@
     font-size: 0.88rem;
     color: #d0cbc5;
     flex: 1;
+    min-width: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1761,17 +1761,17 @@ function renderTrades() {
     return;
   }
 
-  list.innerHTML = `<div class="trade-list-header">
-    <span class="th th-spacer"></span>
-    <span class="th th-dir">Side</span>
-    <span class="th th-question">Market</span>
-    <span class="th th-data">Entry</span>
-    <span class="th th-data">Live</span>
-    <span class="th th-data">Prob</span>
-    <span class="th th-data">Risked</span>
-    <span class="th th-data">Profit</span>
-    <span class="th th-data">Acct</span>
-    <span class="th th-data">Time</span>
+  list.innerHTML = `<div class="trade-list-header trade-grid">
+    <span class="th"></span>
+    <span class="th th-c">Side</span>
+    <span class="th">Market</span>
+    <span class="th th-r">Entry</span>
+    <span class="th th-r">Live</span>
+    <span class="th th-r">Prob</span>
+    <span class="th th-r">Risked</span>
+    <span class="th th-r">Profit</span>
+    <span class="th th-r">Acct</span>
+    <span class="th th-r">Time</span>
   </div>`;
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
 
@@ -1796,7 +1796,7 @@ function renderTrades() {
     const likelihood = trade.estimated_probability ? (trade.estimated_probability * 100).toFixed(0) + '%' : '';
     const entryPct = trade.entry_price ? (trade.entry_price * 100).toFixed(1) + '%' : '--';
 
-    const liveSpread = trade.status === 'filled'
+    const liveCell = trade.status === 'filled'
       ? `<span class="td" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</span>`
       : `<span class="td">--</span>`;
     const profitCell = trade.status === 'filled'
@@ -1804,12 +1804,12 @@ function renderTrades() {
       : `<span class="td">--</span>`;
 
     card.innerHTML = `
-      <div class="trade-header">
+      <div class="trade-header trade-grid">
         ${caretSVG}
-        <span class="trade-direction" style="width:32px;text-align:center">${trade.direction}</span>
+        <span class="trade-direction ${trade.direction}" style="text-align:center">${trade.direction}</span>
         <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
         <span class="td">${entryPct}</span>
-        ${liveSpread}
+        ${liveCell}
         <span class="td" style="color:#7eb8d0">${likelihood || '--'}</span>
         <span class="td">${formatMoney(trade.size)}</span>
         ${profitCell}
