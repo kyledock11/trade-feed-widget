@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T07:20:52.774402+00:00",
+  "updated_at": "2026-03-20T07:32:56.935351+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T07:20:52.774408+00:00",
+    "last_heartbeat": "2026-03-20T07:32:56.935357+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1327,6 +1327,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 421,
+      "platform": "manifold",
+      "market_id": "EcOt6EU68N",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.49995000250000016,
+      "current_no_price": 0.5000499974999999,
+      "volume": 1075.3301803808693,
+      "liquidity": 10000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T07:32:52.979982",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 420,
+      "platform": "manifold",
+      "market_id": "5sAtd088ZR",
+      "question": "OpenAI releases model with 5M+ context by end of March 2026?",
+      "current_yes_price": 0.022537778028421045,
+      "current_no_price": 0.977462221971579,
+      "volume": 2321.699693499219,
+      "liquidity": 2000.0,
+      "close_date": "2026-04-01T23:59:00+00:00",
+      "category": "tech",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T07:32:49.955851",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 419,
       "platform": "manifold",
@@ -2992,40 +3026,6 @@
       "est_prob": 0.55,
       "est_conf": 0.2,
       "est_reasoning": "This is an extremely challenging prediction due to fundamental information gaps. The METR 50% time horizon benchmark is not defined in available sources, making it impossible to assess what specific capability or safety metric is being measured. Without knowing the benchmark methodology, historical results, or even if such results exist for these models, I cannot establish a meaningful base rate. The one piece of suggestive evidence is a VentureBeat article indicating GPT-5.4 outperforms Claude Opus 4.6 in at least one comparative context, which provides weak directional evidence favoring YES. However, this conflicts with other mentions of Claude models performing well generally. Given the complete uncertainty about the benchmark itself and the lack of resolution criteria, I'm assigning a slight lean toward YES (0.55) based solely on the VentureBeat evidence, but with very low confidence (0.2) due to the numerous critical unknowns that could completely change the outcome."
-    },
-    {
-      "id": 321,
-      "platform": "manifold",
-      "market_id": "C96pyn9Z5Z",
-      "question": "Iran Government falls before end of March 2026",
-      "current_yes_price": 0.05156005838056369,
-      "current_no_price": 0.9484399416194363,
-      "volume": 193.5119714012992,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T03:05:08.071200",
-      "est_prob": 0.15,
-      "est_conf": 0.3,
-      "est_reasoning": "Starting with a base rate of ~5% for established government collapse in a given year, which I'm adjusting upward due to the active military conflict. However, several factors limit confidence: (1) Israeli officials explicitly stated uncertainty about government collapse despite ongoing war, suggesting even military pressure may not be sufficient; (2) The extremely short 12-day timeframe makes collapse unlikely without clear precipitating events; (3) The resolution criteria are ambiguous - 'government falls' could mean anything from leadership change to regime collapse; (4) Critical information gaps about Iran's internal situation, military status, and actual government control. While active conflict with major powers increases collapse probability above the base rate, the lack of evidence for internal instability, mass protests, or military defections - combined with the very short timeframe - keeps the estimate relatively low at 15%."
-    },
-    {
-      "id": 320,
-      "platform": "manifold",
-      "market_id": "LIAOQIOtzP",
-      "question": "Jon Jones on UFC White House card?",
-      "current_yes_price": 0.13406485712513613,
-      "current_no_price": 0.8659351428748638,
-      "volume": 250.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-06-15T22:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T03:05:07.828440",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
     }
   ]
 }
