@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-03-20T22:22:20.421691+00:00",
+  "updated_at": "2026-03-20T23:49:03.144270+00:00",
   "strategy": {
     "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
+    "version": "0.6",
+    "full_name": "Parallax v0.6",
+    "iteration": 6,
     "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
+      "version": "0.6",
+      "date": "2026-03-20",
+      "name": "Calibration Engine",
+      "changes": "Fundamental strategy shift. Instead of LLM estimation, apply statistical calibration correction from 6,264 resolved questions. Crowd systematically overestimates probability in 20-50% range. Buy NO on overconfident markets, sell when market corrects or hold to resolution. Capital rotation: sell winning positions early, redeploy. Edge decay monitoring built in. 87% simulated win rate, zero API cost."
     },
     "changelog": [
       {
@@ -41,13 +41,19 @@
         "date": "2026-03-19",
         "name": "Agreement Filter",
         "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
+      },
+      {
+        "version": "0.6",
+        "date": "2026-03-20",
+        "name": "Calibration Engine",
+        "changes": "Fundamental strategy shift. Instead of LLM estimation, apply statistical calibration correction from 6,264 resolved questions. Crowd systematically overestimates probability in 20-50% range. Buy NO on overconfident markets, sell when market corrects or hold to resolution. Capital rotation: sell winning positions early, redeploy. Edge decay monitoring built in. 87% simulated win rate, zero API cost."
       }
     ]
   },
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T22:22:20.421704+00:00",
+    "last_heartbeat": "2026-03-20T23:49:03.144282+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -71,26 +77,26 @@
     "max_drawdown": 0.0
   },
   "stats": {
-    "total_trades": 120,
-    "open_positions": 115,
+    "total_trades": 129,
+    "open_positions": 124,
     "resolved": 5,
     "win_rate": 40.0,
     "brier_score": 0.4788,
-    "avg_edge": 0.1401
+    "avg_edge": 0.1394
   },
   "exposure": {
     "by_category": {
+      "other": {
+        "count": 18,
+        "deployed": 900.24
+      },
       "uncategorized": {
-        "count": 83,
-        "deployed": 1508.92
+        "count": 86,
+        "deployed": 1947.55
       },
       "sports": {
-        "count": 1,
-        "deployed": 32.61
-      },
-      "other": {
-        "count": 14,
-        "deployed": 315.4
+        "count": 3,
+        "deployed": 325.03
       },
       "geopolitics": {
         "count": 11,
@@ -115,14 +121,14 @@
         "deployed": 1048.31
       },
       "no": {
-        "count": 43,
-        "deployed": 1103.98
+        "count": 52,
+        "deployed": 2419.87
       }
     },
-    "high_edge_count": 60,
-    "low_edge_count": 55,
-    "high_edge_deployed": 1382.73,
-    "low_edge_deployed": 769.56
+    "high_edge_count": 67,
+    "low_edge_count": 57,
+    "high_edge_deployed": 2406.2,
+    "low_edge_deployed": 1061.98
   },
   "learning": {
     "resolved_trades": 5,
@@ -262,18 +268,18 @@
       },
       {
         "name": "hal",
-        "balance": 861.96,
+        "balance": 130.91,
         "deposited": 1000
       },
       {
         "name": "Jarvis",
-        "balance": 589.41,
+        "balance": 4.57,
         "deposited": 1000
       }
     ],
-    "total_cash": 1462.08,
+    "total_cash": 146.19,
     "total_deposited": 3100,
-    "total_in_positions": 2152.29,
+    "total_in_positions": 3468.18,
     "market_impact": 514.37
   },
   "resolution_timeline": [
@@ -404,15 +410,15 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1451.99,
-        "cash": -420.46
+        "deployed": 2767.88,
+        "cash": -1736.35
       },
       "stats": {
-        "total_trades": 82,
-        "open_positions": 79,
+        "total_trades": 91,
+        "open_positions": 88,
         "resolved": 3,
         "total_pnl": 25.13,
-        "avg_edge": 0.1281
+        "avg_edge": 0.1284
       },
       "exposure": {
         "by_direction": {
@@ -421,16 +427,178 @@
             "deployed": 697.86
           },
           "no": {
-            "count": 29,
-            "deployed": 754.13
+            "count": 38,
+            "deployed": 2070.02
           }
         },
-        "high_edge_count": 40,
-        "low_edge_count": 39,
-        "high_edge_deployed": 880.4,
-        "low_edge_deployed": 571.59
+        "high_edge_count": 47,
+        "low_edge_count": 41,
+        "high_edge_deployed": 1903.87,
+        "low_edge_deployed": 864.01
       },
       "trades": [
+        {
+          "id": 53,
+          "market_id": "2uLLLSqAzt",
+          "platform": "manifold",
+          "question": "Will 5 famous people bet on this market?",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.06277716320921906,
+          "estimated_probability": 0.0264,
+          "edge": 0.0364,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:41.721085+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 52,
+          "market_id": "ohG4mjDHNAcxp0Uczuhs",
+          "platform": "manifold",
+          "question": "Will 5%+ of writers and designers lose their jobs by 2025?",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.10641941869378051,
+          "estimated_probability": 0.0341,
+          "edge": 0.0724,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:41.610566+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 51,
+          "market_id": "Ehyqgs0czE",
+          "platform": "manifold",
+          "question": "Will Mojtaba Khamenei be shown alive on video between March 8th and April 1, 2026?",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.20076208513197738,
+          "estimated_probability": 0.0924,
+          "edge": 0.1084,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:41.483702+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 50,
+          "market_id": "EcOt6EU68N",
+          "platform": "manifold",
+          "question": "Daily Coinflip",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.5003518904885293,
+          "estimated_probability": 0.3703,
+          "edge": 0.1301,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:41.366100+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 49,
+          "market_id": "OlQq8h8qOh",
+          "platform": "manifold",
+          "question": "Strait of Hormuz traffic returns to normal by April 30? [Polymarket]",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.2736410431530734,
+          "estimated_probability": 0.1259,
+          "edge": 0.1478,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:41.253851+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 48,
+          "market_id": "t0LUU2E2ZE",
+          "platform": "manifold",
+          "question": "Will the European Commission publish a new quantum strategy document within the next 60 days?",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.4371012090995331,
+          "estimated_probability": 0.2885,
+          "edge": 0.1486,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:41.150811+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 47,
+          "market_id": "c5tCCyLI0Q",
+          "platform": "manifold",
+          "question": "Will I post 2 articles on my Substack between 16Mar - 23Mar",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.4395634195054732,
+          "estimated_probability": 0.2901,
+          "edge": 0.1495,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:41.044892+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 46,
+          "market_id": "qOupANU6Zl",
+          "platform": "manifold",
+          "question": "Daily Coinflip",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.49999999999999994,
+          "estimated_probability": 0.33,
+          "edge": 0.17,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:40.923258+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 45,
+          "market_id": "sCSuSgOIg0",
+          "platform": "manifold",
+          "question": "Will my Nucleus Genomics DNA test reveal me to be above 5% jewish?",
+          "direction": "no",
+          "size": 146.21,
+          "entry_price": 0.34729513203669016,
+          "estimated_probability": 0.132,
+          "edge": 0.2153,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-20T23:41:40.767709+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
         {
           "id": 38,
           "market_id": "P255hsOyEL",
@@ -2669,6 +2837,168 @@
     }
   ],
   "trades": [
+    {
+      "id": 53,
+      "market_id": "2uLLLSqAzt",
+      "platform": "manifold",
+      "question": "Will 5 famous people bet on this market?",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.06277716320921906,
+      "estimated_probability": 0.0264,
+      "edge": 0.0364,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:41.721085+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 52,
+      "market_id": "ohG4mjDHNAcxp0Uczuhs",
+      "platform": "manifold",
+      "question": "Will 5%+ of writers and designers lose their jobs by 2025?",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.10641941869378051,
+      "estimated_probability": 0.0341,
+      "edge": 0.0724,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:41.610566+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 51,
+      "market_id": "Ehyqgs0czE",
+      "platform": "manifold",
+      "question": "Will Mojtaba Khamenei be shown alive on video between March 8th and April 1, 2026?",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.20076208513197738,
+      "estimated_probability": 0.0924,
+      "edge": 0.1084,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:41.483702+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 50,
+      "market_id": "EcOt6EU68N",
+      "platform": "manifold",
+      "question": "Daily Coinflip",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.5003518904885293,
+      "estimated_probability": 0.3703,
+      "edge": 0.1301,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:41.366100+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 49,
+      "market_id": "OlQq8h8qOh",
+      "platform": "manifold",
+      "question": "Strait of Hormuz traffic returns to normal by April 30? [Polymarket]",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.2736410431530734,
+      "estimated_probability": 0.1259,
+      "edge": 0.1478,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:41.253851+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 48,
+      "market_id": "t0LUU2E2ZE",
+      "platform": "manifold",
+      "question": "Will the European Commission publish a new quantum strategy document within the next 60 days?",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.4371012090995331,
+      "estimated_probability": 0.2885,
+      "edge": 0.1486,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:41.150811+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 47,
+      "market_id": "c5tCCyLI0Q",
+      "platform": "manifold",
+      "question": "Will I post 2 articles on my Substack between 16Mar - 23Mar",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.4395634195054732,
+      "estimated_probability": 0.2901,
+      "edge": 0.1495,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:41.044892+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 46,
+      "market_id": "qOupANU6Zl",
+      "platform": "manifold",
+      "question": "Daily Coinflip",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.49999999999999994,
+      "estimated_probability": 0.33,
+      "edge": 0.17,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:40.923258+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 45,
+      "market_id": "sCSuSgOIg0",
+      "platform": "manifold",
+      "question": "Will my Nucleus Genomics DNA test reveal me to be above 5% jewish?",
+      "direction": "no",
+      "size": 146.21,
+      "entry_price": 0.34729513203669016,
+      "estimated_probability": 0.132,
+      "edge": 0.2153,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-20T23:41:40.767709+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
     {
       "id": 30,
       "market_id": "2EpCl2y9Ps",
