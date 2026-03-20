@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T04:45:04.199775+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T04:50:49.839820+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T04:45:04.199782+00:00",
+    "last_heartbeat": "2026-03-20T04:50:49.839826+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO     Cycle complete: 0 trades from 31 markets in 0m   run.py:163",
-      "02s",
-      "INFO       Skipped: 19 recently analyzed, 12 already have run.py:167",
-      "position, 0 no edge",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[22:46:19] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-19",
+      "23:15:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1371,6 +1327,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 354,
+      "platform": "manifold",
+      "market_id": "hdN8LEc82N",
+      "question": "Will the US graphite supply chain shift exceed 50 on a scale of 1-100 by March 22, 2026?",
+      "current_yes_price": 0.6400000000000005,
+      "current_no_price": 0.35999999999999954,
+      "volume": 62.62048388701142,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-22T00:03:18.043000+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T04:49:49.200999",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 353,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.38986339576475815,
+      "current_no_price": 0.6101366042352419,
+      "volume": 251.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T04:49:46.399644",
+      "est_prob": 0.35,
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
+    },
     {
       "id": 352,
       "platform": "manifold",
@@ -3036,40 +3026,6 @@
       "est_prob": 0.45,
       "est_conf": 0.3,
       "est_reasoning": "I started with a base rate of ~70% for established professional sumo wrestlers maintaining their general division level over multiple tournaments, based on the sport's structure where dramatic rank changes are less common than gradual movement. However, I significantly adjusted downward to 45% due to several critical factors: (1) The 2+ year timeline to May 2026 creates substantial uncertainty for career longevity, especially in a physically demanding sport like sumo; (2) Complete lack of current data on Enho's status - he could already be retired, injured, or in a lower division; (3) Enho's smaller stature, while enabling his unique style, may contribute to career longevity concerns in sumo; (4) The specific requirement for Juryo division (not higher Makuuchi or lower divisions) creates a narrow target. My confidence is very low (0.3) because this estimate is essentially educated speculation given the critical information gaps about his current status and the long timeline involved."
-    },
-    {
-      "id": 254,
-      "platform": "manifold",
-      "market_id": "ZctCIAhQsu",
-      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-      "current_yes_price": 0.17471416583742785,
-      "current_no_price": 0.8252858341625722,
-      "volume": 18931.013891472117,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:05:06.575502",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
-    },
-    {
-      "id": 253,
-      "platform": "manifold",
-      "market_id": "s6AyzCILzL",
-      "question": "Will Netanyahu make a verifiable, live public appearance by March 31, 2026?",
-      "current_yes_price": 0.9841421823962053,
-      "current_no_price": 0.015857817603794677,
-      "volume": 49697.567843399425,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:05:06.326071",
-      "est_prob": 0.92,
-      "est_conf": 0.7,
-      "est_reasoning": "The base rate for sitting world leaders making public appearances over a 2+ week period is extremely high (99%+) as this is fundamental to their role. Netanyahu recently made verified public appearances on March 16-17, 2026, demonstrating he is actively functioning as Prime Minister. The timeframe is very short (approximately 2 weeks), making it highly likely he will appear publicly at least once. However, I adjust down from the base rate due to: (1) definitional ambiguity around what constitutes a 'verifiable, live' appearance, (2) the recent controversy around death rumors suggesting possible security or scheduling complications, and (3) the inherent unpredictability of health/security issues for any individual over even short periods. The recent debunking of death rumors by multiple credible sources strongly suggests he is currently active and healthy."
     }
   ]
 }
