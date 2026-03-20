@@ -276,6 +276,17 @@
   .trade-list-header .th-question { flex: 1; flex-shrink: 1; }
   .trade-list-header .th-data { width: 55px; text-align: right; }
 
+  /* Trade row data cells — must match th-data width */
+  .trade-header .td {
+    width: 55px;
+    flex-shrink: 0;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    font-size: 0.7rem;
+    color: #8a857e;
+  }
+
   /* Trade cards */
   .trade-list {
     display: flex;
@@ -1340,20 +1351,19 @@ function updateLiveSpreads() {
 
     if (!live) {
       el.textContent = '...';
-      el.className = 'trade-spread loading';
+      el.style.color = '#5a5650';
       return;
     }
 
     // Current price for this direction
     const currentPrice = direction === 'yes' ? live.probability : (1 - live.probability);
-    const entryDir = direction === 'yes' ? entryPrice : entryPrice;
-    const diff = currentPrice - entryDir;
+    const diff = currentPrice - entryPrice;
     const diffPct = (diff * 100).toFixed(1);
     const arrow = diff > 0.005 ? '▲' : diff < -0.005 ? '▼' : '—';
-    const cls = diff > 0.005 ? 'favorable' : diff < -0.005 ? 'unfavorable' : 'neutral';
+    const color = diff > 0.005 ? '#6ec07a' : diff < -0.005 ? '#c06e6e' : '#8a857e';
 
-    el.innerHTML = `${(currentPrice * 100).toFixed(1)}% <span class="spread-arrow">${arrow}</span> ${diff > 0 ? '+' : ''}${diffPct}%`;
-    el.className = `trade-spread ${cls}`;
+    el.innerHTML = `${(currentPrice * 100).toFixed(1)}%`;
+    el.style.color = color;
   });
 }
 
@@ -1786,18 +1796,25 @@ function renderTrades() {
     const likelihood = trade.estimated_probability ? (trade.estimated_probability * 100).toFixed(0) + '%' : '';
     const entryPct = trade.entry_price ? (trade.entry_price * 100).toFixed(1) + '%' : '--';
 
+    const liveSpread = trade.status === 'filled'
+      ? `<span class="td" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</span>`
+      : `<span class="td">--</span>`;
+    const profitCell = trade.status === 'filled'
+      ? `<span class="td" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>`
+      : `<span class="td">--</span>`;
+
     card.innerHTML = `
       <div class="trade-header">
         ${caretSVG}
-        <span class="trade-direction ${trade.direction}" style="width:32px;text-align:center">${trade.direction}</span>
+        <span class="trade-direction" style="width:32px;text-align:center">${trade.direction}</span>
         <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
-        <span class="trade-entry" style="width:55px;text-align:right">${entryPct}</span>
-        ${trade.status === 'filled' ? `<span class="trade-spread loading" style="width:55px;text-align:right" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</span>` : `<span style="width:55px"></span>`}
-        ${likelihood ? `<span class="trade-size" style="width:55px;text-align:right;color:#7eb8d0">${likelihood}</span>` : `<span style="width:55px"></span>`}
-        <span class="trade-size" style="width:55px;text-align:right">${formatMoney(trade.size)}</span>
-        ${trade.status === 'filled' ? `<span class="trade-size" style="width:55px;text-align:right;color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : `<span style="width:55px"></span>`}
-        <span class="trade-account" style="width:55px;text-align:right;color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account || '')}</span>
-        <span class="trade-time" style="width:55px;text-align:right">${relativeTime(trade.created_at)}</span>
+        <span class="td">${entryPct}</span>
+        ${liveSpread}
+        <span class="td" style="color:#7eb8d0">${likelihood || '--'}</span>
+        <span class="td">${formatMoney(trade.size)}</span>
+        ${profitCell}
+        <span class="td" style="color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account || '--')}</span>
+        <span class="td">${relativeTime(trade.created_at)}</span>
       </div>
       <div class="trade-body">
         <div class="trade-body-inner">
