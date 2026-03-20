@@ -251,50 +251,84 @@
 
   .tab.active .count { color: #7a756e; }
 
-  /* Trade table header and data alignment */
-  /* Trade table — header labels must align to data columns */
-  .trade-list-header {
-    display: flex;
-    align-items: center;
-    padding: 0.35rem 0.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    margin-bottom: 0.25rem;
+  /* Trade table */
+  .trade-table {
+    width: 100%;
+    border-collapse: collapse;
   }
 
-  .trade-list-header .th-spacer {
-    flex: 1;
-  }
-
-  .trade-list-header .th {
+  .trade-table th {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.55rem;
     color: #5a5650;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    width: 62px;
-    text-align: right;
-    flex-shrink: 0;
+    padding: 0.35rem 0.3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
   }
 
-  /* Trade row data cells */
-  .trade-data {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    margin-left: auto;
+  .trade-table th.th-l { text-align: left; }
+  .trade-table th.th-r { text-align: right; }
+  .trade-table th.th-c { text-align: center; }
+
+  .trade-table td {
+    padding: 0.5rem 0.3rem;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   }
 
-  .trade-data .td {
-    width: 62px;
-    text-align: right;
+  .trade-table tr {
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .trade-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .trade-table .td-market {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.82rem;
+    color: #d0cbc5;
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .trade-table .td-data {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 300;
     font-size: 0.7rem;
     color: #8a857e;
+    text-align: right;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  }
+
+  .trade-table .td-acct {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    font-size: 0.6rem;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .trade-table .td-time {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.65rem;
+    color: #5a5650;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* Expanded reasoning row */
+  .trade-table .reasoning-row td {
+    padding: 0.25rem 0.3rem 0.75rem 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   /* Trade cards */
@@ -1208,45 +1242,61 @@ function renderTradesFromData(data) {
     return;
   }
 
-  list.innerHTML = `<div class="trade-list-header">
-    <span class="th th-spacer"></span>
-    <span class="th th-dir">Side</span>
-    <span class="th th-question">Market</span>
-    <span class="th th-data">Prob</span>
-    <span class="th th-data">Risked</span>
-    <span class="th th-data">Profit</span>
-    <span class="th th-data">Acct</span>
-    <span class="th th-time">Time</span>
-  </div>`;
-
-  const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
-
   const estimateMap = {};
   const estimates = data.estimates || feedData.estimates || [];
   estimates.forEach(e => {
     if (!estimateMap[e.market_id]) estimateMap[e.market_id] = e;
   });
 
-  trades.forEach(trade => {
-    const card = document.createElement('div');
-    card.className = 'trade-card';
-    const estimate = estimateMap[trade.market_id];
-    const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
-    const potentialProfit = calcPotentialProfit(trade);
-    const likelihood = trade.estimated_probability ? (trade.estimated_probability * 100).toFixed(0) + '%' : '';
+  // Start live price refresh
+  const allOpenTrades = (data.trades || []).filter(t => t.status === 'filled');
+  startLiveRefresh(allOpenTrades);
 
-    card.innerHTML = `
-      <div class="trade-header">
-        ${caretSVG}
-        <span class="trade-direction ${trade.direction}">${trade.direction}</span>
-        <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
-        ${likelihood ? `<span class="trade-size" style="color:#7eb8d0">${likelihood}</span>` : ''}
-        <span class="trade-size">${formatMoney(trade.size)}</span>
-        ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
-        ${trade._account ? `<span class="trade-account" style="color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account)}</span>` : ''}${selectedStrategy === 'all' && trade._strategy ? `<span class="trade-account">${esc(trade._strategy)}</span>` : ''}
-        <span class="trade-time">${relativeTime(trade.created_at)}</span>
-      </div>
-      <div class="trade-body">
+  // Build HTML table
+  let html = `<table class="trade-table">
+    <thead><tr>
+      <th class="th-c" style="width:16px"></th>
+      <th class="th-c" style="width:36px">Side</th>
+      <th class="th-l">Market</th>
+      <th class="th-r">Entry</th>
+      <th class="th-r">Live</th>
+      <th class="th-r">Prob</th>
+      <th class="th-r">Risked</th>
+      <th class="th-r">Profit</th>
+      <th class="th-r">Acct</th>
+      <th class="th-r">Time</th>
+    </tr></thead><tbody>`;
+
+  trades.forEach(trade => {
+    const tradeKey = trade.market_id + '_' + trade.id;
+    const estimate = estimateMap[trade.market_id];
+    const potentialProfit = calcPotentialProfit(trade);
+    const likelihood = trade.estimated_probability ? (trade.estimated_probability * 100).toFixed(0) + '%' : '--';
+    const entryPct = trade.entry_price ? (trade.entry_price * 100).toFixed(1) + '%' : '--';
+    const isExpanded = expandedTrades.has(tradeKey);
+    const dirColor = trade.direction === 'yes' ? '#6ec07a' : '#c06e6e';
+    const acctColor = ACCOUNT_COLORS[trade._account] || '#5a5650';
+    const profitStr = trade.status === 'filled' ? `<span style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : '--';
+    const caretChar = isExpanded ? '&#9660;' : '&#9654;';
+
+    html += `<tr data-key="${esc(tradeKey)}" onclick="toggleTradeRow(this)">
+      <td style="color:#4a4640;font-size:0.6rem">${caretChar}</td>
+      <td><span class="trade-direction ${trade.direction}" style="font-size:0.65rem">${trade.direction.toUpperCase()}</span></td>
+      <td class="td-market">${esc(trade.question || trade.market_id)}</td>
+      <td class="td-data">${entryPct}</td>
+      <td class="td-data" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</td>
+      <td class="td-data" style="color:#7eb8d0">${likelihood}</td>
+      <td class="td-data">${formatMoney(trade.size)}</td>
+      <td class="td-data">${profitStr}</td>
+      <td class="td-acct" style="color:${acctColor}">${esc(trade._account || '--')}</td>
+      <td class="td-time">${relativeTime(trade.created_at)}</td>
+    </tr>`;
+
+    // Expanded detail row (hidden by default)
+    const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
+    const ev = calcExpectedProfit(trade);
+    html += `<tr class="reasoning-row" data-detail-for="${esc(tradeKey)}" style="display:${isExpanded ? 'table-row' : 'none'}">
+      <td colspan="10">
         <div class="trade-body-inner">
           <div class="detail"><span class="detail-label">Entry Price</span><span class="detail-value">${formatPct(trade.entry_price)}</span></div>
           <div class="detail"><span class="detail-label">Est. Probability</span><span class="detail-value">${formatPct(trade.estimated_probability)}</span></div>
@@ -1254,20 +1304,32 @@ function renderTradesFromData(data) {
           <div class="detail"><span class="detail-label">Kelly</span><span class="detail-value">${formatPct(trade.kelly_fraction)}</span></div>
           <div class="detail"><span class="detail-label">Risked</span><span class="detail-value">${formatMoney(trade.size)}</span></div>
           <div class="detail"><span class="detail-label">Profit if Win</span><span class="detail-value edge-positive">+${formatMoney(potentialProfit)}</span></div>
-          <div class="detail"><span class="detail-label">Expected Value</span><span class="detail-value ${calcExpectedProfit(trade) >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(calcExpectedProfit(trade))}</span></div>
+          <div class="detail"><span class="detail-label">Expected Value</span><span class="detail-value ${ev >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(ev)}</span></div>
           <div class="detail"><span class="detail-label">Platform</span><span class="detail-value">${esc(trade.platform || '--')}</span></div>
-          ${trade._account ? `<div class="detail"><span class="detail-label">Account</span><span class="detail-value" style="color:${ACCOUNT_COLORS[trade._account] || '#b0aba5'}">${esc(trade._account)}</span></div>` : ''}
+          ${trade._account ? `<div class="detail"><span class="detail-label">Account</span><span class="detail-value" style="color:${acctColor}">${esc(trade._account)}</span></div>` : ''}
           ${trade._strategy ? `<div class="detail"><span class="detail-label">Strategy</span><span class="detail-value">${esc(trade._strategy)}</span></div>` : ''}
           <div class="detail"><span class="detail-label">Status</span><span class="detail-value">${esc(trade.status || '--')}</span></div>
           ${trade.pnl !== null && trade.pnl !== undefined ? `<div class="detail"><span class="detail-label">P&L</span><span class="detail-value ${trade.pnl >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(trade.pnl)}</span></div>` : ''}
           ${estimate && estimate.reasoning ? `<div class="trade-reasoning"><span class="detail-label">Reasoning</span><div class="reasoning-text">${esc(estimate.reasoning)}</div></div>` : ''}
         </div>
-      </div>
-    `;
-
-    card.querySelector('.trade-header').addEventListener('click', () => card.classList.toggle('expanded'));
-    list.appendChild(card);
+      </td>
+    </tr>`;
   });
+
+  html += '</tbody></table>';
+  list.innerHTML = html;
+}
+
+function toggleTradeRow(tr) {
+  const key = tr.dataset.key;
+  const detailRow = document.querySelector(`[data-detail-for="${key}"]`);
+  if (!detailRow) return;
+  const isOpen = detailRow.style.display !== 'none';
+  detailRow.style.display = isOpen ? 'none' : 'table-row';
+  // Update caret
+  tr.querySelector('td').innerHTML = isOpen ? '&#9654;' : '&#9660;';
+  // Track state
+  if (isOpen) { expandedTrades.delete(key); } else { expandedTrades.add(key); }
 }
 
 // Refresh button
