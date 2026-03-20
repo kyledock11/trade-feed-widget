@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-20T09:14:52.712214+00:00",
+  "updated_at": "2026-03-20T09:15:04.540636+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.5",
@@ -47,18 +47,18 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T09:14:52.712220+00:00",
+    "last_heartbeat": "2026-03-20T09:15:04.540643+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "Pushed to GitHub Pages",
-      "Notion page updated: 28 positions, M$598.56 deployed",
-      "[02:46:21] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
-      "interval[0:30:00], next run at: 2026-03-20",
-      "03:15:01 MDT)\" executed successfully"
+      "C:\\Users\\Kyle Dockstader\\OneDrive\\Desktop\\Claude Code\\bot\\core\\research.py:256: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.",
+      "for query in queries:",
+      "INFO     response:                                        lib.rs:404",
+      "https://duckduckgo.com/?q=something+happen+Iran+",
+      "month 200"
     ]
   },
   "portfolio": {
@@ -2488,6 +2488,23 @@
   ],
   "markets": [
     {
+      "id": 463,
+      "platform": "manifold",
+      "market_id": "USqgCAPAz5",
+      "question": "Will something happen in Iran this month?",
+      "current_yes_price": 0.25835566579973285,
+      "current_no_price": 0.7416443342002672,
+      "volume": 723.1901228505373,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T09:15:04.271850",
+      "est_prob": 0.98,
+      "est_conf": 0.4,
+      "est_reasoning": "The base rate for 'something happening' in Iran during any given month is extremely high (~95%) given frequent sanctions, diplomatic incidents, proxy conflicts, and military activities. The evidence strongly suggests significant events are already occurring in March 2026 - multiple sources describe an active 'Iran war' with US/Israeli forces, drone threats, warship incidents, and evacuation advisories. This clearly constitutes 'something happening' under any reasonable interpretation. I adjust upward to 98% because the current military conflict represents extraordinary activity well beyond typical monthly events. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - without knowing what threshold triggers YES resolution, there's risk that even ongoing warfare might not qualify under an extremely narrow interpretation. The question's vagueness creates significant uncertainty despite strong evidence that major events are occurring."
+    },
+    {
       "id": 462,
       "platform": "manifold",
       "market_id": "OlQq8h8qOh",
@@ -4166,23 +4183,6 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-20T05:19:47.894629",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 363,
-      "platform": "manifold",
-      "market_id": "LIAOQIOtzP",
-      "question": "Jon Jones on UFC White House card?",
-      "current_yes_price": 0.13406485712513613,
-      "current_no_price": 0.8659351428748638,
-      "volume": 250.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-06-15T22:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T05:15:06.974358",
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
