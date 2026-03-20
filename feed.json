@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T15:15:07.766440+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T15:20:53.281534+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T15:15:07.766449+00:00",
+    "last_heartbeat": "2026-03-20T15:20:53.281541+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 20 recently analyzed, 7 already have  run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 1 low-volume markets               run.py:173",
-      "WARNING    Errors: 1 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[09:17:08] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-20",
+      "09:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1367,6 +1323,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 623,
+      "platform": "manifold",
+      "market_id": "gLs6SNcP6L",
+      "question": "Daily Coin Flip - Day 703",
+      "current_yes_price": 0.49990052233428267,
+      "current_no_price": 0.5000994776657173,
+      "volume": 236.56132907033702,
+      "liquidity": 1100.0,
+      "close_date": "2026-03-21T16:56:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T15:20:49.793142",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 622,
+      "platform": "manifold",
+      "market_id": "USqgCAPAz5",
+      "question": "Will something happen in Iran this month?",
+      "current_yes_price": 0.23829331006730006,
+      "current_no_price": 0.7617066899327,
+      "volume": 505.19012285053725,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T15:19:46.557389",
+      "est_prob": 0.98,
+      "est_conf": 0.4,
+      "est_reasoning": "The base rate for 'something happening' in Iran during any given month is extremely high (~95%) given frequent sanctions, diplomatic incidents, proxy conflicts, and military activities. The evidence strongly suggests significant events are already occurring in March 2026 - multiple sources describe an active 'Iran war' with US/Israeli forces, drone threats, warship incidents, and evacuation advisories. This clearly constitutes 'something happening' under any reasonable interpretation. I adjust upward to 98% because the current military conflict represents extraordinary activity well beyond typical monthly events. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - without knowing what threshold triggers YES resolution, there's risk that even ongoing warfare might not qualify under an extremely narrow interpretation. The question's vagueness creates significant uncertainty despite strong evidence that major events are occurring."
+    },
     {
       "id": 621,
       "platform": "manifold",
@@ -3029,40 +3019,6 @@
       "category": "science",
       "resolution_source": "",
       "scanned_at": "2026-03-20T11:19:57.478723",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 523,
-      "platform": "manifold",
-      "market_id": "mIQ8YdCJlAcMz9fFmIUX",
-      "question": "Will Italy qualify for the 2026 FIFA World Cup?",
-      "current_yes_price": 0.6315610984192883,
-      "current_no_price": 0.3684389015807117,
-      "volume": 78.18014146752613,
-      "liquidity": 1000.0,
-      "close_date": "2026-06-02T03:59:00+00:00",
-      "category": "sports",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:19:54.632525",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 522,
-      "platform": "manifold",
-      "market_id": "OlQq8h8qOh",
-      "question": "Strait of Hormuz traffic returns to normal by April 30? [Polymarket]",
-      "current_yes_price": 0.26067134634932626,
-      "current_no_price": 0.7393286536506738,
-      "volume": 100.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-30T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:19:51.905326",
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
