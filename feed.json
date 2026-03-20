@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T04:50:49.839820+00:00",
+  "updated_at": "2026-03-20T05:02:56.133884+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T04:50:49.839826+00:00",
+    "last_heartbeat": "2026-03-20T05:02:56.133892+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1327,6 +1327,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 356,
+      "platform": "manifold",
+      "market_id": "pz2NSPpL2U",
+      "question": "Will Manifold users \"feel that their life is better for using Sora\" in 6 months?",
+      "current_yes_price": 0.25948133178943183,
+      "current_no_price": 0.7405186682105682,
+      "volume": 50.0,
+      "liquidity": 10000.0,
+      "close_date": "2026-04-08T17:24:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:02:52.710652",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 355,
+      "platform": "manifold",
+      "market_id": "PHBrieoPxIS6nmTIbiiL",
+      "question": "Will Volodomyr Zelenskyy be in power at the conclusion of the Russia-Ukraine war?",
+      "current_yes_price": 0.6169094802000431,
+      "current_no_price": 0.3830905197999569,
+      "volume": 50.0,
+      "liquidity": 1375.0,
+      "close_date": "2026-06-01T00:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:02:49.551420",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 354,
       "platform": "manifold",
@@ -2992,40 +3026,6 @@
       "est_prob": 0.25,
       "est_conf": 0.3,
       "est_reasoning": "The core challenge is a fundamental naming discrepancy - the question asks about the 'Fingleton review' but the only evidence references a 'Nuclear Regulatory Taskforce.' Without confirmation these are the same entity, this creates significant doubt. While the March 13, 2026 news suggests government plans for nuclear delivery reforms with completion expected by end of next year, this could refer to: (1) a different review entirely, (2) partial acceptance rather than all 47 recommendations, or (3) implementation plans rather than formal acceptance. The tight 18-day timeline between the news report and resolution deadline suggests urgency, but also limited time for comprehensive acceptance of 47 specific recommendations. The lack of official government sources, corroborating evidence, or details about the actual recommendations creates high uncertainty. I'm estimating 25% probability, acknowledging that positive government action on nuclear reforms is plausible, but the naming discrepancy and information gaps create substantial doubt about whether this specific question will resolve YES."
-    },
-    {
-      "id": 256,
-      "platform": "manifold",
-      "market_id": "sduzl25ER8",
-      "question": "Will the WTI Crude Oil Spot Price be above $95 on March 20, 2026?",
-      "current_yes_price": 0.58,
-      "current_no_price": 0.42000000000000004,
-      "volume": 7007.264896326697,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-21T04:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:05:07.066765",
-      "est_prob": 0.78,
-      "est_conf": 0.6,
-      "est_reasoning": "With no clear base rate available, I'm focusing on the current evidence suggesting WTI is around $100-102 based on Brent at $120 minus the ~$18 spread. The resolution date is only 1-4 days away from the most recent reports, making this essentially a very short-term price prediction. The strongest evidence for YES includes: (1) Current prices appear to be at or above $100, well above the $95 threshold, (2) Ongoing US-Iran war creating sustained upward pressure, (3) EIA raised forecasts by $20 due to conflict. However, oil's extreme volatility (recent $119-$76 range) means significant downward moves are possible even in days. The geopolitical premium from the conflict likely provides some price floor, but strategic interventions or rapid de-escalation could cause sharp drops. Given the apparent current level around $100-102 and short timeframe, I estimate a 78% probability, but with moderate confidence due to oil's inherent volatility and information gaps about exact current pricing."
-    },
-    {
-      "id": 255,
-      "platform": "manifold",
-      "market_id": "PspSScZSL9",
-      "question": "Will Enho be on the banzuke in Juryo for the May 2026 Grand Sumo Tournament (Natsu basho)",
-      "current_yes_price": 0.81,
-      "current_no_price": 0.18999999999999995,
-      "volume": 8859.133294519781,
-      "liquidity": 10078.0,
-      "close_date": "2026-05-02T04:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:05:06.817606",
-      "est_prob": 0.45,
-      "est_conf": 0.3,
-      "est_reasoning": "I started with a base rate of ~70% for established professional sumo wrestlers maintaining their general division level over multiple tournaments, based on the sport's structure where dramatic rank changes are less common than gradual movement. However, I significantly adjusted downward to 45% due to several critical factors: (1) The 2+ year timeline to May 2026 creates substantial uncertainty for career longevity, especially in a physically demanding sport like sumo; (2) Complete lack of current data on Enho's status - he could already be retired, injured, or in a lower division; (3) Enho's smaller stature, while enabling his unique style, may contribute to career longevity concerns in sumo; (4) The specific requirement for Juryo division (not higher Makuuchi or lower divisions) creates a narrow target. My confidence is very low (0.3) because this estimate is essentially educated speculation given the critical information gaps about his current status and the long timeline involved."
     }
   ]
 }
