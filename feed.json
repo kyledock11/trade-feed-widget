@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T08:20:49.801962+00:00",
+  "updated_at": "2026-03-20T08:32:53.283991+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T08:20:49.801969+00:00",
+    "last_heartbeat": "2026-03-20T08:32:53.283998+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1327,6 +1327,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 446,
+      "platform": "manifold",
+      "market_id": "L2qLAZEntz",
+      "question": "Bitcoin below $52K before March 31, 2026?",
+      "current_yes_price": 0.01918075221945148,
+      "current_no_price": 0.9808192477805485,
+      "volume": 549.6965651658173,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T06:59:00+00:00",
+      "category": "crypto",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T08:32:49.667867",
+      "est_prob": 0.35,
+      "est_conf": 0.4,
+      "est_reasoning": "Bitcoin needs to decline roughly 20-30% from current levels ($63k-$75k range) to reach below $52k by March 31, 2026. Key factors supporting YES: Bitcoin already showed weakness in Feb 2026 dropping below $63k, ongoing macro headwinds from Fed policy and economic uncertainty, and Bitcoin's historical volatility makes significant short-term moves possible. The question only requires touching below $52k once, not sustained trading. However, factors against include Bitcoin currently trading well above target in a 'strong relief rally', and survey data showing holder resilience. Without historical base rates for similar declines, I'm estimating around 35% probability - acknowledging Bitcoin's volatility could easily produce this magnitude of decline, but the current price positioning and recent rally suggest it's not the most likely outcome. My confidence is low due to missing key data points and the inherent unpredictability of crypto markets over short timeframes."
+    },
     {
       "id": 445,
       "platform": "manifold",
@@ -3009,23 +3026,6 @@
       "est_prob": 0.08,
       "est_conf": 0.4,
       "est_reasoning": "Starting with a base rate of ~15% for successful US-led regime changes historically, I adjust significantly downward due to several factors. The 5-day timeline is extremely constraining - genuine regime changes typically unfold over months or years, not days. While there's active military conflict described as coordinated US-Israel efforts to 'topple the Islamic Republic,' US intelligence explicitly assesses regime change as 'unlikely' with the IRGC 'maintaining power.' The information quality is concerning - mostly anonymous sources and secondary reporting without official confirmation. Most critically, the resolution criteria are ambiguous about what constitutes 'regime change,' and there's no specified resolution mechanism. Even if military pressure continues, achieving complete regime transformation in 5 days seems highly improbable. The evidence suggests ongoing conflict but points toward regime survival rather than collapse."
-    },
-    {
-      "id": 346,
-      "platform": "manifold",
-      "market_id": "OgnlLCUuCA",
-      "question": "Is this jigsaw puzzle missing some piece?",
-      "current_yes_price": 0.5825435969754097,
-      "current_no_price": 0.4174564030245903,
-      "volume": 323.1846481873697,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-02T21:41:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T04:20:20.548919",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
     }
   ]
 }
