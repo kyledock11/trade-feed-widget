@@ -850,6 +850,80 @@
     flex-shrink: 0;
   }
 
+  /* Strategy dashboard tables */
+  .strategy-dash {
+    padding: 0.5rem 0;
+  }
+
+  .strategy-dash h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.65rem;
+    color: #6b6660;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .strategy-dash h3:first-child {
+    margin-top: 0;
+  }
+
+  .dash-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.75rem;
+  }
+
+  .dash-table th {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.55rem;
+    color: #5a5650;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .dash-table td {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    font-size: 0.72rem;
+    color: #b0aba5;
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .dash-table td.label-cell {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.72rem;
+    color: #d0cbc5;
+  }
+
+  .dash-table td.good { color: #6ec07a; }
+  .dash-table td.warn { color: #c4a35a; }
+  .dash-table td.bad { color: #c06e6e; }
+  .dash-table td.muted { color: #5a5650; }
+
+  .dash-table .status-active {
+    color: #6ec07a;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .dash-table .status-pending {
+    color: #5a5650;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.6rem;
+  }
+
   /* Trade account tag */
   .trade-account {
     font-family: 'JetBrains Mono', monospace;
@@ -922,6 +996,7 @@
       <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Potential Profit</span></div>
       <div class="stat"><span class="stat-value" id="sExpected">--</span><span class="stat-label">Expected Profit</span></div>
       <div class="stat"><span class="stat-value" id="sEdge">--</span><span class="stat-label">Avg Edge</span></div>
+      <div class="stat"><span class="stat-value" id="sMktImpact">--</span><span class="stat-label">Mkt Impact</span></div>
     </div>
 
     <div class="exposure-row" id="exposureRow"></div>
@@ -941,6 +1016,7 @@
       <div class="tab" data-tab="open">Open</div>
       <div class="tab" data-tab="resolved">Resolved</div>
       <div class="tab" data-tab="markets" style="font-style:italic;color:#7eb8d0;">Live Markets</div>
+      <div class="tab" data-tab="strategy">Strategy</div>
     </div>
 
     <div class="trade-list" id="tradeList">
@@ -1205,6 +1281,14 @@ function updatePortfolioFromData(data) {
 
   const avgEdge = stats.avg_edge ? (stats.avg_edge * 100).toFixed(1) + '%' : '--';
   document.getElementById('sEdge').textContent = avgEdge;
+
+  // Market Impact from account balances
+  if (feedData && feedData.account_balances) {
+    const impact = feedData.account_balances.market_impact;
+    const impactEl = document.getElementById('sMktImpact');
+    impactEl.textContent = formatMoney(impact);
+    impactEl.className = 'stat-value' + (impact > 0.01 ? ' positive' : impact < -0.01 ? ' negative' : '');
+  }
 }
 
 function renderTradesFromData(data) {
@@ -1212,6 +1296,11 @@ function renderTradesFromData(data) {
 
   if (activeTab === 'markets') {
     renderMarkets();
+    return;
+  }
+
+  if (activeTab === 'strategy') {
+    renderStrategy();
     return;
   }
 
@@ -1264,6 +1353,7 @@ function renderTradesFromData(data) {
       <th class="th-r">Risked</th>
       <th class="th-r">Profit</th>
       <th class="th-r">Acct</th>
+      <th class="th-r">Strat</th>
       <th class="th-r">Time</th>
     </tr></thead><tbody>`;
 
@@ -1289,6 +1379,7 @@ function renderTradesFromData(data) {
       <td class="td-data">${formatMoney(trade.size)}</td>
       <td class="td-data">${profitStr}</td>
       <td class="td-acct" style="color:${acctColor}">${esc(trade._account || '--')}</td>
+      <td class="td-acct" style="color:#8a857e">${esc(trade._strategy || '--')}</td>
       <td class="td-time">${relativeTime(trade.created_at)}</td>
     </tr>`;
 
@@ -1296,7 +1387,7 @@ function renderTradesFromData(data) {
     const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
     const ev = calcExpectedProfit(trade);
     html += `<tr class="reasoning-row" data-detail-for="${esc(tradeKey)}" style="display:${isExpanded ? 'table-row' : 'none'}">
-      <td colspan="10">
+      <td colspan="11">
         <div class="trade-body-inner">
           <div class="detail"><span class="detail-label">Entry Price</span><span class="detail-value">${formatPct(trade.entry_price)}</span></div>
           <div class="detail"><span class="detail-label">Est. Probability</span><span class="detail-value">${formatPct(trade.estimated_probability)}</span></div>
@@ -1955,6 +2046,101 @@ function renderTrades() {
 function esc(str) {
   if (!str) return '';
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function renderStrategy() {
+  const list = document.getElementById('tradeList');
+
+  // Calculate actual stats from feed data
+  let totalResolved = 0, totalWins = 0;
+  if (feedData.strategies) {
+    feedData.strategies.forEach(s => {
+      (s.trades || []).forEach(t => {
+        if (t.status === 'resolved') {
+          totalResolved++;
+          if ((t.pnl || 0) > 0) totalWins++;
+        }
+      });
+    });
+  } else if (feedData.trades) {
+    feedData.trades.forEach(t => {
+      if (t.status === 'resolved') {
+        totalResolved++;
+        if ((t.pnl || 0) > 0) totalWins++;
+      }
+    });
+  }
+
+  const actualWinRate = totalResolved > 0 ? Math.round(totalWins / totalResolved * 100) : null;
+  const winRateStr = actualWinRate !== null ? actualWinRate + '%' : 'N/A';
+  const winRateClass = actualWinRate === null ? 'muted' : actualWinRate >= 60 ? 'good' : actualWinRate >= 40 ? 'warn' : 'bad';
+  const phase1Status = totalResolved >= 50 ? 'COMPLETE' : 'ACTIVE';
+
+  let html = '<div class="strategy-dash">';
+
+  // Table 1: Edge Structure
+  html += '<h3>Edge Structure (Backtest Reference)</h3>';
+  html += `<table class="dash-table">
+    <thead><tr><th>Zone</th><th>Win Rate</th><th>EV / $10</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td class="label-cell">Sweet spot (5-20% edge, agree)</td><td class="good">95%</td><td class="good">+$11.85</td><td>Primary trades</td></tr>
+      <tr><td class="label-cell">Medium edge (5-10%, agree)</td><td class="good">88%</td><td class="good">+$9.01</td><td>Steady grinder</td></tr>
+      <tr><td class="label-cell">High edge (20%+, agree)</td><td class="warn">50%</td><td class="good">+$3.50</td><td>Asymmetric longshots</td></tr>
+      <tr><td class="label-cell">Low edge (&lt;5%)</td><td class="warn">58%</td><td>+$1.95</td><td>Noise — minimize</td></tr>
+      <tr><td class="label-cell">Disagreement trades</td><td class="bad">21%</td><td class="bad">-$4.54</td><td class="bad">FILTERED OUT</td></tr>
+    </tbody>
+  </table>`;
+
+  // Table 2: Phase Targets
+  html += '<h3>Phase Targets vs Actual</h3>';
+  html += `<table class="dash-table">
+    <thead><tr><th>Phase</th><th>Target WR</th><th>Actual WR</th><th>Target ROI/mo</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="label-cell">Phase 1: Learning</td>
+        <td>60-70%</td>
+        <td class="${winRateClass}">${winRateStr} (${totalResolved} resolved)</td>
+        <td>5-10%</td>
+        <td><span class="${phase1Status === 'ACTIVE' ? 'status-active' : 'status-pending'}">${phase1Status}</span></td>
+      </tr>
+      <tr>
+        <td class="label-cell">Phase 2: Validated</td>
+        <td>70-80%</td>
+        <td class="muted">—</td>
+        <td>10-20%</td>
+        <td><span class="status-pending">Need 50+ resolved</span></td>
+      </tr>
+      <tr>
+        <td class="label-cell">Phase 3: Kalshi Live</td>
+        <td>65-75%</td>
+        <td class="muted">—</td>
+        <td>15-30%</td>
+        <td><span class="status-pending">Pending</span></td>
+      </tr>
+      <tr>
+        <td class="label-cell">Phase 4: Scaled</td>
+        <td>65-75%</td>
+        <td class="muted">—</td>
+        <td>20-40%</td>
+        <td><span class="status-pending">Pending</span></td>
+      </tr>
+    </tbody>
+  </table>`;
+
+  // Table 3: Scaling Projections
+  html += '<h3>Scaling Projections</h3>';
+  html += `<table class="dash-table">
+    <thead><tr><th>Bankroll</th><th>Trades/Mo</th><th>Expected Monthly</th><th>Expected Annual</th></tr></thead>
+    <tbody>
+      <tr><td class="label-cell">$500 (Kalshi start)</td><td>20</td><td class="good">$75-125</td><td class="good">$900-1,500</td></tr>
+      <tr><td class="label-cell">$2,000</td><td>30</td><td class="good">$300-500</td><td class="good">$3,600-6,000</td></tr>
+      <tr><td class="label-cell">$5,000</td><td>50</td><td class="good">$500-1,250</td><td class="good">$6,000-15,000</td></tr>
+      <tr><td class="label-cell">$10,000</td><td>75</td><td class="good">$1,000-2,500</td><td class="good">$12,000-30,000</td></tr>
+    </tbody>
+  </table>`;
+
+  html += '</div>';
+  list.innerHTML = html;
 }
 
 function renderMarkets() {
