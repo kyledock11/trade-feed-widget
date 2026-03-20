@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T13:50:49.833205+00:00",
+  "updated_at": "2026-03-20T14:02:54.240066+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T13:50:49.833212+00:00",
+    "last_heartbeat": "2026-03-20T14:02:54.240073+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1323,6 +1323,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 583,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.38986339576475815,
+      "current_no_price": 0.6101366042352419,
+      "volume": 151.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T14:02:50.933651",
+      "est_prob": 0.35,
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
+    },
     {
       "id": 582,
       "platform": "manifold",
@@ -3005,23 +3022,6 @@
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
-    },
-    {
-      "id": 483,
-      "platform": "manifold",
-      "market_id": "L2qLAZEntz",
-      "question": "Bitcoin below $52K before March 31, 2026?",
-      "current_yes_price": 0.01918075221945148,
-      "current_no_price": 0.9808192477805485,
-      "volume": 647.6965651658173,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T06:59:00+00:00",
-      "category": "crypto",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T10:15:09.910448",
-      "est_prob": 0.35,
-      "est_conf": 0.4,
-      "est_reasoning": "Bitcoin needs to decline roughly 20-30% from current levels ($63k-$75k range) to reach below $52k by March 31, 2026. Key factors supporting YES: Bitcoin already showed weakness in Feb 2026 dropping below $63k, ongoing macro headwinds from Fed policy and economic uncertainty, and Bitcoin's historical volatility makes significant short-term moves possible. The question only requires touching below $52k once, not sustained trading. However, factors against include Bitcoin currently trading well above target in a 'strong relief rally', and survey data showing holder resilience. Without historical base rates for similar declines, I'm estimating around 35% probability - acknowledging Bitcoin's volatility could easily produce this magnitude of decline, but the current price positioning and recent rally suggest it's not the most likely outcome. My confidence is low due to missing key data points and the inherent unpredictability of crypto markets over short timeframes."
     }
   ]
 }
