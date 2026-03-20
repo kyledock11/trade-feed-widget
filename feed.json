@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T12:50:49.942602+00:00",
+  "updated_at": "2026-03-20T13:02:52.650300+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T12:50:49.942608+00:00",
+    "last_heartbeat": "2026-03-20T13:02:52.650306+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1327,6 +1327,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 557,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.38986339576475815,
+      "current_no_price": 0.6101366042352419,
+      "volume": 151.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T13:02:49.691298",
+      "est_prob": 0.35,
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
+    },
     {
       "id": 556,
       "platform": "manifold",
@@ -3009,23 +3026,6 @@
       "est_prob": 0.15,
       "est_conf": 0.6,
       "est_reasoning": "I'm using a base rate of 25% for rapid conflict resolution based on historical patterns where economic disruption (like blocked shipping lanes affecting oil prices) creates strong incentives for quick diplomatic solutions. However, the evidence strongly suggests adjusting downward: (1) Both sides have publicly rejected ceasefire talks as of March 16, with Iran's Foreign Minister explicitly contradicting any willingness to negotiate; (2) Iran has set preconditions (end to US/Israeli strikes) that appear unacceptable to the US; (3) Trump reportedly rejected ceasefire efforts; (4) Only 15 days remain, which is very tight for formal diplomatic breakthrough. The main upside factor is Trump aide Chris Wright's prediction of resolution 'within weeks' and the severe economic pressure from disrupted oil flows. Given the public hardline positions and short timeline, I estimate 15% - notably below the base rate due to the specific negative evidence, but not extremely low given the economic incentives and potential for rapid policy shifts."
-    },
-    {
-      "id": 457,
-      "platform": "manifold",
-      "market_id": "yShRpp25pR",
-      "question": "Will the WTI Crude Oil Spot Price be above $95 on March 31, 2026?",
-      "current_yes_price": 0.61,
-      "current_no_price": 0.39,
-      "volume": 1121.1002363268237,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T09:05:07.567464",
-      "est_prob": 0.32,
-      "est_conf": 0.4,
-      "est_reasoning": "Looking at historical WTI crude oil prices, $95/barrel represents a relatively high price point that has been exceeded during periods of significant supply disruption or strong demand (like 2008, 2011-2014, and briefly in 2022). As a rough base rate, oil has traded above $95 perhaps 25% of the time in the past two decades. However, several factors suggest this could be higher by March 2026: ongoing geopolitical tensions, potential OPEC+ supply management, possible economic recovery driving demand, and the long timeframe allowing for various shock events. Conversely, the energy transition, potential US shale growth, and recession risks could suppress prices. The 15+ month timeframe increases uncertainty significantly, as oil markets are notoriously volatile and subject to unpredictable geopolitical and economic shocks. Without current market context, I'm moderately adjusting upward from the base rate due to the extended timeframe allowing for supply disruptions or demand surges, but maintaining significant uncertainty given oil's historical volatility."
     }
   ]
 }
