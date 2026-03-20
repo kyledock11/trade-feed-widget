@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T01:20:58.286547+00:00",
+  "updated_at": "2026-03-20T01:32:57.217382+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T01:20:58.286555+00:00",
+    "last_heartbeat": "2026-03-20T01:32:57.217390+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1327,6 +1327,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 278,
+      "platform": "manifold",
+      "market_id": "sPppzuLEqR",
+      "question": "Will I make USAMO?",
+      "current_yes_price": 0.07617823355582605,
+      "current_no_price": 0.9238217664441739,
+      "volume": 50.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T04:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T01:32:53.075506",
+      "est_prob": 0.15,
+      "est_conf": 0.2,
+      "est_reasoning": "The base rate for USAMO qualification is extremely low - roughly 250-300 students out of ~100,000+ who take the AIME annually, giving a base rate around 0.3%. However, this question being asked at all suggests some level of mathematical engagement or optimism about qualification. People rarely ask about extremely unlikely events unless they have some reason to believe they're possible. Since this appears to be a personal prediction market question, the person asking likely has some mathematical background or competitive experience that makes USAMO qualification at least conceivable. I'm adjusting upward from the base rate to reflect this selection bias, but keeping the estimate relatively low given the extreme selectivity of USAMO. My confidence is very low due to the complete lack of information about the person's identity and mathematical ability."
+    },
+    {
+      "id": 277,
+      "platform": "manifold",
+      "market_id": "mIQ8YdCJlAcMz9fFmIUX",
+      "question": "Will Italy qualify for the 2026 FIFA World Cup?",
+      "current_yes_price": 0.6317397991490695,
+      "current_no_price": 0.3682602008509305,
+      "volume": 62.01199589449177,
+      "liquidity": 1000.0,
+      "close_date": "2026-06-02T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T01:32:49.853554",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 276,
       "platform": "manifold",
@@ -2992,40 +3026,6 @@
       "est_prob": 0.5,
       "est_conf": 0.15,
       "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
-    },
-    {
-      "id": 178,
-      "platform": "manifold",
-      "market_id": "6Zy0AhhshR",
-      "question": "Daily Coin Flip - Day 703",
-      "current_yes_price": 0.5057496198189589,
-      "current_no_price": 0.49425038018104106,
-      "volume": 168.91508238769052,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-19T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T22:50:49.655201",
-      "est_prob": 0.5,
-      "est_conf": 0.15,
-      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
-    },
-    {
-      "id": 177,
-      "platform": "manifold",
-      "market_id": "Incl8ICc5g",
-      "question": "Trump visits China by end of March 31?",
-      "current_yes_price": 0.027137864367008924,
-      "current_no_price": 0.9728621356329911,
-      "volume": 414.3066578849112,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T06:59:00+00:00",
-      "category": "politics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T22:50:20.193241",
-      "est_prob": 0.08,
-      "est_conf": 0.75,
-      "est_reasoning": "Base rate: Presidential visits to China are rare diplomatic events (1-2 per term), typically requiring extensive planning. Current situation: Multiple credible sources consistently report Trump has requested a 1-1.5 month delay due to Iran war, pushing beyond March 31 deadline. With only 12-14 days remaining as of latest reports, insufficient time exists for typical state visit preparation. The strongest evidence points to NO - official delay request citing specific timeframe that exceeds deadline. However, some uncertainty remains due to: (1) unclear resolution criteria (any visit vs. formal state visit), (2) potential for emergency/unscheduled visits during wartime, and (3) 12+ day information gap. The consistency across multiple reliable sources and the specific timeline of the delay (1-1.5 months) strongly suggests the visit will not occur by March 31, but diplomatic situations can change rapidly during international crises."
     }
   ]
 }
