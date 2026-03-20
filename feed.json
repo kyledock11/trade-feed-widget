@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T12:15:36.824796+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T12:20:49.881574+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T12:15:36.824803+00:00",
+    "last_heartbeat": "2026-03-20T12:20:49.881581+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 17 recently analyzed, 11 already have run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 6 low-volume markets               run.py:173",
-      "WARNING    Errors: 10 markets failed to process           run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[06:17:35] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-20",
+      "06:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1371,6 +1327,74 @@
     }
   ],
   "markets": [
+    {
+      "id": 552,
+      "platform": "manifold",
+      "market_id": "8R52Cn0nAq",
+      "question": "Will Floyd Mayweather beat Mike Tyson?",
+      "current_yes_price": 0.7896082301491851,
+      "current_no_price": 0.21039176985081487,
+      "volume": 67.99999999999697,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-24T22:59:00+00:00",
+      "category": "science",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T12:20:23.066203",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 551,
+      "platform": "manifold",
+      "market_id": "OlQq8h8qOh",
+      "question": "Strait of Hormuz traffic returns to normal by April 30? [Polymarket]",
+      "current_yes_price": 0.26067134634932626,
+      "current_no_price": 0.7393286536506738,
+      "volume": 100.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-30T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T12:20:20.318245",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 550,
+      "platform": "manifold",
+      "market_id": "gLs6SNcP6L",
+      "question": "Daily Coin Flip - Day 703",
+      "current_yes_price": 0.49990052233428267,
+      "current_no_price": 0.5000994776657173,
+      "volume": 232.56132907033617,
+      "liquidity": 1100.0,
+      "close_date": "2026-03-21T16:56:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T12:19:49.271793",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 549,
+      "platform": "manifold",
+      "market_id": "qp29pcz9ZO",
+      "question": "Will Gold be between $5000 - $6000 by the end of March?",
+      "current_yes_price": 0.5285193724590029,
+      "current_no_price": 0.47148062754099707,
+      "volume": 251.99999999999997,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T12:19:46.520401",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 548,
       "platform": "manifold",
@@ -3002,74 +3026,6 @@
       "est_prob": 0.02,
       "est_conf": 0.8,
       "est_reasoning": "Starting with a base rate of ~1% for deaths/serious injuries of world leaders annually, the evidence strongly points toward NO. Netanyahu posted a video on March 15 (immediately after the resolution period), multiple credible sources report the death rumors as false, and a U.S. Senator confirmed he was alive on March 19. The timeline is crucial here - the resolution period (March 12-14, 2026) has passed, and Netanyahu's immediate video response suggests he was healthy during that timeframe. While 'grievous injury' adds some uncertainty since it's undefined and could theoretically be concealed, the pattern of evidence (quick video response, consistent reporting of false rumors, official confirmations) makes this highly unlikely. The main uncertainty is the lack of direct official statements from the exact resolution period, but the circumstantial evidence is very strong for a NO resolution."
-    },
-    {
-      "id": 452,
-      "platform": "manifold",
-      "market_id": "ZctCIAhQsu",
-      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-      "current_yes_price": 0.24999999999999994,
-      "current_no_price": 0.75,
-      "volume": 24028.945003564477,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T09:05:06.355174",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
-    },
-    {
-      "id": 451,
-      "platform": "manifold",
-      "market_id": "pulqzqzCnA",
-      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
-      "current_yes_price": 0.38986339576475815,
-      "current_no_price": 0.6101366042352419,
-      "volume": 151.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-23T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T08:50:49.756894",
-      "est_prob": 0.35,
-      "est_conf": 0.3,
-      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
-    },
-    {
-      "id": 450,
-      "platform": "manifold",
-      "market_id": "c00I8q2sg2",
-      "question": "Free Lottery (ubiquitous number)",
-      "current_yes_price": 0.6731126831907437,
-      "current_no_price": 0.3268873168092563,
-      "volume": 103.00000000001288,
-      "liquidity": 10000.0,
-      "close_date": "2026-03-21T03:33:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T08:45:12.837481",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 449,
-      "platform": "manifold",
-      "market_id": "qOupANU6Zl",
-      "question": "Daily Coinflip",
-      "current_yes_price": 0.511925714133141,
-      "current_no_price": 0.48807428586685897,
-      "volume": 192.4096201228011,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-21T03:59:00+00:00",
-      "category": "sports",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T08:45:09.776278",
-      "est_prob": 0.5,
-      "est_conf": 0.15,
-      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
     }
   ]
 }
