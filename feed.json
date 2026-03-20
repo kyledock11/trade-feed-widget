@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T08:15:28.160793+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T08:20:49.801962+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T08:15:28.160800+00:00",
+    "last_heartbeat": "2026-03-20T08:20:49.801969+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 13 recently analyzed, 14 already have run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 8 low-volume markets               run.py:173",
-      "WARNING    Errors: 8 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[02:17:07] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-20",
+      "02:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1371,6 +1327,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 445,
+      "platform": "manifold",
+      "market_id": "Au9C6AOg9Z",
+      "question": "Is/Was Benjamin Netanyahu dead or grievously injured as of March 12-14, 2026",
+      "current_yes_price": 0.010000000000000018,
+      "current_no_price": 0.99,
+      "volume": 6240.846806381711,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T04:15:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T08:19:46.369095",
+      "est_prob": 0.02,
+      "est_conf": 0.8,
+      "est_reasoning": "Starting with a base rate of ~1% for deaths/serious injuries of world leaders annually, the evidence strongly points toward NO. Netanyahu posted a video on March 15 (immediately after the resolution period), multiple credible sources report the death rumors as false, and a U.S. Senator confirmed he was alive on March 19. The timeline is crucial here - the resolution period (March 12-14, 2026) has passed, and Netanyahu's immediate video response suggests he was healthy during that timeframe. While 'grievous injury' adds some uncertainty since it's undefined and could theoretically be concealed, the pattern of evidence (quick video response, consistent reporting of false rumors, official confirmations) makes this highly unlikely. The main uncertainty is the lack of direct official statements from the exact resolution period, but the circumstantial evidence is very strong for a NO resolution."
+    },
     {
       "id": 444,
       "platform": "manifold",
@@ -3050,23 +3023,6 @@
       "category": "other",
       "resolution_source": "",
       "scanned_at": "2026-03-20T04:20:20.548919",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 345,
-      "platform": "manifold",
-      "market_id": "c5tCCyLI0Q",
-      "question": "Will I post 2 articles on my Substack between 16Mar - 23Mar",
-      "current_yes_price": 0.45,
-      "current_no_price": 0.55,
-      "volume": 74.84353401801216,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-23T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T04:15:13.425568",
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
