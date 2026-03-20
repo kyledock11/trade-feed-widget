@@ -251,15 +251,10 @@
 
   .tab.active .count { color: #7a756e; }
 
-  /* Trade grid layout — shared between header and rows */
-  .trade-grid {
-    display: grid;
-    grid-template-columns: 12px 36px 1fr 52px 52px 40px 58px 62px 52px 52px;
-    gap: 0 0.4rem;
-    align-items: center;
-  }
-
+  /* Trade table header and data alignment */
   .trade-list-header {
+    display: flex;
+    align-items: center;
     padding: 0.35rem 0.25rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     margin-bottom: 0.25rem;
@@ -274,11 +269,35 @@
     letter-spacing: 0.1em;
   }
 
-  .trade-list-header .th-r { text-align: right; }
-  .trade-list-header .th-c { text-align: center; }
+  .trade-list-header .th-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .trade-list-header .th-right {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .trade-list-header .th-right .th {
+    width: 62px;
+    text-align: right;
+  }
 
   /* Trade row data cells */
-  .trade-header .td {
+  .trade-data {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .trade-data .td {
+    width: 62px;
     text-align: right;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 300;
@@ -303,6 +322,9 @@
   .trade-card:last-child { border-bottom: none; }
 
   .trade-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.6rem 0.25rem;
     cursor: pointer;
     transition: background 0.15s ease;
@@ -1761,17 +1783,21 @@ function renderTrades() {
     return;
   }
 
-  list.innerHTML = `<div class="trade-list-header trade-grid">
-    <span class="th"></span>
-    <span class="th th-c">Side</span>
-    <span class="th">Market</span>
-    <span class="th th-r">Entry</span>
-    <span class="th th-r">Live</span>
-    <span class="th th-r">Prob</span>
-    <span class="th th-r">Risked</span>
-    <span class="th th-r">Profit</span>
-    <span class="th th-r">Acct</span>
-    <span class="th th-r">Time</span>
+  list.innerHTML = `<div class="trade-list-header">
+    <div class="th-left">
+      <span class="th" style="width:12px"></span>
+      <span class="th" style="width:32px;text-align:center">Side</span>
+      <span class="th">Market</span>
+    </div>
+    <div class="th-right">
+      <span class="th">Entry</span>
+      <span class="th">Live</span>
+      <span class="th">Prob</span>
+      <span class="th">Risked</span>
+      <span class="th">Profit</span>
+      <span class="th">Acct</span>
+      <span class="th">Time</span>
+    </div>
   </div>`;
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
 
@@ -1804,17 +1830,19 @@ function renderTrades() {
       : `<span class="td">--</span>`;
 
     card.innerHTML = `
-      <div class="trade-header trade-grid">
+      <div class="trade-header">
         ${caretSVG}
-        <span class="trade-direction ${trade.direction}" style="text-align:center">${trade.direction}</span>
+        <span class="trade-direction ${trade.direction}">${trade.direction}</span>
         <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
-        <span class="td">${entryPct}</span>
-        ${liveCell}
-        <span class="td" style="color:#7eb8d0">${likelihood || '--'}</span>
-        <span class="td">${formatMoney(trade.size)}</span>
-        ${profitCell}
-        <span class="td" style="color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account || '--')}</span>
-        <span class="td">${relativeTime(trade.created_at)}</span>
+        <div class="trade-data">
+          <span class="td">${entryPct}</span>
+          ${liveCell}
+          <span class="td" style="color:#7eb8d0">${likelihood || '--'}</span>
+          <span class="td">${formatMoney(trade.size)}</span>
+          ${profitCell}
+          <span class="td" style="color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account || '--')}</span>
+          <span class="td">${relativeTime(trade.created_at)}</span>
+        </div>
       </div>
       <div class="trade-body">
         <div class="trade-body-inner">
