@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T14:45:11.308061+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T14:51:04.385557+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T14:45:11.308069+00:00",
+    "last_heartbeat": "2026-03-20T14:51:04.385564+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 20 recently analyzed, 8 already have  run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 1 low-volume markets               run.py:173",
-      "WARNING    Errors: 2 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[08:46:41] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-20",
+      "09:15:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1367,6 +1323,74 @@
     }
   ],
   "markets": [
+    {
+      "id": 607,
+      "platform": "manifold",
+      "market_id": "c00I8q2sg2",
+      "question": "Free Lottery (ubiquitous number)",
+      "current_yes_price": 0.6731126831907437,
+      "current_no_price": 0.3268873168092563,
+      "volume": 105.00000000001212,
+      "liquidity": 10000.0,
+      "close_date": "2026-03-21T03:33:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T14:51:00.493869",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 606,
+      "platform": "manifold",
+      "market_id": "qOupANU6Zl",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.5051759604642407,
+      "current_no_price": 0.49482403953575926,
+      "volume": 134.2646566926314,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T14:50:57.755808",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 605,
+      "platform": "manifold",
+      "market_id": "ARnqln6pRP",
+      "question": "Will Y Combinator fund 3 or more quantum-related startups in its next public batch update within the next 2 months?",
+      "current_yes_price": 0.08880203927855064,
+      "current_no_price": 0.9111979607214493,
+      "volume": 1289.7890600164408,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-20T21:49:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T14:50:53.316292",
+      "est_prob": 0.25,
+      "est_conf": 0.3,
+      "est_reasoning": "This estimate faces severe information constraints. I have no base rate for Y Combinator quantum startup funding, no data on typical batch sizes, and unclear resolution criteria. The general quantum investment momentum (Quantonation's \u20ac220M fund, IonQ performance) suggests market interest, but this doesn't directly translate to Y Combinator batch composition. Y Combinator typically funds diverse portfolios across emerging technologies, which supports quantum inclusion, but quantum startups may be too capital-intensive or early-stage for their model. The 2-month timeline creates additional uncertainty about when the next batch update occurs. Given the complete lack of Y Combinator-specific data and multiple definitional ambiguities, I'm estimating 25% - acknowledging some possibility due to general quantum momentum and Y Combinator's broad investment approach, but with very low confidence due to the information gaps."
+    },
+    {
+      "id": 604,
+      "platform": "manifold",
+      "market_id": "EcOt6EU68N",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.5,
+      "current_no_price": 0.5,
+      "volume": 1729.1539797113098,
+      "liquidity": 10000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T14:50:50.237333",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
     {
       "id": 603,
       "platform": "manifold",
@@ -2998,74 +3022,6 @@
       "est_prob": 0.35,
       "est_conf": 0.3,
       "est_reasoning": "Starting with a base rate around 25% based on Bitcoin's historical pattern of major bull runs every ~4 years coinciding with halving cycles. However, $80K would represent a significant milestone above Bitcoin's previous ~$69K peak from 2021. The timing (March 2025) falls roughly 11 months after the April 2024 halving, which historically has been associated with price appreciation cycles. I'm adjusting upward to 35% because: (1) the halving cycle timing suggests potential for a bull run in this timeframe, (2) continued institutional adoption trends, and (3) the question only requires touching $80K briefly in March, not sustaining it. However, confidence is very low (0.3) due to critical information gaps - most importantly not knowing the current Bitcoin price, which is essential for assessing how much appreciation would be needed. Without knowing if Bitcoin is currently at $30K, $50K, or $70K, the probability changes dramatically. The rapid evolution of crypto markets also makes historical patterns less reliable predictors."
-    },
-    {
-      "id": 507,
-      "platform": "manifold",
-      "market_id": "A8ytA8RAUQ",
-      "question": "Will Labour's planned inheritance tax on UK farms over \u00a31m be scrapped before April 2026?",
-      "current_yes_price": 0.99,
-      "current_no_price": 0.010000000000000009,
-      "volume": 2923.233286917623,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-30T22:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:05:07.284084",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 506,
-      "platform": "manifold",
-      "market_id": "OgnlLCUuCA",
-      "question": "Is this jigsaw puzzle missing some piece?",
-      "current_yes_price": 0.6236049427515935,
-      "current_no_price": 0.3763950572484065,
-      "volume": 3720.4862442022213,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-02T21:41:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:05:07.034213",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 505,
-      "platform": "manifold",
-      "market_id": "uphA9gU6z0",
-      "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
-      "current_yes_price": 0.3393021624260328,
-      "current_no_price": 0.6606978375739672,
-      "volume": 8258.712718105882,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-04T20:15:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:05:06.795822",
-      "est_prob": 0.55,
-      "est_conf": 0.2,
-      "est_reasoning": "This is an extremely challenging prediction due to fundamental information gaps. The METR 50% time horizon benchmark is not defined in available sources, making it impossible to assess what specific capability or safety metric is being measured. Without knowing the benchmark methodology, historical results, or even if such results exist for these models, I cannot establish a meaningful base rate. The one piece of suggestive evidence is a VentureBeat article indicating GPT-5.4 outperforms Claude Opus 4.6 in at least one comparative context, which provides weak directional evidence favoring YES. However, this conflicts with other mentions of Claude models performing well generally. Given the complete uncertainty about the benchmark itself and the lack of resolution criteria, I'm assigning a slight lean toward YES (0.55) based solely on the VentureBeat evidence, but with very low confidence (0.2) due to the numerous critical unknowns that could completely change the outcome."
-    },
-    {
-      "id": 504,
-      "platform": "manifold",
-      "market_id": "PspSScZSL9",
-      "question": "Will Enho be on the banzuke in Juryo for the May 2026 Grand Sumo Tournament (Natsu basho)",
-      "current_yes_price": 0.9079237599074429,
-      "current_no_price": 0.0920762400925571,
-      "volume": 19182.10422340635,
-      "liquidity": 10078.0,
-      "close_date": "2026-05-02T04:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:05:06.552495",
-      "est_prob": 0.45,
-      "est_conf": 0.3,
-      "est_reasoning": "I started with a base rate of ~70% for established professional sumo wrestlers maintaining their general division level over multiple tournaments, based on the sport's structure where dramatic rank changes are less common than gradual movement. However, I significantly adjusted downward to 45% due to several critical factors: (1) The 2+ year timeline to May 2026 creates substantial uncertainty for career longevity, especially in a physically demanding sport like sumo; (2) Complete lack of current data on Enho's status - he could already be retired, injured, or in a lower division; (3) Enho's smaller stature, while enabling his unique style, may contribute to career longevity concerns in sumo; (4) The specific requirement for Juryo division (not higher Makuuchi or lower divisions) creates a narrow target. My confidence is very low (0.3) because this estimate is essentially educated speculation given the critical information gaps about his current status and the long timeline involved."
     }
   ]
 }
