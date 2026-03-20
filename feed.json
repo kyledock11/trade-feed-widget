@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T14:51:04.385557+00:00",
+  "updated_at": "2026-03-20T15:02:56.223253+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T14:51:04.385564+00:00",
+    "last_heartbeat": "2026-03-20T15:02:56.223260+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1323,6 +1323,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 609,
+      "platform": "manifold",
+      "market_id": "qp29pcz9ZO",
+      "question": "Will Gold be between $5000 - $6000 by the end of March?",
+      "current_yes_price": 0.5027580993776818,
+      "current_no_price": 0.4972419006223182,
+      "volume": 51.999999999999964,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-31T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T15:02:52.762937",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 608,
+      "platform": "manifold",
+      "market_id": "Gk0rSk3vqy1RvqQn9smz",
+      "question": "Will Vladimir Putin be in power at the conclusion of the Russia-Ukraine war?",
+      "current_yes_price": 0.7666556514657832,
+      "current_no_price": 0.23334434853421682,
+      "volume": 102.92837284082823,
+      "liquidity": 1155.0,
+      "close_date": "2026-06-01T00:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T15:02:49.468195",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 607,
       "platform": "manifold",
@@ -2988,40 +3022,6 @@
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
-    },
-    {
-      "id": 509,
-      "platform": "manifold",
-      "market_id": "USqgCAPAz5",
-      "question": "Will something happen in Iran this month?",
-      "current_yes_price": 0.2369953545083816,
-      "current_no_price": 0.7630046454916184,
-      "volume": 823.1901228505373,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:05:07.770137",
-      "est_prob": 0.98,
-      "est_conf": 0.4,
-      "est_reasoning": "The base rate for 'something happening' in Iran during any given month is extremely high (~95%) given frequent sanctions, diplomatic incidents, proxy conflicts, and military activities. The evidence strongly suggests significant events are already occurring in March 2026 - multiple sources describe an active 'Iran war' with US/Israeli forces, drone threats, warship incidents, and evacuation advisories. This clearly constitutes 'something happening' under any reasonable interpretation. I adjust upward to 98% because the current military conflict represents extraordinary activity well beyond typical monthly events. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - without knowing what threshold triggers YES resolution, there's risk that even ongoing warfare might not qualify under an extremely narrow interpretation. The question's vagueness creates significant uncertainty despite strong evidence that major events are occurring."
-    },
-    {
-      "id": 508,
-      "platform": "manifold",
-      "market_id": "L9q0LNRZgq",
-      "question": "Bitcoin $80K in March?",
-      "current_yes_price": 0.1315824360261887,
-      "current_no_price": 0.8684175639738113,
-      "volume": 1797.1925564314156,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T06:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T11:05:07.522470",
-      "est_prob": 0.35,
-      "est_conf": 0.3,
-      "est_reasoning": "Starting with a base rate around 25% based on Bitcoin's historical pattern of major bull runs every ~4 years coinciding with halving cycles. However, $80K would represent a significant milestone above Bitcoin's previous ~$69K peak from 2021. The timing (March 2025) falls roughly 11 months after the April 2024 halving, which historically has been associated with price appreciation cycles. I'm adjusting upward to 35% because: (1) the halving cycle timing suggests potential for a bull run in this timeframe, (2) continued institutional adoption trends, and (3) the question only requires touching $80K briefly in March, not sustaining it. However, confidence is very low (0.3) due to critical information gaps - most importantly not knowing the current Bitcoin price, which is essential for assessing how much appreciation would be needed. Without knowing if Bitcoin is currently at $30K, $50K, or $70K, the probability changes dramatically. The rapid evolution of crypto markets also makes historical patterns less reliable predictors."
     }
   ]
 }
