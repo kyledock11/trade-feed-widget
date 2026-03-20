@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T09:45:10.106034+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T09:50:52.891517+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T09:45:10.106043+00:00",
+    "last_heartbeat": "2026-03-20T09:50:52.891524+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 23 recently analyzed, 11 already have run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 1 low-volume markets               run.py:173",
-      "WARNING    Errors: 1 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[03:46:17] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-20",
+      "04:15:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1371,6 +1327,57 @@
     }
   ],
   "markets": [
+    {
+      "id": 475,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.38986339576475815,
+      "current_no_price": 0.6101366042352419,
+      "volume": 151.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T09:50:49.795133",
+      "est_prob": 0.35,
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
+    },
+    {
+      "id": 474,
+      "platform": "manifold",
+      "market_id": "c00I8q2sg2",
+      "question": "Free Lottery (ubiquitous number)",
+      "current_yes_price": 0.6731126831907437,
+      "current_no_price": 0.3268873168092563,
+      "volume": 103.00000000001288,
+      "liquidity": 10000.0,
+      "close_date": "2026-03-21T03:33:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T09:49:49.847661",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 473,
+      "platform": "manifold",
+      "market_id": "qOupANU6Zl",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.511925714133141,
+      "current_no_price": 0.48807428586685897,
+      "volume": 192.4096201228011,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T09:49:47.182507",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
     {
       "id": 472,
       "platform": "manifold",
@@ -3019,57 +3026,6 @@
       "est_prob": 0.35,
       "est_conf": 0.3,
       "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
-    },
-    {
-      "id": 375,
-      "platform": "manifold",
-      "market_id": "OlQq8h8qOh",
-      "question": "Strait of Hormuz traffic returns to normal by April 30? [Polymarket]",
-      "current_yes_price": 0.2724545740867673,
-      "current_no_price": 0.7275454259132327,
-      "volume": 50.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-30T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T05:33:10.456256",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 374,
-      "platform": "manifold",
-      "market_id": "hZznzZSuPq",
-      "question": "The Five Proud Boys Leaders get one dollar or more compensatory or punitive damages.",
-      "current_yes_price": 0.4417653705687558,
-      "current_no_price": 0.5582346294312441,
-      "volume": 100.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-06-07T17:46:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T05:33:07.724538",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 373,
-      "platform": "manifold",
-      "market_id": "c00I8q2sg2",
-      "question": "Free Lottery (ubiquitous number)",
-      "current_yes_price": 0.6731126831907437,
-      "current_no_price": 0.3268873168092563,
-      "volume": 103.00000000001288,
-      "liquidity": 10000.0,
-      "close_date": "2026-03-21T03:33:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T05:33:05.000988",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
     }
   ]
 }
