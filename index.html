@@ -1372,7 +1372,7 @@ function renderTradesFromData(data) {
     html += `<tr data-key="${esc(tradeKey)}" onclick="toggleTradeRow(this)">
       <td style="color:#4a4640;font-size:0.6rem">${caretChar}</td>
       <td><span class="trade-direction ${trade.direction}" style="font-size:0.65rem">${trade.direction.toUpperCase()}</span></td>
-      <td class="td-market">${esc(trade.question || trade.market_id)}</td>
+      <td class="td-market">${esc(trade.question || trade.market_id)}${trade.is_hedge ? ' <span style="font-size:0.5rem;color:#c4a35a;background:rgba(196,163,90,0.12);padding:0.1rem 0.3rem;border-radius:3px;margin-left:0.3rem;font-family:Inter,sans-serif;letter-spacing:0.06em">HEDGE</span>' : ''}</td>
       <td class="td-data">${entryPct}</td>
       <td class="td-data" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</td>
       <td class="td-data" style="color:#7eb8d0">${likelihood}</td>
@@ -1401,7 +1401,8 @@ function renderTradesFromData(data) {
           ${trade._strategy ? `<div class="detail"><span class="detail-label">Strategy</span><span class="detail-value">${esc(trade._strategy)}</span></div>` : ''}
           <div class="detail"><span class="detail-label">Status</span><span class="detail-value">${esc(trade.status || '--')}</span></div>
           ${trade.pnl !== null && trade.pnl !== undefined ? `<div class="detail"><span class="detail-label">P&L</span><span class="detail-value ${trade.pnl >= 0 ? 'edge-positive' : 'edge-negative'}">${formatMoney(trade.pnl)}</span></div>` : ''}
-          ${estimate && estimate.reasoning ? `<div class="trade-reasoning"><span class="detail-label">Reasoning</span><div class="reasoning-text">${esc(estimate.reasoning)}</div></div>` : ''}
+          <div class="trade-reasoning"><span class="detail-label">Reasoning</span><div class="reasoning-text">${esc(estimate && estimate.reasoning ? estimate.reasoning : (trade.reasoning || 'No reasoning recorded for this trade.'))}</div></div>
+          ${trade.is_hedge ? '<div class="detail" style="grid-column:1/-1"><span class="detail-label">Hedge Status</span><span class="detail-value" style="color:#c4a35a">This position is part of a hedge pair — opposite direction taken on another account</span></div>' : ''}
         </div>
       </td>
     </tr>`;
