@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T03:50:53.637097+00:00",
+  "updated_at": "2026-03-20T04:02:49.683344+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T03:50:53.637104+00:00",
+    "last_heartbeat": "2026-03-20T04:02:49.683350+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
