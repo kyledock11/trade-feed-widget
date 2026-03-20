@@ -268,13 +268,13 @@
     color: #5a5650;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    flex-shrink: 0;
   }
 
-  .trade-list-header .th-spacer { width: 12px; flex-shrink: 0; }
-  .trade-list-header .th-dir { width: 32px; flex-shrink: 0; }
-  .trade-list-header .th-question { flex: 1; }
-  .trade-list-header .th-data { width: 55px; flex-shrink: 0; text-align: right; }
-  .trade-list-header .th-time { width: 55px; flex-shrink: 0; text-align: right; }
+  .trade-list-header .th-spacer { width: 12px; }
+  .trade-list-header .th-dir { width: 32px; text-align: center; }
+  .trade-list-header .th-question { flex: 1; flex-shrink: 1; }
+  .trade-list-header .th-data { width: 55px; text-align: right; }
 
   /* Trade cards */
   .trade-list {
@@ -900,7 +900,8 @@ const REFRESH_INTERVAL = 15000; // 15 seconds
 let feedData = null;
 let activeTab = 'all';
 let isMultiStrategy = false;
-let selectedStrategy = 'all'; // 'all' or strategy name
+let selectedStrategy = 'all';
+const expandedTrades = new Set(); // Track expanded trade market_ids
 
 // Strategy accent colors and account mappings
 const STRATEGY_COLORS = {
@@ -1760,7 +1761,7 @@ function renderTrades() {
     <span class="th th-data">Risked</span>
     <span class="th th-data">Profit</span>
     <span class="th th-data">Acct</span>
-    <span class="th th-time">Time</span>
+    <span class="th th-data">Time</span>
   </div>`;
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
 
@@ -1775,8 +1776,9 @@ function renderTrades() {
   startLiveRefresh(allOpenTrades);
 
   trades.forEach(trade => {
+    const tradeKey = trade.market_id + '_' + trade.id;
     const card = document.createElement('div');
-    card.className = 'trade-card';
+    card.className = 'trade-card' + (expandedTrades.has(tradeKey) ? ' expanded' : '');
 
     const estimate = estimateMap[trade.market_id];
     const edge = trade.edge ? (trade.edge * 100).toFixed(1) : '--';
@@ -1787,15 +1789,15 @@ function renderTrades() {
     card.innerHTML = `
       <div class="trade-header">
         ${caretSVG}
-        <span class="trade-direction ${trade.direction}">${trade.direction}</span>
+        <span class="trade-direction ${trade.direction}" style="width:32px;text-align:center">${trade.direction}</span>
         <span class="trade-question">${esc(trade.question || trade.market_id)}</span>
-        <span class="trade-entry">${entryPct}</span>
-        ${trade.status === 'filled' ? `<span class="trade-spread loading" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</span>` : ''}
-        ${likelihood ? `<span class="trade-size" style="color:#7eb8d0">${likelihood}</span>` : ''}
-        <span class="trade-size">${formatMoney(trade.size)}</span>
-        ${trade.status === 'filled' ? `<span class="trade-size" style="color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : ''}
-        ${trade._account ? `<span class="trade-account" style="color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account)}</span>` : ''}${selectedStrategy === 'all' && trade._strategy ? `<span class="trade-account">${esc(trade._strategy)}</span>` : ''}
-        <span class="trade-time">${relativeTime(trade.created_at)}</span>
+        <span class="trade-entry" style="width:55px;text-align:right">${entryPct}</span>
+        ${trade.status === 'filled' ? `<span class="trade-spread loading" style="width:55px;text-align:right" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</span>` : `<span style="width:55px"></span>`}
+        ${likelihood ? `<span class="trade-size" style="width:55px;text-align:right;color:#7eb8d0">${likelihood}</span>` : `<span style="width:55px"></span>`}
+        <span class="trade-size" style="width:55px;text-align:right">${formatMoney(trade.size)}</span>
+        ${trade.status === 'filled' ? `<span class="trade-size" style="width:55px;text-align:right;color:#6ec07a">+${formatMoney(potentialProfit)}</span>` : `<span style="width:55px"></span>`}
+        <span class="trade-account" style="width:55px;text-align:right;color:${ACCOUNT_COLORS[trade._account] || '#5a5650'}">${esc(trade._account || '')}</span>
+        <span class="trade-time" style="width:55px;text-align:right">${relativeTime(trade.created_at)}</span>
       </div>
       <div class="trade-body">
         <div class="trade-body-inner">
@@ -1849,6 +1851,11 @@ function renderTrades() {
 
     card.querySelector('.trade-header').addEventListener('click', () => {
       card.classList.toggle('expanded');
+      if (card.classList.contains('expanded')) {
+        expandedTrades.add(tradeKey);
+      } else {
+        expandedTrades.delete(tradeKey);
+      }
     });
 
     list.appendChild(card);
