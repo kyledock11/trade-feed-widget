@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-03-20T05:15:10.610667+00:00",
-  "strategy": {
-    "name": "Parallax",
-    "version": "0.5",
-    "full_name": "Parallax v0.5",
-    "iteration": 5,
-    "current": {
-      "version": "0.5",
-      "date": "2026-03-19",
-      "name": "Agreement Filter",
-      "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-    },
-    "changelog": [
-      {
-        "version": "0.1",
-        "date": "2026-03-19",
-        "name": "Genesis",
-        "changes": "Initial scaffolding. Paper trading on Manifold. Basic scanner + estimator."
-      },
-      {
-        "version": "0.2",
-        "date": "2026-03-19",
-        "name": "Deep Research",
-        "changes": "DuckDuckGo news search, Claude Haiku quality filter, category-specific data (yfinance, polls)."
-      },
-      {
-        "version": "0.3",
-        "date": "2026-03-19",
-        "name": "Learning Loop",
-        "changes": "Resolution checker, learning system, duplicate detection, concurrent processing, robust JSON parsing."
-      },
-      {
-        "version": "0.4",
-        "date": "2026-03-19",
-        "name": "Tiered Exposure",
-        "changes": "Backtest-calibrated position sizing. 5 edge tiers from backtest data (100 markets, Brier 0.22). Sweet spot at 5-20% edge, reduced exposure on 20%+ overconfidence zone."
-      },
-      {
-        "version": "0.5",
-        "date": "2026-03-19",
-        "name": "Agreement Filter",
-        "changes": "Critical discovery: only trade when bot and market agree on direction. 94% win rate (agree) vs 21% (disagree) across 100 backtest markets. Bot's edge is in magnitude, not direction. Skip high-edge disagreement trades where market is right 79% of the time. Sweet spot confirmed: 5-20% edge + agreement = 97% win rate."
-      }
-    ]
-  },
+  "updated_at": "2026-03-20T05:21:02.305449+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T05:15:10.610675+00:00",
+    "last_heartbeat": "2026-03-20T05:21:02.305456+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
     "last_cycle_markets_scanned": null,
     "last_log_time": null,
     "last_log_lines": [
-      "INFO       Skipped: 14 recently analyzed, 12 already have run.py:167",
-      "position, 0 no edge",
-      "INFO       Quick mode: 1 low-volume markets               run.py:173",
-      "WARNING    Errors: 2 markets failed to process            run.py:175",
-      "INFO       Next cycle in 30 minutes                       run.py:176"
+      "Pushed to GitHub Pages",
+      "Notion page updated: 28 positions, M$598.56 deployed",
+      "[23:16:25] INFO     Job \"TradingBot.run_cycle (trigger:             base.py:203",
+      "interval[0:30:00], next run at: 2026-03-19",
+      "23:45:01 MDT)\" executed successfully"
     ]
   },
   "portfolio": {
@@ -1371,6 +1327,91 @@
     }
   ],
   "markets": [
+    {
+      "id": 368,
+      "platform": "manifold",
+      "market_id": "qOupANU6Zl",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.5170684576595507,
+      "current_no_price": 0.4829315423404493,
+      "volume": 182.4096201228011,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:20:58.312948",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 367,
+      "platform": "manifold",
+      "market_id": "gLs6SNcP6L",
+      "question": "Daily Coin Flip - Day 703",
+      "current_yes_price": 0.5008103658000941,
+      "current_no_price": 0.4991896341999059,
+      "volume": 228.5613290703356,
+      "liquidity": 1100.0,
+      "close_date": "2026-03-21T16:56:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:20:55.703648",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 366,
+      "platform": "manifold",
+      "market_id": "OgnlLCUuCA",
+      "question": "Is this jigsaw puzzle missing some piece?",
+      "current_yes_price": 0.5825435969754097,
+      "current_no_price": 0.4174564030245903,
+      "volume": 323.1846481873697,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-02T21:41:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:20:52.821011",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 365,
+      "platform": "manifold",
+      "market_id": "EcOt6EU68N",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.5,
+      "current_no_price": 0.5,
+      "volume": 8271.134234995454,
+      "liquidity": 10000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:20:49.912307",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
+    {
+      "id": 364,
+      "platform": "manifold",
+      "market_id": "Ehyqgs0czE",
+      "question": "Will Mojtaba Khamenei be shown alive on video between March 8th and April 1, 2026?",
+      "current_yes_price": 0.26730206525533595,
+      "current_no_price": 0.732697934744664,
+      "volume": 325.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-01T00:00:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T05:19:47.894629",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 363,
       "platform": "manifold",
@@ -2985,91 +3026,6 @@
       "est_prob": 0.35,
       "est_conf": 0.4,
       "est_reasoning": "Bitcoin needs to decline roughly 20-30% from current levels ($63k-$75k range) to reach below $52k by March 31, 2026. Key factors supporting YES: Bitcoin already showed weakness in Feb 2026 dropping below $63k, ongoing macro headwinds from Fed policy and economic uncertainty, and Bitcoin's historical volatility makes significant short-term moves possible. The question only requires touching below $52k once, not sustained trading. However, factors against include Bitcoin currently trading well above target in a 'strong relief rally', and survey data showing holder resilience. Without historical base rates for similar declines, I'm estimating around 35% probability - acknowledging Bitcoin's volatility could easily produce this magnitude of decline, but the current price positioning and recent rally suggest it's not the most likely outcome. My confidence is low due to missing key data points and the inherent unpredictability of crypto markets over short timeframes."
-    },
-    {
-      "id": 268,
-      "platform": "manifold",
-      "market_id": "P255hsOyEL",
-      "question": "BTC  close above 80K by end of March?",
-      "current_yes_price": 0.1385533491103127,
-      "current_no_price": 0.8614466508896873,
-      "volume": 576.9763339203042,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T20:59:00+00:00",
-      "category": "crypto",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:15:15.876428",
-      "est_prob": 0.1,
-      "est_conf": 0.2,
-      "est_reasoning": "This estimate faces severe limitations due to conflicting price data. Using a conservative base rate of 15% for Bitcoin achieving significant milestones in short timeframes, I adjust downward to 10% due to several factors: (1) The extreme data inconsistency suggests unreliable information sources, making any prediction highly speculative; (2) If the lower trading data (~$31) is accurate, reaching $80K would require an unprecedented 158% gain in ~2 weeks; (3) If the higher news price ($74,400) is accurate, only 7.5% gain is needed, but the data conflict undermines confidence in this scenario; (4) The trading data appears to be for a Bitcoin trust rather than spot Bitcoin, which could explain the discrepancy but adds uncertainty about what price will be used for resolution. Given these critical information gaps and the fundamental uncertainty about Bitcoin's actual current price, I assign very low confidence to any estimate."
-    },
-    {
-      "id": 267,
-      "platform": "manifold",
-      "market_id": "g2lE0I6Etq",
-      "question": "Will WTI crude oil cost more than $150/barrel before June? (According to investing.com)",
-      "current_yes_price": 0.3916590366840935,
-      "current_no_price": 0.6083409633159065,
-      "volume": 1654.3633667197942,
-      "liquidity": 1000.0,
-      "close_date": "2026-05-31T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:15:13.038677",
-      "est_prob": null,
-      "est_conf": null,
-      "est_reasoning": null
-    },
-    {
-      "id": 266,
-      "platform": "manifold",
-      "market_id": "gAVoYpX2UXQSeiSdkXKn",
-      "question": "Will spy be worth more than $436 on May 12 2026?",
-      "current_yes_price": 0.9553964037892119,
-      "current_no_price": 0.04460359621078813,
-      "volume": 3557.2816562216503,
-      "liquidity": 1000.0,
-      "close_date": "2026-05-13T05:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:15:10.358898",
-      "est_prob": 0.78,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a base rate: historically, SPY spends the majority of time above levels that represent 25-33% declines from recent peaks. Major corrections of this magnitude occur every 3-7 years but typically recover within months to a few years. Given the 2.5-year timeframe to May 2026, there's substantial time for both a significant decline AND recovery. The research indicates SPY is currently around $580-590, making $436 roughly a 25-33% decline. While such corrections do occur regularly, the long-term upward trend of equity markets driven by economic growth, inflation, and earnings growth suggests sustained periods at such depressed levels are historically temporary. The strongest risk factors are recession, geopolitical crisis, or financial system stress, but even these typically don't keep markets depressed for the full 2.5-year period. My estimate of 78% reflects a modest upward adjustment from the base rate, acknowledging both the historical resilience of equity markets over multi-year periods and the substantial uncertainty around current conditions and potential near-term volatility."
-    },
-    {
-      "id": 265,
-      "platform": "manifold",
-      "market_id": "Au9C6AOg9Z",
-      "question": "Is/Was Benjamin Netanyahu dead or grievously injured as of March 12-14, 2026",
-      "current_yes_price": 0.02453502904007389,
-      "current_no_price": 0.9754649709599261,
-      "volume": 5352.519800917432,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T04:15:00+00:00",
-      "category": "geopolitics",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:15:06.697365",
-      "est_prob": 0.02,
-      "est_conf": 0.8,
-      "est_reasoning": "Starting with a base rate of ~1% for deaths/serious injuries of world leaders annually, the evidence strongly points toward NO. Netanyahu posted a video on March 15 (immediately after the resolution period), multiple credible sources report the death rumors as false, and a U.S. Senator confirmed he was alive on March 19. The timeline is crucial here - the resolution period (March 12-14, 2026) has passed, and Netanyahu's immediate video response suggests he was healthy during that timeframe. While 'grievous injury' adds some uncertainty since it's undefined and could theoretically be concealed, the pattern of evidence (quick video response, consistent reporting of false rumors, official confirmations) makes this highly unlikely. The main uncertainty is the lack of direct official statements from the exact resolution period, but the circumstantial evidence is very strong for a NO resolution."
-    },
-    {
-      "id": 264,
-      "platform": "manifold",
-      "market_id": "uphA9gU6z0",
-      "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
-      "current_yes_price": 0.36000000000000004,
-      "current_no_price": 0.6399999999999999,
-      "volume": 7771.013702835198,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-04T20:15:00+00:00",
-      "category": "tech",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:15:04.171082",
-      "est_prob": 0.55,
-      "est_conf": 0.2,
-      "est_reasoning": "This is an extremely challenging prediction due to fundamental information gaps. The METR 50% time horizon benchmark is not defined in available sources, making it impossible to assess what specific capability or safety metric is being measured. Without knowing the benchmark methodology, historical results, or even if such results exist for these models, I cannot establish a meaningful base rate. The one piece of suggestive evidence is a VentureBeat article indicating GPT-5.4 outperforms Claude Opus 4.6 in at least one comparative context, which provides weak directional evidence favoring YES. However, this conflicts with other mentions of Claude models performing well generally. Given the complete uncertainty about the benchmark itself and the lack of resolution criteria, I'm assigning a slight lean toward YES (0.55) based solely on the VentureBeat evidence, but with very low confidence (0.2) due to the numerous critical unknowns that could completely change the outcome."
     }
   ]
 }
