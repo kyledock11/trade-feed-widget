@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T05:50:54.049703+00:00",
+  "updated_at": "2026-03-20T06:02:56.809718+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T05:50:54.049710+00:00",
+    "last_heartbeat": "2026-03-20T06:02:56.809725+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1327,6 +1327,40 @@
     }
   ],
   "markets": [
+    {
+      "id": 379,
+      "platform": "manifold",
+      "market_id": "pz2NSPpL2U",
+      "question": "Will Manifold users \"feel that their life is better for using Sora\" in 6 months?",
+      "current_yes_price": 0.25948133178943183,
+      "current_no_price": 0.7405186682105682,
+      "volume": 50.0,
+      "liquidity": 10000.0,
+      "close_date": "2026-04-08T17:24:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T06:02:53.461713",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
+    {
+      "id": 378,
+      "platform": "manifold",
+      "market_id": "PHBrieoPxIS6nmTIbiiL",
+      "question": "Will Volodomyr Zelenskyy be in power at the conclusion of the Russia-Ukraine war?",
+      "current_yes_price": 0.6169094802000431,
+      "current_no_price": 0.3830905197999569,
+      "volume": 50.0,
+      "liquidity": 1375.0,
+      "close_date": "2026-06-01T00:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T06:02:50.567864",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 377,
       "platform": "manifold",
@@ -2992,40 +3026,6 @@
       "est_prob": 0.5,
       "est_conf": 0.15,
       "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
-    },
-    {
-      "id": 279,
-      "platform": "manifold",
-      "market_id": "2uLLLSqAzt",
-      "question": "Will 5 famous people bet on this market?",
-      "current_yes_price": 0.06187046287544722,
-      "current_no_price": 0.9381295371245528,
-      "volume": 150.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T16:22:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:49:46.905731",
-      "est_prob": 0.05,
-      "est_conf": 0.2,
-      "est_reasoning": "This market suffers from severe definitional ambiguities that make proper evaluation nearly impossible. Without knowing what constitutes a 'famous person' or which market is being referenced, any probability estimate is highly speculative. I cannot establish a meaningful base rate due to the lack of clear criteria. Celebrity participation in prediction markets appears to be rare based on the absence of such information in news sources, suggesting a low base probability. However, if 'famous people' were defined very broadly (e.g., anyone with >100k social media followers) and 'this market' refers to any prediction market platform, the probability could be higher. Given the extreme ambiguity and lack of resolution mechanism, I'm assigning a very low probability with very low confidence. The market appears fundamentally unresolvable in its current form."
-    },
-    {
-      "id": 278,
-      "platform": "manifold",
-      "market_id": "sPppzuLEqR",
-      "question": "Will I make USAMO?",
-      "current_yes_price": 0.07617823355582605,
-      "current_no_price": 0.9238217664441739,
-      "volume": 50.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T04:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T01:32:53.075506",
-      "est_prob": 0.15,
-      "est_conf": 0.2,
-      "est_reasoning": "The base rate for USAMO qualification is extremely low - roughly 250-300 students out of ~100,000+ who take the AIME annually, giving a base rate around 0.3%. However, this question being asked at all suggests some level of mathematical engagement or optimism about qualification. People rarely ask about extremely unlikely events unless they have some reason to believe they're possible. Since this appears to be a personal prediction market question, the person asking likely has some mathematical background or competitive experience that makes USAMO qualification at least conceivable. I'm adjusting upward from the base rate to reflect this selection bias, but keeping the estimate relatively low given the extreme selectivity of USAMO. My confidence is very low due to the complete lack of information about the person's identity and mathematical ability."
     }
   ]
 }
