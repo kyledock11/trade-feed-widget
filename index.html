@@ -252,12 +252,17 @@
   .tab.active .count { color: #7a756e; }
 
   /* Trade table header and data alignment */
+  /* Trade table — header labels must align to data columns */
   .trade-list-header {
     display: flex;
     align-items: center;
     padding: 0.35rem 0.25rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     margin-bottom: 0.25rem;
+  }
+
+  .trade-list-header .th-spacer {
+    flex: 1;
   }
 
   .trade-list-header .th {
@@ -267,33 +272,17 @@
     color: #5a5650;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-  }
-
-  .trade-list-header .th-left {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex: 1;
-  }
-
-  .trade-list-header .th-right {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    flex-shrink: 0;
-  }
-
-  .trade-list-header .th-right .th {
     width: 62px;
     text-align: right;
+    flex-shrink: 0;
   }
 
   /* Trade row data cells */
   .trade-data {
     display: flex;
     align-items: center;
-    gap: 0;
     flex-shrink: 0;
+    margin-left: auto;
   }
 
   .trade-data .td {
@@ -1784,20 +1773,14 @@ function renderTrades() {
   }
 
   list.innerHTML = `<div class="trade-list-header">
-    <div class="th-left">
-      <span class="th" style="width:12px"></span>
-      <span class="th" style="width:32px;text-align:center">Side</span>
-      <span class="th">Market</span>
-    </div>
-    <div class="th-right">
-      <span class="th">Entry</span>
-      <span class="th">Live</span>
-      <span class="th">Prob</span>
-      <span class="th">Risked</span>
-      <span class="th">Profit</span>
-      <span class="th">Acct</span>
-      <span class="th">Time</span>
-    </div>
+    <span class="th-spacer"></span>
+    <span class="th">Entry</span>
+    <span class="th">Live</span>
+    <span class="th">Prob</span>
+    <span class="th">Risked</span>
+    <span class="th">Profit</span>
+    <span class="th">Acct</span>
+    <span class="th">Time</span>
   </div>`;
   const caretSVG = '<svg class="trade-caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="4.5 3 7.5 6 4.5 9"/></svg>';
 
