@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T11:50:49.856919+00:00",
+  "updated_at": "2026-03-20T12:02:52.624065+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T11:50:49.856925+00:00",
+    "last_heartbeat": "2026-03-20T12:02:52.624071+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1327,6 +1327,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 530,
+      "platform": "manifold",
+      "market_id": "pulqzqzCnA",
+      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
+      "current_yes_price": 0.38986339576475815,
+      "current_no_price": 0.6101366042352419,
+      "volume": 151.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-23T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T12:02:49.557136",
+      "est_prob": 0.35,
+      "est_conf": 0.3,
+      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
+    },
     {
       "id": 529,
       "platform": "manifold",
@@ -3009,23 +3026,6 @@
       "est_prob": null,
       "est_conf": null,
       "est_reasoning": null
-    },
-    {
-      "id": 430,
-      "platform": "manifold",
-      "market_id": "ZctCIAhQsu",
-      "question": "Will Iran shoot down a US military plane/helicopter by end of March?",
-      "current_yes_price": 0.1701019760779854,
-      "current_no_price": 0.8298980239220146,
-      "volume": 23650.476484968076,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-31T23:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T08:05:06.282193",
-      "est_prob": 0.08,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a very low base rate (~1%) as Iran has not shot down a manned US military aircraft in recent decades, despite periodic tensions. The 2019 drone incident shows Iran's willingness to target US military assets but drones represent a much lower escalation threshold. I'm adjusting upward to 8% due to several factors: (1) the 15+ month timeline allows significant opportunity for escalation scenarios, (2) current headlines suggest heightened regional conflict involving Iran and Israel with potential US involvement, (3) Iran has demonstrated anti-aircraft capabilities and willingness to use them against US assets. However, shooting down a manned US aircraft would represent massive escalation likely triggering direct US military response, which Iran typically avoids through proxy strategies. The limited and unreliable source material significantly increases uncertainty. My confidence is low due to information gaps about current military postures, deployment patterns, and ambiguous resolution criteria."
     }
   ]
 }
