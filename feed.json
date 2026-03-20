@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T00:50:49.950197+00:00",
+  "updated_at": "2026-03-20T01:03:24.655016+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T00:50:49.950206+00:00",
+    "last_heartbeat": "2026-03-20T01:03:24.655023+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -826,6 +826,26 @@
   ],
   "estimates": [
     {
+      "id": 105,
+      "market_id": "zOSd5nE56c",
+      "probability": 0.25,
+      "confidence": 0.4,
+      "reasoning": "Starting with a base rate of 95% (qualified teams historically participate), I must heavily adjust downward due to exceptional circumstances. Iran's sports minister has explicitly stated they cannot participate following Khamenei's killing, active military conflict with U.S./Israel creates severe security barriers, FIFA refused Iran's venue change request, and Iran already withdrew from Paralympics citing safety - establishing precedent for sports withdrawal. However, uncertainty remains high because: the situation is rapidly evolving, the sports minister's statement may not be final, there are still months for diplomatic resolution, and FIFA has strong incentives to include all qualified teams. The combination of explicit government statements against participation and active military conflict outweighs the historical tendency for qualified teams to participate, but significant uncertainty remains given the fluid nature of the situation.",
+      "key_uncertainties": "[\"Whether Iran's sports minister statement represents final government position or negotiating posture\", \"Potential for de-escalation of military conflict with U.S./Israel before June 2026\", \"FIFA's willingness to find alternative security/venue arrangements\", \"Exact definition of 'actually participate' - registration vs playing matches\", \"Rapid evolution of geopolitical situation with daily developments\"]",
+      "base_rate": 0.95,
+      "created_at": "2026-03-20T01:03:24.633121"
+    },
+    {
+      "id": 104,
+      "market_id": "qOupANU6Zl",
+      "probability": 0.5,
+      "confidence": 0.15,
+      "reasoning": "Coin flip market \u2014 pure randomness, no edge possible.",
+      "key_uncertainties": "[\"Random outcome \\u2014 no information advantage\"]",
+      "base_rate": 0.5,
+      "created_at": "2026-03-20T01:03:10.040639"
+    },
+    {
       "id": 103,
       "market_id": "p2c9nlgPEg",
       "probability": 0.5,
@@ -1304,29 +1324,43 @@
       "key_uncertainties": "[\"Florida's actual NCAA Tournament seeding - could range from #1 to #3 seed based on recent loss\", \"Tournament bracket positioning and regional strength\", \"Key player injuries or roster changes not mentioned in reports\", \"Team's ability to bounce back from the momentum-killing Vanderbilt loss\", \"Quality of their likely opponents in tournament path\"]",
       "base_rate": 0.06,
       "created_at": "2026-03-19T22:16:13.756454"
-    },
-    {
-      "id": 55,
-      "market_id": "nC9pyPCgyc",
-      "probability": 0.25,
-      "confidence": 0.2,
-      "reasoning": "Without any specific data about Volt's presence or performance in Delft, I'm relying on general knowledge that Volt Europa exists as a political movement in the Netherlands. The 4,000 vote threshold represents a significant portion of likely votes cast (6-8%), which typically requires either strong local organization or favorable political conditions. Given the complete absence of relevant data and the substantial nature of the threshold, I'm estimating a relatively low probability while acknowledging extreme uncertainty. The estimate could reasonably range anywhere from 5% to 50% depending on Volt's actual local presence and performance history.",
-      "key_uncertainties": "[\"Complete lack of historical performance data for Volt in Delft\", \"Unknown current organizational strength and candidate quality in Delft\", \"Unclear political climate and competitive landscape for 2026 elections\", \"Uncertain timing of next municipal elections relative to March 2026 deadline\", \"No data on typical vote thresholds needed for meaningful representation\", \"Unknown whether Volt has active local presence or campaign infrastructure\"]",
-      "base_rate": null,
-      "created_at": "2026-03-19T22:15:41.260348"
-    },
-    {
-      "id": 54,
-      "market_id": "nQQU9OOlIO",
-      "probability": 0.08,
-      "confidence": 0.6,
-      "reasoning": "The first condition is clearly satisfied - multiple reliable sources confirm Mojtaba Khamenei was chosen as Supreme Leader in March 2026. For the second condition, the base rate is extremely low - only one Supreme Leader has been killed in Iran's 47-year history. However, several factors increase the probability above the base rate: (1) The new leader hasn't appeared publicly since appointment, creating genuine uncertainty about his status; (2) There are conflicting reports between official claims he's 'safe' and speculation about potential disfigurement/health issues; (3) The transition occurred during apparent conflict (his father was reportedly killed by Israeli strike), suggesting a volatile security environment; (4) With 14 days remaining, there's still time for the condition to be met. While Iranian officials deny he's been harmed, the lack of public appearances in a role that typically requires visibility creates meaningful doubt. I estimate 8% probability - significantly above the historical base rate due to these specific circumstances, but still low given the lack of direct evidence of death or serious harm.",
-      "key_uncertainties": "[\"Actual health status of Mojtaba Khamenei - officials claim he's safe but he hasn't appeared publicly\", \"Whether speculation about 'disfigurement' or health issues reflects actual incapacitation or death\", \"Potential for assassination attempts or health complications in remaining 14 days\", \"Definition of 'killed' in resolution criteria - could include natural death or other causes\", \"Reliability of Iranian official statements about the leader's wellbeing\"]",
-      "base_rate": 0.02,
-      "created_at": "2026-03-19T22:15:38.366900"
     }
   ],
   "markets": [
+    {
+      "id": 252,
+      "platform": "manifold",
+      "market_id": "zOSd5nE56c",
+      "question": "Will Iran actually participate in the 2026 FIFA World Cup?",
+      "current_yes_price": 0.22811803228884853,
+      "current_no_price": 0.7718819677111515,
+      "volume": 73.40862432762562,
+      "liquidity": 1200.0,
+      "close_date": "2026-06-10T23:59:00+00:00",
+      "category": "geopolitics",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T01:02:54.012877",
+      "est_prob": 0.25,
+      "est_conf": 0.4,
+      "est_reasoning": "Starting with a base rate of 95% (qualified teams historically participate), I must heavily adjust downward due to exceptional circumstances. Iran's sports minister has explicitly stated they cannot participate following Khamenei's killing, active military conflict with U.S./Israel creates severe security barriers, FIFA refused Iran's venue change request, and Iran already withdrew from Paralympics citing safety - establishing precedent for sports withdrawal. However, uncertainty remains high because: the situation is rapidly evolving, the sports minister's statement may not be final, there are still months for diplomatic resolution, and FIFA has strong incentives to include all qualified teams. The combination of explicit government statements against participation and active military conflict outweighs the historical tendency for qualified teams to participate, but significant uncertainty remains given the fluid nature of the situation."
+    },
+    {
+      "id": 251,
+      "platform": "manifold",
+      "market_id": "qOupANU6Zl",
+      "question": "Daily Coinflip",
+      "current_yes_price": 0.5049259987396706,
+      "current_no_price": 0.4950740012603294,
+      "volume": 108.23531372941291,
+      "liquidity": 1000.0,
+      "close_date": "2026-03-21T03:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T01:02:50.818056",
+      "est_prob": 0.5,
+      "est_conf": 0.15,
+      "est_reasoning": "Coin flip market \u2014 pure randomness, no edge possible."
+    },
     {
       "id": 250,
       "platform": "manifold",
@@ -2992,40 +3026,6 @@
       "est_prob": 0.75,
       "est_conf": 0.4,
       "est_reasoning": "With millions of brackets filled out across multiple platforms, even if individual bracket survival probability through 32 games is low (likely 0.1-1%), the large sample size makes it probable that some brackets will survive. The 1st round has fewer major upsets than later rounds, and conservative bracket strategies can achieve higher 1st round survival rates. However, significant uncertainty exists due to lack of historical base rates and unclear resolution criteria."
-    },
-    {
-      "id": 152,
-      "platform": "manifold",
-      "market_id": "L9q0LNRZgq",
-      "question": "Bitcoin $80K in March?",
-      "current_yes_price": 0.1485215329679746,
-      "current_no_price": 0.8514784670320255,
-      "volume": 3132.7603702706324,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T06:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T22:05:08.163811",
-      "est_prob": 0.35,
-      "est_conf": 0.3,
-      "est_reasoning": "Starting with a base rate around 25% based on Bitcoin's historical pattern of major bull runs every ~4 years coinciding with halving cycles. However, $80K would represent a significant milestone above Bitcoin's previous ~$69K peak from 2021. The timing (March 2025) falls roughly 11 months after the April 2024 halving, which historically has been associated with price appreciation cycles. I'm adjusting upward to 35% because: (1) the halving cycle timing suggests potential for a bull run in this timeframe, (2) continued institutional adoption trends, and (3) the question only requires touching $80K briefly in March, not sustaining it. However, confidence is very low (0.3) due to critical information gaps - most importantly not knowing the current Bitcoin price, which is essential for assessing how much appreciation would be needed. Without knowing if Bitcoin is currently at $30K, $50K, or $70K, the probability changes dramatically. The rapid evolution of crypto markets also makes historical patterns less reliable predictors."
-    },
-    {
-      "id": 151,
-      "platform": "manifold",
-      "market_id": "gAVoYpX2UXQSeiSdkXKn",
-      "question": "Will spy be worth more than $436 on May 12 2026?",
-      "current_yes_price": 0.9619343758455942,
-      "current_no_price": 0.03806562415440584,
-      "volume": 3387.3595945025536,
-      "liquidity": 1000.0,
-      "close_date": "2026-05-13T05:59:00+00:00",
-      "category": "uncategorized",
-      "resolution_source": "",
-      "scanned_at": "2026-03-19T22:05:07.897940",
-      "est_prob": 0.78,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting with a base rate: historically, SPY spends the majority of time above levels that represent 25-33% declines from recent peaks. Major corrections of this magnitude occur every 3-7 years but typically recover within months to a few years. Given the 2.5-year timeframe to May 2026, there's substantial time for both a significant decline AND recovery. The research indicates SPY is currently around $580-590, making $436 roughly a 25-33% decline. While such corrections do occur regularly, the long-term upward trend of equity markets driven by economic growth, inflation, and earnings growth suggests sustained periods at such depressed levels are historically temporary. The strongest risk factors are recession, geopolitical crisis, or financial system stress, but even these typically don't keep markets depressed for the full 2.5-year period. My estimate of 78% reflects a modest upward adjustment from the base rate, acknowledging both the historical resilience of equity markets over multi-year periods and the substantial uncertainty around current conditions and potential near-term volatility."
     }
   ]
 }
