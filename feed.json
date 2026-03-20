@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T11:20:50.101711+00:00",
+  "updated_at": "2026-03-20T11:32:53.301677+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T11:20:50.101718+00:00",
+    "last_heartbeat": "2026-03-20T11:32:53.301684+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -1327,6 +1327,23 @@
     }
   ],
   "markets": [
+    {
+      "id": 525,
+      "platform": "manifold",
+      "market_id": "4kreogtql1",
+      "question": "Will US inflation go above 3% before unemployment goes below 4%?",
+      "current_yes_price": 0.8478385444848827,
+      "current_no_price": 0.15216145551511728,
+      "volume": 275.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-11T12:59:00+00:00",
+      "category": "sports",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T11:32:49.627793",
+      "est_prob": null,
+      "est_conf": null,
+      "est_reasoning": null
+    },
     {
       "id": 524,
       "platform": "manifold",
@@ -3009,23 +3026,6 @@
       "est_prob": 0.98,
       "est_conf": 0.4,
       "est_reasoning": "The base rate for 'something happening' in Iran during any given month is extremely high (~95%) given frequent sanctions, diplomatic incidents, proxy conflicts, and military activities. The evidence strongly suggests significant events are already occurring in March 2026 - multiple sources describe an active 'Iran war' with US/Israeli forces, drone threats, warship incidents, and evacuation advisories. This clearly constitutes 'something happening' under any reasonable interpretation. I adjust upward to 98% because the current military conflict represents extraordinary activity well beyond typical monthly events. However, my confidence is low (0.4) due to the critical ambiguity in resolution criteria - without knowing what threshold triggers YES resolution, there's risk that even ongoing warfare might not qualify under an extremely narrow interpretation. The question's vagueness creates significant uncertainty despite strong evidence that major events are occurring."
-    },
-    {
-      "id": 425,
-      "platform": "manifold",
-      "market_id": "pulqzqzCnA",
-      "question": "Will the NSF send offer letters for the 2026-2027 MSPRF by March 24?",
-      "current_yes_price": 0.38986339576475815,
-      "current_no_price": 0.6101366042352419,
-      "volume": 151.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-03-23T23:59:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T07:50:20.606303",
-      "est_prob": 0.35,
-      "est_conf": 0.3,
-      "est_reasoning": "Without historical data on when NSF typically sends MSPRF offer letters, I cannot establish a reliable base rate. The key constraint is the reported budget delays as of March 3, 2026, which could significantly impact fellowship processing. However, this information is now 2-3 weeks old and the current status is unknown. The extremely tight timeline (deadline March 24) suggests either offers would normally go out around this time, or the market is testing whether delays will prevent timely delivery. Given the budget constraints mentioned and the lack of any positive signals about timeline adherence, I'm estimating below 50%. However, government programs often have established timelines they try to meet despite budget pressures, so I'm not going extremely low. The high uncertainty reflects the critical missing information about historical timing patterns and current NSF operational status."
     }
   ]
 }
