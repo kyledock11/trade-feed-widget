@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-20T17:50:50.180066+00:00",
+  "updated_at": "2026-03-20T18:03:18.069598+00:00",
   "bot_status": {
     "mode": "manifold_play",
     "phase": "learning",
-    "last_heartbeat": "2026-03-20T17:50:50.180073+00:00",
+    "last_heartbeat": "2026-03-20T18:03:18.069606+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -862,6 +862,16 @@
   ],
   "estimates": [
     {
+      "id": 138,
+      "market_id": "8zyPl5Ep2n",
+      "probability": 0.25,
+      "confidence": 0.2,
+      "reasoning": "Without any historical viewership data for The Amazing Digital Circus episodes, I cannot establish a meaningful base rate. However, I can reason about the general difficulty of achieving 50 million YouTube views. This is an extremely high threshold - most YouTube videos never reach this level, and it typically requires either viral success or content from mega-popular channels. The favorable factors are that Episode 8 appears likely to release well before the April 2026 deadline (based on March 2026 trailer evidence), giving substantial time for view accumulation. However, 50 million views represents a massive audience that would likely require the series to have extraordinary popularity. Given the complete lack of performance data for previous episodes, I'm estimating this as unlikely but not impossible, settling on 25% with very low confidence due to the critical information gaps.",
+      "key_uncertainties": "[\"No historical viewership data for previous episodes to establish performance patterns\", \"Unknown exact release date for Episode 8, only trailer evidence from March 2026\", \"Missing channel subscriber count and typical episode performance metrics\", \"Unclear which specific YouTube channel or upload counts toward the 50M threshold\", \"Unknown view accumulation patterns and viral potential for this series\", \"Uncertainty about marketing push and audience engagement for Episode 8\"]",
+      "base_rate": null,
+      "created_at": "2026-03-20T18:03:18.035078"
+    },
+    {
       "id": 137,
       "market_id": "cgtL266SNP",
       "probability": 0.45,
@@ -1350,19 +1360,26 @@
       "key_uncertainties": "[\"Random outcome \\u2014 no information advantage\"]",
       "base_rate": 0.5,
       "created_at": "2026-03-19T23:51:11.350401"
-    },
-    {
-      "id": 88,
-      "market_id": "6Zy0AhhshR",
-      "probability": 0.5,
-      "confidence": 0.15,
-      "reasoning": "Coin flip market \u2014 pure randomness, no edge possible.",
-      "key_uncertainties": "[\"Random outcome \\u2014 no information advantage\"]",
-      "base_rate": 0.5,
-      "created_at": "2026-03-19T23:51:11.026502"
     }
   ],
   "markets": [
+    {
+      "id": 701,
+      "platform": "manifold",
+      "market_id": "8zyPl5Ep2n",
+      "question": "Will The Amazing Digital Circus Episode 8 reach 50 million views by the end of April?",
+      "current_yes_price": 0.40929671799207884,
+      "current_no_price": 0.5907032820079212,
+      "volume": 50.0,
+      "liquidity": 1000.0,
+      "close_date": "2026-04-30T23:59:00+00:00",
+      "category": "other",
+      "resolution_source": "",
+      "scanned_at": "2026-03-20T18:02:49.493622",
+      "est_prob": 0.25,
+      "est_conf": 0.2,
+      "est_reasoning": "Without any historical viewership data for The Amazing Digital Circus episodes, I cannot establish a meaningful base rate. However, I can reason about the general difficulty of achieving 50 million YouTube views. This is an extremely high threshold - most YouTube videos never reach this level, and it typically requires either viral success or content from mega-popular channels. The favorable factors are that Episode 8 appears likely to release well before the April 2026 deadline (based on March 2026 trailer evidence), giving substantial time for view accumulation. However, 50 million views represents a massive audience that would likely require the series to have extraordinary popularity. Given the complete lack of performance data for previous episodes, I'm estimating this as unlikely but not impossible, settling on 25% with very low confidence due to the critical information gaps."
+    },
     {
       "id": 700,
       "platform": "manifold",
@@ -3045,23 +3062,6 @@
       "est_prob": 0.12,
       "est_conf": 0.4,
       "est_reasoning": "Starting with a very low base rate of ~2% for established theocratic governments collapsing in short timeframes, as the Iranian regime has survived 47 years through multiple existential crises including the Iran-Iraq War, severe sanctions, and numerous protest movements. However, I'm adjusting significantly upward to 12% due to several concerning factors: reported deaths of top Iranian officials, active military conflict with major powers (U.S. and Israel), and organized exile movements positioning for transition. The key concern is the apparent military escalation, which represents a different category of threat than previous challenges the regime has faced. However, my confidence is low (0.4) due to critical information gaps - we lack verification of the military conflict's scope, current military loyalty, territorial control, or the Supreme Leader's status. The resolution criteria ambiguity ('government falls') adds further uncertainty. The short 11-day timeframe until market close means dramatic changes could occur rapidly, but also limits the time available for a complete regime collapse to unfold."
-    },
-    {
-      "id": 601,
-      "platform": "manifold",
-      "market_id": "Ehyqgs0czE",
-      "question": "Will Mojtaba Khamenei be shown alive on video between March 8th and April 1, 2026?",
-      "current_yes_price": 0.27,
-      "current_no_price": 0.73,
-      "volume": 250.0,
-      "liquidity": 1000.0,
-      "close_date": "2026-04-01T00:00:00+00:00",
-      "category": "other",
-      "resolution_source": "",
-      "scanned_at": "2026-03-20T14:32:49.670325",
-      "est_prob": 0.25,
-      "est_conf": 0.4,
-      "est_reasoning": "Starting from a base rate where healthy leaders typically appear on video (~85%), I'm adjusting significantly downward due to credible reports of serious health issues. The opposition claims of coma, the pattern of only written statements, and Iran's historical secrecy during leadership health crises all point toward incapacitation. The high bar of video evidence within just 24 days makes this unlikely unless he recovers substantially. However, uncertainty remains high due to the secretive nature of the situation and potential for rapid changes in his condition."
     }
   ]
 }
