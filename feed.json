@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-21T17:37:00.090799+00:00",
+  "updated_at": "2026-03-21T23:39:08.680203+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-21T17:37:00.090809+00:00",
+    "last_heartbeat": "2026-03-21T23:39:08.680211+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -78,11 +78,11 @@
   },
   "stats": {
     "total_trades": 138,
-    "open_positions": 72,
-    "resolved": 66,
-    "win_rate": 80.3030303030303,
-    "brier_score": 0.5614,
-    "avg_edge": 0.1334
+    "open_positions": 70,
+    "resolved": 68,
+    "win_rate": 79.41176470588235,
+    "brier_score": 0.5501,
+    "avg_edge": 0.1317
   },
   "exposure": {
     "by_category": {
@@ -91,8 +91,8 @@
         "deployed": 281.8
       },
       "uncategorized": {
-        "count": 54,
-        "deployed": 1129.6
+        "count": 52,
+        "deployed": 1095.72
       },
       "sports": {
         "count": 1,
@@ -117,24 +117,24 @@
     },
     "by_direction": {
       "yes": {
-        "count": 51,
-        "deployed": 761.55
+        "count": 50,
+        "deployed": 744.03
       },
       "no": {
-        "count": 21,
-        "deployed": 892.36
+        "count": 20,
+        "deployed": 876.0
       }
     },
-    "high_edge_count": 38,
-    "low_edge_count": 34,
-    "high_edge_deployed": 1161.12,
-    "low_edge_deployed": 492.79
+    "high_edge_count": 37,
+    "low_edge_count": 33,
+    "high_edge_deployed": 1143.6,
+    "low_edge_deployed": 476.43
   },
   "learning": {
-    "resolved_trades": 66,
+    "resolved_trades": 68,
     "target_resolved": 100,
-    "brier_score": 0.5614,
-    "win_rate": 80.3030303030303,
+    "brier_score": 0.5501,
+    "win_rate": 79.41176470588235,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -263,24 +263,24 @@
     "accounts": [
       {
         "name": "apo11o",
-        "balance": 681.31,
+        "balance": 701.01,
         "deposited": 1100
       },
       {
         "name": "hal",
-        "balance": 407.8,
+        "balance": 507.8,
         "deposited": 1000
       },
       {
         "name": "Jarvis",
-        "balance": 518.36,
+        "balance": 618.36,
         "deposited": 1000
       }
     ],
-    "total_cash": 1607.47,
+    "total_cash": 1827.17,
     "total_deposited": 3100,
-    "total_in_positions": 1653.91,
-    "market_impact": 161.38
+    "total_in_positions": 1620.03,
+    "market_impact": 347.2
   },
   "resolution_timeline": [
     {
@@ -324,7 +324,7 @@
     },
     {
       "date": "2026-04-01",
-      "count": 6,
+      "count": 5,
       "markets": [
         "Will OpenAI IPO and be a publicly traded company in the United States by the end of March 2026?",
         "Is/Was Benjamin Netanyahu dead or grievously injured as of March 12-14, 2026",
@@ -357,30 +357,30 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1188.94,
-        "cash": -157.41
+        "deployed": 1171.42,
+        "cash": -139.89
       },
       "stats": {
         "total_trades": 100,
-        "open_positions": 48,
-        "resolved": 52,
-        "total_pnl": 10604.62,
-        "avg_edge": 0.1276
+        "open_positions": 47,
+        "resolved": 53,
+        "total_pnl": 10607.76,
+        "avg_edge": 0.124
       },
       "exposure": {
         "by_direction": {
           "yes": {
-            "count": 35,
-            "deployed": 516.43
+            "count": 34,
+            "deployed": 498.91
           },
           "no": {
             "count": 13,
             "deployed": 672.51
           }
         },
-        "high_edge_count": 25,
+        "high_edge_count": 24,
         "low_edge_count": 23,
-        "high_edge_deployed": 845.49,
+        "high_edge_deployed": 827.97,
         "low_edge_deployed": 343.45
       },
       "trades": [
@@ -1673,11 +1673,11 @@
           "estimated_probability": 0.6200386129121157,
           "edge": 0.2961,
           "kelly_fraction": 0.0175,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 0.3818797022457968,
+          "pnl": 3.1337044880213014,
           "created_at": "2026-03-19T20:33:17.252178",
-          "resolved_at": null,
+          "resolved_at": "2026-03-21T23:39:06.896165+00:00",
           "is_hedge": true
         },
         {
@@ -2193,16 +2193,16 @@
       "account": "hal",
       "accent": "amber",
       "portfolio": {
-        "bankroll": 1004.6962211860889,
-        "deployed": 63.04,
+        "bankroll": 988.3362211860889,
+        "deployed": 46.68,
         "cash": 941.66
       },
       "stats": {
         "total_trades": 8,
-        "open_positions": 4,
-        "resolved": 4,
-        "total_pnl": 4.7,
-        "avg_edge": 0.1051
+        "open_positions": 3,
+        "resolved": 5,
+        "total_pnl": -11.66,
+        "avg_edge": 0.1101
       },
       "exposure": {
         "by_direction": {
@@ -2211,14 +2211,14 @@
             "deployed": 29.19
           },
           "no": {
-            "count": 2,
-            "deployed": 33.85
+            "count": 1,
+            "deployed": 17.49
           }
         },
         "high_edge_count": 2,
-        "low_edge_count": 2,
+        "low_edge_count": 1,
         "high_edge_deployed": 32.49,
-        "low_edge_deployed": 30.55
+        "low_edge_deployed": 14.19
       },
       "trades": [
         {
@@ -2340,11 +2340,11 @@
           "estimated_probability": 0.4600000000000002,
           "edge": 0.09,
           "kelly_fraction": 0.0164,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 1.0,
+          "pnl": -16.36,
           "created_at": "2026-03-19T22:14:17.246531",
-          "resolved_at": null,
+          "resolved_at": "2026-03-21T19:56:35.926340",
           "is_hedge": true
         },
         {
@@ -4667,11 +4667,11 @@
       "estimated_probability": 0.4600000000000002,
       "edge": 0.09,
       "kelly_fraction": 0.0164,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 1.0,
+      "pnl": -16.36,
       "created_at": "2026-03-19T22:14:17.246531",
-      "resolved_at": null,
+      "resolved_at": "2026-03-21T19:56:35.926340",
       "is_hedge": true
     },
     {
@@ -4829,11 +4829,11 @@
       "estimated_probability": 0.6200386129121157,
       "edge": 0.2961,
       "kelly_fraction": 0.0175,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 0.3818797022457968,
+      "pnl": 3.1337044880213014,
       "created_at": "2026-03-19T20:33:17.252178",
-      "resolved_at": null,
+      "resolved_at": "2026-03-21T23:39:06.896165+00:00",
       "is_hedge": true
     },
     {
