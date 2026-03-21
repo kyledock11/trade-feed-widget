@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-21T05:02:27.320774+00:00",
+  "updated_at": "2026-03-21T05:47:44.602288+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-21T05:02:27.320784+00:00",
+    "last_heartbeat": "2026-03-21T05:47:44.602297+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -78,11 +78,11 @@
   },
   "stats": {
     "total_trades": 133,
-    "open_positions": 75,
-    "resolved": 58,
-    "win_rate": 81.03448275862068,
-    "brier_score": 0.5541,
-    "avg_edge": 0.1313
+    "open_positions": 73,
+    "resolved": 60,
+    "win_rate": 81.66666666666667,
+    "brier_score": 0.5638,
+    "avg_edge": 0.1336
   },
   "exposure": {
     "by_category": {
@@ -94,10 +94,6 @@
         "count": 3,
         "deployed": 325.03
       },
-      "geopolitics": {
-        "count": 9,
-        "deployed": 105.65
-      },
       "politics": {
         "count": 2,
         "deployed": 36.94
@@ -105,6 +101,10 @@
       "other": {
         "count": 5,
         "deployed": 116.03
+      },
+      "geopolitics": {
+        "count": 7,
+        "deployed": 102.8
       },
       "entertainment": {
         "count": 1,
@@ -117,8 +117,8 @@
     },
     "by_direction": {
       "yes": {
-        "count": 53,
-        "deployed": 764.4
+        "count": 51,
+        "deployed": 761.55
       },
       "no": {
         "count": 22,
@@ -126,15 +126,15 @@
       }
     },
     "high_edge_count": 39,
-    "low_edge_count": 36,
+    "low_edge_count": 34,
     "high_edge_deployed": 1274.54,
-    "low_edge_deployed": 495.64
+    "low_edge_deployed": 492.79
   },
   "learning": {
-    "resolved_trades": 58,
+    "resolved_trades": 60,
     "target_resolved": 100,
-    "brier_score": 0.5541,
-    "win_rate": 81.03448275862068,
+    "brier_score": 0.5638,
+    "win_rate": 81.66666666666667,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -263,7 +263,7 @@
     "accounts": [
       {
         "name": "apo11o",
-        "balance": 677.68,
+        "balance": 681.31,
         "deposited": 1100
       },
       {
@@ -273,14 +273,14 @@
       },
       {
         "name": "Jarvis",
-        "balance": 502.59,
+        "balance": 518.36,
         "deposited": 1000
       }
     ],
-    "total_cash": 1767.07,
+    "total_cash": 1786.47,
     "total_deposited": 3100,
-    "total_in_positions": 1770.18,
-    "market_impact": 437.25
+    "total_in_positions": 1767.33,
+    "market_impact": 453.8
   },
   "resolution_timeline": [
     {
@@ -313,7 +313,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 7,
+      "count": 6,
       "markets": [
         "Will Iran shoot down a US military plane/helicopter by end of March?",
         "Will the WTI Crude Oil Spot Price be above $95 on March 31, 2026?",
@@ -357,21 +357,21 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1305.21,
-        "cash": -273.68
+        "deployed": 1302.36,
+        "cash": -270.83
       },
       "stats": {
         "total_trades": 95,
-        "open_positions": 51,
-        "resolved": 44,
-        "total_pnl": 6126.48,
-        "avg_edge": 0.1248
+        "open_positions": 49,
+        "resolved": 46,
+        "total_pnl": 6127.34,
+        "avg_edge": 0.128
       },
       "exposure": {
         "by_direction": {
           "yes": {
-            "count": 37,
-            "deployed": 519.28
+            "count": 35,
+            "deployed": 516.43
           },
           "no": {
             "count": 14,
@@ -379,9 +379,9 @@
           }
         },
         "high_edge_count": 26,
-        "low_edge_count": 25,
+        "low_edge_count": 23,
         "high_edge_deployed": 958.91,
-        "low_edge_deployed": 346.3
+        "low_edge_deployed": 343.45
       },
       "trades": [
         {
@@ -683,11 +683,11 @@
           "estimated_probability": 0.07996728367098807,
           "edge": 0.047,
           "kelly_fraction": 0.0015,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 0.04266126360330913,
+          "pnl": 0.4293107931620057,
           "created_at": "2026-03-20T18:17:12.633336",
-          "resolved_at": null,
+          "resolved_at": "2026-03-21T05:47:42.576679+00:00",
           "is_hedge": false
         },
         {
@@ -827,11 +827,11 @@
           "estimated_probability": 0.07996754126390679,
           "edge": 0.0445,
           "kelly_fraction": 0.0014,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 0.04266126360330913,
+          "pnl": 0.4352158267219457,
           "created_at": "2026-03-20T16:15:55.583112",
-          "resolved_at": null,
+          "resolved_at": "2026-03-21T05:47:43.804463+00:00",
           "is_hedge": false
         },
         {
@@ -3191,11 +3191,11 @@
       "estimated_probability": 0.07996728367098807,
       "edge": 0.047,
       "kelly_fraction": 0.0015,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 0.04266126360330913,
+      "pnl": 0.4293107931620057,
       "created_at": "2026-03-20T18:17:12.633336",
-      "resolved_at": null,
+      "resolved_at": "2026-03-21T05:47:42.576679+00:00",
       "is_hedge": false
     },
     {
@@ -3389,11 +3389,11 @@
       "estimated_probability": 0.07996754126390679,
       "edge": 0.0445,
       "kelly_fraction": 0.0014,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 0.04266126360330913,
+      "pnl": 0.4352158267219457,
       "created_at": "2026-03-20T16:15:55.583112",
-      "resolved_at": null,
+      "resolved_at": "2026-03-21T05:47:43.804463+00:00",
       "is_hedge": false
     },
     {
