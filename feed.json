@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-21T05:47:44.602288+00:00",
+  "updated_at": "2026-03-21T07:18:17.804075+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-21T05:47:44.602297+00:00",
+    "last_heartbeat": "2026-03-21T07:18:17.804083+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -78,10 +78,10 @@
   },
   "stats": {
     "total_trades": 133,
-    "open_positions": 73,
-    "resolved": 60,
-    "win_rate": 81.66666666666667,
-    "brier_score": 0.5638,
+    "open_positions": 72,
+    "resolved": 61,
+    "win_rate": 80.32786885245902,
+    "brier_score": 0.5568,
     "avg_edge": 0.1336
   },
   "exposure": {
@@ -91,8 +91,8 @@
         "deployed": 1129.6
       },
       "sports": {
-        "count": 3,
-        "deployed": 325.03
+        "count": 2,
+        "deployed": 178.82
       },
       "politics": {
         "count": 2,
@@ -121,20 +121,20 @@
         "deployed": 761.55
       },
       "no": {
-        "count": 22,
-        "deployed": 1005.78
+        "count": 21,
+        "deployed": 859.57
       }
     },
-    "high_edge_count": 39,
+    "high_edge_count": 38,
     "low_edge_count": 34,
-    "high_edge_deployed": 1274.54,
+    "high_edge_deployed": 1128.33,
     "low_edge_deployed": 492.79
   },
   "learning": {
-    "resolved_trades": 60,
+    "resolved_trades": 61,
     "target_resolved": 100,
-    "brier_score": 0.5638,
-    "win_rate": 81.66666666666667,
+    "brier_score": 0.5568,
+    "win_rate": 80.32786885245902,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -279,8 +279,8 @@
     ],
     "total_cash": 1786.47,
     "total_deposited": 3100,
-    "total_in_positions": 1767.33,
-    "market_impact": 453.8
+    "total_in_positions": 1621.12,
+    "market_impact": 307.59
   },
   "resolution_timeline": [
     {
@@ -357,14 +357,14 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1302.36,
-        "cash": -270.83
+        "deployed": 1156.15,
+        "cash": -124.62
       },
       "stats": {
         "total_trades": 95,
-        "open_positions": 49,
-        "resolved": 46,
-        "total_pnl": 6127.34,
+        "open_positions": 48,
+        "resolved": 47,
+        "total_pnl": 5981.13,
         "avg_edge": 0.128
       },
       "exposure": {
@@ -374,13 +374,13 @@
             "deployed": 516.43
           },
           "no": {
-            "count": 14,
-            "deployed": 785.93
+            "count": 13,
+            "deployed": 639.72
           }
         },
-        "high_edge_count": 26,
+        "high_edge_count": 25,
         "low_edge_count": 23,
-        "high_edge_deployed": 958.91,
+        "high_edge_deployed": 812.7,
         "low_edge_deployed": 343.45
       },
       "trades": [
@@ -521,11 +521,11 @@
           "estimated_probability": 0.3703,
           "edge": 0.1301,
           "kelly_fraction": 0.0,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 0.0,
+          "pnl": -146.21,
           "created_at": "2026-03-20T23:41:41.366100+00:00",
-          "resolved_at": null,
+          "resolved_at": "2026-03-21T07:18:16.989079+00:00",
           "is_hedge": false
         },
         {
@@ -2993,11 +2993,11 @@
       "estimated_probability": 0.3703,
       "edge": 0.1301,
       "kelly_fraction": 0.0,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 0.0,
+      "pnl": -146.21,
       "created_at": "2026-03-20T23:41:41.366100+00:00",
-      "resolved_at": null,
+      "resolved_at": "2026-03-21T07:18:16.989079+00:00",
       "is_hedge": false
     },
     {
