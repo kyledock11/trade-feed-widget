@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-21T04:47:18.420273+00:00",
+  "updated_at": "2026-03-21T05:02:27.320774+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-21T04:47:18.420283+00:00",
+    "last_heartbeat": "2026-03-21T05:02:27.320784+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -78,17 +78,17 @@
   },
   "stats": {
     "total_trades": 133,
-    "open_positions": 76,
-    "resolved": 57,
-    "win_rate": 80.7017543859649,
-    "brier_score": 0.5534,
-    "avg_edge": 0.1323
+    "open_positions": 75,
+    "resolved": 58,
+    "win_rate": 81.03448275862068,
+    "brier_score": 0.5541,
+    "avg_edge": 0.1313
   },
   "exposure": {
     "by_category": {
       "uncategorized": {
-        "count": 55,
-        "deployed": 1140.33
+        "count": 54,
+        "deployed": 1129.6
       },
       "sports": {
         "count": 3,
@@ -117,24 +117,24 @@
     },
     "by_direction": {
       "yes": {
-        "count": 54,
-        "deployed": 775.13
+        "count": 53,
+        "deployed": 764.4
       },
       "no": {
         "count": 22,
         "deployed": 1005.78
       }
     },
-    "high_edge_count": 40,
+    "high_edge_count": 39,
     "low_edge_count": 36,
-    "high_edge_deployed": 1285.27,
+    "high_edge_deployed": 1274.54,
     "low_edge_deployed": 495.64
   },
   "learning": {
-    "resolved_trades": 57,
+    "resolved_trades": 58,
     "target_resolved": 100,
-    "brier_score": 0.5534,
-    "win_rate": 80.7017543859649,
+    "brier_score": 0.5541,
+    "win_rate": 81.03448275862068,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -263,7 +263,7 @@
     "accounts": [
       {
         "name": "apo11o",
-        "balance": 665.71,
+        "balance": 677.68,
         "deposited": 1100
       },
       {
@@ -277,10 +277,10 @@
         "deposited": 1000
       }
     ],
-    "total_cash": 1755.1,
+    "total_cash": 1767.07,
     "total_deposited": 3100,
-    "total_in_positions": 1780.91,
-    "market_impact": 436.01
+    "total_in_positions": 1770.18,
+    "market_impact": 437.25
   },
   "resolution_timeline": [
     {
@@ -357,30 +357,30 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1315.94,
-        "cash": -284.41
+        "deployed": 1305.21,
+        "cash": -273.68
       },
       "stats": {
         "total_trades": 95,
-        "open_positions": 52,
-        "resolved": 43,
-        "total_pnl": 6123.35,
-        "avg_edge": 0.1264
+        "open_positions": 51,
+        "resolved": 44,
+        "total_pnl": 6126.48,
+        "avg_edge": 0.1248
       },
       "exposure": {
         "by_direction": {
           "yes": {
-            "count": 38,
-            "deployed": 530.01
+            "count": 37,
+            "deployed": 519.28
           },
           "no": {
             "count": 14,
             "deployed": 785.93
           }
         },
-        "high_edge_count": 27,
+        "high_edge_count": 26,
         "low_edge_count": 25,
-        "high_edge_deployed": 969.64,
+        "high_edge_deployed": 958.91,
         "low_edge_deployed": 346.3
       },
       "trades": [
@@ -1205,11 +1205,11 @@
           "estimated_probability": 0.22996277427759207,
           "edge": 0.2103,
           "kelly_fraction": 0.0107,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 0.02538736500066543,
+          "pnl": 3.123916167240827,
           "created_at": "2026-03-19T23:09:45.930053",
-          "resolved_at": null,
+          "resolved_at": "2026-03-21T05:02:26.294821+00:00",
           "is_hedge": false
         },
         {
@@ -2103,9 +2103,9 @@
       "account": "hal",
       "accent": "amber",
       "portfolio": {
-        "bankroll": 1024.696221186089,
+        "bankroll": 1004.6962211860889,
         "deployed": 63.04,
-        "cash": 961.66
+        "cash": 941.66
       },
       "stats": {
         "total_trades": 8,
@@ -2284,9 +2284,9 @@
       "account": "Jarvis",
       "accent": "blue",
       "portfolio": {
-        "bankroll": 1006.2341119770538,
+        "bankroll": 956.2341119770538,
         "deployed": 401.93,
-        "cash": 604.3
+        "cash": 554.3
       },
       "stats": {
         "total_trades": 30,
@@ -4037,11 +4037,11 @@
       "estimated_probability": 0.22996277427759207,
       "edge": 0.2103,
       "kelly_fraction": 0.0107,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 0.02538736500066543,
+      "pnl": 3.123916167240827,
       "created_at": "2026-03-19T23:09:45.930053",
-      "resolved_at": null,
+      "resolved_at": "2026-03-21T05:02:26.294821+00:00",
       "is_hedge": false
     },
     {
