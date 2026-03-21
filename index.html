@@ -1268,10 +1268,8 @@ function updatePortfolioFromData(data) {
   realEl.textContent = formatMoney(realizedPnl);
   realEl.className = 'stat-value' + (realizedPnl > 0.01 ? ' positive' : realizedPnl < -0.01 ? ' negative' : '');
 
-  // Total P&L = Market Impact from account balances (source of truth)
-  // Formula: (cash + deployed) - deposits = net gain/loss
-  const ab = feedData && feedData.account_balances;
-  const totalPnl = ab ? ab.market_impact : realizedPnl;
+  // Total P&L = sum of resolved trade P&L (same as realized)
+  const totalPnl = realizedPnl;
   const pnlEl = document.getElementById('sPnl');
   pnlEl.textContent = formatMoney(totalPnl);
   pnlEl.className = 'stat-value' + (totalPnl > 0.01 ? ' positive' : totalPnl < -0.01 ? ' negative' : '');
