@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-21T07:18:17.804075+00:00",
+  "updated_at": "2026-03-21T17:37:00.090799+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-21T07:18:17.804083+00:00",
+    "last_heartbeat": "2026-03-21T17:37:00.090809+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -77,22 +77,26 @@
     "max_drawdown": 0.0
   },
   "stats": {
-    "total_trades": 133,
+    "total_trades": 138,
     "open_positions": 72,
-    "resolved": 61,
-    "win_rate": 80.32786885245902,
-    "brier_score": 0.5568,
-    "avg_edge": 0.1336
+    "resolved": 66,
+    "win_rate": 80.3030303030303,
+    "brier_score": 0.5614,
+    "avg_edge": 0.1334
   },
   "exposure": {
     "by_category": {
+      "geopolitics": {
+        "count": 8,
+        "deployed": 281.8
+      },
       "uncategorized": {
         "count": 54,
         "deployed": 1129.6
       },
       "sports": {
-        "count": 2,
-        "deployed": 178.82
+        "count": 1,
+        "deployed": 32.61
       },
       "politics": {
         "count": 2,
@@ -101,10 +105,6 @@
       "other": {
         "count": 5,
         "deployed": 116.03
-      },
-      "geopolitics": {
-        "count": 7,
-        "deployed": 102.8
       },
       "entertainment": {
         "count": 1,
@@ -122,19 +122,19 @@
       },
       "no": {
         "count": 21,
-        "deployed": 859.57
+        "deployed": 892.36
       }
     },
     "high_edge_count": 38,
     "low_edge_count": 34,
-    "high_edge_deployed": 1128.33,
+    "high_edge_deployed": 1161.12,
     "low_edge_deployed": 492.79
   },
   "learning": {
-    "resolved_trades": 61,
+    "resolved_trades": 66,
     "target_resolved": 100,
-    "brier_score": 0.5568,
-    "win_rate": 80.32786885245902,
+    "brier_score": 0.5614,
+    "win_rate": 80.3030303030303,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -268,7 +268,7 @@
       },
       {
         "name": "hal",
-        "balance": 586.8,
+        "balance": 407.8,
         "deposited": 1000
       },
       {
@@ -277,10 +277,10 @@
         "deposited": 1000
       }
     ],
-    "total_cash": 1786.47,
+    "total_cash": 1607.47,
     "total_deposited": 3100,
-    "total_in_positions": 1621.12,
-    "market_impact": 307.59
+    "total_in_positions": 1653.91,
+    "market_impact": 161.38
   },
   "resolution_timeline": [
     {
@@ -357,15 +357,15 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1156.15,
-        "cash": -124.62
+        "deployed": 1188.94,
+        "cash": -157.41
       },
       "stats": {
-        "total_trades": 95,
+        "total_trades": 100,
         "open_positions": 48,
-        "resolved": 47,
-        "total_pnl": 5981.13,
-        "avg_edge": 0.128
+        "resolved": 52,
+        "total_pnl": 10604.62,
+        "avg_edge": 0.1276
       },
       "exposure": {
         "by_direction": {
@@ -375,15 +375,105 @@
           },
           "no": {
             "count": 13,
-            "deployed": 639.72
+            "deployed": 672.51
           }
         },
         "high_edge_count": 25,
         "low_edge_count": 23,
-        "high_edge_deployed": 812.7,
+        "high_edge_deployed": 845.49,
         "low_edge_deployed": 343.45
       },
       "trades": [
+        {
+          "id": 62,
+          "market_id": "Incl8ICc5g",
+          "platform": "manifold",
+          "question": "Strait of Hormuz traffic returns to normal by April 30?",
+          "direction": "no",
+          "size": 179.0,
+          "entry_price": 0.04072271808842563,
+          "estimated_probability": 0.11,
+          "edge": 0.13,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.03798539692712016,
+          "pnl": 4049.6129716618543,
+          "created_at": "2026-03-21T17:29:22.937471+00:00",
+          "resolved_at": "2026-03-21T17:36:59.244131+00:00",
+          "is_hedge": true
+        },
+        {
+          "id": 61,
+          "market_id": "SAAsu5gn5C",
+          "platform": "manifold",
+          "question": "Will Iranian Foreign Minister Abbas Araghchi still be alive by June 1st?",
+          "direction": "no",
+          "size": 179.0,
+          "entry_price": 0.5825613732656826,
+          "estimated_probability": 0.43,
+          "edge": 0.15,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-21T17:29:22.834409+00:00",
+          "resolved_at": null,
+          "is_hedge": true
+        },
+        {
+          "id": 60,
+          "market_id": "qp29pcz9ZO",
+          "platform": "manifold",
+          "question": "Will Gold be between $5000 - $6000 by the end of March?",
+          "direction": "no",
+          "size": 179.0,
+          "entry_price": 0.3802829303837516,
+          "estimated_probability": 0.14,
+          "edge": 0.24,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.3206492276073173,
+          "pnl": 140.7718817817493,
+          "created_at": "2026-03-21T17:29:22.732934+00:00",
+          "resolved_at": "2026-03-21T17:36:59.077671+00:00",
+          "is_hedge": false
+        },
+        {
+          "id": 59,
+          "market_id": "zq8O5ZlPIh",
+          "platform": "manifold",
+          "question": "Will the US strike Yemen by April 30, 2026?",
+          "direction": "no",
+          "size": 179.0,
+          "entry_price": 0.24920032958842672,
+          "estimated_probability": 0.15,
+          "edge": 0.24,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.12933441591764425,
+          "pnl": 446.3970041216975,
+          "created_at": "2026-03-21T17:29:22.637614+00:00",
+          "resolved_at": "2026-03-21T17:36:58.982889+00:00",
+          "is_hedge": true
+        },
+        {
+          "id": 58,
+          "market_id": "uphA9gU6z0",
+          "platform": "manifold",
+          "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
+          "direction": "no",
+          "size": 179.0,
+          "entry_price": 0.3868151637123985,
+          "estimated_probability": 0.15,
+          "edge": 0.24,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.3259456684956601,
+          "pnl": 132.9208776132307,
+          "created_at": "2026-03-21T17:29:22.540055+00:00",
+          "resolved_at": "2026-03-21T17:36:58.890309+00:00",
+          "is_hedge": false
+        },
         {
           "id": 57,
           "market_id": "lOyNZns6QS",
@@ -593,11 +683,11 @@
           "estimated_probability": 0.33,
           "edge": 0.17,
           "kelly_fraction": 0.0,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 1.0,
+          "pnl": -146.21,
           "created_at": "2026-03-20T23:41:40.923258+00:00",
-          "resolved_at": null,
+          "resolved_at": "2026-03-21T12:26:35.716238",
           "is_hedge": false
         },
         {
@@ -1120,7 +1210,7 @@
           "pnl": 5.742641107365564,
           "created_at": "2026-03-19T23:34:07.163085",
           "resolved_at": "2026-03-21T00:30:25.749281+00:00",
-          "is_hedge": false
+          "is_hedge": true
         },
         {
           "id": 24,
@@ -1858,7 +1948,7 @@
           "pnl": 7.578445715198487,
           "created_at": "2026-03-19T18:46:46.296665",
           "resolved_at": "2026-03-21T00:30:22.583861+00:00",
-          "is_hedge": false
+          "is_hedge": true
         },
         {
           "id": 13,
@@ -2147,7 +2237,7 @@
           "pnl": 4.547711322210354,
           "created_at": "2026-03-20T16:19:56.270704",
           "resolved_at": "2026-03-21T03:46:53.230042+00:00",
-          "is_hedge": false
+          "is_hedge": true
         },
         {
           "id": 7,
@@ -2382,7 +2472,7 @@
           "pnl": 7.6494587877576805,
           "created_at": "2026-03-20T16:20:00.599932",
           "resolved_at": "2026-03-21T03:46:53.986503+00:00",
-          "is_hedge": false
+          "is_hedge": true
         },
         {
           "id": 26,
@@ -2652,7 +2742,7 @@
           "pnl": 12.055902215860494,
           "created_at": "2026-03-19T22:17:19.883939",
           "resolved_at": "2026-03-21T00:30:29.904915+00:00",
-          "is_hedge": false
+          "is_hedge": true
         },
         {
           "id": 11,
@@ -2856,6 +2946,96 @@
     }
   ],
   "trades": [
+    {
+      "id": 62,
+      "market_id": "Incl8ICc5g",
+      "platform": "manifold",
+      "question": "Strait of Hormuz traffic returns to normal by April 30?",
+      "direction": "no",
+      "size": 179.0,
+      "entry_price": 0.04072271808842563,
+      "estimated_probability": 0.11,
+      "edge": 0.13,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.03798539692712016,
+      "pnl": 4049.6129716618543,
+      "created_at": "2026-03-21T17:29:22.937471+00:00",
+      "resolved_at": "2026-03-21T17:36:59.244131+00:00",
+      "is_hedge": true
+    },
+    {
+      "id": 61,
+      "market_id": "SAAsu5gn5C",
+      "platform": "manifold",
+      "question": "Will Iranian Foreign Minister Abbas Araghchi still be alive by June 1st?",
+      "direction": "no",
+      "size": 179.0,
+      "entry_price": 0.5825613732656826,
+      "estimated_probability": 0.43,
+      "edge": 0.15,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-21T17:29:22.834409+00:00",
+      "resolved_at": null,
+      "is_hedge": true
+    },
+    {
+      "id": 60,
+      "market_id": "qp29pcz9ZO",
+      "platform": "manifold",
+      "question": "Will Gold be between $5000 - $6000 by the end of March?",
+      "direction": "no",
+      "size": 179.0,
+      "entry_price": 0.3802829303837516,
+      "estimated_probability": 0.14,
+      "edge": 0.24,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.3206492276073173,
+      "pnl": 140.7718817817493,
+      "created_at": "2026-03-21T17:29:22.732934+00:00",
+      "resolved_at": "2026-03-21T17:36:59.077671+00:00",
+      "is_hedge": false
+    },
+    {
+      "id": 59,
+      "market_id": "zq8O5ZlPIh",
+      "platform": "manifold",
+      "question": "Will the US strike Yemen by April 30, 2026?",
+      "direction": "no",
+      "size": 179.0,
+      "entry_price": 0.24920032958842672,
+      "estimated_probability": 0.15,
+      "edge": 0.24,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.12933441591764425,
+      "pnl": 446.3970041216975,
+      "created_at": "2026-03-21T17:29:22.637614+00:00",
+      "resolved_at": "2026-03-21T17:36:58.982889+00:00",
+      "is_hedge": true
+    },
+    {
+      "id": 58,
+      "market_id": "uphA9gU6z0",
+      "platform": "manifold",
+      "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
+      "direction": "no",
+      "size": 179.0,
+      "entry_price": 0.3868151637123985,
+      "estimated_probability": 0.15,
+      "edge": 0.24,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.3259456684956601,
+      "pnl": 132.9208776132307,
+      "created_at": "2026-03-21T17:29:22.540055+00:00",
+      "resolved_at": "2026-03-21T17:36:58.890309+00:00",
+      "is_hedge": false
+    },
     {
       "id": 57,
       "market_id": "lOyNZns6QS",
@@ -3065,11 +3245,11 @@
       "estimated_probability": 0.33,
       "edge": 0.17,
       "kelly_fraction": 0.0,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 1.0,
+      "pnl": -146.21,
       "created_at": "2026-03-20T23:41:40.923258+00:00",
-      "resolved_at": null,
+      "resolved_at": "2026-03-21T12:26:35.716238",
       "is_hedge": false
     },
     {
@@ -3358,7 +3538,7 @@
       "pnl": 7.6494587877576805,
       "created_at": "2026-03-20T16:20:00.599932",
       "resolved_at": "2026-03-21T03:46:53.986503+00:00",
-      "is_hedge": false
+      "is_hedge": true
     },
     {
       "id": 8,
@@ -3376,7 +3556,7 @@
       "pnl": 4.547711322210354,
       "created_at": "2026-03-20T16:19:56.270704",
       "resolved_at": "2026-03-21T03:46:53.230042+00:00",
-      "is_hedge": false
+      "is_hedge": true
     },
     {
       "id": 41,
@@ -3880,7 +4060,7 @@
       "pnl": 5.742641107365564,
       "created_at": "2026-03-19T23:34:07.163085",
       "resolved_at": "2026-03-21T00:30:25.749281+00:00",
-      "is_hedge": false
+      "is_hedge": true
     },
     {
       "id": 18,
@@ -4312,7 +4492,7 @@
       "pnl": 12.055902215860494,
       "created_at": "2026-03-19T22:17:19.883939",
       "resolved_at": "2026-03-21T00:30:29.904915+00:00",
-      "is_hedge": false
+      "is_hedge": true
     },
     {
       "id": 12,
@@ -5014,7 +5194,7 @@
       "pnl": 7.578445715198487,
       "created_at": "2026-03-19T18:46:46.296665",
       "resolved_at": "2026-03-21T00:30:22.583861+00:00",
-      "is_hedge": false
+      "is_hedge": true
     },
     {
       "id": 13,
