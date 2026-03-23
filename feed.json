@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-23T04:29:40.471129+00:00",
+  "updated_at": "2026-03-23T04:34:59.975452+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-23T04:29:40.471140+00:00",
+    "last_heartbeat": "2026-03-23T04:34:59.975461+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -77,22 +77,22 @@
     "max_drawdown": 0.0
   },
   "stats": {
-    "total_trades": 138,
-    "open_positions": 64,
-    "resolved": 74,
-    "win_rate": 81.08108108108108,
-    "brier_score": 0.5496,
-    "avg_edge": 0.1322
+    "total_trades": 147,
+    "open_positions": 65,
+    "resolved": 82,
+    "win_rate": 82.92682926829268,
+    "brier_score": 0.5634,
+    "avg_edge": 0.1328
   },
   "exposure": {
     "by_category": {
+      "uncategorized": {
+        "count": 47,
+        "deployed": 955.76
+      },
       "geopolitics": {
         "count": 8,
         "deployed": 281.8
-      },
-      "uncategorized": {
-        "count": 46,
-        "deployed": 905.76
       },
       "sports": {
         "count": 1,
@@ -121,20 +121,20 @@
         "deployed": 680.07
       },
       "no": {
-        "count": 18,
-        "deployed": 750.0
+        "count": 19,
+        "deployed": 800.0
       }
     },
-    "high_edge_count": 34,
+    "high_edge_count": 35,
     "low_edge_count": 30,
-    "high_edge_deployed": 998.85,
+    "high_edge_deployed": 1048.85,
     "low_edge_deployed": 431.22
   },
   "learning": {
-    "resolved_trades": 74,
+    "resolved_trades": 82,
     "target_resolved": 100,
-    "brier_score": 0.5496,
-    "win_rate": 81.08108108108108,
+    "brier_score": 0.5634,
+    "win_rate": 82.92682926829268,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -268,7 +268,7 @@
       },
       {
         "name": "hal",
-        "balance": 633.36,
+        "balance": 533.36,
         "deposited": 1000
       },
       {
@@ -277,10 +277,10 @@
         "deposited": 1000
       }
     ],
-    "total_cash": 1962.77,
+    "total_cash": 1862.77,
     "total_deposited": 3100,
-    "total_in_positions": 1430.07,
-    "market_impact": 292.84
+    "total_in_positions": 1480.07,
+    "market_impact": 242.84
   },
   "resolution_timeline": [
     {
@@ -356,15 +356,15 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1031.13,
-        "cash": 0.4
+        "deployed": 1081.13,
+        "cash": -49.6
       },
       "stats": {
-        "total_trades": 100,
-        "open_positions": 43,
-        "resolved": 57,
-        "total_pnl": 10784.48,
-        "avg_edge": 0.1256
+        "total_trades": 109,
+        "open_positions": 44,
+        "resolved": 65,
+        "total_pnl": 13766.69,
+        "avg_edge": 0.1266
       },
       "exposure": {
         "by_direction": {
@@ -373,16 +373,178 @@
             "deployed": 484.62
           },
           "no": {
-            "count": 11,
-            "deployed": 546.51
+            "count": 12,
+            "deployed": 596.51
           }
         },
-        "high_edge_count": 22,
+        "high_edge_count": 23,
         "low_edge_count": 21,
-        "high_edge_deployed": 718.7,
+        "high_edge_deployed": 768.7,
         "low_edge_deployed": 312.43
       },
       "trades": [
+        {
+          "id": 71,
+          "market_id": "A092qz068z",
+          "platform": "manifold",
+          "question": "Will WTI Crude Oil close below 85/barrel on March 31?",
+          "direction": "no",
+          "size": 40.0,
+          "entry_price": 0.2604642798443502,
+          "estimated_probability": 0.12,
+          "edge": 0.14,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.25152804688060415,
+          "pnl": 74.94427620811149,
+          "created_at": "2026-03-23T04:34:18.337197+00:00",
+          "resolved_at": "2026-03-23T04:34:58.718382+00:00",
+          "is_hedge": false
+        },
+        {
+          "id": 70,
+          "market_id": "9S9RPEZLdl",
+          "platform": "manifold",
+          "question": "Will xAI release Grok 5 before May 1st?",
+          "direction": "no",
+          "size": 40.0,
+          "entry_price": 0.25579529505287885,
+          "estimated_probability": 0.12,
+          "edge": 0.14,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.24524807358696726,
+          "pnl": 78.0243641708903,
+          "created_at": "2026-03-23T04:34:18.236549+00:00",
+          "resolved_at": "2026-03-23T04:34:58.553739+00:00",
+          "is_hedge": false
+        },
+        {
+          "id": 69,
+          "market_id": "5gAECOClQg",
+          "platform": "manifold",
+          "question": "VIX hits 40 by end of April?",
+          "direction": "no",
+          "size": 35.0,
+          "entry_price": 0.4094585577623655,
+          "estimated_probability": 0.27,
+          "edge": 0.14,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.3956415821885768,
+          "pnl": 16.659793701700963,
+          "created_at": "2026-03-23T04:34:18.126829+00:00",
+          "resolved_at": "2026-03-23T04:34:58.376741+00:00",
+          "is_hedge": false
+        },
+        {
+          "id": 68,
+          "market_id": "g2lE0I6Etq",
+          "platform": "manifold",
+          "question": "Will WTI crude oil cost more than 150/barrel?",
+          "direction": "no",
+          "size": 50.0,
+          "entry_price": 0.45,
+          "estimated_probability": 0.3,
+          "edge": 0.15,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.45,
+          "pnl": 11.111111111111114,
+          "created_at": "2026-03-23T04:34:18.027600+00:00",
+          "resolved_at": "2026-03-23T04:34:58.220045+00:00",
+          "is_hedge": false
+        },
+        {
+          "id": 67,
+          "market_id": "QgsNNzSRE0",
+          "platform": "manifold",
+          "question": "Will OpenAI release a super-app?",
+          "direction": "no",
+          "size": 50.0,
+          "entry_price": 0.4917807896847073,
+          "estimated_probability": 0.32,
+          "edge": 0.17,
+          "kelly_fraction": 0.0,
+          "status": "filled",
+          "exit_price": null,
+          "pnl": null,
+          "created_at": "2026-03-23T04:34:17.912250+00:00",
+          "resolved_at": null,
+          "is_hedge": false
+        },
+        {
+          "id": 66,
+          "market_id": "qt9uU8Pc8I",
+          "platform": "manifold",
+          "question": "Will Kalshi win its lawsuit against Nevada?",
+          "direction": "no",
+          "size": 40.0,
+          "entry_price": 0.34000000000000014,
+          "estimated_probability": 0.13,
+          "edge": 0.21,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.3274139769774701,
+          "pnl": 39.127767414415246,
+          "created_at": "2026-03-23T04:34:17.809397+00:00",
+          "resolved_at": "2026-03-23T04:34:58.112379+00:00",
+          "is_hedge": false
+        },
+        {
+          "id": 65,
+          "market_id": "8u5ncEZgnh",
+          "platform": "manifold",
+          "question": "One Nation gets at least 5 seats in South Australian election",
+          "direction": "no",
+          "size": 50.0,
+          "entry_price": 0.38095608353506505,
+          "estimated_probability": 0.14,
+          "edge": 0.24,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.3629831293924268,
+          "pnl": 33.60765166110532,
+          "created_at": "2026-03-23T04:34:17.702364+00:00",
+          "resolved_at": "2026-03-23T04:34:57.947296+00:00",
+          "is_hedge": false
+        },
+        {
+          "id": 64,
+          "market_id": "uphA9gU6z0",
+          "platform": "manifold",
+          "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
+          "direction": "no",
+          "size": 60.0,
+          "entry_price": 0.38,
+          "estimated_probability": 0.14,
+          "edge": 0.24,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.35862103193689576,
+          "pnl": 41.27036337838487,
+          "created_at": "2026-03-23T04:33:23.319081+00:00",
+          "resolved_at": "2026-03-23T04:34:57.770936+00:00",
+          "is_hedge": false
+        },
+        {
+          "id": 63,
+          "market_id": "Incl8ICc5g",
+          "platform": "manifold",
+          "question": "Strait of Hormuz traffic returns to normal by April 30?",
+          "direction": "no",
+          "size": 60.0,
+          "entry_price": 0.021379407751619568,
+          "estimated_probability": 0.15,
+          "edge": 0.24,
+          "kelly_fraction": 0.0,
+          "status": "resolved",
+          "exit_price": 0.021013057095648022,
+          "pnl": 2687.466967124541,
+          "created_at": "2026-03-23T04:33:23.026854+00:00",
+          "resolved_at": "2026-03-23T04:34:57.662207+00:00",
+          "is_hedge": true
+        },
         {
           "id": 62,
           "market_id": "Incl8ICc5g",
@@ -2945,6 +3107,168 @@
     }
   ],
   "trades": [
+    {
+      "id": 71,
+      "market_id": "A092qz068z",
+      "platform": "manifold",
+      "question": "Will WTI Crude Oil close below 85/barrel on March 31?",
+      "direction": "no",
+      "size": 40.0,
+      "entry_price": 0.2604642798443502,
+      "estimated_probability": 0.12,
+      "edge": 0.14,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.25152804688060415,
+      "pnl": 74.94427620811149,
+      "created_at": "2026-03-23T04:34:18.337197+00:00",
+      "resolved_at": "2026-03-23T04:34:58.718382+00:00",
+      "is_hedge": false
+    },
+    {
+      "id": 70,
+      "market_id": "9S9RPEZLdl",
+      "platform": "manifold",
+      "question": "Will xAI release Grok 5 before May 1st?",
+      "direction": "no",
+      "size": 40.0,
+      "entry_price": 0.25579529505287885,
+      "estimated_probability": 0.12,
+      "edge": 0.14,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.24524807358696726,
+      "pnl": 78.0243641708903,
+      "created_at": "2026-03-23T04:34:18.236549+00:00",
+      "resolved_at": "2026-03-23T04:34:58.553739+00:00",
+      "is_hedge": false
+    },
+    {
+      "id": 69,
+      "market_id": "5gAECOClQg",
+      "platform": "manifold",
+      "question": "VIX hits 40 by end of April?",
+      "direction": "no",
+      "size": 35.0,
+      "entry_price": 0.4094585577623655,
+      "estimated_probability": 0.27,
+      "edge": 0.14,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.3956415821885768,
+      "pnl": 16.659793701700963,
+      "created_at": "2026-03-23T04:34:18.126829+00:00",
+      "resolved_at": "2026-03-23T04:34:58.376741+00:00",
+      "is_hedge": false
+    },
+    {
+      "id": 68,
+      "market_id": "g2lE0I6Etq",
+      "platform": "manifold",
+      "question": "Will WTI crude oil cost more than 150/barrel?",
+      "direction": "no",
+      "size": 50.0,
+      "entry_price": 0.45,
+      "estimated_probability": 0.3,
+      "edge": 0.15,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.45,
+      "pnl": 11.111111111111114,
+      "created_at": "2026-03-23T04:34:18.027600+00:00",
+      "resolved_at": "2026-03-23T04:34:58.220045+00:00",
+      "is_hedge": false
+    },
+    {
+      "id": 67,
+      "market_id": "QgsNNzSRE0",
+      "platform": "manifold",
+      "question": "Will OpenAI release a super-app?",
+      "direction": "no",
+      "size": 50.0,
+      "entry_price": 0.4917807896847073,
+      "estimated_probability": 0.32,
+      "edge": 0.17,
+      "kelly_fraction": 0.0,
+      "status": "filled",
+      "exit_price": null,
+      "pnl": null,
+      "created_at": "2026-03-23T04:34:17.912250+00:00",
+      "resolved_at": null,
+      "is_hedge": false
+    },
+    {
+      "id": 66,
+      "market_id": "qt9uU8Pc8I",
+      "platform": "manifold",
+      "question": "Will Kalshi win its lawsuit against Nevada?",
+      "direction": "no",
+      "size": 40.0,
+      "entry_price": 0.34000000000000014,
+      "estimated_probability": 0.13,
+      "edge": 0.21,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.3274139769774701,
+      "pnl": 39.127767414415246,
+      "created_at": "2026-03-23T04:34:17.809397+00:00",
+      "resolved_at": "2026-03-23T04:34:58.112379+00:00",
+      "is_hedge": false
+    },
+    {
+      "id": 65,
+      "market_id": "8u5ncEZgnh",
+      "platform": "manifold",
+      "question": "One Nation gets at least 5 seats in South Australian election",
+      "direction": "no",
+      "size": 50.0,
+      "entry_price": 0.38095608353506505,
+      "estimated_probability": 0.14,
+      "edge": 0.24,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.3629831293924268,
+      "pnl": 33.60765166110532,
+      "created_at": "2026-03-23T04:34:17.702364+00:00",
+      "resolved_at": "2026-03-23T04:34:57.947296+00:00",
+      "is_hedge": false
+    },
+    {
+      "id": 64,
+      "market_id": "uphA9gU6z0",
+      "platform": "manifold",
+      "question": "Will GPT-5.4 outperform Claude Opus 4.6 at METR 50% time horizon?",
+      "direction": "no",
+      "size": 60.0,
+      "entry_price": 0.38,
+      "estimated_probability": 0.14,
+      "edge": 0.24,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.35862103193689576,
+      "pnl": 41.27036337838487,
+      "created_at": "2026-03-23T04:33:23.319081+00:00",
+      "resolved_at": "2026-03-23T04:34:57.770936+00:00",
+      "is_hedge": false
+    },
+    {
+      "id": 63,
+      "market_id": "Incl8ICc5g",
+      "platform": "manifold",
+      "question": "Strait of Hormuz traffic returns to normal by April 30?",
+      "direction": "no",
+      "size": 60.0,
+      "entry_price": 0.021379407751619568,
+      "estimated_probability": 0.15,
+      "edge": 0.24,
+      "kelly_fraction": 0.0,
+      "status": "resolved",
+      "exit_price": 0.021013057095648022,
+      "pnl": 2687.466967124541,
+      "created_at": "2026-03-23T04:33:23.026854+00:00",
+      "resolved_at": "2026-03-23T04:34:57.662207+00:00",
+      "is_hedge": true
+    },
     {
       "id": 62,
       "market_id": "Incl8ICc5g",
