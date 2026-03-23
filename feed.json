@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-23T11:22:33.607200+00:00",
+  "updated_at": "2026-03-23T20:26:14.144420+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-23T11:22:33.607209+00:00",
+    "last_heartbeat": "2026-03-23T20:26:14.144435+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -78,17 +78,17 @@
   },
   "stats": {
     "total_trades": 147,
-    "open_positions": 63,
-    "resolved": 84,
-    "win_rate": 83.33333333333334,
-    "brier_score": 0.5672,
-    "avg_edge": 0.136
+    "open_positions": 62,
+    "resolved": 85,
+    "win_rate": 83.52941176470588,
+    "brier_score": 0.569,
+    "avg_edge": 0.1336
   },
   "exposure": {
     "by_category": {
       "uncategorized": {
-        "count": 45,
-        "deployed": 949.8
+        "count": 44,
+        "deployed": 900.96
       },
       "geopolitics": {
         "count": 8,
@@ -121,20 +121,20 @@
         "deployed": 674.11
       },
       "no": {
-        "count": 19,
-        "deployed": 800.0
+        "count": 18,
+        "deployed": 751.16
       }
     },
-    "high_edge_count": 35,
+    "high_edge_count": 34,
     "low_edge_count": 28,
-    "high_edge_deployed": 1048.85,
+    "high_edge_deployed": 1000.01,
     "low_edge_deployed": 425.26
   },
   "learning": {
-    "resolved_trades": 84,
+    "resolved_trades": 85,
     "target_resolved": 100,
-    "brier_score": 0.5672,
-    "win_rate": 83.33333333333334,
+    "brier_score": 0.569,
+    "win_rate": 83.52941176470588,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -279,8 +279,8 @@
     ],
     "total_cash": 1917.28,
     "total_deposited": 3100,
-    "total_in_positions": 1474.11,
-    "market_impact": 291.39
+    "total_in_positions": 1425.27,
+    "market_impact": 242.55
   },
   "resolution_timeline": [
     {
@@ -2535,16 +2535,16 @@
       "account": "Jarvis",
       "accent": "blue",
       "portfolio": {
-        "bankroll": 963.2314441324138,
-        "deployed": 365.14,
-        "cash": 598.09
+        "bankroll": 965.0800453816219,
+        "deployed": 316.3,
+        "cash": 648.78
       },
       "stats": {
         "total_trades": 30,
-        "open_positions": 18,
-        "resolved": 12,
-        "total_pnl": -34.92,
-        "avg_edge": 0.1546
+        "open_positions": 17,
+        "resolved": 13,
+        "total_pnl": 1.92,
+        "avg_edge": 0.1472
       },
       "exposure": {
         "by_direction": {
@@ -2553,13 +2553,13 @@
             "deployed": 179.14
           },
           "no": {
-            "count": 6,
-            "deployed": 186.0
+            "count": 5,
+            "deployed": 137.16
           }
         },
-        "high_edge_count": 10,
+        "high_edge_count": 9,
         "low_edge_count": 8,
-        "high_edge_deployed": 247.66,
+        "high_edge_deployed": 198.82,
         "low_edge_deployed": 117.48
       },
       "trades": [
@@ -2574,11 +2574,11 @@
           "estimated_probability": 0.1499999999999999,
           "edge": 0.28,
           "kelly_fraction": 0.0488,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 1.0,
+          "pnl": 36.844210526315784,
           "created_at": "2026-03-20T21:06:58.625679",
-          "resolved_at": null,
+          "resolved_at": "2026-03-23T20:26:14.085117+00:00",
           "is_hedge": false
         },
         {
@@ -3604,11 +3604,11 @@
       "estimated_probability": 0.1499999999999999,
       "edge": 0.28,
       "kelly_fraction": 0.0488,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 1.0,
+      "pnl": 36.844210526315784,
       "created_at": "2026-03-20T21:06:58.625679",
-      "resolved_at": null,
+      "resolved_at": "2026-03-23T20:26:14.085117+00:00",
       "is_hedge": false
     },
     {
