@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-23T04:34:59.975452+00:00",
+  "updated_at": "2026-03-23T05:35:28.088925+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-23T04:34:59.975461+00:00",
+    "last_heartbeat": "2026-03-23T05:35:28.088934+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -78,17 +78,17 @@
   },
   "stats": {
     "total_trades": 147,
-    "open_positions": 65,
-    "resolved": 82,
-    "win_rate": 82.92682926829268,
-    "brier_score": 0.5634,
-    "avg_edge": 0.1328
+    "open_positions": 64,
+    "resolved": 83,
+    "win_rate": 83.13253012048193,
+    "brier_score": 0.5653,
+    "avg_edge": 0.1342
   },
   "exposure": {
     "by_category": {
       "uncategorized": {
-        "count": 47,
-        "deployed": 955.76
+        "count": 46,
+        "deployed": 951.11
       },
       "geopolitics": {
         "count": 8,
@@ -117,8 +117,8 @@
     },
     "by_direction": {
       "yes": {
-        "count": 46,
-        "deployed": 680.07
+        "count": 45,
+        "deployed": 675.42
       },
       "no": {
         "count": 19,
@@ -126,15 +126,15 @@
       }
     },
     "high_edge_count": 35,
-    "low_edge_count": 30,
+    "low_edge_count": 29,
     "high_edge_deployed": 1048.85,
-    "low_edge_deployed": 431.22
+    "low_edge_deployed": 426.57
   },
   "learning": {
-    "resolved_trades": 82,
+    "resolved_trades": 83,
     "target_resolved": 100,
-    "brier_score": 0.5634,
-    "win_rate": 82.92682926829268,
+    "brier_score": 0.5653,
+    "win_rate": 83.13253012048193,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -263,7 +263,7 @@
     "accounts": [
       {
         "name": "apo11o",
-        "balance": 702.17,
+        "balance": 706.46,
         "deposited": 1100
       },
       {
@@ -277,10 +277,10 @@
         "deposited": 1000
       }
     ],
-    "total_cash": 1862.77,
+    "total_cash": 1867.06,
     "total_deposited": 3100,
-    "total_in_positions": 1480.07,
-    "market_impact": 242.84
+    "total_in_positions": 1475.42,
+    "market_impact": 242.48
   },
   "resolution_timeline": [
     {
@@ -313,13 +313,13 @@
     },
     {
       "date": "2026-03-31",
-      "count": 6,
+      "count": 5,
       "markets": [
         "Will Iran shoot down a US military plane/helicopter by end of March?",
         "Will the WTI Crude Oil Spot Price be above $95 on March 31, 2026?",
         "Will ChatGPT launch an \"adult mode\" before 1 April 2026?",
-        "USA x Iran ceasefire by end of march 31?",
-        "US escorts commercial ship through Hormuz by March 31? [Polymarket]"
+        "US escorts commercial ship through Hormuz by March 31? [Polymarket]",
+        "UK gov accepts all 47 Fingleton nuclear review recommendations by Q1 2026?"
       ]
     },
     {
@@ -356,21 +356,21 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1081.13,
-        "cash": -49.6
+        "deployed": 1076.48,
+        "cash": -44.95
       },
       "stats": {
         "total_trades": 109,
-        "open_positions": 44,
-        "resolved": 65,
-        "total_pnl": 13766.69,
-        "avg_edge": 0.1266
+        "open_positions": 43,
+        "resolved": 66,
+        "total_pnl": 13767.68,
+        "avg_edge": 0.1285
       },
       "exposure": {
         "by_direction": {
           "yes": {
-            "count": 32,
-            "deployed": 484.62
+            "count": 31,
+            "deployed": 479.97
           },
           "no": {
             "count": 12,
@@ -378,9 +378,9 @@
           }
         },
         "high_edge_count": 23,
-        "low_edge_count": 21,
+        "low_edge_count": 20,
         "high_edge_deployed": 768.7,
-        "low_edge_deployed": 312.43
+        "low_edge_deployed": 307.78
       },
       "trades": [
         {
@@ -2176,11 +2176,11 @@
           "estimated_probability": 0.15004870298883466,
           "edge": 0.0415,
           "kelly_fraction": 0.0046,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 0.13164646004686537,
+          "pnl": 0.9894597297112844,
           "created_at": "2026-03-19T18:40:29.330819",
-          "resolved_at": null,
+          "resolved_at": "2026-03-23T05:35:25.570426+00:00",
           "is_hedge": true
         },
         {
@@ -5584,11 +5584,11 @@
       "estimated_probability": 0.15004870298883466,
       "edge": 0.0415,
       "kelly_fraction": 0.0046,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 0.13164646004686537,
+      "pnl": 0.9894597297112844,
       "created_at": "2026-03-19T18:40:29.330819",
-      "resolved_at": null,
+      "resolved_at": "2026-03-23T05:35:25.570426+00:00",
       "is_hedge": true
     },
     {
