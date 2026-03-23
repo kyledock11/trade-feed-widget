@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-23T20:26:14.144420+00:00",
+  "updated_at": "2026-03-23T21:41:43.488936+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-23T20:26:14.144435+00:00",
+    "last_heartbeat": "2026-03-23T21:41:43.488949+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -78,17 +78,17 @@
   },
   "stats": {
     "total_trades": 147,
-    "open_positions": 62,
-    "resolved": 85,
-    "win_rate": 83.52941176470588,
+    "open_positions": 61,
+    "resolved": 86,
+    "win_rate": 83.72093023255815,
     "brier_score": 0.569,
-    "avg_edge": 0.1336
+    "avg_edge": 0.1354
   },
   "exposure": {
     "by_category": {
       "uncategorized": {
-        "count": 44,
-        "deployed": 900.96
+        "count": 43,
+        "deployed": 899.91
       },
       "geopolitics": {
         "count": 8,
@@ -117,8 +117,8 @@
     },
     "by_direction": {
       "yes": {
-        "count": 44,
-        "deployed": 674.11
+        "count": 43,
+        "deployed": 673.06
       },
       "no": {
         "count": 18,
@@ -126,15 +126,15 @@
       }
     },
     "high_edge_count": 34,
-    "low_edge_count": 28,
+    "low_edge_count": 27,
     "high_edge_deployed": 1000.01,
-    "low_edge_deployed": 425.26
+    "low_edge_deployed": 424.21
   },
   "learning": {
-    "resolved_trades": 85,
+    "resolved_trades": 86,
     "target_resolved": 100,
     "brier_score": 0.569,
-    "win_rate": 83.52941176470588,
+    "win_rate": 83.72093023255815,
     "backtest_results": {
       "last_run": "2026-03-19T20:19:45.947156",
       "markets_tested": 189,
@@ -273,14 +273,14 @@
       },
       {
         "name": "Jarvis",
-        "balance": 677.46,
+        "balance": 713.08,
         "deposited": 1000
       }
     ],
-    "total_cash": 1917.28,
+    "total_cash": 1952.9,
     "total_deposited": 3100,
-    "total_in_positions": 1425.27,
-    "market_impact": 242.55
+    "total_in_positions": 1424.22,
+    "market_impact": 277.12
   },
   "resolution_timeline": [
     {
@@ -288,13 +288,6 @@
       "count": 1,
       "markets": [
         "Will Google announce a new quantum-related milestone within the next 60 days?"
-      ]
-    },
-    {
-      "date": "2026-03-24",
-      "count": 1,
-      "markets": [
-        "Will USA change Iran regime"
       ]
     },
     {
@@ -356,21 +349,21 @@
       "accent": "green",
       "portfolio": {
         "bankroll": 1031.53,
-        "deployed": 1076.48,
-        "cash": -44.95
+        "deployed": 1075.43,
+        "cash": -43.9
       },
       "stats": {
         "total_trades": 109,
-        "open_positions": 43,
-        "resolved": 66,
-        "total_pnl": 13767.68,
-        "avg_edge": 0.1285
+        "open_positions": 42,
+        "resolved": 67,
+        "total_pnl": 13768.24,
+        "avg_edge": 0.131
       },
       "exposure": {
         "by_direction": {
           "yes": {
-            "count": 31,
-            "deployed": 479.97
+            "count": 30,
+            "deployed": 478.92
           },
           "no": {
             "count": 12,
@@ -378,9 +371,9 @@
           }
         },
         "high_edge_count": 23,
-        "low_edge_count": 20,
+        "low_edge_count": 19,
         "high_edge_deployed": 768.7,
-        "low_edge_deployed": 307.78
+        "low_edge_deployed": 306.73
       },
       "trades": [
         {
@@ -1006,11 +999,11 @@
           "estimated_probability": 0.24998028703546227,
           "edge": 0.0272,
           "kelly_fraction": 0.0011,
-          "status": "filled",
-          "exit_price": null,
-          "pnl": null,
+          "status": "resolved",
+          "exit_price": 0.34024621317771625,
+          "pnl": 0.5536361591532266,
           "created_at": "2026-03-20T17:17:39.397672",
-          "resolved_at": null,
+          "resolved_at": "2026-03-23T21:41:41.811581+00:00",
           "is_hedge": true
         },
         {
@@ -2535,9 +2528,9 @@
       "account": "Jarvis",
       "accent": "blue",
       "portfolio": {
-        "bankroll": 965.0800453816219,
+        "bankroll": 1001.9242559079377,
         "deployed": 316.3,
-        "cash": 648.78
+        "cash": 685.62
       },
       "stats": {
         "total_trades": 30,
@@ -3766,11 +3759,11 @@
       "estimated_probability": 0.24998028703546227,
       "edge": 0.0272,
       "kelly_fraction": 0.0011,
-      "status": "filled",
-      "exit_price": null,
-      "pnl": null,
+      "status": "resolved",
+      "exit_price": 0.34024621317771625,
+      "pnl": 0.5536361591532266,
       "created_at": "2026-03-20T17:17:39.397672",
-      "resolved_at": null,
+      "resolved_at": "2026-03-23T21:41:41.811581+00:00",
       "is_hedge": true
     },
     {
