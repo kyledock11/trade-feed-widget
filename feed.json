@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-24T22:55:11.393284+00:00",
+  "updated_at": "2026-03-24T22:56:53.556236+00:00",
   "strategy": {
     "name": "Parallax",
     "version": "0.6",
@@ -53,7 +53,7 @@
   "bot_status": {
     "mode": "manifold_play",
     "phase": "validating",
-    "last_heartbeat": "2026-03-24T22:55:11.393298+00:00",
+    "last_heartbeat": "2026-03-24T22:56:53.556248+00:00",
     "scan_interval_minutes": 30,
     "last_cycle_duration_seconds": null,
     "last_cycle_trades": null,
@@ -467,6 +467,8 @@
       "pnl": 146.27512282026035,
       "created_at": "2026-03-24T16:17:05.700489+00:00",
       "resolved_at": "2026-03-24T16:18:34.663552+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -485,6 +487,8 @@
       "pnl": 165.39260709329614,
       "created_at": "2026-03-24T16:17:05.582447+00:00",
       "resolved_at": "2026-03-24T16:18:34.341451+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.18484288354898343,
       "is_hedge": false
     },
@@ -504,6 +508,8 @@
       "pnl": 158.95909262465327,
       "created_at": "2026-03-24T16:17:05.482541+00:00",
       "resolved_at": "2026-03-24T16:18:34.112342+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -522,6 +528,8 @@
       "pnl": 98.97388170731259,
       "created_at": "2026-03-24T16:17:05.373226+00:00",
       "resolved_at": "2026-03-24T16:18:34.019607+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -540,6 +548,8 @@
       "pnl": 80.4849496307109,
       "created_at": "2026-03-24T16:17:05.263200+00:00",
       "resolved_at": "2026-03-24T16:18:33.774759+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -558,6 +568,8 @@
       "pnl": 14.279096683581571,
       "created_at": "2026-03-24T16:17:05.147662+00:00",
       "resolved_at": "2026-03-24T16:18:33.613685+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -576,6 +588,8 @@
       "pnl": 30.77883248605285,
       "created_at": "2026-03-24T16:17:05.013582+00:00",
       "resolved_at": "2026-03-24T16:18:33.391315+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -594,6 +608,8 @@
       "pnl": 125.38761620134613,
       "created_at": "2026-03-24T16:17:04.900072+00:00",
       "resolved_at": "2026-03-24T16:18:33.301485+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -612,6 +628,8 @@
       "pnl": 102.85714285714289,
       "created_at": "2026-03-24T16:17:04.781692+00:00",
       "resolved_at": "2026-03-24T16:18:33.213799+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.2736410431530734,
       "is_hedge": false
     },
@@ -631,6 +649,8 @@
       "pnl": 107.54725381978804,
       "created_at": "2026-03-24T16:17:04.664908+00:00",
       "resolved_at": "2026-03-24T16:18:33.108530+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -649,6 +669,8 @@
       "pnl": 103.501384192823,
       "created_at": "2026-03-24T16:17:04.539021+00:00",
       "resolved_at": "2026-03-24T16:18:33.018127+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -667,6 +689,8 @@
       "pnl": 91.04117262302844,
       "created_at": "2026-03-24T16:17:04.434593+00:00",
       "resolved_at": "2026-03-24T16:18:32.927064+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -685,6 +709,8 @@
       "pnl": 17.827628252788067,
       "created_at": "2026-03-24T16:17:04.317432+00:00",
       "resolved_at": "2026-03-24T16:18:32.835219+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -703,6 +729,8 @@
       "pnl": 12.195121951219498,
       "created_at": "2026-03-24T00:13:47.292133+00:00",
       "resolved_at": "2026-03-24T00:27:53.504414+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -721,6 +749,8 @@
       "pnl": null,
       "created_at": "2026-03-24T00:13:47.194863+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -739,6 +769,8 @@
       "pnl": 1538.9923838109357,
       "created_at": "2026-03-24T00:13:47.097135+00:00",
       "resolved_at": "2026-03-24T00:27:53.407806+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.24277760645332924,
       "is_hedge": false
     },
@@ -758,6 +790,8 @@
       "pnl": 556.0186224723396,
       "created_at": "2026-03-24T00:13:46.884758+00:00",
       "resolved_at": "2026-03-24T00:27:53.299194+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -776,6 +810,8 @@
       "pnl": 17.827628252788067,
       "created_at": "2026-03-24T00:13:46.769034+00:00",
       "resolved_at": "2026-03-24T00:27:53.205382+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -794,6 +830,8 @@
       "pnl": 30.77883248605282,
       "created_at": "2026-03-24T00:13:46.652118+00:00",
       "resolved_at": "2026-03-24T00:27:53.111140+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -812,6 +850,8 @@
       "pnl": 134.471401575541,
       "created_at": "2026-03-24T00:13:46.528955+00:00",
       "resolved_at": "2026-03-24T00:27:53.016775+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -830,6 +870,8 @@
       "pnl": 113.80620738553901,
       "created_at": "2026-03-24T00:13:46.409156+00:00",
       "resolved_at": "2026-03-24T00:27:52.919617+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -848,6 +890,8 @@
       "pnl": 157.02195091724477,
       "created_at": "2026-03-24T00:13:46.298981+00:00",
       "resolved_at": "2026-03-24T00:27:52.816278+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -866,6 +910,8 @@
       "pnl": 78.37148093805152,
       "created_at": "2026-03-24T00:13:45.994382+00:00",
       "resolved_at": "2026-03-24T00:27:52.716866+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -884,6 +930,8 @@
       "pnl": 15.268611357142817,
       "created_at": "2026-03-24T00:13:45.890980+00:00",
       "resolved_at": "2026-03-24T00:27:52.612943+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -902,6 +950,8 @@
       "pnl": 106.4882538628101,
       "created_at": "2026-03-24T00:13:45.777365+00:00",
       "resolved_at": "2026-03-24T00:27:52.391955+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.2736410431530734,
       "is_hedge": false
     },
@@ -921,6 +971,8 @@
       "pnl": 74.94427620811149,
       "created_at": "2026-03-23T04:34:18.337197+00:00",
       "resolved_at": "2026-03-23T04:34:58.718382+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -939,6 +991,8 @@
       "pnl": 78.0243641708903,
       "created_at": "2026-03-23T04:34:18.236549+00:00",
       "resolved_at": "2026-03-23T04:34:58.553739+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -957,6 +1011,8 @@
       "pnl": 16.659793701700963,
       "created_at": "2026-03-23T04:34:18.126829+00:00",
       "resolved_at": "2026-03-23T04:34:58.376741+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -975,6 +1031,8 @@
       "pnl": 11.111111111111114,
       "created_at": "2026-03-23T04:34:18.027600+00:00",
       "resolved_at": "2026-03-23T04:34:58.220045+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.3872307181032205,
       "is_hedge": false
     },
@@ -994,6 +1052,8 @@
       "pnl": 8.393266719848924,
       "created_at": "2026-03-23T04:34:17.912250+00:00",
       "resolved_at": "2026-03-24T00:27:52.267677+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1012,6 +1072,8 @@
       "pnl": 39.127767414415246,
       "created_at": "2026-03-23T04:34:17.809397+00:00",
       "resolved_at": "2026-03-23T04:34:58.112379+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1030,6 +1092,8 @@
       "pnl": 33.60765166110532,
       "created_at": "2026-03-23T04:34:17.702364+00:00",
       "resolved_at": "2026-03-23T04:34:57.947296+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1048,6 +1112,8 @@
       "pnl": 41.27036337838487,
       "created_at": "2026-03-23T04:33:23.319081+00:00",
       "resolved_at": "2026-03-23T04:34:57.770936+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.30714938803660957,
       "is_hedge": false
     },
@@ -1067,6 +1133,8 @@
       "pnl": 2687.466967124541,
       "created_at": "2026-03-23T04:33:23.026854+00:00",
       "resolved_at": "2026-03-23T04:34:57.662207+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.061047348308882386,
       "is_hedge": false
     },
@@ -1086,6 +1154,8 @@
       "pnl": 4049.6129716618543,
       "created_at": "2026-03-21T17:29:22.937471+00:00",
       "resolved_at": "2026-03-21T17:36:59.244131+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.061047348308882386,
       "is_hedge": false
     },
@@ -1105,6 +1175,8 @@
       "pnl": null,
       "created_at": "2026-03-21T17:29:22.834409+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4456902190995143,
       "is_hedge": false
     },
@@ -1124,6 +1196,8 @@
       "pnl": 140.7718817817493,
       "created_at": "2026-03-21T17:29:22.732934+00:00",
       "resolved_at": "2026-03-21T17:36:59.077671+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4549739755259508,
       "is_hedge": false
     },
@@ -1143,6 +1217,8 @@
       "pnl": 446.3970041216975,
       "created_at": "2026-03-21T17:29:22.637614+00:00",
       "resolved_at": "2026-03-21T17:36:58.982889+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.24277760645332924,
       "is_hedge": false
     },
@@ -1162,6 +1238,8 @@
       "pnl": 132.9208776132307,
       "created_at": "2026-03-21T17:29:22.540055+00:00",
       "resolved_at": "2026-03-21T17:36:58.890309+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.30714938803660957,
       "is_hedge": false
     },
@@ -1181,6 +1259,8 @@
       "pnl": 1014.0915397972974,
       "created_at": "2026-03-21T03:37:19.381497+00:00",
       "resolved_at": "2026-03-21T03:46:53.049769+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1199,6 +1279,8 @@
       "pnl": 163.35678707751669,
       "created_at": "2026-03-21T03:37:19.277794+00:00",
       "resolved_at": "2026-03-21T03:46:52.854435+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1217,6 +1299,8 @@
       "pnl": null,
       "created_at": "2026-03-21T03:37:19.180794+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1235,6 +1319,8 @@
       "pnl": 19.19999999999999,
       "created_at": "2026-03-21T03:37:19.074296+00:00",
       "resolved_at": "2026-03-22T02:25:09.727808+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1253,6 +1339,8 @@
       "pnl": 2046.466310649194,
       "created_at": "2026-03-20T23:41:41.721085+00:00",
       "resolved_at": "2026-03-21T00:30:28.430422+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.06277716320921906,
       "is_hedge": false
     },
@@ -1272,6 +1360,8 @@
       "pnl": 1091.1763831630024,
       "created_at": "2026-03-20T23:41:41.610566+00:00",
       "resolved_at": "2026-03-21T00:30:28.192819+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1290,6 +1380,8 @@
       "pnl": 438.389180272629,
       "created_at": "2026-03-20T23:41:41.483702+00:00",
       "resolved_at": "2026-03-21T00:30:27.961278+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.18484288354898343,
       "is_hedge": false
     },
@@ -1309,6 +1401,8 @@
       "pnl": -146.21,
       "created_at": "2026-03-20T23:41:41.366100+00:00",
       "resolved_at": "2026-03-21T07:18:16.989079+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.49990198019996185,
       "is_hedge": false
     },
@@ -1328,6 +1422,8 @@
       "pnl": 259.4218781365786,
       "created_at": "2026-03-20T23:41:41.253851+00:00",
       "resolved_at": "2026-03-21T00:30:27.728836+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.2736410431530734,
       "is_hedge": false
     },
@@ -1347,6 +1443,8 @@
       "pnl": 61.75663147781259,
       "created_at": "2026-03-20T23:41:41.150811+00:00",
       "resolved_at": "2026-03-21T00:30:27.547308+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "is_hedge": false
     },
     {
@@ -1365,6 +1463,8 @@
       "pnl": 59.898644233759995,
       "created_at": "2026-03-20T23:41:41.044892+00:00",
       "resolved_at": "2026-03-21T00:30:27.384172+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4395634195054732,
       "is_hedge": false
     },
@@ -1384,6 +1484,8 @@
       "pnl": -146.21,
       "created_at": "2026-03-20T23:41:40.923258+00:00",
       "resolved_at": "2026-03-21T12:26:35.716238",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.49999999999999994,
       "is_hedge": false
     },
@@ -1403,6 +1505,8 @@
       "pnl": 130.59460350264018,
       "created_at": "2026-03-20T23:41:40.767709+00:00",
       "resolved_at": "2026-03-21T00:30:27.018501+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.34729513203669016,
       "is_hedge": false
     },
@@ -1422,6 +1526,8 @@
       "pnl": 36.844210526315784,
       "created_at": "2026-03-20T21:06:58.625679",
       "resolved_at": "2026-03-23T20:26:14.085117+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.39566595321126413,
       "is_hedge": false
     },
@@ -1441,6 +1547,8 @@
       "pnl": null,
       "created_at": "2026-03-20T19:16:24.732847",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.11860784102313052,
       "is_hedge": false
     },
@@ -1460,6 +1568,8 @@
       "pnl": null,
       "created_at": "2026-03-20T18:48:42.350516",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.567694298694875,
       "is_hedge": false
     },
@@ -1479,6 +1589,8 @@
       "pnl": 10.812416021408168,
       "created_at": "2026-03-20T18:19:04.345656",
       "resolved_at": "2026-03-21T00:30:23.821469+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4549739755259508,
       "is_hedge": false
     },
@@ -1498,6 +1610,8 @@
       "pnl": 130.50107059436937,
       "created_at": "2026-03-20T18:17:48.467225",
       "resolved_at": "2026-03-21T00:30:23.729421+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1581568699829238,
       "is_hedge": false
     },
@@ -1517,6 +1631,8 @@
       "pnl": 0.4293107931620057,
       "created_at": "2026-03-20T18:17:12.633336",
       "resolved_at": "2026-03-21T05:47:42.576679+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.03296728367098808,
       "is_hedge": false
     },
@@ -1536,6 +1652,8 @@
       "pnl": 4.203389280183746,
       "created_at": "2026-03-20T18:16:38.814914",
       "resolved_at": "2026-03-21T00:30:23.633432+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.010000000000000016,
       "is_hedge": false
     },
@@ -1555,6 +1673,8 @@
       "pnl": 0.16169261095002452,
       "created_at": "2026-03-20T18:15:59.570565",
       "resolved_at": "2026-03-23T01:33:48.122655+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.014172614538756833,
       "is_hedge": false
     },
@@ -1574,6 +1694,8 @@
       "pnl": null,
       "created_at": "2026-03-20T17:33:22.530166",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.03315564079968906,
       "is_hedge": false
     },
@@ -1593,6 +1715,8 @@
       "pnl": 0.5536361591532266,
       "created_at": "2026-03-20T17:17:39.397672",
       "resolved_at": "2026-03-23T21:41:41.811581+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.22190866344351506,
       "is_hedge": false
     },
@@ -1612,6 +1736,8 @@
       "pnl": null,
       "created_at": "2026-03-20T17:07:06.589106",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.033261233302255305,
       "is_hedge": false
     },
@@ -1631,6 +1757,8 @@
       "pnl": 47.659847359872025,
       "created_at": "2026-03-20T16:48:56.529866+00:00",
       "resolved_at": "2026-03-21T00:30:26.807215+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.12999999999999998,
       "is_hedge": false
     },
@@ -1650,6 +1778,8 @@
       "pnl": 5.103447494428089,
       "created_at": "2026-03-20T16:48:56.406974+00:00",
       "resolved_at": "2026-03-21T00:30:26.565232+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4549739755259508,
       "is_hedge": false
     },
@@ -1669,6 +1799,8 @@
       "pnl": -30.0,
       "created_at": "2026-03-20T16:48:56.307209+00:00",
       "resolved_at": "2026-03-21T04:47:17.574688+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.5169695345378221,
       "is_hedge": false
     },
@@ -1688,6 +1820,8 @@
       "pnl": 7.6494587877576805,
       "created_at": "2026-03-20T16:20:00.599932",
       "resolved_at": "2026-03-21T03:46:53.986503+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.4456902190995143,
       "is_hedge": false
     },
@@ -1707,6 +1841,8 @@
       "pnl": 4.547711322210354,
       "created_at": "2026-03-20T16:19:56.270704",
       "resolved_at": "2026-03-21T03:46:53.230042+00:00",
+      "_strategy": "Contrarian",
+      "_account": "@hal",
       "current_price": 0.4456902190995143,
       "is_hedge": false
     },
@@ -1726,6 +1862,8 @@
       "pnl": 0.4352158267219457,
       "created_at": "2026-03-20T16:15:55.583112",
       "resolved_at": "2026-03-21T05:47:43.804463+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.03296728367098808,
       "is_hedge": false
     },
@@ -1745,6 +1883,8 @@
       "pnl": 1.1358445292592911,
       "created_at": "2026-03-20T15:50:05.624505+00:00",
       "resolved_at": "2026-03-21T00:30:26.450456+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.38910369574581277,
       "is_hedge": false
     },
@@ -1764,6 +1904,8 @@
       "pnl": null,
       "created_at": "2026-03-20T15:40:33.687067+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.23752093141039615,
       "is_hedge": false
     },
@@ -1783,6 +1925,8 @@
       "pnl": null,
       "created_at": "2026-03-20T15:40:33.548952+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1930609233498308,
       "is_hedge": false
     },
@@ -1802,6 +1946,8 @@
       "pnl": null,
       "created_at": "2026-03-20T15:40:33.419826+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.09686507403814046,
       "is_hedge": false
     },
@@ -1821,6 +1967,8 @@
       "pnl": null,
       "created_at": "2026-03-20T15:40:33.309131+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.24370067732599918,
       "is_hedge": false
     },
@@ -1840,6 +1988,8 @@
       "pnl": null,
       "created_at": "2026-03-20T15:40:33.194251+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.22190866344351506,
       "is_hedge": false
     },
@@ -1859,6 +2009,8 @@
       "pnl": null,
       "created_at": "2026-03-20T15:40:33.085428+00:00",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1600989021417663,
       "is_hedge": false
     },
@@ -1878,6 +2030,8 @@
       "pnl": 465.5030338446692,
       "created_at": "2026-03-20T15:40:32.964063+00:00",
       "resolved_at": "2026-03-23T23:12:23.468501+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1581568699829238,
       "is_hedge": false
     },
@@ -1897,6 +2051,8 @@
       "pnl": 4.994408842620128,
       "created_at": "2026-03-20T15:38:06.510699+00:00",
       "resolved_at": "2026-03-21T00:30:28.762709+00:00",
+      "_strategy": "Contrarian",
+      "_account": "@hal",
       "current_price": 0.4549739755259508,
       "is_hedge": false
     },
@@ -1916,6 +2072,8 @@
       "pnl": null,
       "created_at": "2026-03-20T15:38:06.388522+00:00",
       "resolved_at": null,
+      "_strategy": "Contrarian",
+      "_account": "@hal",
       "current_price": 0.771021227861446,
       "is_hedge": false
     },
@@ -1935,6 +2093,8 @@
       "pnl": 15.154101021258388,
       "created_at": "2026-03-20T15:38:06.284410+00:00",
       "resolved_at": "2026-03-21T00:30:28.672209+00:00",
+      "_strategy": "Contrarian",
+      "_account": "@hal",
       "current_price": 0.30714938803660957,
       "is_hedge": false
     },
@@ -1954,6 +2114,8 @@
       "pnl": 3.4667210643283894,
       "created_at": "2026-03-20T15:37:18.119521+00:00",
       "resolved_at": "2026-03-21T00:30:30.793402+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.4549739755259508,
       "is_hedge": false
     },
@@ -1973,6 +2135,8 @@
       "pnl": null,
       "created_at": "2026-03-20T15:37:17.904228+00:00",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.771021227861446,
       "is_hedge": false
     },
@@ -1992,6 +2156,8 @@
       "pnl": 9.91339397097196,
       "created_at": "2026-03-20T15:37:17.715431+00:00",
       "resolved_at": "2026-03-21T00:30:30.619749+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.30714938803660957,
       "is_hedge": false
     },
@@ -2011,6 +2177,8 @@
       "pnl": null,
       "created_at": "2026-03-20T01:10:04.168505",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.4622028564781184,
       "is_hedge": false
     },
@@ -2030,6 +2198,8 @@
       "pnl": null,
       "created_at": "2026-03-20T00:48:38.620658",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.03296728367098808,
       "is_hedge": false
     },
@@ -2049,6 +2219,8 @@
       "pnl": 4.3110947164449875,
       "created_at": "2026-03-20T00:46:52.372093",
       "resolved_at": "2026-03-21T00:30:30.251548+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.13218666536026216,
       "is_hedge": false
     },
@@ -2068,6 +2240,8 @@
       "pnl": null,
       "created_at": "2026-03-20T00:46:17.046770",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.12553014389173756,
       "is_hedge": false
     },
@@ -2087,6 +2261,8 @@
       "pnl": 188.85607983468796,
       "created_at": "2026-03-20T00:39:29.774429",
       "resolved_at": "2026-03-21T00:30:26.212030+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1581568699829238,
       "is_hedge": false
     },
@@ -2106,6 +2282,8 @@
       "pnl": -5.3,
       "created_at": "2026-03-20T00:37:02.045162",
       "resolved_at": "2026-03-21T00:45:36.899927+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.02847613716429644,
       "is_hedge": false
     },
@@ -2125,6 +2303,8 @@
       "pnl": -1.17,
       "created_at": "2026-03-20T00:35:34.258571",
       "resolved_at": "2026-03-24T14:47:56.366071+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.014172614538756833,
       "is_hedge": false
     },
@@ -2144,6 +2324,8 @@
       "pnl": 25.066275465408786,
       "created_at": "2026-03-20T00:34:58.467848",
       "resolved_at": "2026-03-21T00:30:26.122661+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.5180002102649597,
       "is_hedge": false
     },
@@ -2163,6 +2345,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:39:50.826595",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.10031555180003202,
       "is_hedge": false
     },
@@ -2182,6 +2366,8 @@
       "pnl": 20.512431307363425,
       "created_at": "2026-03-19T23:39:24.518982",
       "resolved_at": "2026-03-21T00:30:26.029837+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1930609233498308,
       "is_hedge": false
     },
@@ -2201,6 +2387,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:38:14.097587",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.1494689864352512,
       "is_hedge": false
     },
@@ -2220,6 +2408,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:36:08.731065",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.3456027005039163,
       "is_hedge": false
     },
@@ -2239,6 +2429,8 @@
       "pnl": 5.742641107365564,
       "created_at": "2026-03-19T23:34:07.163085",
       "resolved_at": "2026-03-21T00:30:25.749281+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.061047348308882386,
       "is_hedge": false
     },
@@ -2258,6 +2450,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:31:36.935215",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.1600989021417663,
       "is_hedge": false
     },
@@ -2277,6 +2471,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:25:58.506010",
       "resolved_at": null,
+      "_strategy": "Contrarian",
+      "_account": "@hal",
       "current_price": 0.6465978165952111,
       "is_hedge": false
     },
@@ -2296,6 +2492,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:21:40.567109",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.12999999999999998,
       "is_hedge": false
     },
@@ -2315,6 +2513,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:20:28.124438",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.9617047483394502,
       "is_hedge": false
     },
@@ -2334,6 +2534,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:18:00.018939",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.018243181844988375,
       "is_hedge": false
     },
@@ -2353,6 +2555,8 @@
       "pnl": null,
       "created_at": "2026-03-19T23:15:11.089868",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1725859284940833,
       "is_hedge": false
     },
@@ -2372,6 +2576,8 @@
       "pnl": -9.61,
       "created_at": "2026-03-19T23:11:11.473196",
       "resolved_at": "2026-03-20T02:10:07.361278",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.9150479644016172,
       "is_hedge": false
     },
@@ -2391,6 +2597,8 @@
       "pnl": -6.4,
       "created_at": "2026-03-19T23:10:37.056876",
       "resolved_at": "2026-03-20T02:10:05.126026",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.9150479644016172,
       "is_hedge": false
     },
@@ -2410,6 +2618,8 @@
       "pnl": 3.123916167240827,
       "created_at": "2026-03-19T23:09:45.930053",
       "resolved_at": "2026-03-21T05:02:26.294821+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.02689378098718716,
       "is_hedge": false
     },
@@ -2429,6 +2639,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:50:22.398177",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1725859284940833,
       "is_hedge": false
     },
@@ -2448,6 +2660,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:41:03.715307",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.39285477085199694,
       "is_hedge": false
     },
@@ -2467,6 +2681,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:37:11.357445",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.11860784102313052,
       "is_hedge": false
     },
@@ -2486,6 +2702,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:34:02.031457",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.11975353506298987,
       "is_hedge": false
     },
@@ -2505,6 +2723,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:21:50.274966",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.026715681599868757,
       "is_hedge": false
     },
@@ -2524,6 +2744,8 @@
       "pnl": 3.386865451721672,
       "created_at": "2026-03-19T22:21:46.285383",
       "resolved_at": "2026-03-23T03:04:23.409357+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.026715681599868757,
       "is_hedge": false
     },
@@ -2543,6 +2765,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:21:38.722964",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.22190866344351506,
       "is_hedge": false
     },
@@ -2562,6 +2786,8 @@
       "pnl": 79.22694666464221,
       "created_at": "2026-03-19T22:21:35.075608",
       "resolved_at": "2026-03-21T00:30:25.599825+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.22190866344351506,
       "is_hedge": false
     },
@@ -2581,6 +2807,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:20:35.150105",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4899999999999997,
       "is_hedge": false
     },
@@ -2600,6 +2828,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:20:07.906279",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.05500346843669343,
       "is_hedge": false
     },
@@ -2619,6 +2849,8 @@
       "pnl": 4.455854741512912,
       "created_at": "2026-03-19T22:19:12.515952",
       "resolved_at": "2026-03-21T00:30:23.542120+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.026715681599868757,
       "is_hedge": false
     },
@@ -2638,6 +2870,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:18:44.608471",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.012063773953536132,
       "is_hedge": false
     },
@@ -2657,6 +2891,8 @@
       "pnl": 82.12108770283646,
       "created_at": "2026-03-19T22:18:39.340102",
       "resolved_at": "2026-03-21T00:30:23.237152+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.24370067732599918,
       "is_hedge": false
     },
@@ -2676,6 +2912,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:17:52.058413",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.10031555180003202,
       "is_hedge": false
     },
@@ -2695,6 +2933,8 @@
       "pnl": 12.055902215860494,
       "created_at": "2026-03-19T22:17:19.883939",
       "resolved_at": "2026-03-21T00:30:29.904915+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.061047348308882386,
       "is_hedge": false
     },
@@ -2714,6 +2954,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:17:14.050066",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.025302832745753314,
       "is_hedge": false
     },
@@ -2733,6 +2975,8 @@
       "pnl": 153.97684570882143,
       "created_at": "2026-03-19T22:16:52.189857",
       "resolved_at": "2026-03-22T18:15:58.518210+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1600989021417663,
       "is_hedge": false
     },
@@ -2752,6 +2996,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:16:51.160930",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.11975353506298987,
       "is_hedge": false
     },
@@ -2771,6 +3017,8 @@
       "pnl": 1.8486012492080373,
       "created_at": "2026-03-19T22:16:24.127331",
       "resolved_at": "2026-03-23T11:22:33.118583+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.09686507403814046,
       "is_hedge": false
     },
@@ -2790,6 +3038,8 @@
       "pnl": -1.01,
       "created_at": "2026-03-19T22:16:16.179032",
       "resolved_at": "2026-03-21T00:45:37.322108+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.02847613716429644,
       "is_hedge": false
     },
@@ -2809,6 +3059,8 @@
       "pnl": 16.737757619530797,
       "created_at": "2026-03-19T22:15:50.234626",
       "resolved_at": "2026-03-21T00:30:25.204723+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.3872307181032205,
       "is_hedge": false
     },
@@ -2828,6 +3080,8 @@
       "pnl": 150.63874751816422,
       "created_at": "2026-03-19T22:15:38.619656",
       "resolved_at": "2026-03-21T00:30:23.141196+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1600989021417663,
       "is_hedge": false
     },
@@ -2847,6 +3101,8 @@
       "pnl": -20.0,
       "created_at": "2026-03-19T22:15:25.176538",
       "resolved_at": "2026-03-21T04:47:17.577913+00:00",
+      "_strategy": "Contrarian",
+      "_account": "@hal",
       "current_price": 0.5169695345378221,
       "is_hedge": false
     },
@@ -2866,6 +3122,8 @@
       "pnl": null,
       "created_at": "2026-03-19T22:14:39.571618",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.013705034766355154,
       "is_hedge": false
     },
@@ -2885,6 +3143,8 @@
       "pnl": -16.36,
       "created_at": "2026-03-19T22:14:17.246531",
       "resolved_at": "2026-03-21T19:56:35.926340",
+      "_strategy": "Contrarian",
+      "_account": "@hal",
       "current_price": 0.5180002102649597,
       "is_hedge": false
     },
@@ -2904,6 +3164,8 @@
       "pnl": null,
       "created_at": "2026-03-19T21:07:10.739246",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.24370067732599918,
       "is_hedge": false
     },
@@ -2923,6 +3185,8 @@
       "pnl": 78.65912631827914,
       "created_at": "2026-03-19T21:06:29.586521",
       "resolved_at": "2026-03-21T00:30:24.879045+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.24370067732599918,
       "is_hedge": false
     },
@@ -2942,6 +3206,8 @@
       "pnl": 6.99733215536002,
       "created_at": "2026-03-19T21:04:57.893161",
       "resolved_at": "2026-03-22T08:27:15.555282+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.4899999999999997,
       "is_hedge": false
     },
@@ -2961,6 +3227,8 @@
       "pnl": 2.7985384240292728,
       "created_at": "2026-03-19T21:04:39.100337",
       "resolved_at": "2026-03-22T08:27:14.737442+00:00",
+      "_strategy": "Contrarian",
+      "_account": "@hal",
       "current_price": 0.4899999999999997,
       "is_hedge": false
     },
@@ -2980,6 +3248,8 @@
       "pnl": 20.806557578443844,
       "created_at": "2026-03-19T21:03:25.434737",
       "resolved_at": "2026-03-21T00:30:22.995529+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.1930609233498308,
       "is_hedge": false
     },
@@ -2999,6 +3269,8 @@
       "pnl": null,
       "created_at": "2026-03-19T21:00:04.182325",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.05500346843669343,
       "is_hedge": false
     },
@@ -3018,6 +3290,8 @@
       "pnl": null,
       "created_at": "2026-03-19T20:57:43.822137",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4099999999999999,
       "is_hedge": false
     },
@@ -3037,6 +3311,8 @@
       "pnl": null,
       "created_at": "2026-03-19T20:49:40.290373",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.2610212315705754,
       "is_hedge": false
     },
@@ -3056,6 +3332,8 @@
       "pnl": 3.1337044880213014,
       "created_at": "2026-03-19T20:33:17.252178",
       "resolved_at": "2026-03-21T23:39:06.896165+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.39285477085199694,
       "is_hedge": false
     },
@@ -3075,6 +3353,8 @@
       "pnl": null,
       "created_at": "2026-03-19T20:31:57.614178",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.057987934554607636,
       "is_hedge": false
     },
@@ -3094,6 +3374,8 @@
       "pnl": null,
       "created_at": "2026-03-19T20:31:23.211528",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.057987934554607636,
       "is_hedge": false
     },
@@ -3113,6 +3395,8 @@
       "pnl": -50.0,
       "created_at": "2026-03-19T20:30:36.647096",
       "resolved_at": "2026-03-21T04:47:17.780000+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.5169695345378221,
       "is_hedge": false
     },
@@ -3132,6 +3416,8 @@
       "pnl": -23.96,
       "created_at": "2026-03-19T20:30:02.337544",
       "resolved_at": "2026-03-21T04:47:16.940223+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.5169695345378221,
       "is_hedge": false
     },
@@ -3151,6 +3437,8 @@
       "pnl": null,
       "created_at": "2026-03-19T20:20:37.540301",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.3036220950283318,
       "is_hedge": false
     },
@@ -3170,6 +3458,8 @@
       "pnl": null,
       "created_at": "2026-03-19T20:15:33.629709",
       "resolved_at": null,
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.17300336084325998,
       "is_hedge": false
     },
@@ -3189,6 +3479,8 @@
       "pnl": null,
       "created_at": "2026-03-19T20:15:05.767511",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.17300336084325998,
       "is_hedge": false
     },
@@ -3208,6 +3500,8 @@
       "pnl": null,
       "created_at": "2026-03-19T20:13:05.505471",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.09686507403814046,
       "is_hedge": false
     },
@@ -3227,6 +3521,8 @@
       "pnl": -25.76,
       "created_at": "2026-03-19T20:10:26.380517",
       "resolved_at": "2026-03-19T20:49:37.425833",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.9900000000000001,
       "is_hedge": false
     },
@@ -3246,6 +3542,8 @@
       "pnl": 5.217541221690272,
       "created_at": "2026-03-19T20:06:46.300933",
       "resolved_at": "2026-03-21T00:30:29.053790+00:00",
+      "_strategy": "Zeitgeist",
+      "_account": "@Jarvis",
       "current_price": 0.23752093141039615,
       "is_hedge": false
     },
@@ -3265,6 +3563,8 @@
       "pnl": 13.32829928136032,
       "created_at": "2026-03-19T20:05:54.334707",
       "resolved_at": "2026-03-21T00:30:23.924714+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.23752093141039615,
       "is_hedge": false
     },
@@ -3284,6 +3584,8 @@
       "pnl": 7.026046946653054,
       "created_at": "2026-03-19T20:03:52.236320",
       "resolved_at": "2026-03-21T00:30:22.872933+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.17300336084325998,
       "is_hedge": false
     },
@@ -3303,6 +3605,8 @@
       "pnl": null,
       "created_at": "2026-03-19T19:51:05.906698",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4022561937488817,
       "is_hedge": false
     },
@@ -3322,6 +3626,8 @@
       "pnl": null,
       "created_at": "2026-03-19T19:31:17.377717",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.12999999999999998,
       "is_hedge": false
     },
@@ -3341,6 +3647,8 @@
       "pnl": null,
       "created_at": "2026-03-19T19:20:45.720859",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.012063773953536132,
       "is_hedge": false
     },
@@ -3360,6 +3668,8 @@
       "pnl": null,
       "created_at": "2026-03-19T18:50:17.203951",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.011524631409208938,
       "is_hedge": false
     },
@@ -3379,6 +3689,8 @@
       "pnl": null,
       "created_at": "2026-03-19T18:50:09.913487",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4899999999999997,
       "is_hedge": false
     },
@@ -3398,6 +3710,8 @@
       "pnl": 1.3514204321798973,
       "created_at": "2026-03-19T18:49:22.162183",
       "resolved_at": "2026-03-21T00:30:22.773550+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.04959783753530831,
       "is_hedge": false
     },
@@ -3417,6 +3731,8 @@
       "pnl": 8.925773576903225,
       "created_at": "2026-03-19T18:46:51.734867",
       "resolved_at": "2026-03-21T00:30:22.680122+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.4099999999999999,
       "is_hedge": false
     },
@@ -3436,6 +3752,8 @@
       "pnl": 7.578445715198487,
       "created_at": "2026-03-19T18:46:46.296665",
       "resolved_at": "2026-03-21T00:30:22.583861+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.24277760645332924,
       "is_hedge": false
     },
@@ -3455,6 +3773,8 @@
       "pnl": 24.71885109792784,
       "created_at": "2026-03-19T18:46:43.345889",
       "resolved_at": "2026-03-21T00:30:22.482480+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.3456027005039163,
       "is_hedge": false
     },
@@ -3474,6 +3794,8 @@
       "pnl": null,
       "created_at": "2026-03-19T18:42:09.762034",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.8857528550709586,
       "is_hedge": false
     },
@@ -3493,6 +3815,8 @@
       "pnl": -9.19,
       "created_at": "2026-03-19T18:41:01.321144",
       "resolved_at": "2026-03-21T00:45:35.772282+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.02847613716429644,
       "is_hedge": false
     },
@@ -3512,6 +3836,8 @@
       "pnl": 0.9894597297112844,
       "created_at": "2026-03-19T18:40:29.330819",
       "resolved_at": "2026-03-23T05:35:25.570426+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.09686507403814046,
       "is_hedge": false
     },
@@ -3531,6 +3857,8 @@
       "pnl": 5.165244554389165,
       "created_at": "2026-03-19T18:39:55.575340",
       "resolved_at": "2026-03-21T00:30:22.375412+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.057987934554607636,
       "is_hedge": false
     },
@@ -3550,6 +3878,8 @@
       "pnl": 5.562840334630685,
       "created_at": "2026-03-19T18:39:22.877320",
       "resolved_at": "2026-03-21T00:30:22.280223+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.013705034766355154,
       "is_hedge": false
     },
@@ -3569,6 +3899,8 @@
       "pnl": 5.623267197633641,
       "created_at": "2026-03-19T18:38:23.410101",
       "resolved_at": "2026-03-21T00:30:22.189161+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.5180002102649597,
       "is_hedge": false
     },
@@ -3588,6 +3920,8 @@
       "pnl": null,
       "created_at": "2026-03-19T18:19:11.272319",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.025302832745753314,
       "is_hedge": false
     },
@@ -3607,6 +3941,8 @@
       "pnl": null,
       "created_at": "2026-03-19T18:18:26.677252",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.6465978165952111,
       "is_hedge": false
     },
@@ -3626,6 +3962,8 @@
       "pnl": 13.93,
       "created_at": "2026-03-19T18:16:57.391869",
       "resolved_at": "2026-03-20T02:15:02.329151",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.9150479644016172,
       "is_hedge": false
     },
@@ -3645,6 +3983,8 @@
       "pnl": -50.0,
       "created_at": "2026-03-19T18:09:31.579530",
       "resolved_at": "2026-03-21T04:47:16.488303+00:00",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.5169695345378221,
       "is_hedge": false
     },
@@ -3664,6 +4004,8 @@
       "pnl": null,
       "created_at": "2026-03-19T18:08:57.140930",
       "resolved_at": null,
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.23752093141039615,
       "is_hedge": false
     },
@@ -3683,6 +4025,8 @@
       "pnl": 17.6,
       "created_at": "2026-03-19T18:08:33.558567",
       "resolved_at": "2026-03-20T02:15:02.107533",
+      "_strategy": "Parallax",
+      "_account": "@apo11o",
       "current_price": 0.9150479644016172,
       "is_hedge": false
     }
