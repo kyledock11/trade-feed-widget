@@ -1184,7 +1184,7 @@ function buildStrategyDropdown() {
       name: s.name,
       version: s.version,
       account: getAccountName(s),
-      count: s.trades ? s.trades.length : 0
+      count: s.trade_count || (s.trades ? s.trades.length : 0)
     }));
   } else if (feedData.strategy) {
     stratOptions = [{ name: feedData.strategy.name || 'Parallax', version: feedData.strategy.version, account: getAccountName(feedData.strategy || 'Parallax'), count: feedData.trades ? feedData.trades.length : 0 }];
@@ -1859,10 +1859,10 @@ function renderMultiStrategy() {
         </div>
         <div class="strategy-body">
           <div class="strategy-body-inner">
-            ${buildPortfolioBarHTML(strat.portfolio, strat.stats, strat.trades, 'strat' + idx)}
+            ${buildPortfolioBarHTML(strat.portfolio, strat.stats, (feedData.trades || []).filter(t => t._strategy === strat.name), 'strat' + idx)}
             ${strat.exposure ? buildExposureHTML(strat.exposure) : ''}
             <div class="trade-list">
-              ${buildTradeListHTML(strat.trades, strat.estimates || (feedData.estimates || null))}
+              ${buildTradeListHTML((feedData.trades || []).filter(t => t._strategy === strat.name), feedData.estimates || null)}
             </div>
           </div>
         </div>
@@ -2073,7 +2073,7 @@ function renderStrategy() {
   let totalResolved = 0, totalWins = 0;
   if (feedData.strategies) {
     feedData.strategies.forEach(s => {
-      (s.trades || []).forEach(t => {
+      ((feedData.trades || []).filter(t => t._strategy === s.name)).forEach(t => {
         if (t.status === 'resolved') {
           totalResolved++;
           if ((t.pnl || 0) > 0) totalWins++;
@@ -2405,12 +2405,13 @@ async function fetchFeed() {
 
     // Render based on selected strategy
     refreshView();
-  } catch {
+  } catch (err) {
+    console.error('Feed error:', err);
     dot.className = 'status-dot offline';
     update.textContent = 'Feed offline';
     updateBotStatus(null);
     document.getElementById('tradeList').innerHTML =
-      '<div class="error-state">Could not load trade feed. Run export_feed.py to generate data.</div>';
+      `<div class="error-state">Error: ${err.message || 'Unknown'}</div>`;
   }
 }
 
