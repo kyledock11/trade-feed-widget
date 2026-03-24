@@ -999,13 +999,11 @@
       <div class="stat"><span class="stat-value" id="sBankroll">--</span><span class="stat-label">Bankroll</span></div>
       <div class="stat"><span class="stat-value" id="sDeployed">--</span><span class="stat-label">Deployed</span></div>
       <div class="stat"><span class="stat-value" id="sPositions">--</span><span class="stat-label">Open</span></div>
-      <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Total P&L</span></div>
-      <div class="stat"><span class="stat-value" id="sUnrealized">--</span><span class="stat-label">Realized P&L</span></div>
-      <div class="stat"><span class="stat-value" id="sDrawdown">--</span><span class="stat-label">Max DD</span></div>
+      <div class="stat"><span class="stat-value" id="sPnl">--</span><span class="stat-label">Net Gain</span></div>
+      <div class="stat"><span class="stat-value" id="sWinLoss">--</span><span class="stat-label">W/L Record</span></div>
       <div class="stat"><span class="stat-value positive" id="sPotential">--</span><span class="stat-label">Max If All Win</span></div>
       <div class="stat"><span class="stat-value" id="sExpected">--</span><span class="stat-label">Expected Profit</span></div>
       <div class="stat"><span class="stat-value" id="sEdge">--</span><span class="stat-label">Avg Edge</span></div>
-      <div class="stat"><span class="stat-value" id="sMktImpact">--</span><span class="stat-label">Mkt Impact</span></div>
     </div>
 
     <div class="exposure-row" id="exposureRow"></div>
@@ -1260,24 +1258,20 @@ function updatePortfolioFromData(data) {
   document.getElementById('sDeployed').textContent = formatMoney(portfolio.deployed || stats.deployed);
   document.getElementById('sPositions').textContent = stats.open_positions || 0;
 
-  // Realized P&L from resolved trades
-  const resolvedTrades = (data.trades || []).filter(t => t.status === 'resolved');
-  const realizedPnl = resolvedTrades.reduce((sum, t) => sum + (t.pnl || 0), 0);
-
-  const realEl = document.getElementById('sUnrealized');
-  realEl.textContent = formatMoney(realizedPnl);
-  realEl.className = 'stat-value' + (realizedPnl > 0.01 ? ' positive' : realizedPnl < -0.01 ? ' negative' : '');
-
-  // Total P&L = sum of resolved trade P&L (same as realized)
-  const totalPnl = realizedPnl;
+  // Net Gain = (cash + deployed) - deposits (from account_balances — source of truth)
+  const ab = feedData && feedData.account_balances;
+  const netGain = ab ? ab.market_impact : 0;
   const pnlEl = document.getElementById('sPnl');
-  pnlEl.textContent = formatMoney(totalPnl);
-  pnlEl.className = 'stat-value' + (totalPnl > 0.01 ? ' positive' : totalPnl < -0.01 ? ' negative' : '');
+  pnlEl.textContent = formatMoney(netGain);
+  pnlEl.className = 'stat-value' + (netGain > 0.01 ? ' positive' : netGain < -0.01 ? ' negative' : '');
 
-  const dd = portfolio.max_drawdown || stats.max_drawdown || 0;
-  const ddEl = document.getElementById('sDrawdown');
-  ddEl.textContent = formatPct(dd);
-  ddEl.className = 'stat-value' + (dd > 0 ? ' negative' : '');
+  // W/L Record
+  const resolvedTrades = (data.trades || []).filter(t => t.status === 'resolved');
+  const wins = resolvedTrades.filter(t => (t.pnl || 0) > 0).length;
+  const losses = resolvedTrades.filter(t => (t.pnl || 0) <= 0).length;
+  const wlEl = document.getElementById('sWinLoss');
+  wlEl.textContent = resolvedTrades.length > 0 ? `${wins}W / ${losses}L` : '--';
+  wlEl.className = 'stat-value' + (wins > losses ? ' positive' : wins < losses ? ' negative' : '');
 
   const trades = data.trades || [];
   const openTrades = trades.filter(t => t.status === 'filled');
@@ -1408,7 +1402,7 @@ function renderTradesFromData(data) {
       <td><span class="trade-direction ${trade.direction}" style="font-size:0.65rem">${trade.direction.toUpperCase()}</span></td>
       <td class="td-market">${esc((trade.question || trade.market_id).replace(/^\[HEDGE\]\s*/i, ''))}${(trade.is_hedge || (trade.question || '').includes('[HEDGE]')) ? ' <span style="font-size:0.5rem;color:#c4a35a;background:rgba(196,163,90,0.12);padding:0.1rem 0.3rem;border-radius:3px;margin-left:0.3rem;font-family:Inter,sans-serif;letter-spacing:0.06em">HEDGE</span>' : ''}</td>
       <td class="td-data">${entryPct}</td>
-      <td class="td-data" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">...</td>
+      <td class="td-data" data-market-id="${esc(trade.market_id)}" data-direction="${trade.direction}" data-entry-price="${trade.entry_price}">${trade.current_price ? (trade.current_price * 100).toFixed(1) + '%' : '...'}</td>
       <td class="td-data" style="color:#7eb8d0">${likelihood}</td>
       <td class="td-data">${formatMoney(trade.size)}</td>
       <td class="td-data">${profitStr}${sellSignal}</td>
@@ -1594,20 +1588,12 @@ async function fetchLiveAccounts() {
 }
 
 function updatePortfolioFromLive() {
-  // Use feed's account_balances as source of truth for bankroll/deployed/impact
-  // These are fetched from Manifold API during export and are more accurate
+  // Use feed's account_balances as source of truth for bankroll/deployed
   if (!feedData || !feedData.account_balances) return;
 
   const ab = feedData.account_balances;
   document.getElementById('sBankroll').textContent = formatMoney(ab.total_deposited);
   document.getElementById('sDeployed').textContent = formatMoney(ab.total_in_positions);
-
-  // Market impact
-  const impactEl = document.getElementById('sMktImpact');
-  if (impactEl) {
-    impactEl.textContent = formatMoney(ab.market_impact);
-    impactEl.className = 'stat-value' + (ab.market_impact > 0.01 ? ' positive' : ab.market_impact < -0.01 ? ' negative' : '');
-  }
 }
 
 function updateStrategy(strategy) {
