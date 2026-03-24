@@ -1102,7 +1102,8 @@ function getActiveData() {
   if (selectedStrategy === 'all') {
     // If multi-strategy, combine all strategies
     if (isMultiStrategy && feedData.strategies) {
-      const allTrades = feedData.strategies.flatMap(s => (s.trades || []).map(t => ({...t, _strategy: s.name, _account: getAccountName(s)})));
+      // Trades already have _strategy and _account tags from the feed
+      const allTrades = feedData.trades || [];
       // Sum portfolio values
       const portfolio = { bankroll: 0, deployed: 0, cash: 0, total_pnl: 0, max_drawdown: 0 };
       const stats = { total_trades: 0, open_positions: 0, resolved: 0, avg_edge: 0 };
@@ -1145,12 +1146,18 @@ function getActiveData() {
       strat = feedData.strategies.find(s => s.name === selectedStrategy);
     }
     if (strat) {
+      // Filter top-level trades by strategy or account name
+      const stratName = strat.name;
+      const acctName = getAccountName(strat);
+      const filteredTrades = (feedData.trades || []).filter(t =>
+        t._strategy === stratName || t._account === acctName
+      );
       return {
-        trades: (strat.trades || []).map(t => ({...t, _strategy: strat.name, _account: getAccountName(strat)})),
+        trades: filteredTrades,
         portfolio: strat.portfolio,
         stats: strat.stats,
         exposure: strat.exposure,
-        estimates: strat.estimates || feedData.estimates
+        estimates: feedData.estimates
       };
     }
   }
