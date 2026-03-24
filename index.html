@@ -1294,13 +1294,6 @@ function updatePortfolioFromData(data) {
   const avgEdge = stats.avg_edge ? (stats.avg_edge * 100).toFixed(1) + '%' : '--';
   document.getElementById('sEdge').textContent = avgEdge;
 
-  // Market Impact from account balances
-  if (feedData && feedData.account_balances) {
-    const impact = feedData.account_balances.market_impact;
-    const impactEl = document.getElementById('sMktImpact');
-    impactEl.textContent = formatMoney(impact);
-    impactEl.className = 'stat-value' + (impact > 0.01 ? ' positive' : impact < -0.01 ? ' negative' : '');
-  }
 }
 
 function renderTradesFromData(data) {
@@ -1679,9 +1672,7 @@ function updatePortfolio(stats) {
   pnlEl.textContent = formatMoney(stats.total_pnl);
   pnlEl.className = 'stat-value' + (stats.total_pnl > 0 ? ' positive' : stats.total_pnl < 0 ? ' negative' : '');
 
-  const ddEl = document.getElementById('sDrawdown');
-  ddEl.textContent = formatPct(stats.max_drawdown);
-  ddEl.className = 'stat-value' + (stats.max_drawdown > 0 ? ' negative' : '');
+  // sDrawdown removed from UI
 
   if (feedData && feedData.trades) {
     const openTrades = feedData.trades.filter(t => t.status === 'filled');
